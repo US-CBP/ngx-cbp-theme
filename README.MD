@@ -46,40 +46,77 @@ Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp
 
 * In your `styles.scss` add
   ```sass
-  @import '~/app/ngx-cbp-theme';
+  @import '~ngx-cbp-theme/app/ngx-cbp-theme';
   ```
 
-* Import following minimal modules in your `AppModule`:
+* Implement required services:
+
+   
+  `ngx-cbp-theme` requires implementation of some services provided by the consuming application since those services are beyond the scope of theme.
+  Ideally these will be provided by other projects hosted in the enterprise. 
+  Hence we need to provide implementation of some of these services (CBPUserService, CBPApplicationsService) before we start our application. 
+  Since this is just a guide we will create my-user.service (to fake User) and my-applications.service (to fake basic set of applications for header menu). 
   
-  ```typescript
-  import {
-      CBPRootModule, 
-      CBPHeaderModule, 
-      CBPAppHeaderModule,     // this is optional 
-      USER_SERVICE,           // must be provided to fetch CBP user logged in to display user name on CBP Header
-      APPLICATIONS_SERVICE    // must be provided to get CBP applications (recent) for Applications menu on the CBP Header
-  } from 'ngx-cbp-theme' ;
+  Lets go ahead and create those using `angular-cli`.
+    
+  ```bash
+  ng g s my-user
+  ng g s my-applications
   ```
-
+  
+  Ensure `MyUserService` implements `CBPUserService` from `import {CBPUserService, CBPUser} from 'ngx-cbp-theme';`
+  Make sure we implement all the abstract methods.
+  
+  Similarly `MyApplicationsService` must implement `CBPApplicationsService` and its methods from `import {CBPApplicationsService} from 'ngx-cbp-theme';`.
+  
+  Both class declaration signature looks as below (implementation omitted for brevity).
+  
+ 
+  ```typescript
+  // inside my-user-service.ts
+  @Injectable()
+  export class MyUserService implements CBPUserService { 
+  ...
+  }
+  // inside my-applications-service.ts
+  @Injectable()
+  export class MyApplicationsService implements CBPApplicationsService { 
+  ...
+  ```
+    
+* Import following minimal modules in your `AppModule`:   
+  
+    ```typescript
+    import {
+        CBPRootModule, 
+        CBPHeaderModule, 
+        CBPAppHeaderModule,     // this is optional 
+        CBP_USER_SERVICE,           // must be provided to fetch CBP user logged in to display user name on CBP Header
+        CBP_APPLICATIONS_SERVICE    // must be provided to get CBP applications (recent) for Applications menu on the CBP Header
+    } from 'ngx-cbp-theme' ;
+    ```
+  
+  
   Provide implementation for these services like `USER_SERVICE` and `APPLICATIONS_SERVICE` by implementing respective interfaces and declare providers in AppModule's @NgModule as follows:-
   ```typescript
     providers: [
-      { provide: USER_SERVICE,          useClass: MyUserService },
-      { provide: APPLICATIONS_SERVICE,  useClass: MyApplicationsService }]
+      { provide: CBP_USER_SERVICE,          useClass: MyUserService },
+      { provide: CBP_APPLICATIONS_SERVICE,  useClass: MyApplicationsService }
+    ]
   ```
   
 * Markup Requirement
 
-Your `app.component.html` would have:-
+Your `app.component.html` should be changed to following minimal structure:-
 
 ```angular2html
-<cbp-root layout="fluid">
+<cbp-root layout="'fluid'">
   <cbp-header></cbp-header>
   <cbp-app-header>
     <h1 class="app-title">App Header<small>Kitchensink</small></h1>
   </cbp-app-header>
   <div class="app-content">
-        <!-- Your markup here -->
+        <p>My markup here...</p>
   </div>
 </cbp-root>
 ```  
