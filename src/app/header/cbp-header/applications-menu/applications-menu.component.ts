@@ -43,7 +43,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
                     });
                 }
                 if ( this.cbpMenu && change && change.mqAlias === 'xs') {
-                    this.cbpMenu._emitCloseEvent();
+                    // TODO this.cbpMenu._emitCloseEvent();
                     setTimeout(() => {
                         this.isXS = true;
                     });
