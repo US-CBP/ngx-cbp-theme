@@ -46,7 +46,7 @@ Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp
 
 * In your `styles.scss` add
   ```sass
-  @import '~/app/';
+  @import '~/app/ngx-cbp-theme';
   ```
 
 * Import following minimal modules in your `AppModule`:
@@ -58,7 +58,7 @@ Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp
       CBPAppHeaderModule,     // this is optional 
       USER_SERVICE,           // must be provided to fetch CBP user logged in to display user name on CBP Header
       APPLICATIONS_SERVICE    // must be provided to get CBP applications (recent) for Applications menu on the CBP Header
-  } from '' ;
+  } from 'ngx-cbp-theme' ;
   ```
 
   Provide implementation for these services like `USER_SERVICE` and `APPLICATIONS_SERVICE` by implementing respective interfaces and declare providers in AppModule's @NgModule as follows:-
