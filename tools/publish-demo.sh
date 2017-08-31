@@ -23,6 +23,8 @@ git reset upstream/gh-pages
 
 touch .
 
+cp demo.html index.html
+
 git add -A .
 git commit -m "rebuild pages at ${rev}"
 git push -q upstream HEAD:gh-pages
