@@ -1,6 +1,6 @@
 {
   "name": "ngx-cpb-theme",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/US-CBP/ngx-cbp-theme.git"
@@ -12,10 +12,10 @@
   "bugs": {
     "url": "https://github.com/US-CBP/ngx-cbp-theme.git/issues"
   },
-  "main": ".umd.js",
-  "module": ".js",
-  "jsnext:main": ".js",
-  "typings": ".d.ts",
+  "main": "ngx-cbp-theme.umd.js",
+  "module": "ngx-cbp-theme.js",
+  "jsnext:main": "ngx-cbp-theme.js",
+  "typings": "ngx-cbp-theme.d.ts",
   "peerDependencies": {
     "@angular/animations": "^4.3.3",
     "@angular/common": "^4.3.3",

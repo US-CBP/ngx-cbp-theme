@@ -22,8 +22,8 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": ".js",
-    "flatModuleId": ""
+    "flatModuleOutFile": "ngx-cbp-theme.js",
+    "flatModuleId": "ngx-cbp-theme"
   },
   "files": [
     "./index.ts",
