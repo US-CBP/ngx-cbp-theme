@@ -1,0 +1,2 @@
+To take benefit angular-cli we have to live both the folder name 'app' since it not configurable(yet).
+

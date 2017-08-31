@@ -1,0 +1,14 @@
+@import '~cbp-theme/dist/scss/vendor/_fontawesome';
+
+@mixin md-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+}
+
+md-icon.mat-icon {
+  width: inherit;
+}
+.md-36 {
+  @include md-icon-size(36px);
+}

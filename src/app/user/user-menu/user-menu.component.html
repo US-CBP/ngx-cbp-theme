@@ -1,0 +1,29 @@
+<div *ngIf="!isLoggedIn && !loginProgress" class="cbp-user-navitem" (click)="login()">
+  <i class="fa fa-sign-in"></i><span>&nbsp;Login</span>
+</div>
+<div *ngIf="!isLoggedIn && loginProgress" class="cbp-user-navitem">
+  <cbp-loading></cbp-loading>
+</div>
+<div *ngIf="isLoggedIn && userDataLoaded && !toolbarExpanded" class="cbp-user-navitem" [mdMenuTriggerFor]="userMenu">
+  <md-icon fontSet="fontawesome" fontIcon="fa-user"></md-icon>
+  <span fxShow="false" fxShow.gt-sm fxShow.lt-sm>{{user.firstName}} {{user.lastName}}</span>
+  <md-icon fontSet="fontawesome" fontIcon="fa-caret-down"></md-icon>
+</div>
+
+<div *ngIf="isLoggedIn && userDataLoaded && toolbarExpanded" class="cbp-user-navitem non-menu" (click)="toggleMenu()">
+  <md-icon fontSet="fontawesome" fontIcon="fa-user"></md-icon>
+  <span fxShow="false" fxShow.gt-sm fxShow.lt-sm>{{user.firstName}} {{user.lastName}}</span>
+  <md-icon fontSet="fontawesome" fontIcon="fa-caret-down"></md-icon>
+</div>
+
+<div class="cbp-user-navitem expanded" *ngIf="toolbarExpanded && userMenuExpanded">
+  <ng-template [ngTemplateOutlet]="userMenuContents"></ng-template>
+</div>
+
+<md-menu #userMenu="mdMenu" yPosition="above" xPosition="before" [overlapTrigger]="false">
+  <ng-template [ngTemplateOutlet]="userMenuContents"></ng-template>
+</md-menu>
+
+<ng-template #userMenuContents let-fromMenu="fromMenu">
+  <div class="mat-menu-item" (click)="logout()">Logout</div>
+</ng-template>

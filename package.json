@@ -1,0 +1,91 @@
+{
+  "name": "ngx-cpb-theme",
+  "version": "0.2.0",
+  "scripts": {
+    "build": "npm run build:lib",
+    "build:lib": "gulp clean && gulp build",
+    "build:watch:lib": "gulp clean && gulp",
+    "docs": "npm run docs:build:lib",
+    "docs:build:lib": "compodoc -p ./src/tsconfig.app.json -n ngx-cpb-theme -d docs --hideGenerator",
+    "docs:serve:lib": "npm run docs:build:lib -- -s",
+    "docs:watch:lib": "npm run docs:build:lib -- -s -w",
+    "lint": "ng lint",
+    "start:demo": "ng serve --app demo --port 4100",
+    "build:demo": "ng build --app demo",
+    "test": "ng test",
+    "postinstall": "gulp clean && node ./postinstall.js && npm run build",
+    "publish": "npm run build:demo && tools/publish-demo.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/US-CBP/ngx-cbp-theme.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/US-CBP/ngx-cbp-theme.git/issues"
+  },
+  "dependencies": {
+    "@angular/animations": "^4.3.3",
+    "@angular/cdk": "^2.0.0-beta.8",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/http": "^4.0.0",
+    "@angular/flex-layout": "^2.0.0-beta.8",
+    "@angular/material": "^2.0.0-beta.8",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/router": "^4.0.0",
+    "cbp-theme": "^1.3.1"
+  },
+  "devDependencies": {
+    "@angular/cli": "1.2.6",
+    "@angular/compiler-cli": "^4.3.3",
+    "@angular/language-service": "^4.3.3",
+    "@compodoc/compodoc": "^1.0.0-beta.10",
+    "@types/jasmine": "2.5.38",
+    "@types/node": "~6.0.60",
+    "codelyzer": "~2.0.0",
+    "concurrently": "^3.5.0",
+    "core-js": "^2.4.1",
+    "del": "^2.2.2",
+    "es6-shim": "^0.35.3",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rollup": "^2.11.0",
+    "gulp-sass": "^3.1.0",
+    "jasmine-core": "~2.5.2",
+    "jasmine-spec-reporter": "~3.2.0",
+    "karma": "~1.4.1",
+    "karma-chrome-launcher": "~2.0.0",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^0.2.0",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "lite-server": "^2.3.0",
+    "node-sass": "^4.5.2",
+    "node-sass-tilde-importer": "^1.0.0",
+    "node-watch": "^0.5.2",
+    "npm-git-publish": "^0.2.4-beta",
+    "plugin-typescript": "^7.0.6",
+    "protractor": "~5.1.0",
+    "replace": "^0.3.0",
+    "rollup": "^0.41.6",
+    "run-sequence": "^1.2.2",
+    "rxjs": "^5.1.0",
+    "systemjs": "^0.20.17",
+    "tota11y": "^0.1.6",
+    "ts-node": "~2.0.0",
+    "tslint": "~4.5.0",
+    "typescript": "~2.2.0",
+    "web-animations-js": "^2.3.1",
+    "zone.js": "^0.8.16"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  }
+}

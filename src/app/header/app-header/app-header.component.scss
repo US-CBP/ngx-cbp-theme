@@ -1,0 +1,9 @@
+@import '../../variables';
+
+.cbp-app-header {
+  position: fixed;
+  top: $navbar-height;
+  z-index: $zindex-appbar;
+
+}
+

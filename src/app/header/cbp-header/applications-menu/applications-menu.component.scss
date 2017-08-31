@@ -1,0 +1,44 @@
+@import '../../../variables';
+
+
+
+.cbp-menu-item-category {
+  margin-left: $box-padding;
+  pointer-events: none;
+  padding: $padding-small-vertical $padding-xs-horizontal;
+}
+
+.mat-menu-item {
+  cursor: inherit;
+}
+
+.mat-menu-item .cbp-applications-link {
+    text-decoration: none;
+    color: $gray-dark;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+.mat-menu-item .cbp-applications-remove-icon .mat-icon {
+    vertical-align: inherit;
+    &:hover,
+    &:focus {
+      color: $gray-darker;
+      cursor: pointer;
+    }
+  }
+.cbp-applications-refresh {
+  cursor: pointer;
+}
+// TODO !important :(
+.applications-expansion-panel.inverse .cbp-applications-refresh,
+.applications-expansion-panel.inverse .cbp-applications-link,
+.applications-expansion-panel.inverse .cbp-applications-remove-icon .mat-icon {
+  color: $brand-default !important;
+}
+
+.applications-expansion-panel {
+  user-select: none;
+}

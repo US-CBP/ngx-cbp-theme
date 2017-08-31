@@ -1,0 +1,46 @@
+@import '../variables';
+
+/** Hacks - Certain material2 components can't be styled well without this higher level css */
+.cbp-theme {
+  .mat-toolbar.cbp-header .mat-toolbar-row {
+    height: $navbar-height;
+    border-bottom: 1px solid;
+  }
+  .mat-toolbar.cbp-app-header .mat-toolbar-row {
+    height: $navbar-appheader-height;
+    border-bottom: 1px solid;
+  }
+
+  .mat-toolbar.cbp-header .mat-toolbar-row {
+    border-bottom-color: $brand-primary-border;
+  }
+  .mat-toolbar.cbp-app-header .mat-toolbar-row {
+    border-bottom-color: $brand-default-border;
+  }
+
+  .cbp-app-header.mat-toolbar,
+  .cbp-header.mat-toolbar {
+    padding: 0;
+    min-height: inherit;
+  }
+
+  .mat-toolbar {
+    font-weight: inherit !important;
+    min-height: inherit;
+  }
+
+  .mat-tab-label, .mat-tab-link {
+    font-size: 15px !important;
+    opacity: inherit !important;
+  }
+}
+
+cbp-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  cbp-app-header {
+    flex: 0 0 auto;
+  }
+}

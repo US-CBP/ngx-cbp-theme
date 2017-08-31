@@ -1,0 +1,12 @@
+@import '../../../app/variables';
+
+.app-right-nav-items {
+  display: inline-flex;
+}
+
+.app-title {
+  padding: 0 15px;
+  margin-right: 10px;
+  border-right: 1px solid $brand-default-border;
+}
+

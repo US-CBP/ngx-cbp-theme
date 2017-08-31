@@ -1,0 +1,8 @@
+@import '../../variables';
+
+:host {
+  user-select: none;
+}
+.cbp-user-navitem.expanded .mat-menu-item {
+  color: $brand-default !important;
+}
