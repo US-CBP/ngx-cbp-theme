@@ -1,0 +1,18 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+
+    "emitDecoratorMetadata": true,
+    "module": "commonjs",
+    "baseUrl": "",
+    "rootDir": ".",
+    "declaration" : false,
+    "types": [
+      "node",
+      "jasmine"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  }
+}

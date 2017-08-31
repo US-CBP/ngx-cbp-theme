@@ -1,0 +1,34 @@
+<md-toolbar class="cbp-app-header" fxLayout="column" fxLayoutAlign.gt-xs="center stretch" fxLayoutAlign.lt-sm="end stretch" [@appHeaderState]="appHeaderState">
+
+  <div class="app-header-title-container">
+    <ng-content select="cbp-app-title"></ng-content>
+  </div>
+
+  <div class="app-header-left-nav-container" style="overflow-x: hidden;" fxShow="false" fxShow.gt-xs>
+    <ng-content select="cbp-app-main-nav"></ng-content>
+  </div>
+
+  <div class="app-header-right-nav-container"  fxFlex="" fxLayoutAlign.gt-xs="end stretch" >
+    <ng-content select="cbp-app-right-nav"></ng-content>
+  </div>
+
+
+  <div class="cbp-toolbar-expansion-container" fxFlex="" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="end stretch" fxHide="false" fxHide.gt-xs>
+    <div class="cbp-toolbar-expansion" (click)="isToolbarExpanded = ! isToolbarExpanded">
+      <div class="cbp-toolbar-expansion-icon">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </div>
+    </div>
+  </div>
+
+  <div fxShow="false" fxShow.lt-sm *ngIf="isToolbarExpanded ? true : false">
+    <ng-content select=".app-left-nav-items"></ng-content>
+  </div>
+
+
+</md-toolbar>
+
+
+

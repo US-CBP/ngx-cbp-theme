@@ -1,0 +1,54 @@
+<div class="cbp-applications-navitem" [mdMenuTriggerFor]="cbpMenu" >
+  <ng-template [ngTemplateOutlet]="application"></ng-template>
+</div>
+<div class="cbp-applications-navitem" *ngIf="menuDataLoaded && applicationsData.lastRetrieved !== null && !isXS">
+
+</div>
+<div class="applications-expansion-panel inverse" *ngIf="isApplicationsExpanded  && menuDataLoaded">
+  <ng-template [ngTemplateOutlet]="applicationsPanel" ></ng-template>
+</div>
+
+<md-menu #cbpMenu="mdMenu" yPosition="above" xPosition="after" [overlapTrigger]="false" class="cbp-menu-with-category applications-expansion-panel" >
+  <ng-template [ngTemplateOutlet]="applicationsPanel"></ng-template>
+</md-menu>
+
+
+<ng-template #applicationsPanel>
+  <ng-container *ngIf="applicationsData">
+    <div class="cbp-menu-item-category" *ngIf="applicationsData.recents?.length > 0">Recent Apps</div>
+    <div class="mat-menu-item" *ngFor="let app of applicationsData.recents">
+      <div class="cbp-applications-remove-icon"><md-icon  fontSet="fontawesome" fontIcon="fa-times" (click)="removeFromRecent(app, $event)" fxFlexAlign="center"></md-icon></div>
+      <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="" >
+        {{app.name}}
+      </a>
+    </div>
+
+    <md-divider *ngIf="applicationsData.recents?.length > 0"></md-divider>
+
+    <div class="cbp-menu-item-category" *ngIf="applicationsData.favorites?.length > 0">Favorite Apps</div>
+    <div class="mat-menu-item" *ngFor="let app of applicationsData.favorites">
+      <div class="cbp-applications-remove-icon"><md-icon  fontSet="fontawesome" fontIcon="fa-times" (click)="removeFromFavorite(app, $event)" fxFlexAlign="center"></md-icon></div>
+      <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="" >
+        {{app.name}}
+      </a>
+    </div>
+
+    <md-divider *ngIf="applicationsData.favorites.length > 0 || applicationsData.recents.length > 0"></md-divider>
+
+    <div class="mat-menu-item cbp-applications-refresh" (click)="reloadApplicationsData($event)">Refresh
+      <small>Updated {{applicationsData.lastRetrieved | datetime}}</small>
+    </div>
+  </ng-container>
+
+</ng-template>
+<ng-template #application>
+  <div class="cbp-current-application" fxShow="false" fxShow.gt-xs fxShow.lt-sm fxLayout="column" fxLayoutAlign="center start" (click)="toggleApplicationsMenu($event)">
+    <div *ngIf="applicationsDataLoading" class="cbp-menu-loading" style="color: white">
+      <cbp-loading></cbp-loading>
+    </div>
+    <div *ngIf="menuDataLoaded && !applicationsDataLoading" class="cbp-current-application-name">{{applicationsData.currentApp.name}}
+      <md-icon *ngIf="applicationsData.lastRetrieved" fontSet="fontawesome" fontIcon="fa-caret-down"></md-icon>
+    </div>
+    <div *ngIf="menuDataLoaded" class="cbp-current-application-version" fxShow="false" fxShow.gt-xs>{{applicationsData.currentApp.version}}</div>
+  </div>
+</ng-template>
