@@ -60,3 +60,8 @@
 .applications-expansion-panel {
   user-select: none;
 }
+.cbp-menu-item-category {
+  margin-left: $box-padding;
+  pointer-events: none;
+  padding: $padding-small-vertical $padding-xs-horizontal;
+}

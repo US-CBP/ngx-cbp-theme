@@ -4,10 +4,11 @@ import {CBPApplicationsMenuComponent} from './applications-menu/applications-men
 import {MdIconModule, MdMenuModule} from '@angular/material';
 import {CBPProgressModule} from '../progress/progress.module';
 import {CBPPipesModule} from '../pipes/pipes.module';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   imports: [
-    CommonModule, MdMenuModule, MdIconModule, CBPProgressModule, CBPPipesModule
+    CommonModule, MdMenuModule, MdIconModule, CBPProgressModule, CBPPipesModule, FlexLayoutModule
   ],
   declarations: [CBPApplicationsMenuComponent],
   exports: [CBPApplicationsMenuComponent]
