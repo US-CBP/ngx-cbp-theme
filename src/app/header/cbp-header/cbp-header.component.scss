@@ -2,32 +2,13 @@
 @import '../header';
 
 // Can't import _navbar from CBP theme - several items must be refactored and variables defined - need to fix _navbar in cbp-theme
-// Assumed variables start
 
-$font-size-smallest: 12px; // We cannot use $$font-size-small because it is not 12 px as required by DHS brand (we also use it for version)
-$brand-padding: 0 70px 0 15px;
 
 .cbp-header {
   position: fixed;
   top: 0;
   z-index: $zindex-navbar;
 
-  .cbp-current-application {
-    height: $navbar-height;
-  }
-
-  .cbp-current-application-name {
-    line-height: 1em;
-    .mat-icon {
-      margin-left: 5px;
-      height: 14px;
-    }
-  }
-  .cbp-current-application-version {
-    line-height: $line-height-base;
-    font-size: $font-size-smallest;
-    font-style: italic;
-  }
 }
 
 .cbp-brand-nav {

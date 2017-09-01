@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 import {MockUserService} from './mock-services/user.mock.service';
 import {CBP_USER_SERVICE} from '../../app/user/user';
-import {CBP_APPLICATIONS_SERVICE} from '../../app/header/applications.service';
+import {CBP_APPLICATIONS_SERVICE} from '../../app/applications/cbp-applications-service';
 import {MockApplicationsService} from './mock-services/applications.mock.service';
 
 

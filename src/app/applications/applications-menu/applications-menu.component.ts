@@ -1,11 +1,11 @@
 import {Component, Inject, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {
-    CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
-    CBPApplicationsService
-} from '../../applications.service';
 import {Subscription} from 'rxjs/Subscription';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {MdMenu} from '@angular/material';
+import {
+    CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
+    CBPApplicationsService
+} from '../cbp-applications-service';
 
 @Component({
     selector: 'cbp-applications-menu',

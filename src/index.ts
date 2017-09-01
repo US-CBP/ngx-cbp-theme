@@ -22,4 +22,5 @@ export * from './app/cbp-root/index';
 export * from './app/accordion/index';
 export * from './app/header/index';
 export * from './app/user/index';
-export * from './app/progress/progress.module';
+export * from './app/applications/index';
+export * from './app/progress/index';
