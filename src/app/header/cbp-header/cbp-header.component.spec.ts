@@ -16,6 +16,7 @@ import {
 } from '../../applications/cbp-applications-service';
 import {Subject} from 'rxjs/Subject';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
+import {CBPUserModule} from '../../user/user.module';
 
 describe('CBPHeaderComponent', () => {
   let component: CBPHeaderComponent;
@@ -26,7 +27,7 @@ describe('CBPHeaderComponent', () => {
       imports: [
           CommonModule,
           MdListModule, MdMenuModule, MdToolbarModule, FlexLayoutModule, MdIconModule,
-          MdButtonModule, NoopAnimationsModule, CBPProgressModule, CBPPipesModule, CBPApplicationsModule],
+          MdButtonModule, NoopAnimationsModule, CBPProgressModule, CBPPipesModule, CBPApplicationsModule, CBPUserModule],
       declarations: [CBPHeaderComponent],
       providers: [
           {provide: CBP_USER_SERVICE, useClass: TestUserService},
