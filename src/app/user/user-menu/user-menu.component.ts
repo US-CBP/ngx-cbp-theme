@@ -11,7 +11,7 @@ export class CBPUserMenuComponent implements OnInit, OnDestroy {
 
   private _isToolbarExpanded = false;
   userMenuExpanded =  false;
-  user: CBPUser;
+  user?: CBPUser;
   loginProgress = false;
   isLoggedIn = false;
   userDataLoaded = false;
@@ -61,7 +61,7 @@ export class CBPUserMenuComponent implements OnInit, OnDestroy {
       if (this.userServiceSubscription) {
           this.userServiceSubscription.unsubscribe();
       }
-      this.user = null;
+      this.user = undefined;
       this.userDataLoaded = false;
   }
 

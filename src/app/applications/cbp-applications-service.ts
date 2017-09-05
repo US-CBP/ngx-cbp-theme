@@ -1,21 +1,27 @@
-import {InjectionToken} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
+import {InjectionToken} from '@angular/core';
 
+/**
+ * Each application in the drop down and this application to refer by name/id etc.
+ */
 export class CBPApplication {
-    public version: String;
+    public id: String;
     public description: String;
-    constructor(public name: String, public href: String) {};
+    public version: String;
+    constructor(public name?: String, public href?: String) {}
 }
 
+/**
+ * Models list of applications, recents, favorites etc.
+ */
 export class CBPApplicationsData {
     public list: CBPApplication[] = [];
     public recents: CBPApplication[] = [];
     public favorites: CBPApplication[] = [];
-    public currentApp: CBPApplication = new CBPApplication('default', null);
+    public currentApp: CBPApplication = new CBPApplication();
     public lastRetrieved: Date;
-
-    constructor() {};
 }
+
 
 export abstract class CBPApplicationsService {
     /**

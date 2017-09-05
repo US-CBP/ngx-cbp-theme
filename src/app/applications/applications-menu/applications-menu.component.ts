@@ -1,11 +1,11 @@
 import {Component, Inject, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {
-    CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
-    CBPApplicationsService
-} from '../../applications.service';
 import {Subscription} from 'rxjs/Subscription';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {MdMenu} from '@angular/material';
+import {
+    CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
+    CBPApplicationsService
+} from '../cbp-applications-service';
 
 @Component({
     selector: 'cbp-applications-menu',
@@ -20,7 +20,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     applicationsDataLoading = true;
     isApplicationsExpanded = false;
     isXS = false;
-    applicationsData: CBPApplicationsData = null;
+    applicationsData?: CBPApplicationsData;
     private applicationsServiceSubscription: Subscription;
     private mediaSubscription: Subscription;
 
@@ -33,38 +33,44 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.mediaSubscription = this.media.subscribe(
-            (change: MediaChange) => {
-                if ( change && change.mqAlias !== 'xs') {
-                    this._isToolbarExpanded = false;
-                    this.isApplicationsExpanded = false;
-                    setTimeout(() => {
-                        this.isXS = false;
-                    });
-                }
-                if ( this.cbpMenu && change && change.mqAlias === 'xs') {
-                    // TODO this.cbpMenu._emitCloseEvent();
-                    setTimeout(() => {
-                        this.isXS = true;
-                    });
+        if (this.media) {
+            this.mediaSubscription = this.media.subscribe(
+                (change: MediaChange) => {
+                    if ( change && change.mqAlias !== 'xs') {
+                        this._isToolbarExpanded = false;
+                        this.isApplicationsExpanded = false;
+                        setTimeout(() => {
+                            this.isXS = false;
+                        });
+                    }
+                    if ( this.cbpMenu && change && change.mqAlias === 'xs') {
+                        // TODO this.cbpMenu._emitCloseEvent();
+                        setTimeout(() => {
+                            this.isXS = true;
+                        });
 
+                    }
                 }
-             }
-        );
+            );
+        }
 
-        this.applicationsServiceSubscription = this.applicationsService.getApplicationsData().subscribe(
-            (data: CBPApplicationsData) => {
-                this.applicationsData = data;
-                if (data) {
-                    this.menuDataLoaded = true;
+        if (this.applicationsService) {
+            this.applicationsServiceSubscription = this.applicationsService.getApplicationsData().subscribe(
+                (data: CBPApplicationsData) => {
+                    this.applicationsData = data;
+                    if (data) {
+                        this.menuDataLoaded = true;
+                        this.applicationsDataLoading = false;
+                    }
+                },
+                (err) => {
+                    this.error = err;
                     this.applicationsDataLoading = false;
                 }
-            },
-            (err) => {
-                this.error = err;
-                this.applicationsDataLoading = false;
-            }
-        );
+            );
+        }
+
+
     }
 
     removeFromFavorite(app: CBPApplication, $event: any) {
@@ -79,8 +85,13 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         console.log('ngDestroy Called');
-        this.applicationsServiceSubscription.unsubscribe();
-        this.mediaSubscription.unsubscribe();
+        if (this.applicationsServiceSubscription) {
+            this.applicationsServiceSubscription.unsubscribe();
+        }
+        if (this.mediaSubscription) {
+            this.mediaSubscription.unsubscribe();
+        }
+
     }
 
     reloadApplicationsData($event: Event): void {

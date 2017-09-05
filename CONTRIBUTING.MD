@@ -12,14 +12,22 @@ Produces consumable artifacts as per [Angular Package Format](https://docs.googl
   npm run build
  ```
 
+# Organization
+
+This project is made up of 2 applications
+
+Lib -> This is src/app
+
+Demo -> This is the demo app.
+
 # Demo
 
 This is for development of components to quickly see the components in works.
-Based on purpose SystemJS so that it can be rendered fast.  
+Based on angular-cli.  
 
-# Why this project not angular-cli ?
+# Why Lib is not angular-cli ?
 
-This project uses gulp and angular-cli both. angular-cli is used to quickly scaffolding new components etc.
+Only the Demo app is based on angular-cli however the lib uses gulp and angular-cli both. angular-cli is used to quickly scaffolding new components etc.
 However in order to overcome meet the Angular package Format i.e. to make this consumable we make direct use of Angular Compilers and other utilities which needs more choreography than simple package.json can handle hence gulp is also used.
   
 

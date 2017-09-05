@@ -5,14 +5,18 @@ import {MdButtonModule, MdIconModule, MdListModule, MdMenuModule, MdToolbarModul
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {CommonModule} from '@angular/common';
 import {CBPUser, CBP_USER_SERVICE, CBPUserService} from '../../user/user';
-import {
-    CBPApplication, CBP_APPLICATIONS_SERVICE, CBPApplicationsService,
-    CBPApplicationsData
-} from '../applications.service';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {Observable} from 'rxjs/Observable';
 import {CBPProgressModule} from '../../progress/progress.module';
 import {CBPPipesModule} from '../../pipes/pipes.module';
+import {CBPApplicationsModule} from '../../applications/applications.module';
+import {
+    CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
+    CBPApplicationsService
+} from '../../applications/cbp-applications-service';
+import {Subject} from 'rxjs/Subject';
+import {ReplaySubject} from 'rxjs/ReplaySubject';
+import {CBPUserModule} from '../../user/user.module';
 
 describe('CBPHeaderComponent', () => {
   let component: CBPHeaderComponent;
@@ -23,7 +27,7 @@ describe('CBPHeaderComponent', () => {
       imports: [
           CommonModule,
           MdListModule, MdMenuModule, MdToolbarModule, FlexLayoutModule, MdIconModule,
-          MdButtonModule, NoopAnimationsModule, CBPProgressModule, CBPPipesModule],
+          MdButtonModule, NoopAnimationsModule, CBPProgressModule, CBPPipesModule, CBPApplicationsModule, CBPUserModule],
       declarations: [CBPHeaderComponent],
       providers: [
           {provide: CBP_USER_SERVICE, useClass: TestUserService},
@@ -45,14 +49,20 @@ describe('CBPHeaderComponent', () => {
 });
 
 export class TestUserService implements CBPUserService {
-    private user: CBPUser;
-    getUser(): Observable<CBPUser> {
-        this.user = new CBPUser();
-        return Observable.of(this.user);
+
+    private userSubject: ReplaySubject<CBPUser> = new ReplaySubject(1);
+
+    constructor() {}
+
+    login(): Subject<CBPUser> {
+        this.userSubject.next(new CBPUser());
+        return this.userSubject;
     }
-    getCurrentUser(): CBPUser {
-        return this.user;
+
+    getUser(): Subject<CBPUser> {
+        return this.userSubject;
     }
+
     logout() {}
 }
 export class TestApplicationsService implements  CBPApplicationsService {

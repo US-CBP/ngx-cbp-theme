@@ -101,7 +101,9 @@ gulp.task('rollup:fesm', function () {
 
       // Format of generated bundle
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#format
-      format: 'es'
+      format: 'es',
+
+      moduleName: 'ngx-cbp-theme'
     }))
     .pipe(gulp.dest(distFolder));
 });
@@ -150,7 +152,7 @@ gulp.task('rollup:umd', function () {
       }
 
     }))
-    .pipe(rename('.umd.js'))
+    .pipe(rename('ngx-cbp-theme.umd.js'))
     .pipe(gulp.dest(distFolder));
 });
 

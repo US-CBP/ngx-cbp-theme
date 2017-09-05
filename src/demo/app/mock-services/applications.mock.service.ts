@@ -1,4 +1,3 @@
-import {CBPApplicationsService, CBPApplication, CBPApplicationsData} from '../../../app/header/applications.service';
 import {Inject, Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
@@ -6,6 +5,10 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/merge';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {CBP_USER_SERVICE, CBPUser, CBPUserService} from '../../../app/user/user';
+import {
+    CBPApplication, CBPApplicationsData,
+    CBPApplicationsService
+} from '../../../app/applications/cbp-applications-service';
 
 
 
@@ -68,8 +71,6 @@ export class MockApplicationsService implements  CBPApplicationsService {
     private _getData(): Observable<CBPApplicationsData> {
         return this._getMockHttpData()
             .map((data: CBPApplicationsData) => {
-                data.recents = [];
-                data.favorites = [];
                 data.currentApp = new CBPApplication('Kitchen Sink v4.0.1.0', null);
                 data.lastRetrieved = new Date();
                 return data;
