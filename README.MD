@@ -1,5 +1,8 @@
 # ngx-cbp-theme
 
+[![npm version](https://badge.fury.io/gh/US-CBP%2Fngx-cbp-theme.svg)](https://badge.fury.io/gh/US-CBP%2Fngx-cbp-theme)
+
+
 Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp-theme) for Angular 4.x applications. 
 
 

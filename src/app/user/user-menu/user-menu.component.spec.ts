@@ -4,7 +4,7 @@ import { CBPUserMenuComponent } from './user-menu.component';
 import {MdIconModule, MdMenuModule} from '@angular/material';
 import {CBPProgressModule} from '../../progress/progress.module';
 import {CBP_USER_SERVICE} from '../user';
-import {MockUserService} from '../../../demo/app/mock-services/user.mock.service';
+import {MockUserService} from '../../../mock-services/user.mock.service';
 
 describe('CBPUserMenuComponent', () => {
   let component: CBPUserMenuComponent;

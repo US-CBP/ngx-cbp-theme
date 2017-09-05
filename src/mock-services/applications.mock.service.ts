@@ -4,11 +4,11 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/merge';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {CBP_USER_SERVICE, CBPUser, CBPUserService} from '../../../app/user/user';
+import {CBP_USER_SERVICE, CBPUser, CBPUserService} from '../app/user/user';
 import {
     CBPApplication, CBPApplicationsData,
     CBPApplicationsService
-} from '../../../app/applications/cbp-applications-service';
+} from '../app/applications/cbp-applications-service';
 
 
 

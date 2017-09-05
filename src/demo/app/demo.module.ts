@@ -6,7 +6,7 @@ import { CBPAccordionModule} from '../../app/accordion/' ;
 
 import { DemoAppRoutingModule } from './demo-routing.module';
 import { DemoAppComponent } from './demo.component';
-import { MockUserService} from './mock-services/user.mock.service';
+import { MockUserService} from '../../mock-services/user.mock.service';
 
 import {MdIconModule, MdTabsModule} from '@angular/material';
 

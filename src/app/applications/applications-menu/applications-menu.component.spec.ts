@@ -5,12 +5,10 @@ import {MdIconModule, MdMenuModule} from '@angular/material';
 import {CBPProgressModule} from '../../progress/progress.module';
 import {CBPPipesModule} from '../../pipes/pipes.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {
-    CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
-    CBPApplicationsService
-} from '../cbp-applications-service';
-import {Observable} from 'rxjs/Observable';
-import {ReplaySubject} from 'rxjs/ReplaySubject';
+import {CBP_APPLICATIONS_SERVICE} from '../cbp-applications-service';
+import {MockApplicationsService} from '../../../mock-services/applications.mock.service';
+import {CBP_USER_SERVICE} from '../../user/user';
+import {MockUserService} from '../../../mock-services/user.mock.service';
 
 describe('CBPApplicationsMenuComponent', () => {
   let component: CBPApplicationsMenuComponent;
@@ -21,7 +19,10 @@ describe('CBPApplicationsMenuComponent', () => {
     TestBed.configureTestingModule({
       imports: [MdMenuModule, MdIconModule, CBPProgressModule, CBPPipesModule, FlexLayoutModule],
       declarations: [ CBPApplicationsMenuComponent ],
-      providers: [{provide: CBP_APPLICATIONS_SERVICE, useClass: MockAppService}]
+      providers: [
+          {provide: CBP_APPLICATIONS_SERVICE, useClass: MockApplicationsService},
+          {provide: CBP_USER_SERVICE, useClass: MockUserService}
+      ]
     })
     .compileComponents();
   }));
@@ -36,28 +37,3 @@ describe('CBPApplicationsMenuComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-
-class MockAppService extends CBPApplicationsService {
-    private subject: ReplaySubject<CBPApplicationsData> =  new ReplaySubject(1);
-
-    getApplicationsData(): Observable<CBPApplicationsData> {
-        return this.subject;
-    }
-
-    refresh(): Observable<boolean> {
-        return null;
-    }
-
-    search(token: string): Observable<CBPApplication[]> {
-        return null;
-    }
-
-    removeFavoriteApplication(favoriteApplication: CBPApplication): Observable<boolean> {
-        return null;
-    }
-
-    removeRecentApplication(recentApplication: CBPApplication): Observable<boolean> {
-        return null;
-    }
-
-}
