@@ -71,8 +71,7 @@ export class MockApplicationsService implements  CBPApplicationsService {
     private _getData(): Observable<CBPApplicationsData> {
         return this._getMockHttpData()
             .map((data: CBPApplicationsData) => {
-                data.currentApp = new CBPApplication();
-                data.currentApp.name = 'Kitchen Sink v4.0.1.0';
+                data.currentApp = new CBPApplication('Kitchen Sink v4.0.1.0', null);
                 data.lastRetrieved = new Date();
                 return data;
             });

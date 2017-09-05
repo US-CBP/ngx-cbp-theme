@@ -8,9 +8,7 @@ export class CBPApplication {
     public id: String;
     public description: String;
     public version: String;
-    public name: String;
-    public href: String;
-    constructor(name: String, href: String) {}
+    constructor(public name: String, public href: String) {}
 }
 
 /**
