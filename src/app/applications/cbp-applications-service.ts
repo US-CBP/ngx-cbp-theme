@@ -10,7 +10,7 @@ export class CBPApplication {
     public version: String;
     public name: String;
     public href: String;
-    constructor() {};
+    constructor(name: String, href: String) {}
 }
 
 /**
@@ -20,9 +20,8 @@ export class CBPApplicationsData {
     public list: CBPApplication[] = [];
     public recents: CBPApplication[] = [];
     public favorites: CBPApplication[] = [];
-    public currentApp: CBPApplication = new CBPApplication();
+    public currentApp: CBPApplication = new CBPApplication(null, null);
     public lastRetrieved: Date;
-    constructor() {}
 }
 
 

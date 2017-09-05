@@ -33,38 +33,44 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.mediaSubscription = this.media.subscribe(
-            (change: MediaChange) => {
-                if ( change && change.mqAlias !== 'xs') {
-                    this._isToolbarExpanded = false;
-                    this.isApplicationsExpanded = false;
-                    setTimeout(() => {
-                        this.isXS = false;
-                    });
-                }
-                if ( this.cbpMenu && change && change.mqAlias === 'xs') {
-                    // TODO this.cbpMenu._emitCloseEvent();
-                    setTimeout(() => {
-                        this.isXS = true;
-                    });
+        if (this.media) {
+            this.mediaSubscription = this.media.subscribe(
+                (change: MediaChange) => {
+                    if ( change && change.mqAlias !== 'xs') {
+                        this._isToolbarExpanded = false;
+                        this.isApplicationsExpanded = false;
+                        setTimeout(() => {
+                            this.isXS = false;
+                        });
+                    }
+                    if ( this.cbpMenu && change && change.mqAlias === 'xs') {
+                        // TODO this.cbpMenu._emitCloseEvent();
+                        setTimeout(() => {
+                            this.isXS = true;
+                        });
 
+                    }
                 }
-             }
-        );
+            );
+        }
 
-        this.applicationsServiceSubscription = this.applicationsService.getApplicationsData().subscribe(
-            (data: CBPApplicationsData) => {
-                this.applicationsData = data;
-                if (data) {
-                    this.menuDataLoaded = true;
+        if (this.applicationsService) {
+            this.applicationsServiceSubscription = this.applicationsService.getApplicationsData().subscribe(
+                (data: CBPApplicationsData) => {
+                    this.applicationsData = data;
+                    if (data) {
+                        this.menuDataLoaded = true;
+                        this.applicationsDataLoading = false;
+                    }
+                },
+                (err) => {
+                    this.error = err;
                     this.applicationsDataLoading = false;
                 }
-            },
-            (err) => {
-                this.error = err;
-                this.applicationsDataLoading = false;
-            }
-        );
+            );
+        }
+
+
     }
 
     removeFromFavorite(app: CBPApplication, $event: any) {
@@ -79,8 +85,13 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         console.log('ngDestroy Called');
-        this.applicationsServiceSubscription.unsubscribe();
-        this.mediaSubscription.unsubscribe();
+        if (this.applicationsServiceSubscription) {
+            this.applicationsServiceSubscription.unsubscribe();
+        }
+        if (this.mediaSubscription) {
+            this.mediaSubscription.unsubscribe();
+        }
+
     }
 
     reloadApplicationsData($event: Event): void {
