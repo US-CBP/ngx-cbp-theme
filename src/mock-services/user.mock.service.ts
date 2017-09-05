@@ -1,6 +1,6 @@
 
 import {Injectable} from '@angular/core';
-import {CBPUser, CBPUserService} from '../../../app/user/user';
+import {CBPUser, CBPUserService} from '../app/user/user';
 import {Subject} from 'rxjs/Subject';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
 
