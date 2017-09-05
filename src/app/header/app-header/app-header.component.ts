@@ -30,7 +30,7 @@ export class CBPAppHeaderComponent implements OnInit {
     this.lastScrollY = 0;
   }
   @HostListener('window:scroll', ['$event'])
-  scrolled(event: any) {
+  scrolled() {
     this.appHeaderState = this.lastScrollY  > window.pageYOffset ? 'initial' : 'up';
     this.lastScrollY  = window.pageYOffset;
   }

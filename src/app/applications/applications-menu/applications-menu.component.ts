@@ -20,7 +20,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     applicationsDataLoading = true;
     isApplicationsExpanded = false;
     isXS = false;
-    applicationsData: CBPApplicationsData = null;
+    applicationsData?: CBPApplicationsData;
     private applicationsServiceSubscription: Subscription;
     private mediaSubscription: Subscription;
 

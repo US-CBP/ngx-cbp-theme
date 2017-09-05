@@ -65,7 +65,7 @@ export class CBPHeaderComponent implements OnInit , OnDestroy {
 
 
   @HostListener('window:scroll', ['$event'])
-  scrolled(event: any) {
+  scrolled() {
     this.cbpHeaderState = this.lastScrollY  > window.pageYOffset ? 'initial' : 'up';
     this.lastScrollY  = window.pageYOffset;
     this.isToolbarExpanded = false;

@@ -8,7 +8,7 @@ export class CBPApplication {
     public id: String;
     public description: String;
     public version: String;
-    constructor(public name: String, public href: String) {}
+    constructor(public name?: String, public href?: String) {}
 }
 
 /**
@@ -18,7 +18,7 @@ export class CBPApplicationsData {
     public list: CBPApplication[] = [];
     public recents: CBPApplication[] = [];
     public favorites: CBPApplication[] = [];
-    public currentApp: CBPApplication = new CBPApplication(null, null);
+    public currentApp: CBPApplication = new CBPApplication();
     public lastRetrieved: Date;
 }
 
