@@ -14,7 +14,7 @@
     "build:demo": "ng build --app demo",
     "test": "ng test",
     "e2e:demo": "ng e2e --app demo",
-    "ci": "npm run build:lib && npm run lint && npm run test:once && npm run e2e:demo && npm run build:demo",
+    "ci": "npm run build:lib && npm run lint && npm run test:once && npm run e2e:demo",
     "test:once": "ng test --watch=false",
     "postinstall": "gulp clean && node ./postinstall.js && npm run build",
     "publish": "npm run build:demo && tools/publish-demo.sh"

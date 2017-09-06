@@ -17,7 +17,7 @@ git init
 git config user.name "yogeshgadge"
 git config user.email "yogeshgadge@gmail.com"
 
-git remote add upstream "https://$GH_TOKEN@github.com/US-CBP/ngx-cbp-theme.git"
+git remote add upstream "https://$GITHUB_TOKEN@github.com/US-CBP/ngx-cbp-theme.git"
 git fetch upstream
 git reset upstream/gh-pages
 
