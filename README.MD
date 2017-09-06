@@ -1,9 +1,17 @@
 # ngx-cbp-theme
 
-[![npm version](https://badge.fury.io/gh/US-CBP%2Fngx-cbp-theme.svg)](https://badge.fury.io/gh/US-CBP%2Fngx-cbp-theme)
+[![npm version](https://badge.fury.io/js/US-CBP%2Fngx-cbp-theme.svg)](https://badge.fury.io/js/US-CBP/ngx-cbp-theme)
+[![build Status]((https://travis-ci.org/US-CBP/ngx-cbp-theme.svg?branch=master))](https://travis-ci.org/US-CBP/ngx-cbp-theme.svg?branch=master)
+[![dependencies Status](https://david-dm.org/us-cbp/ngx-cbp-theme/status.svg)](https://david-dm.org/us-cbp/ngx-cbp-theme)
+[![devDependencies Status](https://david-dm.org/us-cbp/ngx-cbp-theme/dev-status.svg)](https://david-dm.org/us-cbp/ngx-cbp-theme?type=dev)
 
 
 Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp-theme) for Angular 4.x applications. 
+
+
+___
+[![Kitchen Sink Demo](docs/kitchen-sink-preview.png)](docs/kitchen-sink-preview.png)
+___
 
 
 ## Goals
