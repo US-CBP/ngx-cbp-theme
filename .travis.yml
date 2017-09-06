@@ -20,20 +20,20 @@ install:
 jobs:
   include:
     - stage: build
-    - script: echo "Building Library ..."
-    - script: npm run build:lib
+      script: echo "Building Library ..."
+      script: npm run build:lib
     - stage: linting
-    - script: echo "Linting ..."
-    - script: npm run lint
+      script: echo "Linting ..."
+      script: npm run lint
     - stage: unit-test
-    - script: echo "Starting Karma unit tests..."
-    - script: npm run test:once
-    - stage: unit-test
-    - script: echo "Starting e2e ..."
-    - script: npm run e2e:demo
+      script: echo "Starting Karma unit tests..."
+      script: npm run test:once
+    - stage: e2e-test
+      script: echo "Starting e2e ..."
+      script: npm run e2e:demo
     - stage : publish
-    - script: echo "Publishing to Github..."
-    - script: npm run publish
+      script: echo "Publishing to Github..."
+      script: npm run publish
 cache:
   directories:
     - node_modules
