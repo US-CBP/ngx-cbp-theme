@@ -6,7 +6,7 @@ import { CBPLoadingComponent } from './loading/loading.component';
   imports: [
     CommonModule
   ],
-  exports:[CBPLoadingComponent],
-  declarations: [CBPLoadingComponent]
+  exports: [ CBPLoadingComponent ],
+  declarations: [ CBPLoadingComponent ]
 })
 export class CBPProgressModule { }
