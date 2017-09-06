@@ -170,7 +170,7 @@ gulp.task('copy:build', function () {
  * 8. Copy package.json from /src to /dist
  */
 gulp.task('copy:manifest', function () {
-  return gulp.src([`${srcFolder}/package.json`, `${rootFolder}/postinstall.js`])
+  return gulp.src([`${rootFolder}/package.json`, `${rootFolder}/postinstall.js`])
     .pipe(gulp.dest(distFolder));
 });
 
