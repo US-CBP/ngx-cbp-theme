@@ -14,7 +14,7 @@
     "build:demo": "ng build --app demo",
     "test": "ng test",
     "e2e:demo": "ng e2e --app demo",
-    "ci": "npm run build:lib && npm run lint && npm run test:once && npm run e2e:demo",
+    "ci": "concurrently --kill-others-on-fail --names \"BUILD,LINTING,KARMA-UNIT,E2E-DEMO\" -c \"bgBlue.bold,bgCyan.bold,bgGreen.bold\" \"npm run build:lib\" \"npm run lint\" \"npm run test:once\" \"npm run e2e:demo\"",
     "test:once": "ng test --watch=false",
     "postinstall": "gulp clean && node ./postinstall.js",
     "publish": "npm run build:demo && tools/publish-demo.sh"

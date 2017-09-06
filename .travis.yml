@@ -1,3 +1,4 @@
+language: node_js
 sudo: required
 dist: trusty
 addons:
@@ -9,11 +10,13 @@ addons:
 branches:
   only:
   - master
-language: node_js
 node_js:
   - 8
 install:
   - npm install
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
 jobs:
   include:
     - stage: build & linting & test
