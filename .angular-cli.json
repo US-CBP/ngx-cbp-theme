@@ -12,7 +12,7 @@
     "outDir": "dist-lib",
     "polyfills": "polyfills.ts",
     "styles": [
-      ".scss"
+      "ngx-cbp-theme.scss"
     ]
   },
     {
@@ -22,7 +22,7 @@
       "test": "test.ts",
       "prefix": "demo",
       "outDir": "dist-demo",
-      "index": "demo.html",
+      "index": "index.html",
       "polyfills": "polyfills.ts",
       "styles": [
         "demo.scss"
@@ -58,6 +58,10 @@
   "defaults": {
     "styleExt": "scss",
     "component": {}
+  },
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
   }
-
 }
