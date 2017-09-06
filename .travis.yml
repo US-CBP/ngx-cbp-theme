@@ -16,18 +16,8 @@ install:
   - npm install
 jobs:
   include:
-    - stage: build & linting
-      script: echo "Building Library ..."
-      script: npm run build:lib
-      script: echo "Linting ..."
-      script: npm run lint
-    - stage: unit-test & e2e tests
-      script: export DISPLAY=:99.0
-      script: sh -e /etc/init.d/xvfb start
-      script: echo "Starting Karma unit tests..."
-      script: npm run test:once
-      script: echo "Starting e2e ..."
-      script: npm run e2e:demo
+    - stage: build & linting & test
+      script: npm run ci
     - stage : publish
       script: echo "Publishing to Github..."
       script: npm run build:demo
