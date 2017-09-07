@@ -30,7 +30,7 @@ module.exports.build = function(options) {
         externalDependencies : _getDependencies(pkg),
         compilationFolder : path.join(rootFolder, 'out-tsc'),
         srcFolder: path.join(rootFolder, 'src' ,'lib'),
-        distFolder : path.join(rootFolder, 'dist2'),
+        distFolder : path.join(rootFolder, 'dist-lib'),
     }, options);
 
     options = Object.assign({
@@ -149,10 +149,11 @@ module.exports.build = function(options) {
         })
         // Copy package files
         .then(() => Promise.resolve()
-            .then(() => _relativeCopy('LICENSE', options.rootFolder, options.distFolder))
-            .then(() => _relativeCopy('package.json', options.rootFolder, options.distFolder))
-            .then(() => _relativeCopy('README.md', options.rootFolder, options.distFolder))
+            .then(() => _relativeCopy('./LICENSE.MD', options.rootFolder, options.distFolder))
+            .then(() => _relativeCopy('./package.json', options.rootFolder, options.distFolder))
+            .then(() => _relativeCopy('./README.md', options.rootFolder, options.distFolder))
             .then(() => console.log('Package files copy succeeded.'))
+            .catch(() => console.error('Copying failed!'))
         )
         .catch(e => {
             console.error('\Build failed. See below for errors.\n');
@@ -162,6 +163,7 @@ module.exports.build = function(options) {
 };
 
 
+const OTHER_EXTERNALS_NOT_DIRECTLY_IN_PACKAGE = ['@angular/platform-browser/animations'];
 
 function _getDependencies(pkg) {
     let deps = [];
@@ -187,12 +189,19 @@ function _getDependencies(pkg) {
             }
         });
     }
+
+    // YG : Note
+    // In general @angular/platform-browser/animations should be only imported by App module however that adds additional configuration to remember to include
+    // hence while we import it in Library project we have to treat this as external
+    Array.prototype.push.apply(deps, OTHER_EXTERNALS_NOT_DIRECTLY_IN_PACKAGE);
+    console.log(JSON.stringify(deps));
     return deps;
 }
 
 
 // Copy files maintaining relative paths.
 function _relativeCopy(fileGlob, from, to) {
+    console.log('copying '+fileGlob+' from '+from+' to '+to);
     return new Promise((resolve, reject) => {
         glob(fileGlob, { cwd: from, nodir: true }, (err, files) => {
             if (err) reject(err);

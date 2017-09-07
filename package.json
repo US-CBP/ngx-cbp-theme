@@ -1,10 +1,10 @@
 {
   "name": "ngx-cbp-theme",
   "version": "0.2.2",
-  "main": "ngx-cbp-theme.umd.js",
-  "module": "index.js",
-  "jsnext:main": "index.js",
-  "typings": "ngx-cbp-theme.d.ts",
+  "main": "./bundles/ngx-cbp-theme.umd.js",
+  "module": "./ngx-cbp-theme.es5.js",
+  "es2015": "./ngx-cbp-theme.js",
+  "typings": "./ngx-cbp-theme.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/US-CBP/ngx-cbp-theme.git"
@@ -33,15 +33,23 @@
     "postinstall": "node ./postinstall.js"
   },
   "dependencies": {
-    "cbp-theme": "^1.4.0",
     "@angular/animations": "^4.4.0-RC.0",
     "@angular/cdk": "^2.0.0-beta.10",
-    "@angular/material": "^2.0.0-beta.10",
     "@angular/flex-layout": "^2.0.0-beta.9",
-    "web-animations-js": "^2.3.1",
+    "@angular/material": "^2.0.0-beta.10",
+    "cbp-theme": "^1.4.0",
     "classlist.js": "^1.1.20150312",
+    "del": "^3.0.0",
     "hammerjs": "^2.0.8",
-    "replace": "^0.3.0"
+    "node-sass": "^4.5.3",
+    "node-sass-tilde-importer": "^1.0.0",
+    "replace": "^0.3.0",
+    "rollup": "^0.49.2",
+    "rollup-plugin-commonjs": "^8.2.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-uglify": "^2.0.1",
+    "web-animations-js": "^2.3.1"
   },
   "peerDependencies": {
     "@angular/common": "^4.4.0-RC.0",
