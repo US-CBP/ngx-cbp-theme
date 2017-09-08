@@ -17,7 +17,7 @@ node_js:
 install:
   - npm install
 before_script:
-  - ln -fs /usr/bin/nodejs /usr/local/bin/node
+  - sudo ln -fs /usr/bin/nodejs /usr/local/bin/node
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 jobs:
