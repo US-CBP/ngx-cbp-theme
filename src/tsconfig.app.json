@@ -31,8 +31,8 @@
     "flatModuleId": "ngx-cbp-theme"
   },
   "files": [
-    "./index.ts",
-    "./typings.d.ts"
+    "./app/index.ts",
+    "./app/typings.d.ts"
   ]
 
 }
