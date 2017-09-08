@@ -17,7 +17,9 @@
     "url": "https://github.com/US-CBP/ngx-cbp-theme.git/issues"
   },
   "scripts": {
-    "build:lib": "gulp clean && gulp build",
+    "build:lib": "npm run ngx-lib-build:lib && copy:postinstall",
+    "ngx-lib-build:lib": "ngx-lib-build --rootDir . --libDir ./src/app",
+    "copy:postinstall": "cp ./postinstall.js ./dist-lib",
     "build:watch:lib": "gulp clean && gulp",
     "docs": "npm run docs:build:lib",
     "docs:build:lib": "compodoc -p ./src/tsconfig.app.json -n ngx-cpb-theme -d docs --hideGenerator",
@@ -30,7 +32,7 @@
     "e2e:demo": "ng e2e --app demo",
     "ci": "concurrently --kill-others-on-fail --names \"BUILD,LINTING,KARMA-UNIT,E2E-DEMO\" -c \"bgBlue.bold,bgCyan.bold,bgGreen.bold\" \"npm run build:lib\" \"npm run lint\" \"npm run test:once\" \"npm run e2e:demo\"",
     "test:once": "ng test --watch=false",
-    "postinstall": "node ./postinstall.js"
+    "postinstall": "node postinstall.js"
   },
   "dependencies": {
     "@angular/animations": "^4.4.0-RC.0",
@@ -41,14 +43,7 @@
     "classlist.js": "^1.1.20150312",
     "del": "^3.0.0",
     "hammerjs": "^2.0.8",
-    "node-sass": "^4.5.3",
-    "node-sass-tilde-importer": "^1.0.0",
     "replace": "^0.3.0",
-    "rollup": "^0.49.2",
-    "rollup-plugin-commonjs": "^8.2.0",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-sourcemaps": "^0.4.2",
-    "rollup-plugin-uglify": "^2.0.1",
     "web-animations-js": "^2.3.1"
   },
   "peerDependencies": {
@@ -83,7 +78,6 @@
     "@types/jasmine": "2.5.54",
     "@types/jasminewd2": "^2.0.3",
     "@types/node": "~8.0.26",
-    "angular-library-builder-gulp": "file:///C:\\projects\\githib\\angular-library-builder-gulp\\dist",
     "codelyzer": "~3.1.2",
     "concurrently": "^3.5.0",
     "core-js": "^2.5.1",
@@ -100,7 +94,6 @@
     "plugin-typescript": "^7.1.0",
     "protractor": "^5.1.2",
     "replace": "^0.3.0",
-    "rxjs": "^5.4.3",
     "standard-version": "^4.2.0",
     "tota11y": "^0.1.6",
     "ts-node": "~3.3.0",
