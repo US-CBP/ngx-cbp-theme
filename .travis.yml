@@ -1,6 +1,8 @@
 language: node_js
 sudo: required
 dist: trusty
+os:
+  - linux
 addons:
   apt:
     sources:
@@ -15,9 +17,11 @@ node_js:
 install:
   - npm install
 before_script:
+  - which node
+  - sudo ln -fs /usr/bin/nodejs /usr/local/bin/node
+  - env node
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - sh -e ln -s "$(which nodejs)" /usr/local/bin/node
 jobs:
   include:
     - stage: build & linting & test
