@@ -95,7 +95,7 @@ ___
   ...
   ```
     
-* Import following minimal modules in your `AppModule`:   
+* Import following minimal modules in your `AppModule` (app.module.ts):   
   
     ```typescript
     import {
@@ -107,6 +107,15 @@ ___
     } from 'ngx-cbp-theme' ;
     ```
   
+  Import in `@NgModule`
+  
+  ```typescript
+    imports: [
+        BrowserModule,
+        CBPRootModule,
+        CBPAppHeaderModule
+      ],
+  ```
   
   Provide implementation for these services like `USER_SERVICE` and `APPLICATIONS_SERVICE` by implementing respective interfaces and declare providers in AppModule's @NgModule as follows:-
   ```typescript
@@ -115,7 +124,9 @@ ___
       { provide: CBP_APPLICATIONS_SERVICE,  useClass: MyApplicationsService }
     ]
   ```
-  
+ 
+ Full code is available here in another github repo [my-app](https://github.com/yogeshgadge/my-app). Checkout the progression by loking at the commit history as these steps. 
+
 * Markup Requirement
 
 Your `app.component.html` should be changed to following minimal structure:-
@@ -124,10 +135,12 @@ Your `app.component.html` should be changed to following minimal structure:-
 <cbp-root layout="'fluid'">
   <cbp-header></cbp-header>
   <cbp-app-header>
-    <h1 class="app-title">App Header<small>Kitchensink</small></h1>
+    <cbp-app-title>
+      <h1 class="app-title"> Product<small> create</small></h1>
+    </cbp-app-title>
   </cbp-app-header>
   <div class="app-content">
-        <p>My markup here...</p>
+    <p>My markup here...</p>
   </div>
 </cbp-root>
 ```  
