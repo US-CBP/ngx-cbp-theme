@@ -17,7 +17,7 @@
     "url": "https://github.com/US-CBP/ngx-cbp-theme.git/issues"
   },
   "scripts": {
-    "build:lib": "node tools/ngx-lib-build.js",
+    "build:lib": "ngx-library-builder --rootDir . --libDir src/app",
     "build:watch:lib": "gulp clean && gulp",
     "docs": "npm run docs:build:lib",
     "docs:build:lib": "compodoc -p ./src/tsconfig.app.json -n ngx-cpb-theme -d docs --hideGenerator",
@@ -59,6 +59,7 @@
     "zone.js": "^0.8.17"
   },
   "devDependencies": {
+    "@angular/animations": "^4.4.0-RC.0",
     "@angular/cli": "1.3.2",
     "@angular/common": "^4.4.0-RC.0",
     "@angular/compiler": "^4.4.0-RC.0",
@@ -88,7 +89,7 @@
     "karma-coverage-istanbul-reporter": "^1.3.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "npm-git-publish": "^0.2.4-beta",
+    "ngx-library-builder": "^1.0.2",
     "plugin-typescript": "^7.1.0",
     "protractor": "^5.1.2",
     "replace": "^0.3.0",
