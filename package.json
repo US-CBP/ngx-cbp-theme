@@ -17,9 +17,7 @@
     "url": "https://github.com/US-CBP/ngx-cbp-theme.git/issues"
   },
   "scripts": {
-    "build:lib": "npm run ngx-lib-build:lib && copy:postinstall",
-    "ngx-lib-build:lib": "ngx-lib-build --rootDir . --libDir ./src/app",
-    "copy:postinstall": "cp ./postinstall.js ./dist-lib",
+    "build:lib": "node tools/ngx-lib-build.js",
     "build:watch:lib": "gulp clean && gulp",
     "docs": "npm run docs:build:lib",
     "docs:build:lib": "compodoc -p ./src/tsconfig.app.json -n ngx-cpb-theme -d docs --hideGenerator",
@@ -35,7 +33,6 @@
     "postinstall": "node postinstall.js"
   },
   "dependencies": {
-    "@angular/animations": "^4.4.0-RC.0",
     "@angular/cdk": "^2.0.0-beta.10",
     "@angular/flex-layout": "^2.0.0-beta.9",
     "@angular/material": "^2.0.0-beta.10",
@@ -47,6 +44,7 @@
     "web-animations-js": "^2.3.1"
   },
   "peerDependencies": {
+    "@angular/animations": "^4.4.0-RC.0",
     "@angular/common": "^4.4.0-RC.0",
     "@angular/compiler": "^4.4.0-RC.0",
     "@angular/core": "^4.4.0-RC.0",

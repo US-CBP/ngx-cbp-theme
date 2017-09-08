@@ -81,16 +81,8 @@ module.exports.build = function(options) {
                     // See https://github.com/rollup/rollup/wiki/JavaScript-API#globals for more.
                     '@angular/core': 'ng.core'
                 },
-                // external: [
-                //     // List of dependencies
-                //     // See https://github.com/rollup/rollup/wiki/JavaScript-API#external for more.
-                //     '@angular/core'
-                // ],
                 external: options.externalDependencies,
                 plugins: [
-                    // commonjs({
-                    //     include: ['node_modules/rxjs/**']
-                    // }),
                     sourcemaps(),
                     nodeResolve({ jsnext: true, module: true })
                 ]
@@ -151,6 +143,7 @@ module.exports.build = function(options) {
         .then(() => Promise.resolve()
             .then(() => _relativeCopy('LICENSE*', options.rootFolder, options.distFolder))
             .then(() => _relativeCopy('package.json', options.rootFolder, options.distFolder))
+            .then(() => _relativeCopy('postinstall*', options.rootFolder, options.distFolder))
             .then(() => _relativeCopy('README*', options.rootFolder, options.distFolder))
             .then(() => _relativeCopy('**/*.scss', options.srcFolder, options.distFolder))
             .then(() => console.log('Package files copy succeeded.'))
