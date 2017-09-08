@@ -1,9 +1,23 @@
 {
   "name": "ngx-cbp-theme",
-  "version": "0.2.2",
+  "version": "0.2.4",
+  "main": "./bundles/ngx-cbp-theme.umd.js",
+  "module": "./ngx-cbp-theme.es5.js",
+  "es2015": "./ngx-cbp-theme.js",
+  "typings": "./ngx-cbp-theme.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/US-CBP/ngx-cbp-theme.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/US-CBP/ngx-cbp-theme.git/issues"
+  },
   "scripts": {
-    "build": "npm run build:lib && npm run build:demo",
-    "build:lib": "gulp clean && gulp build",
+    "build:lib": "ngx-library-builder --rootDir . --libDir src/app",
     "build:watch:lib": "gulp clean && gulp",
     "docs": "npm run docs:build:lib",
     "docs:build:lib": "compodoc -p ./src/tsconfig.app.json -n ngx-cpb-theme -d docs --hideGenerator",
@@ -16,23 +30,21 @@
     "e2e:demo": "ng e2e --app demo",
     "ci": "concurrently --kill-others-on-fail --names \"BUILD,LINTING,KARMA-UNIT,E2E-DEMO\" -c \"bgBlue.bold,bgCyan.bold,bgGreen.bold\" \"npm run build:lib\" \"npm run lint\" \"npm run test:once\" \"npm run e2e:demo\"",
     "test:once": "ng test --watch=false",
-    "postinstall": "gulp clean && node ./postinstall.js",
-    "publish": "npm run build:demo && tools/publish-demo.sh"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/US-CBP/ngx-cbp-theme.git"
-  },
-  "keywords": [
-    "angular"
-  ],
-  "license": "CC0-1.0",
-  "bugs": {
-    "url": "https://github.com/US-CBP/ngx-cbp-theme.git/issues"
+    "postinstall": "node postinstall.js"
   },
   "dependencies": {
-    "@angular/animations": "^4.4.0-RC.0",
     "@angular/cdk": "^2.0.0-beta.10",
+    "@angular/flex-layout": "^2.0.0-beta.9",
+    "@angular/material": "^2.0.0-beta.10",
+    "cbp-theme": "^1.4.0",
+    "classlist.js": "^1.1.20150312",
+    "del": "^3.0.0",
+    "hammerjs": "^2.0.8",
+    "replace": "^0.3.0",
+    "web-animations-js": "^2.3.1"
+  },
+  "peerDependencies": {
+    "@angular/animations": "^4.4.0-RC.0",
     "@angular/common": "^4.4.0-RC.0",
     "@angular/compiler": "^4.4.0-RC.0",
     "@angular/core": "^4.4.0-RC.0",
@@ -43,12 +55,24 @@
     "@angular/platform-browser": "^4.4.0-RC.0",
     "@angular/platform-browser-dynamic": "^4.4.0-RC.0",
     "@angular/router": "^4.4.0-RC.0",
-    "cbp-theme": "^1.4.0"
+    "rxjs": "^5.4.3",
+    "zone.js": "^0.8.17"
   },
   "devDependencies": {
+    "@angular/animations": "^4.4.0-RC.0",
     "@angular/cli": "1.3.2",
+    "@angular/common": "^4.4.0-RC.0",
+    "@angular/compiler": "^4.4.0-RC.0",
     "@angular/compiler-cli": "^4.4.0-RC.0",
+    "@angular/core": "^4.4.0-RC.0",
+    "@angular/flex-layout": "^2.0.0-beta.9",
+    "@angular/forms": "^4.4.0-RC.0",
+    "@angular/http": "^4.4.0-RC.0",
     "@angular/language-service": "^4.4.0-RC.0",
+    "@angular/material": "^2.0.0-beta.10",
+    "@angular/platform-browser": "^4.4.0-RC.0",
+    "@angular/platform-browser-dynamic": "^4.4.0-RC.0",
+    "@angular/router": "^4.4.0-RC.0",
     "@compodoc/compodoc": "^1.0.0-beta.15",
     "@types/jasmine": "2.5.54",
     "@types/jasminewd2": "^2.0.3",
@@ -56,12 +80,7 @@
     "codelyzer": "~3.1.2",
     "concurrently": "^3.5.0",
     "core-js": "^2.5.1",
-    "del": "^3.0.0",
     "es6-shim": "^0.35.3",
-    "gulp": "^3.9.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-rollup": "^2.14.0",
-    "gulp-sass": "^3.1.0",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "^4.2.1",
     "karma": "~1.7.1",
@@ -70,23 +89,15 @@
     "karma-coverage-istanbul-reporter": "^1.3.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "lite-server": "^2.3.0",
-    "node-sass": "^4.5.3",
-    "node-sass-tilde-importer": "^1.0.0",
-    "node-watch": "^0.5.5",
-    "npm-git-publish": "^0.2.4-beta",
+    "ngx-library-builder": "^1.0.2",
     "plugin-typescript": "^7.1.0",
     "protractor": "^5.1.2",
     "replace": "^0.3.0",
-    "rollup": "^0.49.2",
-    "run-sequence": "^2.1.0",
-    "rxjs": "^5.4.3",
-    "systemjs": "^0.20.18",
+    "standard-version": "^4.2.0",
     "tota11y": "^0.1.6",
     "ts-node": "~3.3.0",
     "tslint": "~5.7.0",
     "typescript": "~2.5.2",
-    "web-animations-js": "^2.3.1",
     "zone.js": "^0.8.17"
   },
   "engines": {

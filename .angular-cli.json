@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": ""
+    "name": "ngx-cbp-theme"
   },
   "apps": [{
     "name": "lib",
@@ -26,6 +26,9 @@
       "polyfills": "polyfills.ts",
       "styles": [
         "demo.scss"
+      ],
+      "assets": [
+        "assets"
       ],
       "scripts": [
         "../../node_modules/tota11y/build/tota11y.min.js"

@@ -1,9 +1,17 @@
 # ngx-cbp-theme
 
-[![npm version](https://badge.fury.io/gh/US-CBP%2Fngx-cbp-theme.svg)](https://badge.fury.io/gh/US-CBP%2Fngx-cbp-theme)
+[![npm version](https://badge.fury.io/js/US-CBP%2Fngx-cbp-theme.svg)](https://badge.fury.io/js/US-CBP/ngx-cbp-theme)
+[![build Status]((https://travis-ci.org/US-CBP/ngx-cbp-theme.svg?branch=master))](https://travis-ci.org/US-CBP/ngx-cbp-theme.svg?branch=master)
+[![dependencies Status](https://david-dm.org/us-cbp/ngx-cbp-theme/status.svg)](https://david-dm.org/us-cbp/ngx-cbp-theme)
+[![devDependencies Status](https://david-dm.org/us-cbp/ngx-cbp-theme/dev-status.svg)](https://david-dm.org/us-cbp/ngx-cbp-theme?type=dev)
 
 
 Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp-theme) for Angular 4.x applications. 
+
+
+___
+[![Kitchen Sink Demo](https://us-cbp.github.io/ngx-cbp-theme/assets/kitchen-sink-preview.png)](https://us-cbp.github.io/ngx-cbp-theme/assets/kitchen-sink-preview.png)
+___
 
 
 ## Goals
@@ -87,7 +95,7 @@ Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp
   ...
   ```
     
-* Import following minimal modules in your `AppModule`:   
+* Import following minimal modules in your `AppModule` (app.module.ts):   
   
     ```typescript
     import {
@@ -99,6 +107,15 @@ Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp
     } from 'ngx-cbp-theme' ;
     ```
   
+  Import in `@NgModule`
+  
+  ```typescript
+    imports: [
+        BrowserModule,
+        CBPRootModule,
+        CBPAppHeaderModule
+      ],
+  ```
   
   Provide implementation for these services like `USER_SERVICE` and `APPLICATIONS_SERVICE` by implementing respective interfaces and declare providers in AppModule's @NgModule as follows:-
   ```typescript
@@ -107,7 +124,9 @@ Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp
       { provide: CBP_APPLICATIONS_SERVICE,  useClass: MyApplicationsService }
     ]
   ```
-  
+ 
+ Full code is available here in another github repo [my-app](https://github.com/yogeshgadge/my-app). Checkout the progression by loking at the commit history as these steps. 
+
 * Markup Requirement
 
 Your `app.component.html` should be changed to following minimal structure:-
@@ -116,10 +135,12 @@ Your `app.component.html` should be changed to following minimal structure:-
 <cbp-root layout="'fluid'">
   <cbp-header></cbp-header>
   <cbp-app-header>
-    <h1 class="app-title">App Header<small>Kitchensink</small></h1>
+    <cbp-app-title>
+      <h1 class="app-title"> Product<small> create</small></h1>
+    </cbp-app-title>
   </cbp-app-header>
   <div class="app-content">
-        <p>My markup here...</p>
+    <p>My markup here...</p>
   </div>
 </cbp-root>
 ```  

@@ -1,4 +1,4 @@
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {NgxCBPModule} from './index';
+import {NgxCBPModule} from './app/index';
 
 platformBrowserDynamic().bootstrapModule(NgxCBPModule);

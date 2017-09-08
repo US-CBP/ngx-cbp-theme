@@ -33,3 +33,7 @@ Desktop.ini
 /dist-*/
 /node_modules/
 /.tmp
+/out-tsc/
+
+#package lock - unstable
+package-lock.json
