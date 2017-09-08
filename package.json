@@ -17,7 +17,7 @@
     "url": "https://github.com/US-CBP/ngx-cbp-theme.git/issues"
   },
   "scripts": {
-    "build:lib": "ngx-library-builder --rootDir . --libDir src/app",
+    "build:lib": "node build-lib.js",
     "docs": "npm run docs:build:lib",
     "docs:build:lib": "compodoc -p ./src/tsconfig.app.json -n ngx-cpb-theme -d docs --hideGenerator",
     "docs:serve:lib": "npm run docs:build:lib -- -s",
