@@ -1,4 +1,4 @@
-<md-toolbar color="primary" class="cbp-header" fxLayout="column" fxLayoutAlign="center stretch"  [@cbpHeaderState]="cbpHeaderState">
+<cbp-toolbar position="0" class="cbp-header">
   <div class="cbp-brand-nav" fxFlexAlign="stretch" fxLayout="row">
     <div fxFlexAlign="center" fxLayout="column" fxLayoutAlign="start start">
       <div class="cbp-brand"  fxShow="false" fxShow.gt-sm>U.S. Customs & Border Protection</div>
@@ -23,12 +23,12 @@
     </div>
   </div>
 
-</md-toolbar>
-<md-toolbar color="primary" class="toolbar-expansion-panel" fxLayoutAlign="start start" fxLayout="start" *ngIf="isToolbarExpanded" fxHide.gt-xs>
+</cbp-toolbar>
+<!--md-toolbar color="primary" class="toolbar-expansion-panel" fxLayoutAlign="start start" fxLayout="start" *ngIf="isToolbarExpanded" fxHide.gt-xs>
   <ng-template [ngTemplateOutlet]="cbpApplicationsDropdown"></ng-template>
   <ng-template [ngTemplateOutlet]="feedbackNavItem"></ng-template>
   <ng-template [ngTemplateOutlet]="userNavItem"></ng-template>
-</md-toolbar>
+</md-toolbar -->
 
 <ng-template #cbpApplicationsDropdown>
   <cbp-applications-menu [toolbarExpanded]="isToolbarExpanded"></cbp-applications-menu>

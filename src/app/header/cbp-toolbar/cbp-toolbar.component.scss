@@ -1,0 +1,17 @@
+@import '../../variables';
+
+
+.cbp-toolbar {
+
+  order: 0;
+
+  z-index: $zindex-navbar;
+  .cbp-toolbar-row {
+    height: $navbar-height;
+    border-bottom: 1px solid;
+    white-space: nowrap;
+  }
+
+}
+
+

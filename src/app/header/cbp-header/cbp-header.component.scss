@@ -4,10 +4,11 @@
 // Can't import _navbar from CBP theme - several items must be refactored and variables defined - need to fix _navbar in cbp-theme
 
 
-.cbp-header {
-  position: fixed;
+cbp-header {
   top: 0;
-  z-index: $zindex-navbar;
+  background-color: $navbar-inverse-bg;
+  color: $navbar-inverse-color;
+  border-bottom-color: $navbar-inverse-border;
 
 }
 
