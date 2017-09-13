@@ -10,8 +10,8 @@ import { HEADER_SHRINK_TRANSITION } from '../cbp-header/cbp-header.component';
   styleUrls: ['./app-header.component.scss'],
   animations: [
     trigger('appHeaderState', [
-      state('initial', style({top: '50px', position: 'fixed'})),
-      state('up', style({top: '0', position: 'fixed'})),
+      state('initial', style({top: '50px'})),
+      state('up', style({top: '0'})),
       transition('initial => up, up => initial',
         animate(HEADER_SHRINK_TRANSITION))
     ])
