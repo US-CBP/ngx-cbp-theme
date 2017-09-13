@@ -1,5 +1,6 @@
 import {Component, HostBinding, HostListener, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
+import {CBPScrollShrinkAnimator} from './cbp-scrollshrink';
 
 export const HEADER_SHRINK_TRANSITION = '250ms cubic-bezier(0.4,0.0,0.2,1)';
 export const TOOLBAR_HEIGHT = 50;
@@ -11,12 +12,7 @@ export const TOOLBAR_HEIGHT = 50;
     styleUrls: ['./cbp-toolbar.component.scss'],
     encapsulation: ViewEncapsulation.None,
     animations: [
-        trigger('cbpToolbarState', [
-            state('initial', style({top: '*'})),
-            state('up', style({top: '-50px'})),
-            transition('initial => up, up => initial',
-                animate(HEADER_SHRINK_TRANSITION))
-        ])
+        CBPScrollShrinkAnimator.createScrollShrinkTrigger('cbpToolbarState', '*', '-50px')
     ]
 })
 export class CBPToolbarComponent implements OnInit {
