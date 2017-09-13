@@ -3,17 +3,7 @@
 /** Hacks - Certain material2 components can't be styled well without this higher level css */
 .cbp-theme {
 
-  .mat-toolbar.cbp-app-header .mat-toolbar-row {
-    height: $navbar-appheader-height;
-    border-bottom: 1px solid;
-  }
 
-  .mat-toolbar.cbp-header .mat-toolbar-row {
-    border-bottom-color: $brand-primary-border;
-  }
-  .mat-toolbar.cbp-app-header .mat-toolbar-row {
-    border-bottom-color: $brand-default-border;
-  }
 
   .cbp-app-header.mat-toolbar,
   .cbp-header.mat-toolbar {

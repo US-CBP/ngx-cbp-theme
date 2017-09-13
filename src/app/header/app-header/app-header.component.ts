@@ -1,4 +1,4 @@
-import {Component, HostListener, Output, OnInit} from '@angular/core';
+import {Component, HostListener, Output, OnInit, HostBinding} from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 import { HEADER_SHRINK_TRANSITION } from '../cbp-header/cbp-header.component';
 
@@ -10,8 +10,8 @@ import { HEADER_SHRINK_TRANSITION } from '../cbp-header/cbp-header.component';
   styleUrls: ['./app-header.component.scss'],
   animations: [
     trigger('appHeaderState', [
-      state('initial', style({top: '*'})),
-      state('up', style({top: '0'})),
+      state('initial', style({top: '50px', position: 'fixed'})),
+      state('up', style({top: '0', position: 'fixed'})),
       transition('initial => up, up => initial',
         animate(HEADER_SHRINK_TRANSITION))
     ])

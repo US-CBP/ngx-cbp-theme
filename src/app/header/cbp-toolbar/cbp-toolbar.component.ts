@@ -26,7 +26,8 @@ export class CBPToolbarComponent implements OnInit {
     private lastScrollY: number;
 
     @Input() position: number;
-    @HostBinding('attr.class') class = 'cbp-toolbar';
+    // @HostBinding('attr.class') class = 'cbp-toolbar';
+    @HostBinding('attr.role') role = 'toolbar';
 
     constructor() {
     }

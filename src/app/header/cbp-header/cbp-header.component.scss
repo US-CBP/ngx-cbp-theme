@@ -6,10 +6,15 @@
 
 
 cbp-header {
+  z-index: $zindex-navbar;
   .cbp-toolbar-row {
+    height: $navbar-height;
     background-color: $navbar-inverse-bg;
     color: $navbar-inverse-color;
     border-bottom-color: $navbar-inverse-border;
+    position: fixed;
+    right: 0;
+    left: 0;
   }
 }
 
@@ -21,6 +26,8 @@ cbp-header {
   .cbp-brand {
     font-size: 19px ;
     line-height: 21px;
+    margin-top: inherit;
+    margin-bottom: inherit;
   }
   .cbp-brand-short {
 

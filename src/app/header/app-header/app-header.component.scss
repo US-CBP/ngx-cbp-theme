@@ -1,9 +1,18 @@
 @import '../../variables';
 
-.cbp-app-header {
-  position: fixed;
-  top: $navbar-height;
-  z-index: $zindex-appbar;
 
+
+cbp-root cbp-app-header {
+  z-index: $zindex-appbar;
 }
 
+
+cbp-root  cbp-app-header .cbp-toolbar-row {
+  height: $navbar-appheader-height;
+  border-bottom: 1px solid $brand-default-border;
+}
+
+
+.mat-toolbar.cbp-app-header .mat-toolbar-row {
+
+}
