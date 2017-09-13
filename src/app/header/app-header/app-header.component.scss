@@ -1,16 +1,24 @@
 @import '../../variables';
 
 
+:host {
 
-cbp-root cbp-app-header {
-  z-index: $zindex-appbar;
+
+  cbp-toolbar {
+
+    border-bottom-color: $navbar-inverse-border;
+
+    height: $navbar-appheader-height;
+    z-index: $zindex-appbar;
+
+    .cbp-toolbar-row {
+      z-index: $zindex-appbar;
+      border-bottom: 1px solid $brand-default-border !important;
+    }
+  }
 }
 
 
-cbp-root  cbp-app-header .cbp-toolbar-row {
-  height: $navbar-appheader-height;
-  border-bottom: 1px solid $brand-default-border;
-}
 
 
 .mat-toolbar.cbp-app-header .mat-toolbar-row {

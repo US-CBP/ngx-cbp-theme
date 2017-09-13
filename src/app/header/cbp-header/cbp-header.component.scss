@@ -7,7 +7,7 @@
 
 cbp-header {
   z-index: $zindex-navbar;
-  .cbp-toolbar-row {
+  cbp-toolbar .cbp-toolbar-row {
     height: $navbar-height;
     background-color: $navbar-inverse-bg;
     color: $navbar-inverse-color;
