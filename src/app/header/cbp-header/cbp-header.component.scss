@@ -4,14 +4,9 @@
 // Can't import _navbar from CBP theme - several items must be refactored and variables defined - need to fix _navbar in cbp-theme
 
 
-cbp-header {
-  top: 0;
-
-
-}
 
 cbp-header {
-  cbp-toolbar {
+  .cbp-toolbar-row {
     background-color: $navbar-inverse-bg;
     color: $navbar-inverse-color;
     border-bottom-color: $navbar-inverse-border;

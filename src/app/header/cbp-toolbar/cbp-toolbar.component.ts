@@ -12,7 +12,7 @@ export const TOOLBAR_HEIGHT = 50;
     encapsulation: ViewEncapsulation.None,
     animations: [
         trigger('cbpToolbarState', [
-            state('initial', style({top: '0'})),
+            state('initial', style({top: '*'})),
             state('up', style({top: '-50px'})),
             transition('initial => up, up => initial',
                 animate(HEADER_SHRINK_TRANSITION))

@@ -1,5 +1,5 @@
 import {
-    Component, HostBinding, Inject, OnDestroy, OnInit,
+    Component, Inject, OnDestroy, OnInit,
     ViewEncapsulation
 } from '@angular/core';
 
@@ -17,7 +17,6 @@ export const HEADER_SHRINK_TRANSITION = '250ms cubic-bezier(0.4,0.0,0.2,1)';
   encapsulation: ViewEncapsulation.None
 
 })
-@HostBinding()
 export class CBPHeaderComponent implements OnInit , OnDestroy {
 
 
