@@ -6,10 +6,16 @@
 
 cbp-header {
   top: 0;
-  background-color: $navbar-inverse-bg;
-  color: $navbar-inverse-color;
-  border-bottom-color: $navbar-inverse-border;
 
+
+}
+
+cbp-header {
+  cbp-toolbar {
+    background-color: $navbar-inverse-bg;
+    color: $navbar-inverse-color;
+    border-bottom-color: $navbar-inverse-border;
+  }
 }
 
 .cbp-brand-nav {

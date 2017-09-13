@@ -3,8 +3,9 @@
 
 .cbp-toolbar {
 
-  order: 0;
-
+  position: fixed;
+  right: 0;
+  left: 0;
   z-index: $zindex-navbar;
   .cbp-toolbar-row {
     height: $navbar-height;
