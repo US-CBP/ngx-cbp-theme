@@ -42,22 +42,7 @@
   }
 }
 
-.mat-primary
-.cbp-toolbar-expansion-container {
-  .cbp-toolbar-expansion {
-    .cbp-toolbar-expansion-icon {
-      border: 1px solid darken($navbar-inverse-border, 2%);
-      background-color: $navbar-inverse-bg;
-      &:hover {
-        background-color: $navbar-inverse-toggle-hover-bg;
-      }
-      &:focus {
-        border-color: $navbar-inverse-toggle-border-color;
-        outline: 1px dotted lighten($brand-info, 0.25)!important;
-      }
-    }
-  }
-}
+
 
 
 
@@ -72,10 +57,7 @@
   border-radius: 1px;
 }
 
-.mat-primary
-.icon-bar {
-  background-color: #fff;
-}
+
 
 .toolbar-expansion-panel.mat-toolbar {
   padding: 0;

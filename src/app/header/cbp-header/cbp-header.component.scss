@@ -11,10 +11,29 @@ cbp-header {
     height: $navbar-height;
     background-color: $navbar-inverse-bg;
     color: $navbar-inverse-color;
-    border-bottom-color: $navbar-inverse-border;
+    border-bottom-color: darken($navbar-inverse-border, 2%);
     position: fixed;
     right: 0;
     left: 0;
+  }
+
+  .cbp-toolbar-expansion-container {
+    .cbp-toolbar-expansion {
+      .cbp-toolbar-expansion-icon {
+        border: 1px solid darken($navbar-inverse-border, 4%);
+        background-color: $navbar-inverse-bg;
+        &:hover {
+          background-color: $navbar-inverse-toggle-hover-bg;
+        }
+        &:focus {
+          border-color: $navbar-inverse-toggle-border-color;
+          outline: 1px dotted lighten($brand-info, 0.25)!important;
+        }
+      }
+    }
+  }
+  .icon-bar {
+    background-color: #fff;
   }
 }
 

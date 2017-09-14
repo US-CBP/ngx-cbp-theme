@@ -1,6 +1,4 @@
 import {Component, HostListener, Output, OnInit, HostBinding} from '@angular/core';
-import {trigger, state, style, animate, transition} from '@angular/animations';
-import { HEADER_SHRINK_TRANSITION } from '../cbp-header/cbp-header.component';
 import {CBPScrollShrinkAnimator} from '../cbp-toolbar/cbp-scrollshrink';
 
 
