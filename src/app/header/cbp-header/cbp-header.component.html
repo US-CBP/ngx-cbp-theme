@@ -1,4 +1,4 @@
-<cbp-toolbar position="0" class="cbp-header">
+<cbp-toolbar position="0" class="cbp-header" (toolbarExpanded)="onToolbarExpanded()">
   <div class="cbp-brand-nav" fxFlexAlign="stretch" fxLayout="row">
     <div fxFlexAlign="center" fxLayout="column" fxLayoutAlign="start start">
       <h1 class="cbp-brand"  fxShow="false" fxShow.gt-sm>U.S. Customs & Border Protection</h1>
@@ -6,29 +6,21 @@
       <div class="dhs-brand"  fxShow="false" fxShow.gt-sm>U.S. Department of Homeland Security</div>
     </div>
   </div>
-  <div fxFlex="" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="start stretch" fxShow="false" fxShow.gt-xs>
+  <div fxFlex="grow" [fxFlexOrder]="isToolbarExpanded ? 3 : 2" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="start stretch" [fxHide.lt-sm]="isToolbarExpanded ? null : true">
     <ng-template [ngTemplateOutlet]="cbpApplicationsDropdown"></ng-template>
   </div>
-  <div fxFlex="" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="end stretch" fxShow="false" fxShow.gt-xs>
+  <div fxFlex="" fxFlexOrder="3" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="end stretch" fxShow="false" fxShow.gt-xs>
     <ng-template [ngTemplateOutlet]="feedbackNavItem"></ng-template>
+  </div>
+  <div fxFlex="" fxFlexOrder="4" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="end stretch" fxShow="false" fxShow.gt-xs>
     <ng-template [ngTemplateOutlet]="userNavItem"></ng-template>
   </div>
-  <div fxFlex="" class="cbp-toolbar-expansion-container" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="end stretch" fxHide="false" fxHide.gt-xs>
-    <div class="cbp-toolbar-expansion" (click)="isToolbarExpanded = ! isToolbarExpanded">
-      <div class="cbp-toolbar-expansion-icon">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </div>
-    </div>
-  </div>
-
 </cbp-toolbar>
 <!--md-toolbar color="primary" class="toolbar-expansion-panel" fxLayoutAlign="start start" fxLayout="start" *ngIf="isToolbarExpanded" fxHide.gt-xs>
   <ng-template [ngTemplateOutlet]="cbpApplicationsDropdown"></ng-template>
   <ng-template [ngTemplateOutlet]="feedbackNavItem"></ng-template>
   <ng-template [ngTemplateOutlet]="userNavItem"></ng-template>
-</md-toolbar -->
+</md-toolbar-->
 
 <ng-template #cbpApplicationsDropdown>
   <cbp-applications-menu [toolbarExpanded]="isToolbarExpanded"></cbp-applications-menu>

@@ -1,4 +1,7 @@
-import {Component, HostBinding, HostListener, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
+import {
+    Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output,
+    ViewEncapsulation
+} from '@angular/core';
 import {CBPScrollShrinkAnimator} from './cbp-scrollshrink';
 
 
@@ -14,15 +17,28 @@ import {CBPScrollShrinkAnimator} from './cbp-scrollshrink';
 })
 export class CBPToolbarComponent implements OnInit {
 
-    isToolbarExpanded: boolean;
+
     @Output() cbpToolbarState: String;
     private lastScrollY: number;
 
     @Input() position: number;
     @HostBinding('attr.role') role = 'toolbar';
 
-    constructor() {
-    }
+    @Output() toolbarExpanded: EventEmitter<any> = new EventEmitter();
+    @Output() toolbarCollapsed: EventEmitter<any> = new EventEmitter();
+
+    private _isToolbarExpanded = false;
+    set isToolbarExpanded(expanded: boolean){
+        this._isToolbarExpanded = expanded;
+        if (expanded) {
+            this.toolbarExpanded.emit(null);
+        } else {
+            this.toolbarCollapsed.emit(null)
+        }
+    };
+    get isToolbarExpanded(){ return this._isToolbarExpanded};
+
+    constructor() {}
 
     ngOnInit() {
         this.cbpToolbarState = 'initial';

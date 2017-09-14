@@ -1,4 +1,13 @@
-<div class="cbp-toolbar-row mat-toolbar" fxLayout="row" fxLayoutAlign="center stretch" [@cbpToolbarState]="cbpToolbarState">
+<div class="cbp-toolbar-row mat-toolbar" [attr.fxLayout]="isToolbarExpanded ? 'column' : 'row'"  fxLayoutAlign="center stretch" [@cbpToolbarState]="cbpToolbarState">
   <ng-content></ng-content>
+  <div fxFlex="" fxFlexOrder.lt-sm="1"  class="cbp-toolbar-expansion-container" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="end stretch" fxHide="false" fxHide.gt-xs>
+    <div class="cbp-toolbar-expansion" (click)="isToolbarExpanded = ! isToolbarExpanded">
+      <div class="cbp-toolbar-expansion-icon">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </div>
+    </div>
+  </div>
 </div>
 

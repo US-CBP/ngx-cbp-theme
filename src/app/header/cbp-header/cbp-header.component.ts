@@ -45,6 +45,11 @@ export class CBPHeaderComponent implements OnInit , OnDestroy {
     );
   }
 
+  onToolbarExpanded() {
+    this.isToolbarExpanded = true;
+  }
+
+
   ngOnDestroy() {
       this.mediaSubscription.unsubscribe();
   }
