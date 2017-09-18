@@ -22,6 +22,6 @@ import {CBPToolbarModule} from '../cbp-toolbar/cbp-toolbar.module';
       CBPToolbarModule
   ],
   declarations: [CBPHeaderComponent],
-  exports: [CBPHeaderComponent, MdButtonModule, CBPUserModule, CBPApplicationsModule]
+  exports: [CBPHeaderComponent, MdButtonModule, CBPUserModule, CBPApplicationsModule, CBPToolbarModule]
 })
 export class CBPHeaderModule { }

@@ -41,23 +41,19 @@ cbp-header {
 
   font-size: 19px;
   transition: color 200ms ease-in-out;
+  height: $navbar-height;
 
   .cbp-brand {
     font-size: 19px ;
     line-height: 21px;
-    margin-top: inherit;
-    margin-bottom: inherit;
   }
-  .cbp-brand-short {
 
-  }
   .dhs-brand {
     line-height: 14px;
     margin: 0;
     font-size: $font-size-smallest;
     font-style: italic;
   }
-  @extend .cbp-navbar-item;
   padding: $brand-padding;
 }
 

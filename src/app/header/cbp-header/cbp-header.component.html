@@ -1,4 +1,4 @@
-<cbp-toolbar position="0" class="cbp-header" (toolbarExpanded)="onToolbarExpanded()">
+<cbp-toolbar position="0" class="cbp-header" #cbpToolbar>
   <div class="cbp-brand-nav" fxFlexAlign="stretch" fxLayout="row">
     <div fxFlexAlign="center" fxLayout="column" fxLayoutAlign="start start">
       <h1 class="cbp-brand"  fxShow="false" fxShow.gt-sm>U.S. Customs & Border Protection</h1>
@@ -6,24 +6,22 @@
       <div class="dhs-brand"  fxShow="false" fxShow.gt-sm>U.S. Department of Homeland Security</div>
     </div>
   </div>
-  <div fxFlex="grow" [fxFlexOrder]="isToolbarExpanded ? 3 : 2" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="start stretch" [fxHide.lt-sm]="isToolbarExpanded ? null : true">
+  <div class="cbp-toolbar-left-nav">
     <ng-template [ngTemplateOutlet]="cbpApplicationsDropdown"></ng-template>
   </div>
-  <div fxFlex="" fxFlexOrder="3" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="end stretch" fxShow="false" fxShow.gt-xs>
-    <ng-template [ngTemplateOutlet]="feedbackNavItem"></ng-template>
+
+  <div class="cbp-toolbar-right-nav">
+    <div><ng-template [ngTemplateOutlet]="feedbackNavItem"></ng-template></div>
   </div>
-  <div fxFlex="" fxFlexOrder="4" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="end stretch" fxShow="false" fxShow.gt-xs>
-    <ng-template [ngTemplateOutlet]="userNavItem"></ng-template>
+
+  <div class="cbp-toolbar-right-nav">
+    <div><ng-template [ngTemplateOutlet]="userNavItem"></ng-template></div>
   </div>
+
 </cbp-toolbar>
-<!--md-toolbar color="primary" class="toolbar-expansion-panel" fxLayoutAlign="start start" fxLayout="start" *ngIf="isToolbarExpanded" fxHide.gt-xs>
-  <ng-template [ngTemplateOutlet]="cbpApplicationsDropdown"></ng-template>
-  <ng-template [ngTemplateOutlet]="feedbackNavItem"></ng-template>
-  <ng-template [ngTemplateOutlet]="userNavItem"></ng-template>
-</md-toolbar-->
 
 <ng-template #cbpApplicationsDropdown>
-  <cbp-applications-menu [toolbarExpanded]="isToolbarExpanded"></cbp-applications-menu>
+  <cbp-applications-menu [toolbarExpanded]="cbpToolbar.isToolbarExpanded"></cbp-applications-menu>
 </ng-template>
 
 <!-- templates -->
@@ -35,7 +33,7 @@
 </ng-template>
 
 <ng-template #userNavItem>
-  <cbp-user-menu [toolbarExpanded]="isToolbarExpanded"></cbp-user-menu>
+  <cbp-user-menu [toolbarExpanded]="cbpToolbar.isToolbarExpanded"></cbp-user-menu>
 </ng-template>
 
 <!-- hack  for md-divider to work outside of md-list-->

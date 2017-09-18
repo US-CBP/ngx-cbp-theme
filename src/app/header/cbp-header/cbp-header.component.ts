@@ -1,11 +1,10 @@
 import {
-    Component, Inject, OnDestroy, OnInit,
+    Component, Inject,
     ViewEncapsulation
 } from '@angular/core';
 
 import {CBP_FEEDBACK_SERVICE, CBPFeedbackService} from '../feedback.service';
-import {Subscription} from 'rxjs/Subscription';
-import {MediaChange, ObservableMedia} from '@angular/flex-layout';
+
 
 export const HEADER_SHRINK_TRANSITION = '250ms cubic-bezier(0.4,0.0,0.2,1)';
 
@@ -17,43 +16,16 @@ export const HEADER_SHRINK_TRANSITION = '250ms cubic-bezier(0.4,0.0,0.2,1)';
   encapsulation: ViewEncapsulation.None
 
 })
-export class CBPHeaderComponent implements OnInit , OnDestroy {
-
-
-  isToolbarExpanded: boolean;
-  private mediaSubscription: Subscription;
+export class CBPHeaderComponent  {
 
   @Inject(CBP_FEEDBACK_SERVICE)
   feedbackService: CBPFeedbackService;
 
-  constructor(
-      private media: ObservableMedia) {
+  constructor() {
       if (this.feedbackService) {
           this.feedbackService.onFeedbackClose(this.feedbackDone);
       }
   };
-
-
-
-  ngOnInit() {
-    this.mediaSubscription = this.media.subscribe(
-      (change: MediaChange) => {
-          if ( change && change.mqAlias !== 'xs') {
-              this.isToolbarExpanded = false;
-          }
-      }
-    );
-  }
-
-  onToolbarExpanded() {
-    this.isToolbarExpanded = true;
-  }
-
-
-  ngOnDestroy() {
-      this.mediaSubscription.unsubscribe();
-  }
-
 
   handleFeedback(): void {
     if (this.feedbackService) {

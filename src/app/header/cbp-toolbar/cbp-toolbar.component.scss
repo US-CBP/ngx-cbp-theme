@@ -1,5 +1,5 @@
 @import '../../variables';
-
+@import '../header';
 
 cbp-toolbar {
   width: 100%;
@@ -14,3 +14,7 @@ cbp-toolbar {
 }
 
 
+.cbp-brand-nav-container {
+  @extend .cbp-navbar-item;
+  padding: inherit;
+}
