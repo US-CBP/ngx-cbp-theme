@@ -1,10 +1,10 @@
 <div class="cbp-toolbar-row mat-toolbar" [attr.fxLayout]="isToolbarExpanded ? 'column' : 'row'"  fxLayoutAlign="center stretch" [@cbpToolbarState]="cbpToolbarState">
 
-  <div class="cbp-brand-nav-container">
+  <div class="cbp-brand-nav-container" fxFlex="" fxFlexAlign="stretch" fxLayout="row">
     <ng-content select=".cbp-brand-nav"></ng-content>
   </div>
 
-  <div class="cbp-toolbar-left-nav-container"  fxFlex="grow" [fxFlexOrder]="isToolbarExpanded ? 3 : 2" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="start stretch">
+  <div class="cbp-toolbar-left-nav-container"  fxFlex="grow" [fxFlexOrder]="isToolbarExpanded ? 3 : 2" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="start stretch" fxShow="false" fxShow.gt-xs>
     <ng-content select=".cbp-toolbar-left-nav"></ng-content>
   </div>
 
