@@ -1,4 +1,4 @@
-<div class="cbp-applications-navitem" [mdMenuTriggerFor]="cbpMenu" >
+<div class="cbp-applications-navitem" [mdMenuTriggerFor]="cbpMenu" #cbpMenuTrigger="mdMenuTrigger">
   <ng-template [ngTemplateOutlet]="application"></ng-template>
 </div>
 <div class="cbp-applications-navitem" *ngIf="menuDataLoaded && applicationsData.lastRetrieved !== null && !isXS">

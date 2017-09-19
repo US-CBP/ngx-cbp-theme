@@ -1,7 +1,7 @@
 import {Component, Inject, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
-import {MdMenu} from '@angular/material';
+import {MdMenuTrigger} from '@angular/material';
 import {
     CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
     CBPApplicationsService
@@ -24,8 +24,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     private applicationsServiceSubscription: Subscription;
     private mediaSubscription: Subscription;
 
-    @ViewChild(MdMenu)
-    private cbpMenu: MdMenu;
+    @ViewChild('cbpMenuTrigger') cbpMenuTrigger: MdMenuTrigger;
 
     public error: any;
 
@@ -44,7 +43,9 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
                                 this.isXS = false;
                             });
                         } else {
-                            // TODO this.cbpMenu._emitCloseEvent();
+                            if (this.cbpMenuTrigger) {
+                                this.cbpMenuTrigger.closeMenu();
+                            }
                             setTimeout(() => {
                                 this.isXS = true;
                             });
