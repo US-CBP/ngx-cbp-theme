@@ -10,8 +10,15 @@
     .cbp-toolbar-row {
       z-index: $zindex-appbar;
       border-bottom: 1px solid $brand-default-border !important;
+      width: 100%;
+
+
     }
+
+
   }
 }
 
-
+.cbp-toolbar-main-nav-container {
+  width: inherit !important;
+}

@@ -4,11 +4,11 @@
     <ng-content select=".cbp-toolbar-title"></ng-content>
   </div>
 
-  <div class="cbp-toolbar-main-nav-container"  *ngIf="isToolbarExpanded ? false : true"  fxShow="false" fxShow.gt-xs>
+  <div class="cbp-toolbar-main-nav-container" fxFlex=""  *ngIf="isToolbarExpanded ? false : true"  fxShow="false" fxShow.gt-xs>
     <ng-template [ngTemplateOutlet]="cbpToolbarLeftNav"></ng-template>
   </div>
 
-  <div class="cbp-toolbar-right-nav-container" *ngIf="isToolbarExpanded ? false : true" fxFlex=""  fxLayout="column" fxLayoutAlign="end stretch" fxShow="false" fxShow.gt-xs>
+  <div class="cbp-toolbar-right-nav-container" *ngIf="isToolbarExpanded ? false : true" fxFlex=""   fxShow="false" fxShow.gt-xs>
     <ng-template [ngTemplateOutlet]="cbpToolbarRightNav"></ng-template>
   </div>
 

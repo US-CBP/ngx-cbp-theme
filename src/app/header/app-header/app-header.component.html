@@ -1,14 +1,16 @@
-<cbp-toolbar class="cbp-app-header" fxLayout="column" fxLayoutAlign.gt-xs="center stretch" fxLayoutAlign.lt-sm="end stretch"  [@appHeaderState]="appHeaderState">
+<cbp-toolbar class="cbp-app-header" fxLayout="row" fxLayoutAlign.gt-xs="start stretch" [@appHeaderState]="appHeaderState">
 
-  <div class="app-header-title-container cbp-toolbar-title" fxFlex="1 1">
+  <div class="app-header-title-container cbp-toolbar-title" fxFlex="">
     <ng-content select="cbp-app-title"></ng-content>
   </div>
 
-  <div class="app-header-left-nav-container cbp-toolbar-main-nav" fxFlex="1 0" style="overflow: hidden;" fxFlexAlign.gt-xs="stretch"   fxShow="false" fxShow.gt-xs>
+  <div class="app-header-left-nav-container cbp-toolbar-main-nav" fxFlex="" style="overflow: hidden;">
     <ng-content select="cbp-app-main-nav"></ng-content>
   </div>
 
-  <div class="app-header-right-nav-container cbp-toolbar-right-nav"  fxFlexAlign.gt-xs="end"  fxLayout.gt-xs="row" fxLayout.lt-sm="column" >
+
+
+  <div class="app-header-right-nav-container cbp-toolbar-right-nav" fxFlex=""  fxFlexAlign.gt-xs="end"  fxLayout.gt-xs="row" fxLayout.lt-sm="column" >
     <ng-content select="cbp-app-right-nav"></ng-content>
   </div>
 
