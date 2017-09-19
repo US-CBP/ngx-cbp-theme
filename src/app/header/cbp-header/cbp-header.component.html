@@ -11,12 +11,11 @@
   </div>
 
   <div class="cbp-toolbar-right-nav">
-    <div><ng-template [ngTemplateOutlet]="feedbackNavItem"></ng-template></div>
+    <div fxFlex=""><ng-template [ngTemplateOutlet]="feedbackNavItem"></ng-template></div>
+    <div fxFlex=""><ng-template [ngTemplateOutlet]="userNavItem"></ng-template></div>
   </div>
 
-  <div class="cbp-toolbar-right-nav">
-    <div><ng-template [ngTemplateOutlet]="userNavItem"></ng-template></div>
-  </div>
+
 
 </cbp-toolbar>
 
@@ -26,9 +25,9 @@
 
 <!-- templates -->
 <ng-template #feedbackNavItem>
-  <div class="cbp-feedback-navitem" (click)="handleFeedback()">
-    <md-icon fontSet="fontawesome" fontIcon="fa-comment"></md-icon>
-    <span fxShow="false" fxShow.gt-sm fxShow.lt-sm>Feedback</span>
+  <div class="cbp-feedback-navitem" fxLayout="row" fxLayoutAlign="start stretch"  (click)="handleFeedback()">
+    <md-icon fxFlex="0" fxFlexAlign="stretch" fontSet="fontawesome" fontIcon="fa-comment"></md-icon>
+    <span fxFlexAlign="stretch" fxShow="false" fxShow.gt-sm fxShow.lt-sm>Feedback</span>
   </div>
 </ng-template>
 

@@ -1,22 +1,19 @@
-<div class="cbp-toolbar-row mat-toolbar" [attr.fxLayout]="isToolbarExpanded ? 'column' : 'row'"  fxLayoutAlign="center stretch" [@cbpToolbarState]="cbpToolbarState">
+<div class="cbp-toolbar-row mat-toolbar" fxLayout="row"  fxLayoutAlign="center stretch" [@cbpToolbarState]="cbpToolbarState">
 
   <div class="cbp-brand-nav-container" fxFlex="" fxFlexAlign="stretch" fxLayout="row">
     <ng-content select=".cbp-brand-nav"></ng-content>
   </div>
 
-  <div class="cbp-toolbar-left-nav-container"  fxFlex="grow" [fxFlexOrder]="isToolbarExpanded ? 3 : 2" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="start stretch" fxShow="false" fxShow.gt-xs>
-    <ng-content select=".cbp-toolbar-left-nav"></ng-content>
+  <div class="cbp-toolbar-left-nav-container"  fxFlex=""  fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="start stretch" fxShow="false" fxShow.gt-xs>
+    <ng-template [ngTemplateOutlet]="cbpToolbarLeftNav"></ng-template>
   </div>
 
-  <div class="cbp-toolbar-right-nav-container"  fxFlex="" fxFlexOrder="3" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="end stretch" fxShow="false" fxShow.gt-xs>
-    <ng-content select=".cbp-toolbar-right-nav"></ng-content>
+  <div class="cbp-toolbar-right-nav-container"  fxFlex="" fxFlexAlign="stretch" fxLayout="column" fxLayoutAlign="end stretch" fxShow="false" fxShow.gt-xs>
+    <ng-template [ngTemplateOutlet]="cbpToolbarRightNav"></ng-template>
   </div>
 
 
-  <div fxShow="false" fxShow.lt-sm *ngIf="isToolbarExpanded ? true : false">
-    <ng-content select=".cbp-toolbar-left-nav"></ng-content>
-    <ng-content select=".cbp-toolbar-right-nav"></ng-content>
-  </div>
+
 
   <div fxFlex="" fxFlexOrder.lt-sm="1"  class="cbp-toolbar-expansion-container" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="end stretch" fxHide="false" fxHide.gt-xs>
     <div class="cbp-toolbar-expansion" (click)="isToolbarExpanded = ! isToolbarExpanded">
@@ -28,4 +25,13 @@
     </div>
   </div>
 </div>
-
+<div fxShow="false" fxShow.lt-sm *ngIf="isToolbarExpanded ? true : false" class="cbp-toolbar-expansion-panel" style="position: relative; top :50px">
+  <ng-template [ngTemplateOutlet]="cbpToolbarLeftNav"></ng-template>
+  <ng-container fxLayout="column"  ><ng-template [ngTemplateOutlet]="cbpToolbarRightNav"></ng-template></ng-container>
+</div>
+<ng-template #cbpToolbarLeftNav>
+  <ng-content select=".cbp-toolbar-left-nav"></ng-content>
+</ng-template>
+<ng-template #cbpToolbarRightNav>
+  <ng-content select=".cbp-toolbar-right-nav"></ng-content>
+</ng-template>
