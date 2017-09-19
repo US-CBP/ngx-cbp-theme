@@ -5,7 +5,6 @@ import {
 import {CBPScrollShrinkAnimator} from './cbp-scrollshrink';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {Subscription} from 'rxjs/Subscription';
-import {CBPToolbarItemComponent} from './cbp-toolbar-item/cbp-toolbar-item.component';
 
 @Component({
     moduleId: module.id,
@@ -18,8 +17,6 @@ import {CBPToolbarItemComponent} from './cbp-toolbar-item/cbp-toolbar-item.compo
     ]
 })
 export class CBPToolbarComponent implements OnInit, OnDestroy {
-
-    @ViewChildren(CBPToolbarItemComponent) toolbarItems: QueryList<CBPToolbarItemComponent>;
 
 
     @Output() cbpToolbarState: String;
