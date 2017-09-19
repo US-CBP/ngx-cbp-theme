@@ -36,19 +36,19 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
         if (this.media) {
             this.mediaSubscription = this.media.subscribe(
                 (change: MediaChange) => {
-                    if ( change && change.mqAlias !== 'xs') {
-                        this._isToolbarExpanded = false;
-                        this.isApplicationsExpanded = false;
-                        setTimeout(() => {
-                            this.isXS = false;
-                        });
-                    }
-                    if ( this.cbpMenu && change && change.mqAlias === 'xs') {
-                        // TODO this.cbpMenu._emitCloseEvent();
-                        setTimeout(() => {
-                            this.isXS = true;
-                        });
-
+                    if (change) {
+                        if (change.mqAlias !== 'xs') {
+                            this._isToolbarExpanded = false;
+                            this.isApplicationsExpanded = false;
+                            setTimeout(() => {
+                                this.isXS = false;
+                            });
+                        } else {
+                            // TODO this.cbpMenu._emitCloseEvent();
+                            setTimeout(() => {
+                                this.isXS = true;
+                            });
+                        }
                     }
                 }
             );

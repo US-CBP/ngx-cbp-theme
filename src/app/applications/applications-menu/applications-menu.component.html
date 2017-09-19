@@ -42,11 +42,11 @@
 
 </ng-template>
 <ng-template #application>
-  <div class="cbp-current-application" fxShow="false" fxShow.gt-xs fxShow.lt-sm fxLayout="column" fxLayoutAlign="center start" (click)="toggleApplicationsMenu($event)">
+  <div class="cbp-current-application" fxShow="false" fxShow.gt-xs fxShow.lt-sm fxLayout="column" fxLayoutAlign="center start" >
     <div *ngIf="applicationsDataLoading" class="cbp-menu-loading" style="color: white">
       <cbp-loading></cbp-loading>
     </div>
-    <div *ngIf="menuDataLoaded && !applicationsDataLoading" class="cbp-current-application-name">{{applicationsData.currentApp.name}}
+    <div *ngIf="menuDataLoaded && !applicationsDataLoading" class="cbp-current-application-name" (click)="toggleApplicationsMenu($event)">{{applicationsData.currentApp.name}}
       <md-icon *ngIf="applicationsData.lastRetrieved" fontSet="fontawesome" fontIcon="fa-caret-down"></md-icon>
     </div>
     <div *ngIf="menuDataLoaded" class="cbp-current-application-version" fxShow="false" fxShow.gt-xs>{{applicationsData.currentApp.version}}</div>

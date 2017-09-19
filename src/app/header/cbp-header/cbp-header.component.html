@@ -10,7 +10,7 @@
     <ng-template [ngTemplateOutlet]="cbpApplicationsDropdown"></ng-template>
   </div>
 
-  <div class="cbp-toolbar-right-nav">
+  <div class="cbp-toolbar-right-nav"  fxFlexAlign.gt-xs="end"  fxLayout.gt-xs="row" fxLayout.lt-sm="column">
     <div fxFlex=""><ng-template [ngTemplateOutlet]="feedbackNavItem"></ng-template></div>
     <div fxFlex=""><ng-template [ngTemplateOutlet]="userNavItem"></ng-template></div>
   </div>
@@ -25,9 +25,9 @@
 
 <!-- templates -->
 <ng-template #feedbackNavItem>
-  <div class="cbp-feedback-navitem" fxLayout="row" fxLayoutAlign="start stretch"  (click)="handleFeedback()">
-    <md-icon fxFlex="0" fxFlexAlign="stretch" fontSet="fontawesome" fontIcon="fa-comment"></md-icon>
-    <span fxFlexAlign="stretch" fxShow="false" fxShow.gt-sm fxShow.lt-sm>Feedback</span>
+  <div class="cbp-feedback-navitem" fxLayout="row" fxLayoutAlign="start center"  (click)="handleFeedback()">
+    <span><i class="fa fa-comment"></i></span>
+    <span  fxShow="false" fxShow.gt-sm fxShow.lt-sm style="padding-left: 3px;">Feedback</span>
   </div>
 </ng-template>
 
