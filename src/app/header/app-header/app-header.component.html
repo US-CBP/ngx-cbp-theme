@@ -1,10 +1,10 @@
-<cbp-toolbar class="cbp-app-header" fxLayout="column" fxLayoutAlign.gt-xs="center stretch" fxLayoutAlign.lt-sm="end stretch" [@appHeaderState]="appHeaderState">
+<cbp-toolbar class="cbp-app-header" [@appHeaderState]="appHeaderState">
 
-  <div class="app-header-title-container cbp-toolbar-title">
+  <div class="app-header-title-container cbp-toolbar-title" fxFlex="1 1">
     <ng-content select="cbp-app-title"></ng-content>
   </div>
 
-  <div class="app-header-left-nav-container cbp-toolbar-main-nav" style="overflow: hidden;" fxShow="false" fxShow.gt-xs>
+  <div class="app-header-left-nav-container cbp-toolbar-main-nav" style="overflow: hidden;" fxFlexAlign.gt-xs="start"   fxShow="false" fxShow.gt-xs>
     <ng-content select="cbp-app-main-nav"></ng-content>
   </div>
 

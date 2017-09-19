@@ -7,6 +7,7 @@
     height: $navbar-appheader-height;
     z-index: $zindex-appbar;
     position: fixed;
+    top: 50px;
     .cbp-toolbar-row {
       z-index: $zindex-appbar;
       border-bottom: 1px solid $brand-default-border !important;
