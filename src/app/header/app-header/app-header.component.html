@@ -1,21 +1,17 @@
 <cbp-toolbar class="cbp-app-header" fxLayout="column" fxLayoutAlign.gt-xs="center stretch" fxLayoutAlign.lt-sm="end stretch" [@appHeaderState]="appHeaderState">
 
-  <div class="app-header-title-container">
+  <div class="app-header-title-container cbp-toolbar-title">
     <ng-content select="cbp-app-title"></ng-content>
   </div>
 
-  <div class="app-header-left-nav-container" style="overflow: hidden;" fxShow="false" fxShow.gt-xs>
+  <div class="app-header-left-nav-container cbp-toolbar-main-nav" style="overflow: hidden;" fxShow="false" fxShow.gt-xs>
     <ng-content select="cbp-app-main-nav"></ng-content>
   </div>
 
-  <div class="app-header-right-nav-container"  fxFlex="" fxLayoutAlign.gt-xs="end stretch" >
+  <div class="app-header-right-nav-container cbp-toolbar-right-nav"  fxFlexAlign.gt-xs="end"  fxLayout.gt-xs="row" fxLayout.lt-sm="column" >
     <ng-content select="cbp-app-right-nav"></ng-content>
   </div>
 
-
-  <div fxShow="false" fxShow.lt-sm *ngIf="isToolbarExpanded ? true : false">
-    <ng-content select=".app-left-nav-items"></ng-content>
-  </div>
 
 </cbp-toolbar>
 

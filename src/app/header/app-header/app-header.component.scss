@@ -2,17 +2,12 @@
 
 
 :host {
-
-
   cbp-toolbar {
-
     border-bottom-color: $navbar-inverse-border;
-
     height: $navbar-appheader-height;
     z-index: $zindex-appbar;
     position: fixed;
     .cbp-toolbar-row {
-
       z-index: $zindex-appbar;
       border-bottom: 1px solid $brand-default-border !important;
     }
@@ -20,8 +15,3 @@
 }
 
 
-
-
-.mat-toolbar.cbp-app-header .mat-toolbar-row {
-
-}
