@@ -17,6 +17,9 @@ cbp-header {
     left: 0;
   }
 
+  .cbp-toolbar-expansion-panel {
+    top: $navbar-height !important;
+  }
   .cbp-toolbar-expansion-container {
     .cbp-toolbar-expansion {
       .cbp-toolbar-expansion-icon {

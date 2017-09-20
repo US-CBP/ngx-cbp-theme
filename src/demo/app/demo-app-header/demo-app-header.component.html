@@ -8,11 +8,12 @@
   </cbp-app-title>
 
   <cbp-app-main-nav>
-    <ng-template [ngTemplateOutlet]="tabbedAppNav"></ng-template>
+      <div fxShow="false" fxShow.gt-xs="true"><ng-template [ngTemplateOutlet]="tabbedAppNav"></ng-template></div>
+      <div fxShow="false" fxShow.lt-sm="true" class="app-stacked-nav"><ng-template [ngTemplateOutlet]="stackedAppNav"></ng-template></div>
   </cbp-app-main-nav>
 
   <cbp-app-right-nav>
-    <div class="app-right-nav-items">
+    <div ngClass.gt-xs="app-right-nav-items" ngClass.lt-sm="app-stacked-nav">
       <div class="cbp-navbar-item">
         <md-icon  fontSet="fontawesome" fontIcon="fa-print"></md-icon>
       </div>
@@ -28,3 +29,15 @@
     <md-tab *ngFor="let appNav of appNavigations" label="{{appNav.name}}"></md-tab>
   </md-tab-group>
 </ng-template>
+
+
+<ng-template #stackedAppNav>
+    <ng-container>
+        <div class="mat-menu-item" *ngFor="let appNav of appNavigations">
+            <div title="{{appNav.name}}"  fxFlex="" >
+                {{appNav.name}}
+            </div>
+        </div>
+    </ng-container>
+</ng-template>
+
