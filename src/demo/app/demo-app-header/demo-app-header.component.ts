@@ -9,7 +9,7 @@ export class DemoAppHeaderComponent implements OnInit {
 
   appNavigations = [
       {name: 'Info'},
-      {name: 'Findings', selected: true},
+      {name: 'Findings'},
       {name: 'Attachments'},
       {name: 'Results'},
       {name:  'Some'},
