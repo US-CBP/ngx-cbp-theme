@@ -19,7 +19,9 @@ cbp-toolbar {
   @extend .cbp-navbar-item;
   padding: inherit;
 }
-
+.cbp-toolbar-main-nav-container {
+  overflow: hidden;
+}
 .cbp-toolbar-expansion-panel {
   background-color: $navbar-inverse-bg;
   color: $navbar-inverse-color;

@@ -2,23 +2,18 @@
 
 
 :host {
+
   cbp-toolbar {
+
     border-bottom-color: $navbar-inverse-border;
-    height: $navbar-appheader-height;
+    height: $navbar-appheader-height + 1px;
     z-index: $zindex-appbar;
     position: fixed;
     .cbp-toolbar-row {
       z-index: $zindex-appbar;
       border-bottom: 1px solid $brand-default-border !important;
-      width: 100%;
-
-
     }
-
-
   }
 }
 
-.cbp-toolbar-main-nav-container {
-  width: inherit !important;
-}
+

@@ -1,4 +1,4 @@
-import {Component, HostListener, Output, OnInit, HostBinding} from '@angular/core';
+import {Component, HostListener, Output, OnInit, HostBinding, ViewEncapsulation} from '@angular/core';
 import {CBPScrollShrinkAnimator} from '../cbp-toolbar/cbp-scrollshrink';
 
 

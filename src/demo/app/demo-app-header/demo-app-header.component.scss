@@ -11,3 +11,14 @@
   border-right: 1px solid $brand-default-border;
 }
 
+
+// workaround
+.cbp-app-main-nav{
+  width: 9999px !important;
+}
+
+.not-working {
+  display: block !important;;
+  overflow: hidden;
+  width: auto !important;
+}

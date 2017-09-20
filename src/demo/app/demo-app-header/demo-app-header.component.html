@@ -1,6 +1,6 @@
 <cbp-app-header>
 
-  <cbp-app-title>
+  <cbp-app-title >
     <h2 class="app-title">
       Kitchen Sink
       <small>Demo</small>
@@ -24,16 +24,7 @@
 </cbp-app-header>
 
 <ng-template #tabbedAppNav>
-  <md-tab-group>
-    <md-tab label="Info" ></md-tab>
-    <md-tab label="Findings"></md-tab>
-    <md-tab label="Attachments"></md-tab>
-    <md-tab label="Results"></md-tab>
-    <md-tab label="Some"></md-tab>
-    <md-tab label="More"></md-tab>
-    <md-tab label="Items"></md-tab>
-    <md-tab label="Remarks"></md-tab>
-    <md-tab label="History"></md-tab>
-    <md-tab label="Notes"></md-tab>
+  <md-tab-group class="not-working">
+    <md-tab *ngFor="let appNav of appNavigations" label="{{appNav}}" ></md-tab>
   </md-tab-group>
 </ng-template>
