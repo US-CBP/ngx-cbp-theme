@@ -24,7 +24,7 @@
 </cbp-app-header>
 
 <ng-template #tabbedAppNav>
-  <md-tab-group class="not-working">
-    <md-tab *ngFor="let appNav of appNavigations" label="{{appNav}}" ></md-tab>
+  <md-tab-group class="not-working" [selectedIndex]="1">
+    <md-tab *ngFor="let appNav of appNavigations" label="{{appNav.name}}"></md-tab>
   </md-tab-group>
 </ng-template>
