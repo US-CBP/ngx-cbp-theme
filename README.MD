@@ -58,15 +58,18 @@ ___
 
 * In your `styles.scss` add
   ```sass
-  @import '~ngx-cbp-theme/app/ngx-cbp-theme';
+  @import '~ngx-cbp-theme/ngx-cbp-theme';
   ```
 
 * Implement required services:
 
    
   `ngx-cbp-theme` requires implementation of some services provided by the consuming application since those services are beyond the scope of theme.
-  Ideally these will be provided by other projects hosted in the enterprise. 
-  Hence we need to provide implementation of some of these services (CBPUserService, CBPApplicationsService) before we start our application. 
+  
+  Ideally these will be provided by other projects hosted in the enterprise. Please check common framework team or other Angular teams withing CBP.
+   
+  However for the sake of this exercise we will provide implementation of some of these services (CBPUserService, CBPApplicationsService) before we start our application. 
+  
   Since this is just a guide we will create my-user.service (to fake User) and my-applications.service (to fake basic set of applications for header menu). 
   
   Lets go ahead and create those using `angular-cli`.
@@ -76,21 +79,24 @@ ___
   ng g s my-applications
   ```
   
-  Ensure `MyUserService` implements `CBPUserService` from `import {CBPUserService, CBPUser} from 'ngx-cbp-theme';`
-  Make sure we implement all the abstract methods.
+  Modify `MyUserService` to implement `CBPUserService` from `ngx-cbp-theme`. Make sure we implement all the abstract methods.
   
-  Similarly `MyApplicationsService` must implement `CBPApplicationsService` and its methods from `import {CBPApplicationsService} from 'ngx-cbp-theme';`.
+  Similarly `MyApplicationsService` must implement `CBPApplicationsService` and its methods.
+   
   
   Both class declaration signature looks as below (implementation omitted for brevity).
   
  
   ```typescript
   // inside my-user-service.ts
+  import {CBPUserService, CBPUser} from 'ngx-cbp-theme';
   @Injectable()
   export class MyUserService implements CBPUserService { 
   ...
   }
   // inside my-applications-service.ts
+  
+  import {CBPApplicationsService} from 'ngx-cbp-theme';
   @Injectable()
   export class MyApplicationsService implements CBPApplicationsService { 
   ...

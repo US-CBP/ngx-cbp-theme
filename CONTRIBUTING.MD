@@ -39,6 +39,22 @@ Huge discussion threads here:-
 [[RFC] Library Support and Boilerplate Comment Thread](https://github.com/angular/angular-cli/issues/6510) 
 
 
+# bootstrap vs. material
+
+We have started with material to customize it for bootstrap wherever it is needed. 
+This is as opposed to starting with bootstrap and customizing it with with Material wherever needed.
+
+This was done for following reasons :-  
+
+* cbp-theme will eventually move to Material
+* It is easier to scale down and get rid of bootstrap workarounds once all cbp-theme components are switched to Material
+* It means less technical debt for consumer applications given the forward direction towards Material
+* For bootstrap we would start with `ngx-bootstrap` vs. `angular material2` and the later is more clean and better library.   
+* material components are much nicer than bootstrap :) 
+* cbp-theme forms and some other components are Material themed which will form the bulk of consumer applications.
+
+For detailed discussion refer to [ bootstrap vs. material - issue #11](https://github.com/US-CBP/ngx-cbp-theme/issues/11)
+
 # References
 
 https://github.com/filipesilva/angular-quickstart-lib
