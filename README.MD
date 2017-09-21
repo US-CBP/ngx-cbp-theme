@@ -44,6 +44,9 @@ ___
 
 ## Getting Started - How To Use
 
+Note: For Windows users we recommend git-bash shell. Also check the node engine version.
+  
+* Install [angular-cli](https://cli.angular.io/) globally making sure we use same version as we have in `@angular/cli` inside package.json.
 * For new apps follow [angular-cli](https://cli.angular.io/) and create your application with styles = SCSS. Minimal e.g.
   ```bash
   ng new my-app --style scss
