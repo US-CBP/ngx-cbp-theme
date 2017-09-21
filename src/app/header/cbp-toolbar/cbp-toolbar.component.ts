@@ -5,6 +5,7 @@ import {
 import {CBPScrollShrinkAnimator} from './cbp-scrollshrink';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {Subscription} from 'rxjs/Subscription';
+import {fadeInContent, fadeInItems} from '@angular/material';
 
 @Component({
     moduleId: module.id,
@@ -13,7 +14,8 @@ import {Subscription} from 'rxjs/Subscription';
     styleUrls: ['./cbp-toolbar.component.scss'],
     encapsulation: ViewEncapsulation.None,
     animations: [
-        CBPScrollShrinkAnimator.createScrollShrinkTrigger('cbpToolbarState', '*', '-50px')
+        CBPScrollShrinkAnimator.createScrollShrinkTrigger('cbpToolbarState', '*', '-50px'),
+        fadeInContent
     ]
 })
 export class CBPToolbarComponent implements OnInit, OnDestroy {

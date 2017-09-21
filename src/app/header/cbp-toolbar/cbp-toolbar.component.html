@@ -22,7 +22,7 @@
     </div>
   </div>
 </div>
-<div *ngIf="isToolbarExpanded ? true : false" fxShow="false" fxShow.lt-sm class="cbp-toolbar-expansion-panel" fxLayout="column" >
+<div *ngIf="isToolbarExpanded ? true : false" fxShow="false" fxShow.lt-sm class="cbp-toolbar-expansion-panel" [@fadeInContent]="'showing'"   fxLayout="column" >
   <ng-template [ngTemplateOutlet]="cbpToolbarMainNav"></ng-template>
   <ng-template [ngTemplateOutlet]="cbpToolbarRightNav"></ng-template>
 </div>
