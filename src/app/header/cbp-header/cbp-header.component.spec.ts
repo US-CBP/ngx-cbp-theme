@@ -1,22 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CBPHeaderComponent } from './cbp-header.component';
-import {MdButtonModule, MdIconModule, MdListModule, MdMenuModule, MdToolbarModule} from '@angular/material';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {CommonModule} from '@angular/common';
+import { CBPHeaderModule }    from './cbp-header.module';
 import {CBPUser, CBP_USER_SERVICE, CBPUserService} from '../../user/user';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {Observable} from 'rxjs/Observable';
-import {CBPProgressModule} from '../../progress/progress.module';
-import {CBPPipesModule} from '../../pipes/pipes.module';
-import {CBPApplicationsModule} from '../../applications/applications.module';
 import {
     CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
     CBPApplicationsService
 } from '../../applications/cbp-applications-service';
 import {Subject} from 'rxjs/Subject';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
-import {CBPUserModule} from '../../user/user.module';
 
 describe('CBPHeaderComponent', () => {
   let component: CBPHeaderComponent;
@@ -24,11 +17,7 @@ describe('CBPHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-          CommonModule,
-          MdListModule, MdMenuModule, MdToolbarModule, FlexLayoutModule, MdIconModule,
-          MdButtonModule, NoopAnimationsModule, CBPProgressModule, CBPPipesModule, CBPApplicationsModule, CBPUserModule],
-      declarations: [CBPHeaderComponent],
+      imports: [CBPHeaderModule],
       providers: [
           {provide: CBP_USER_SERVICE, useClass: TestUserService},
           {provide: CBP_APPLICATIONS_SERVICE, useClass: TestApplicationsService}

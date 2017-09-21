@@ -6,7 +6,7 @@ export class DemoAppPage {
     }
 
     getAppHeaderTitle(): any {
-        return element(by.css('cbp-app-title h1')).getText();
+        return element(by.css('cbp-app-title h2')).getText();
     }
 
     getAppHeaderBrand(): any {

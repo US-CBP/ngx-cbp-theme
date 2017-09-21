@@ -1,6 +1,5 @@
-import {Component, HostListener, Output, OnInit} from '@angular/core';
-import {trigger, state, style, animate, transition} from '@angular/animations';
-import { HEADER_SHRINK_TRANSITION } from '../cbp-header/cbp-header.component';
+import {Component, HostListener, Output, OnInit, HostBinding} from '@angular/core';
+import {CBPScrollShrinkAnimator} from '../cbp-toolbar/cbp-scrollshrink';
 
 
 @Component({
@@ -9,12 +8,7 @@ import { HEADER_SHRINK_TRANSITION } from '../cbp-header/cbp-header.component';
   templateUrl: './app-header.component.html',
   styleUrls: ['./app-header.component.scss'],
   animations: [
-    trigger('appHeaderState', [
-      state('initial', style({top: '*'})),
-      state('up', style({top: '0'})),
-      transition('initial => up, up => initial',
-        animate(HEADER_SHRINK_TRANSITION))
-    ])
+      CBPScrollShrinkAnimator.createScrollShrinkTrigger('appHeaderState', '50px', '0')
   ]
 })
 export class CBPAppHeaderComponent implements OnInit {

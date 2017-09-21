@@ -1,18 +1,19 @@
 <cbp-app-header>
 
-  <cbp-app-title>
-    <h1 class="app-title">
+  <cbp-app-title >
+    <h2 class="app-title" ngClass.gt-xs="vertical-divider">
       Kitchen Sink
       <small>Demo</small>
-    </h1>
+    </h2>
   </cbp-app-title>
 
   <cbp-app-main-nav>
-    <ng-template [ngTemplateOutlet]="tabbedAppNav"></ng-template>
+      <div fxShow="false" fxShow.gt-xs="true"><ng-template [ngTemplateOutlet]="tabbedAppNav"></ng-template></div>
+      <div fxShow="false" fxShow.lt-sm="true" class="app-stacked-nav"><ng-template [ngTemplateOutlet]="stackedAppNav"></ng-template></div>
   </cbp-app-main-nav>
 
   <cbp-app-right-nav>
-    <div class="app-right-nav-items">
+    <div ngClass.gt-xs="app-right-nav-items" ngClass.lt-sm="app-stacked-nav">
       <div class="cbp-navbar-item">
         <md-icon  fontSet="fontawesome" fontIcon="fa-print"></md-icon>
       </div>
@@ -24,16 +25,19 @@
 </cbp-app-header>
 
 <ng-template #tabbedAppNav>
-  <md-tab-group>
-    <md-tab label="Info" ></md-tab>
-    <md-tab label="Findings"></md-tab>
-    <md-tab label="Attachments"></md-tab>
-    <md-tab label="Results"></md-tab>
-    <md-tab label="Some"></md-tab>
-    <md-tab label="More"></md-tab>
-    <md-tab label="Items"></md-tab>
-    <md-tab label="Remarks"></md-tab>
-    <md-tab label="History"></md-tab>
-    <md-tab label="Notes"></md-tab>
+  <md-tab-group class="mat-tab-header-pagination-controls-enabled">
+    <md-tab *ngFor="let appNav of appNavigations" label="{{appNav.name}}"></md-tab>
   </md-tab-group>
 </ng-template>
+
+
+<ng-template #stackedAppNav>
+    <ng-container>
+        <div class="mat-menu-item" *ngFor="let appNav of appNavigations">
+            <div title="{{appNav.name}}"  fxFlex="" >
+                {{appNav.name}}
+            </div>
+        </div>
+    </ng-container>
+</ng-template>
+

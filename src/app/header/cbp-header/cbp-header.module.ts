@@ -5,6 +5,7 @@ import {MdIconModule, MdListModule, MdMenuModule, MdToolbarModule, MdButtonModul
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {CBPUserModule} from '../../user/user.module';
 import {CBPApplicationsModule} from '../../applications/applications.module';
+import {CBPToolbarModule} from '../cbp-toolbar/cbp-toolbar.module';
 
 
 @NgModule({
@@ -17,9 +18,10 @@ import {CBPApplicationsModule} from '../../applications/applications.module';
       MdIconModule,
       MdButtonModule,
       CBPUserModule,
-      CBPApplicationsModule
+      CBPApplicationsModule,
+      CBPToolbarModule
   ],
   declarations: [CBPHeaderComponent],
-  exports: [CBPHeaderComponent, MdButtonModule, CBPUserModule, CBPApplicationsModule]
+  exports: [CBPHeaderComponent, MdButtonModule, CBPUserModule, CBPApplicationsModule, CBPToolbarModule]
 })
 export class CBPHeaderModule { }

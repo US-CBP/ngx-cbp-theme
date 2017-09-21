@@ -1,7 +1,7 @@
 import {Component, Inject, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
-import {MdMenu} from '@angular/material';
+import {MdMenuTrigger} from '@angular/material';
 import {
     CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
     CBPApplicationsService
@@ -24,8 +24,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     private applicationsServiceSubscription: Subscription;
     private mediaSubscription: Subscription;
 
-    @ViewChild(MdMenu)
-    private cbpMenu: MdMenu;
+    @ViewChild('cbpMenuTrigger') cbpMenuTrigger: MdMenuTrigger;
 
     public error: any;
 
@@ -36,19 +35,21 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
         if (this.media) {
             this.mediaSubscription = this.media.subscribe(
                 (change: MediaChange) => {
-                    if ( change && change.mqAlias !== 'xs') {
-                        this._isToolbarExpanded = false;
-                        this.isApplicationsExpanded = false;
-                        setTimeout(() => {
-                            this.isXS = false;
-                        });
-                    }
-                    if ( this.cbpMenu && change && change.mqAlias === 'xs') {
-                        // TODO this.cbpMenu._emitCloseEvent();
-                        setTimeout(() => {
-                            this.isXS = true;
-                        });
-
+                    if (change) {
+                        if (change.mqAlias !== 'xs') {
+                            this._isToolbarExpanded = false;
+                            this.isApplicationsExpanded = false;
+                            setTimeout(() => {
+                                this.isXS = false;
+                            });
+                        } else {
+                            if (this.cbpMenuTrigger) {
+                                this.cbpMenuTrigger.closeMenu();
+                            }
+                            setTimeout(() => {
+                                this.isXS = true;
+                            });
+                        }
                     }
                 }
             );

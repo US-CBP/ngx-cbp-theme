@@ -7,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoAppHeaderComponent implements OnInit {
 
+  appNavigations = [
+      {name: 'Info'},
+      {name: 'Findings'},
+      {name: 'Attachments'},
+      {name: 'Results'},
+      {name:  'Some'},
+      {name: 'More'},
+      {name: 'Items'},
+      {name: 'Remarks'},
+      {name: 'History'},
+      {name: 'Notes'},
+      {name: 'Ideas'}];
   constructor() { }
 
   ngOnInit() {
