@@ -23,7 +23,6 @@ jobs:
   include:
     - stage: build & linting & test
       script: npm run ci
-    - stage : publish
       script: echo "Publishing to Github..."
       script: npm run build:demo
       deploy:
@@ -33,6 +32,7 @@ jobs:
         github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
         on:
           branch: master
+
 cache:
   directories:
     - node_modules
