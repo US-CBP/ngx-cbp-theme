@@ -7,6 +7,8 @@ import {Subject} from 'rxjs/Subject';
 export class CBPUser {
     firstName: String;
     lastName: String;
+    userId: String;
+    preferences: any;
 }
 
 /**
