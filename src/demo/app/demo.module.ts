@@ -15,6 +15,9 @@ import {DemoTypographyComponent} from './demo-typograqphy/demo-typography.compon
 import {DemoButtonsModule} from './demo-buttons/demo-buttons.module';
 import {DemoAppHeaderModule} from './demo-app-header/demo-app-header.module';
 import {HttpClientModule} from '@angular/common/http';
+import {MockApplicationsService} from '../../mock-services/applications.mock.service';
+import {CBP_USER_SERVICE} from '../../app/user/user';
+import {CBP_APPLICATIONS_SERVICE, CBPApplication} from '../../app/applications/cbp-applications-service';
 
 
 
@@ -38,11 +41,20 @@ import {HttpClientModule} from '@angular/common/http';
       DemoAppHeaderModule
   ],
   exports: [DemoButtonsModule, DemoAppHeaderModule],
-  providers: [MockUserService],
+  providers: [
+      MockUserService,
+      MockApplicationsService,
+      { provide: CBP_USER_SERVICE,          useExisting: MockUserService },
+      { provide: CBP_APPLICATIONS_SERVICE,  useExisting: MockApplicationsService }
+  ],
   schemas: [],
   bootstrap: [DemoAppComponent]
 })
-export class DemoAppModule { }
+export class DemoAppModule {
+    constructor(applicationsService: MockApplicationsService) {
+        applicationsService.registerCurrentApplication(new CBPApplication('Kitchen Sink Demo v4.0.0'))
+    }
+}
 
 
 
