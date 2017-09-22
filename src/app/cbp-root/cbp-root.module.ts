@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CBPRootComponent } from './cbp-root.component';
-import {MdButtonModule, MdIconModule, MdIconRegistry} from '@angular/material';
+import {MdButtonModule, MdFormFieldModule, MdIconModule, MdIconRegistry, MdInputModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {CBPProgressModule} from '../progress/progress.module';
@@ -11,11 +11,11 @@ import {CBPPipesModule} from '../pipes/pipes.module';
 
 @NgModule({
   imports: [
-    CommonModule, MdIconModule, BrowserAnimationsModule, FlexLayoutModule, MdButtonModule
+    CommonModule, MdIconModule, BrowserAnimationsModule, FlexLayoutModule, MdButtonModule, MdInputModule, MdFormFieldModule
   ],
   declarations: [CBPRootComponent],
   exports: [
-      CBPRootComponent, MdIconModule, BrowserAnimationsModule, FlexLayoutModule, MdButtonModule,
+      CBPRootComponent, MdIconModule, BrowserAnimationsModule, FlexLayoutModule, MdButtonModule, MdInputModule, MdFormFieldModule,
       CBPProgressModule, CBPHeaderModule, CBPPipesModule
   ]
 })

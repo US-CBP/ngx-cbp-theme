@@ -10,7 +10,8 @@ import {
 @Component({
     selector: 'cbp-applications-menu',
     templateUrl: './applications-menu.component.html',
-    styleUrls: ['./applications-menu.component.scss']
+    styleUrls: ['./applications-menu.component.scss'],
+    entryComponents: []
 })
 export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
 
@@ -23,6 +24,10 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     applicationsData?: CBPApplicationsData;
     private applicationsServiceSubscription: Subscription;
     private mediaSubscription: Subscription;
+
+    @Input()
+    searchToken: string;
+    searchResultsApplications: CBPApplication[];
 
     @ViewChild('cbpMenuTrigger') cbpMenuTrigger: MdMenuTrigger;
 
@@ -72,6 +77,11 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
         }
 
 
+    }
+
+    search($event: any) {
+        this.searchResultsApplications = this.applicationsService.search(this.searchToken);
+        $event.stopPropagation();
     }
 
     removeFromFavorite(app: CBPApplication, $event: any) {

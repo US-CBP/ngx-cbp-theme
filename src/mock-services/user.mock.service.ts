@@ -21,6 +21,9 @@ export class MockUserService implements  CBPUserService {
             let user = new CBPUser();
             user.firstName = 'First';
             user.lastName = 'LastName';
+            user.preferences = {
+                favoriteAppIds: this._randomlyGetFavoritAppId()
+            };
             this.subject.next(user);
             // this.subject.complete();
         }, 3000);
@@ -32,5 +35,14 @@ export class MockUserService implements  CBPUserService {
         this.loggedIn = false;
         this.subject.next(null);
         console.log('mock logout');
+    }
+
+    private _randomlyGetFavoritAppId(): String[] {
+        const favoriteIds: String[] = [];
+        let count = 4;
+        do {
+            favoriteIds.push('' + Math.floor(Math.random() * 10));
+        } while (count-- >= 0);
+        return favoriteIds;
     }
 }

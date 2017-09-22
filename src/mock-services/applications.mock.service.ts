@@ -32,7 +32,13 @@ export class MockApplicationsService implements  CBPApplicationsService {
         this._load();
         return null;
     }
-    search(token: string): Observable<CBPApplication[]> {
+    search(token: string): CBPApplication[] {
+        const appData: CBPApplicationsData = this.subject.getValue();
+        if (appData && appData.list) {
+            appData.list.filter((app) => {
+                return (app.name.indexOf(token)) >= 0;
+            });
+        }
         return null;
     }
 
@@ -81,7 +87,9 @@ export class MockApplicationsService implements  CBPApplicationsService {
         let rawList: any[] = [];
         let count = 100;
         do {
-            rawList.push({name: `App ${count}`, description: `Description ${count}`, href: `http://example.com/app-${count}`});
+            rawList.push(
+                {   id: `${count}`,
+                    name: `App ${count}`, description: `Description ${count}`, href: `http://example.com/app-${count}`});
         } while (count-- >= 0);
 
         let data = new CBPApplicationsData();
@@ -101,21 +109,18 @@ export class MockApplicationsService implements  CBPApplicationsService {
 
         let applications = <CBPApplication[]> data.list;
         if (applications) {
-            let random = 0;
+            let random;
             data.recents = [];
             data.favorites = [];
+            if (user && user.preferences) {
+                data.favorites = this._getFavoritesFromUserPreferences(applications, user.preferences.favoriteAppIds);
+            }
             // randomly assign few a favorites and some as recent
             random = this._randomIndex(0, applications.length / 10);
             data.recents.push(applications[random]);
             random = this._randomIndex(applications.length / 10, 2 * applications.length / 10);
             data.recents.push(applications[random]);
 
-            random = this._randomIndex(2 * applications.length / 10, 3 * applications.length / 10);
-            data.favorites.push(applications[random]);
-            random = this._randomIndex(3 * applications.length / 10, 4 * applications.length / 10);
-            data.favorites.push(applications[random]);
-            random = this._randomIndex(4 * applications.length / 10, 5 * applications.length / 10);
-            data.favorites.push(applications[random]);
         }
         return data;
     }
@@ -126,5 +131,25 @@ export class MockApplicationsService implements  CBPApplicationsService {
     }
 
 
+    private _getFavoritesFromUserPreferences(applications: CBPApplication[], userFavoriteAppIds: String[]): CBPApplication[] {
+        if (!userFavoriteAppIds || !applications) {
+            return [];
+        }
+        const favorites = applications.filter((application) => {
+            return userFavoriteAppIds.indexOf(application.id) >= 0;
+        });
+        return favorites;
+    }
+    private _randomlyGetFavorites(applications: CBPApplication[]): CBPApplication[] {
+        const favorites: CBPApplication[] = [];
+        let random = this._randomIndex(2 * applications.length / 10, 3 * applications.length / 10);
+        favorites.push(applications[random]);
+        random = this._randomIndex(3 * applications.length / 10, 4 * applications.length / 10);
+        favorites.push(applications[random]);
+        random = this._randomIndex(4 * applications.length / 10, 5 * applications.length / 10);
+        favorites.push(applications[random]);
+
+        return favorites;
+    }
 }
 
