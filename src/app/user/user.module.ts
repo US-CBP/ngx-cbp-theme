@@ -9,7 +9,7 @@ import {CBPProgressModule} from '../progress/progress.module';
   imports: [
       CommonModule, MdListModule, MdMenuModule, FlexLayoutModule, MdIconModule, MdButtonModule, CBPProgressModule
   ],
-  exports: [CBPUserMenuComponent],
+  exports: [CBPUserMenuComponent, MdMenuModule],
   declarations: [CBPUserMenuComponent]
 })
 export class CBPUserModule { }
