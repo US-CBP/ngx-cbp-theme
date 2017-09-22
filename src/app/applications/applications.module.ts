@@ -11,6 +11,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     CommonModule, MdMenuModule, MdIconModule, CBPProgressModule, CBPPipesModule, FlexLayoutModule
   ],
   declarations: [CBPApplicationsMenuComponent],
-  exports: [CBPApplicationsMenuComponent]
+  exports: [CBPApplicationsMenuComponent, MdMenuModule]
 })
 export class CBPApplicationsModule { }

@@ -6,7 +6,6 @@ import {
 import {CBP_FEEDBACK_SERVICE, CBPFeedbackService} from '../feedback.service';
 
 
-export const HEADER_SHRINK_TRANSITION = '250ms cubic-bezier(0.4,0.0,0.2,1)';
 
 @Component({
   selector: 'cbp-header',

@@ -6,7 +6,7 @@
   "apps": [{
     "name": "lib",
     "root": "src",
-    "main": "aot-entry.ts",
+    "main": "app/index.ts",
     "test": "test.ts",
     "prefix": "cbp",
     "outDir": "dist-lib",
