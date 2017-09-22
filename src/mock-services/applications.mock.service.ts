@@ -19,6 +19,7 @@ export class MockApplicationsService implements  CBPApplicationsService {
 
     private subject: BehaviorSubject<CBPApplicationsData> = new BehaviorSubject<CBPApplicationsData>(null);
     private loaded = false;
+    private currentApp: CBPApplication;
 
     constructor(@Inject(CBP_USER_SERVICE) private userService: CBPUserService) {}
 
@@ -51,6 +52,10 @@ export class MockApplicationsService implements  CBPApplicationsService {
         return this._removeAppFromArray(recentApplication, data.recents);
     }
 
+    registerCurrentApplication(currentApp: CBPApplication) {
+        this.currentApp = currentApp;
+    }
+
     private _removeAppFromArray(app: CBPApplication, fromArray: CBPApplication[]): Observable<boolean> {
         let index = fromArray.indexOf(app);
         if (index >= 0) {
@@ -77,7 +82,12 @@ export class MockApplicationsService implements  CBPApplicationsService {
     private _getData(): Observable<CBPApplicationsData> {
         return this._getMockHttpData()
             .map((data: CBPApplicationsData) => {
-                data.currentApp = new CBPApplication('Kitchen Sink v4.0.1.0', null);
+                if (!this.currentApp) {
+                    data.currentApp = new CBPApplication('Kitchen Sink v4.0.1.0', null);
+                } else {
+                    data.currentApp = this.currentApp;
+                }
+
                 data.lastRetrieved = new Date();
                 return data;
             });

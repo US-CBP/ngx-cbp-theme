@@ -24,6 +24,7 @@ export class CBPApplicationsData {
 
 
 export abstract class CBPApplicationsService {
+
     /**
      * For any data fetching and initialization before other API can be called.
      * @returns {Observable<CBPApplicationsData>}
@@ -55,6 +56,14 @@ export abstract class CBPApplicationsService {
      * @returns {Observable<boolean>}
      */
     abstract removeRecentApplication(recentApplication: CBPApplication): Observable<boolean>;
+
+    /**
+     * Sets the current application.
+     * Consuming Applications should register during module initialization.
+     * Default value is a dummy value - KitchenSink
+     * @param {CBPApplication} currentApplication
+     */
+    abstract registerCurrentApplication(currentApplication: CBPApplication): void;
 }
 
 export const CBP_APPLICATIONS_SERVICE = new InjectionToken<CBPApplicationsService>('cbp-applications-service');
