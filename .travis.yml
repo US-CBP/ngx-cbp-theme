@@ -23,6 +23,7 @@ jobs:
   include:
     - stage: build & linting & test
       script: npm run ci
+    - stage : publish
       script: echo "Publishing to Github..."
       script: npm run build:demo
       deploy:
