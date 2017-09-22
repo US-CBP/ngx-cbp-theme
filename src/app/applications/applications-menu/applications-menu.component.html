@@ -16,23 +16,6 @@
 <ng-template #applicationsPanel>
   <ng-container *ngIf="applicationsData">
 
-    <div class="cbp-menu-item-category" *ngIf="applicationsData.favorites?.length > 0">Favorite Apps</div>
-    <div class="mat-menu-item" *ngFor="let app of applicationsData.favorites">
-      <div class="cbp-applications-remove-icon"><md-icon  fontSet="fontawesome" fontIcon="fa-times" (click)="removeFromFavorite(app, $event)" fxFlexAlign="center"></md-icon></div>
-      <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="" >
-        {{app.name}}
-      </a>
-    </div>
-
-
-    <div *ngIf="applicationsData.favorites?.length > 0" class="mat-divider"></div>
-    <div *ngIf="applicationsData.favorites.length > 0 || applicationsData.recents.length > 0">
-      <md-form-field (click)="search($event)">
-        <input mdInput placeholder="Search..">
-      </md-form-field>
-    </div>
-    <div class="mat-divider" *ngIf="applicationsData.favorites.length > 0 || applicationsData.recents.length > 0"></div>
-
     <div class="cbp-menu-item-category" *ngIf="applicationsData.recents?.length > 0">Recent Apps</div>
     <div class="mat-menu-item" *ngFor="let app of applicationsData.recents">
       <div class="cbp-applications-remove-icon"><md-icon  fontSet="fontawesome" fontIcon="fa-times" (click)="removeFromRecent(app, $event)" fxFlexAlign="center"></md-icon></div>
@@ -41,11 +24,34 @@
       </a>
     </div>
 
+    <div *ngIf="applicationsData.favorites?.length > 0" class="mat-divider"></div>
 
-    <div class="mat-divider" *ngIf="applicationsData.favorites.length > 0 || applicationsData.recents.length > 0"></div>
+    <div class="cbp-menu-item-category" *ngIf="applicationsData.favorites?.length > 0">Favorite Apps</div>
+    <div class="mat-menu-item" *ngFor="let app of applicationsData.favorites">
+      <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="" >
+        {{app.name}}
+      </a>
+    </div>
 
 
-    <div class="mat-menu-item cbp-applications-refresh" (click)="reloadApplicationsData($event)">Refresh
+    <div class="mat-divider"></div>
+    <form class="mat-menu-item">
+      <md-form-field (keypress)="search($event)" (click)="search($event)">
+        <input mdInput name="searchToken" [(ngModel)]="searchToken" placeholder="Search..">
+      </md-form-field>
+    </form>
+    <ng-container *ngIf="searchResultsApplications && searchResultsApplications.length > 0">
+      <div class="mat-menu-item" *ngFor="let app of searchResultsApplications">
+        <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="" >
+          {{app.name}}
+        </a>
+      </div>
+      <div class="mat-divider"></div>
+    </ng-container>
+    <div class="mat-divider"></div>
+
+    <div class="mat-menu-item cbp-applications-refresh" (click)="reloadApplicationsData($event)">
+      Refresh
       <small>Updated {{applicationsData.lastRetrieved | datetime}}</small>
     </div>
   </ng-container>

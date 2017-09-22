@@ -36,11 +36,11 @@ export class MockApplicationsService implements  CBPApplicationsService {
     search(token: string): CBPApplication[] {
         const appData: CBPApplicationsData = this.subject.getValue();
         if (appData && appData.list) {
-            appData.list.filter((app) => {
+            return appData.list.filter((app) => {
                 return (app.name.indexOf(token)) >= 0;
             });
         }
-        return null;
+        return [];
     }
 
     removeFavoriteApplication(favoriteApplication: CBPApplication): Observable<boolean> {

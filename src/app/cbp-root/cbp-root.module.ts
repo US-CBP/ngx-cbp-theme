@@ -7,16 +7,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {CBPProgressModule} from '../progress/progress.module';
 import {CBPHeaderModule} from '../header/cbp-header/cbp-header.module';
 import {CBPPipesModule} from '../pipes/pipes.module';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
   imports: [
-    CommonModule, MdIconModule, BrowserAnimationsModule, FlexLayoutModule, MdButtonModule, MdInputModule, MdFormFieldModule
+    CommonModule, MdIconModule, BrowserAnimationsModule, FlexLayoutModule, MdButtonModule, MdInputModule, MdFormFieldModule, FormsModule
   ],
   declarations: [CBPRootComponent],
   exports: [
-      CBPRootComponent, MdIconModule, BrowserAnimationsModule, FlexLayoutModule, MdButtonModule, MdInputModule, MdFormFieldModule,
-      CBPProgressModule, CBPHeaderModule, CBPPipesModule
+      MdIconModule, BrowserAnimationsModule, FlexLayoutModule, MdButtonModule, MdInputModule, MdFormFieldModule, FormsModule,
+      CBPRootComponent, CBPProgressModule, CBPHeaderModule, CBPPipesModule
   ]
 })
 export class CBPRootModule {

@@ -5,10 +5,11 @@ import {MdIconModule, MdMenuModule} from '@angular/material';
 import {CBPProgressModule} from '../progress/progress.module';
 import {CBPPipesModule} from '../pipes/pipes.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule, MdMenuModule, MdIconModule, CBPProgressModule, CBPPipesModule, FlexLayoutModule
+    CommonModule, MdMenuModule, MdIconModule, CBPProgressModule, CBPPipesModule, FlexLayoutModule, FormsModule
   ],
   declarations: [CBPApplicationsMenuComponent],
   exports: [CBPApplicationsMenuComponent, MdMenuModule]

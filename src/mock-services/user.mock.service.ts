@@ -39,7 +39,7 @@ export class MockUserService implements  CBPUserService {
 
     private _randomlyGetFavoritAppId(): String[] {
         const favoriteIds: String[] = [];
-        let count = 4;
+        let count = 2;
         do {
             favoriteIds.push('' + Math.floor(Math.random() * 10));
         } while (count-- >= 0);
