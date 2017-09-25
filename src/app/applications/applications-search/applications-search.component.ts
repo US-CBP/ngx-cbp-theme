@@ -40,7 +40,7 @@ import {Observable} from 'rxjs/Observable';
         }
         return this.searchResults;
     }
-    stopPropogation($event: Event) {
+    stopPropagation($event: Event) {
         $event.stopPropagation();
     }
 
