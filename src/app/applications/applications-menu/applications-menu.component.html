@@ -34,12 +34,14 @@
     </div>
 
 
-    <div class="mat-divider"></div>
+    <div class="mat-divider" *ngIf="applicationsData.favorites?.length > 0 || applicationsData.recents?.length > 0"></div>
     <cbp-applications-search></cbp-applications-search>
 
 
     <div class="mat-menu-item cbp-applications-refresh" (click)="reloadApplicationsData($event)">
-      Refresh
+      <div>Refresh</div>
+    </div>
+    <div class="cbp-applications-last-updated" (click)="stopPropogation($event)">
       <small>Updated {{applicationsData.lastRetrieved | datetime}}</small>
     </div>
   </ng-container>

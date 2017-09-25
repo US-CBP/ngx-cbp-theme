@@ -119,4 +119,9 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
 
     get toolbarExpanded(): boolean { return this._isToolbarExpanded; }
 
+
+    // TODO find a way to share this
+    stopPropogation($event: Event) {
+        $event.stopPropagation();
+    }
 }

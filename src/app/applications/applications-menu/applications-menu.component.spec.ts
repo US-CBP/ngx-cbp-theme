@@ -9,6 +9,8 @@ import {CBP_APPLICATIONS_SERVICE} from '../cbp-applications-service';
 import {MockApplicationsService} from '../../../mock-services/applications.mock.service';
 import {CBP_USER_SERVICE} from '../../user/user';
 import {MockUserService} from '../../../mock-services/user.mock.service';
+import {CBPApplicationsSearchComponent} from '../applications-search/applications-search.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 describe('CBPApplicationsMenuComponent', () => {
   let component: CBPApplicationsMenuComponent;
@@ -17,8 +19,8 @@ describe('CBPApplicationsMenuComponent', () => {
   beforeEach(async(() => {
     // const  spiedAppService = jasmine.createSpy('mockAppService' , MockAppService);
     TestBed.configureTestingModule({
-      imports: [MdMenuModule, MdIconModule, CBPProgressModule, CBPPipesModule, FlexLayoutModule],
-      declarations: [ CBPApplicationsMenuComponent ],
+      imports: [MdMenuModule, MdIconModule, CBPProgressModule, CBPPipesModule, FlexLayoutModule, FormsModule, ReactiveFormsModule],
+      declarations: [ CBPApplicationsMenuComponent , CBPApplicationsSearchComponent],
       providers: [
           {provide: CBP_APPLICATIONS_SERVICE, useClass: MockApplicationsService},
           {provide: CBP_USER_SERVICE, useClass: MockUserService}

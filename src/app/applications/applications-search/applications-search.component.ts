@@ -33,7 +33,7 @@ import {Observable} from 'rxjs/Observable';
         if (token) {
             const allResults = this.applicationsService.search(token);
             if (allResults) {
-                this.searchResults = allResults.filter((val, index) => { return index < 5;})
+                this.searchResults = allResults.filter((val, index) => { return index < 5; })
             }
         } else {
             this.searchResults.length = 0;
