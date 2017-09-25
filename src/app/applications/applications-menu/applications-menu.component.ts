@@ -10,7 +10,8 @@ import {
 @Component({
     selector: 'cbp-applications-menu',
     templateUrl: './applications-menu.component.html',
-    styleUrls: ['./applications-menu.component.scss']
+    styleUrls: ['./applications-menu.component.scss'],
+    entryComponents: []
 })
 export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
 
@@ -23,6 +24,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     applicationsData?: CBPApplicationsData;
     private applicationsServiceSubscription: Subscription;
     private mediaSubscription: Subscription;
+
 
     @ViewChild('cbpMenuTrigger') cbpMenuTrigger: MdMenuTrigger;
 
@@ -44,6 +46,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
                             });
                         } else {
                             if (this.cbpMenuTrigger) {
+                                this.isApplicationsExpanded = false;
                                 this.cbpMenuTrigger.closeMenu();
                             }
                             setTimeout(() => {
@@ -73,6 +76,8 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
 
 
     }
+
+
 
     removeFromFavorite(app: CBPApplication, $event: any) {
         this.applicationsService.removeFavoriteApplication(app);
@@ -114,4 +119,9 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
 
     get toolbarExpanded(): boolean { return this._isToolbarExpanded; }
 
+
+    // TODO find a way to share this
+    stopPropogation($event: Event) {
+        $event.stopPropagation();
+    }
 }

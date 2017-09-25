@@ -15,6 +15,7 @@
 
 <ng-template #applicationsPanel>
   <ng-container *ngIf="applicationsData">
+
     <div class="cbp-menu-item-category" *ngIf="applicationsData.recents?.length > 0">Recent Apps</div>
     <div class="mat-menu-item" *ngFor="let app of applicationsData.recents">
       <div class="cbp-applications-remove-icon"><md-icon  fontSet="fontawesome" fontIcon="fa-times" (click)="removeFromRecent(app, $event)" fxFlexAlign="center"></md-icon></div>
@@ -23,19 +24,24 @@
       </a>
     </div>
 
-    <md-divider *ngIf="applicationsData.recents?.length > 0"></md-divider>
+    <div *ngIf="applicationsData.favorites?.length > 0" class="mat-divider"></div>
 
     <div class="cbp-menu-item-category" *ngIf="applicationsData.favorites?.length > 0">Favorite Apps</div>
     <div class="mat-menu-item" *ngFor="let app of applicationsData.favorites">
-      <div class="cbp-applications-remove-icon"><md-icon  fontSet="fontawesome" fontIcon="fa-times" (click)="removeFromFavorite(app, $event)" fxFlexAlign="center"></md-icon></div>
       <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="" >
         {{app.name}}
       </a>
     </div>
 
-    <md-divider *ngIf="applicationsData.favorites.length > 0 || applicationsData.recents.length > 0"></md-divider>
 
-    <div class="mat-menu-item cbp-applications-refresh" (click)="reloadApplicationsData($event)">Refresh
+    <div class="mat-divider" *ngIf="applicationsData.favorites?.length > 0 || applicationsData.recents?.length > 0"></div>
+    <cbp-applications-search></cbp-applications-search>
+
+
+    <div class="mat-menu-item cbp-applications-refresh" (click)="reloadApplicationsData($event)">
+      <div>Refresh</div>
+    </div>
+    <div class="cbp-applications-last-updated" (click)="stopPropogation($event)">
       <small>Updated {{applicationsData.lastRetrieved | datetime}}</small>
     </div>
   </ng-container>

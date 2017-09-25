@@ -39,9 +39,9 @@ export abstract class CBPApplicationsService {
 
     /**
      * To refresh data.
-     * @returns {Observable<void>}
+     * @returns {CBPApplication[]}
      */
-    abstract search(token: string): Observable<CBPApplication[]>;
+    abstract search(token: string): CBPApplication[];
 
     /**
      * Removes favorite.
