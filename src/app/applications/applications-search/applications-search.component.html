@@ -1,6 +1,6 @@
 <form class="mat-menu-item">
   <md-form-field (click)="stopPropogation($event)">
-    <input type="text" mdInput aria-label="Number" [formControl]="searchTokenControl" name="searchToken"  placeholder="Search..">
+    <input color="default" type="text" mdInput aria-label="Number" [formControl]="searchTokenControl" name="searchToken"  placeholder="Search ...">
   </md-form-field>
 </form>
 <ng-container *ngIf="searchResultsApplications">
@@ -9,5 +9,4 @@
       {{app.name}}
     </a>
   </div>
-  <div class="mat-divider"></div>
 </ng-container>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {CBPApplicationsMenuComponent} from './applications-menu/applications-menu.component';
-import {MdIconModule, MdMenuModule} from '@angular/material';
+import {MdIconModule, MdInputModule, MdMenuModule} from '@angular/material';
 import {CBPProgressModule} from '../progress/progress.module';
 import {CBPPipesModule} from '../pipes/pipes.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -10,9 +10,10 @@ import { CBPApplicationsSearchComponent } from './applications-search/applicatio
 
 @NgModule({
   imports: [
-    CommonModule, MdMenuModule, MdIconModule, CBPProgressModule, CBPPipesModule, FlexLayoutModule, FormsModule, ReactiveFormsModule
+    CommonModule, MdMenuModule, MdIconModule, FlexLayoutModule, FormsModule, ReactiveFormsModule, MdInputModule,
+    CBPProgressModule, CBPPipesModule
   ],
   declarations: [CBPApplicationsMenuComponent, CBPApplicationsSearchComponent],
-  exports: [CBPApplicationsMenuComponent, CBPApplicationsSearchComponent, MdMenuModule]
+  exports: [CBPApplicationsMenuComponent, CBPApplicationsSearchComponent]
 })
 export class CBPApplicationsModule { }
