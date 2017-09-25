@@ -35,19 +35,7 @@
 
 
     <div class="mat-divider"></div>
-    <form class="mat-menu-item">
-      <md-form-field (keypress)="search($event)" (click)="search($event)">
-        <input mdInput name="searchToken" [(ngModel)]="searchToken" placeholder="Search..">
-      </md-form-field>
-    </form>
-    <ng-container *ngIf="searchResultsApplications && searchResultsApplications.length > 0">
-      <div class="mat-menu-item" *ngFor="let app of searchResultsApplications">
-        <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="" >
-          {{app.name}}
-        </a>
-      </div>
-      <div class="mat-divider"></div>
-    </ng-container>
+    <cbp-applications-search></cbp-applications-search>
     <div class="mat-divider"></div>
 
     <div class="mat-menu-item cbp-applications-refresh" (click)="reloadApplicationsData($event)">

@@ -1,0 +1,12 @@
+@import '../../variables';
+
+.mat-menu-item .cbp-applications-link {
+  text-decoration: none;
+  color: $gray-dark;
+  overflow: inherit;
+  text-overflow: inherit;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}

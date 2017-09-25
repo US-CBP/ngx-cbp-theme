@@ -25,9 +25,6 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     private applicationsServiceSubscription: Subscription;
     private mediaSubscription: Subscription;
 
-    @Input()
-    searchToken: string;
-    searchResultsApplications: CBPApplication[];
 
     @ViewChild('cbpMenuTrigger') cbpMenuTrigger: MdMenuTrigger;
 
@@ -49,6 +46,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
                             });
                         } else {
                             if (this.cbpMenuTrigger) {
+                                this.isApplicationsExpanded = false;
                                 this.cbpMenuTrigger.closeMenu();
                             }
                             setTimeout(() => {
@@ -79,10 +77,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
 
     }
 
-    search($event: any) {
-        this.searchResultsApplications = this.applicationsService.search(this.searchToken);
-        $event.stopPropagation();
-    }
+
 
     removeFromFavorite(app: CBPApplication, $event: any) {
         this.applicationsService.removeFavoriteApplication(app);

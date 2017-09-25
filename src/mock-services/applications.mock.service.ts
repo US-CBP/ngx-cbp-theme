@@ -34,10 +34,11 @@ export class MockApplicationsService implements  CBPApplicationsService {
         return null;
     }
     search(token: string): CBPApplication[] {
+        token = token.toLowerCase();
         const appData: CBPApplicationsData = this.subject.getValue();
         if (appData && appData.list) {
             return appData.list.filter((app) => {
-                return (app.name.indexOf(token)) >= 0;
+                return (app.name.toLowerCase().indexOf(token)) >= 0;
             });
         }
         return [];
