@@ -52,6 +52,14 @@
 .cbp-applications-refresh {
   cursor: pointer;
 }
+.cbp-applications-last-updated {
+  float: right;
+  padding: 0 $alert-padding;
+  color: $headings-small-color;
+  user-select: none;
+
+}
+
 // TODO !important :(
 .applications-expansion-panel.inverse .cbp-applications-refresh,
 .applications-expansion-panel.inverse .cbp-applications-link,
@@ -61,6 +69,7 @@
 
 .applications-expansion-panel {
   user-select: none;
+  overflow-x: hidden;
 }
 .cbp-menu-item-category {
   margin-left: $box-padding;
