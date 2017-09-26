@@ -1,6 +1,6 @@
 import { DemoAppPage } from './app.po';
 
-describe('ngx-ui-cbp-kitchensink-cli App', () => {
+describe('ngx-cbp-theme-kitchensink-cli Demo App', () => {
     let page: DemoAppPage;
 
     beforeAll(() => {
@@ -10,6 +10,6 @@ describe('ngx-ui-cbp-kitchensink-cli App', () => {
 
 
     it('should display app header title', () => {
-       expect(page.getAppHeaderTitle()).toEqual('Kitchen Sink Demo');
+       expect(page.getCurrentAppName()).toEqual('Kitchen Sink Demo');
     });
 });

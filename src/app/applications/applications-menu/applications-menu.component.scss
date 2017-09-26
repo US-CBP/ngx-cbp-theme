@@ -53,8 +53,8 @@
   cursor: pointer;
 }
 .cbp-applications-last-updated {
-  float: right;
-  padding: 0 $alert-padding;
+  float: left;
+  padding: 0 $padding-large-horizontal $padding-base-vertical;
   color: $headings-small-color;
   user-select: none;
 

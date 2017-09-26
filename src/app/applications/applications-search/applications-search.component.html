@@ -1,13 +1,14 @@
-<form>
-  <md-form-field (click)="stopPropogation($event)" floatPlaceholder="never">
-    <input color="white" type="text" mdInput aria-label="Number" [formControl]="searchTokenControl" name="searchToken"  placeholder="&nbsp;&nbsp;Search ..."
-           class="cbp-applications-search-input">
+<form class="mat-menu-item cbp-app-search">
+  <md-form-field (click)="stopPropogation($event)" floatPlaceholder="never" color="default">
+      <input type="text" mdInput aria-label="Search App" [formControl]="searchTokenControl" name="searchToken"  placeholder="Search ..."
+             class="cbp-applications-search-input"/>
   </md-form-field>
 </form>
-<ng-container *ngIf="searchResultsApplications">
-  <div class="mat-menu-item" *ngFor="let app of searchResultsApplications | async">
+<ng-container *ngIf="searchResults">
+  <div class="mat-menu-item cbp-app-search-results" *ngFor="let app of searchResultsApplications | async">
     <a class="cbp-applications-link" title="{{app.description}}" href="{{app.href}}" fxFlex="" >
       {{app.name}}
     </a>
   </div>
+  <div class="mat-divider" *ngIf="searchResults && searchResults.length > 0"></div>
 </ng-container>

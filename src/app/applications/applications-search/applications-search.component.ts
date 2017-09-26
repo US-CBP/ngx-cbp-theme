@@ -1,4 +1,4 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import {Component, Inject, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsService} from '../cbp-applications-service';
 import {FormControl} from '@angular/forms';
 import 'rxjs/add/operator/startWith';
@@ -8,7 +8,8 @@ import {Observable} from 'rxjs/Observable';
 @Component({
         selector: 'cbp-applications-search',
         templateUrl: './applications-search.component.html',
-        styleUrls: ['./applications-search.component.scss']
+        styleUrls: ['./applications-search.component.scss'],
+        encapsulation: ViewEncapsulation.None
     })
     export class CBPApplicationsSearchComponent implements OnInit {
 
@@ -19,7 +20,7 @@ import {Observable} from 'rxjs/Observable';
     searchResultsApplications: Observable<CBPApplication[]>;
 
 
-    private searchResults: CBPApplication[] = [];
+    searchResults: CBPApplication[] = [];
 
     constructor(@Inject(CBP_APPLICATIONS_SERVICE) public applicationsService: CBPApplicationsService) {}
 
