@@ -24,7 +24,7 @@
       </a>
     </div>
 
-    <div *ngIf="applicationsData.recents?.length > 0" class="mat-divider test1"></div>
+    <div *ngIf="applicationsData.recents?.length > 0" class="mat-divider"></div>
 
     <div class="cbp-menu-item-category" *ngIf="applicationsData.favorites?.length > 0">Favorite Apps</div>
     <div class="mat-menu-item" *ngFor="let app of applicationsData.favorites">
@@ -34,7 +34,7 @@
     </div>
 
 
-    <div class="mat-divider test2" *ngIf="applicationsData.favorites?.length > 0"></div>
+    <div class="mat-divider" *ngIf="applicationsData.favorites?.length > 0"></div>
 
     <cbp-applications-search></cbp-applications-search>
 
