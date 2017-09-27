@@ -9,25 +9,8 @@
   &:focus {
     text-decoration: underline;
   }
+  .inverse & {
+    color: $navbar-inverse-color;
+  }
 }
-//.cbp-applications-search-input {
-//  margin-left: 7px;
-//  width: 100%;
-//}
 
-//:host {
-//  form {
-//    .mat-form-field {
-//      .mat-input-wrapper {
-//        .mat-input-flex.mat-form-field-flex {
-//          padding-left: 5px;
-//        }
-//      }
-//
-//    }
-//  }
-//}
-//
-//.mat-form-field-flex {
-//  padding-left: 5px;
-//}

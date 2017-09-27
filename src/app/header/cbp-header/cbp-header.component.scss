@@ -36,12 +36,12 @@ cbp-header {
     }
   }
   .icon-bar {
-    background-color: #fff;
+    background-color: $navbar-inverse-toggle-icon-bar-bg;
   }
 }
 
 .cbp-brand-nav {
-
+ // copied from cbp-theme - until this becomes inheritable
   font-size: 19px;
   transition: color 200ms ease-in-out;
   height: $navbar-height;

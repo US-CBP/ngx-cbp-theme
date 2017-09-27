@@ -25,6 +25,7 @@ export class CBPApplicationsData {
 
 export abstract class CBPApplicationsService {
 
+
     /**
      * For any data fetching and initialization before other API can be called.
      * @returns {Observable<CBPApplicationsData>}

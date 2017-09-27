@@ -5,8 +5,8 @@ export class DemoAppPage {
         return browser.get('/');
     }
 
-    getAppHeaderTitle(): any {
-        return element(by.css('cbp-app-title h2')).getText();
+    getCurrentAppName(): any {
+        return element(by.css('cbp-header .cbp-current-application-name')).getText();
     }
 
     getAppHeaderBrand(): any {

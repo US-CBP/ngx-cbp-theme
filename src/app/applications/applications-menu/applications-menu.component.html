@@ -24,7 +24,7 @@
       </a>
     </div>
 
-    <div *ngIf="applicationsData.favorites?.length > 0" class="mat-divider"></div>
+    <div *ngIf="applicationsData.recents?.length > 0" class="mat-divider"></div>
 
     <div class="cbp-menu-item-category" *ngIf="applicationsData.favorites?.length > 0">Favorite Apps</div>
     <div class="mat-menu-item" *ngFor="let app of applicationsData.favorites">
@@ -34,13 +34,15 @@
     </div>
 
 
-    <div class="mat-divider" *ngIf="applicationsData.favorites?.length > 0 || applicationsData.recents?.length > 0"></div>
+    <div class="mat-divider" *ngIf="applicationsData.favorites?.length > 0"></div>
+
     <cbp-applications-search></cbp-applications-search>
 
 
-    <div class="mat-menu-item cbp-applications-refresh" (click)="reloadApplicationsData($event)">
+
+    <a class="mat-menu-item cbp-applications-refresh" (click)="reloadApplicationsData($event)">
       <div>Refresh</div>
-    </div>
+    </a>
     <div class="cbp-applications-last-updated" (click)="stopPropogation($event)">
       <small>Updated {{applicationsData.lastRetrieved | datetime}}</small>
     </div>
@@ -52,9 +54,9 @@
     <div *ngIf="applicationsDataLoading" class="cbp-menu-loading" style="color: white">
       <cbp-loading></cbp-loading>
     </div>
-    <div *ngIf="menuDataLoaded && !applicationsDataLoading" class="cbp-current-application-name" (click)="toggleApplicationsMenu($event)">{{applicationsData.currentApp.name}}
+    <div *ngIf="menuDataLoaded && applicationsData.currentApp && !applicationsDataLoading" class="cbp-current-application-name-container" (click)="toggleApplicationsMenu($event)">
+      <span class="cbp-current-application-name">{{applicationsData.currentApp.name}}</span><span *ngIf="applicationsData.currentApp.version"> - {{applicationsData.currentApp.version}}</span>
       <md-icon *ngIf="applicationsData.lastRetrieved" fontSet="fontawesome" fontIcon="fa-caret-down"></md-icon>
     </div>
-    <div *ngIf="menuDataLoaded" class="cbp-current-application-version" fxShow="false" fxShow.gt-xs>{{applicationsData.currentApp.version}}</div>
   </div>
 </ng-template>
