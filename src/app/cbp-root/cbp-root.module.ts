@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CBPRootComponent } from './cbp-root.component';
-import {MdButtonModule, MdFormFieldModule, MdIconModule, MdIconRegistry, MdInputModule} from '@angular/material';
+import {
+    MATERIAL_COMPATIBILITY_MODE, MatButtonModule, MatFormFieldModule, MatIconModule, MatIconRegistry,
+    MatInputModule
+} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {CBPProgressModule} from '../progress/progress.module';
@@ -12,16 +15,17 @@ import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule, MdIconModule, BrowserAnimationsModule, FlexLayoutModule, MdButtonModule, MdInputModule, MdFormFieldModule, FormsModule
+    CommonModule, MatIconModule, BrowserAnimationsModule, FlexLayoutModule, MatButtonModule, MatInputModule, MatFormFieldModule, FormsModule
   ],
   declarations: [CBPRootComponent],
+  providers: [{provide: MATERIAL_COMPATIBILITY_MODE, useValue: true}],
   exports: [
-      MdIconModule, BrowserAnimationsModule, FlexLayoutModule, MdButtonModule, MdInputModule, MdFormFieldModule, FormsModule,
+      MatIconModule, BrowserAnimationsModule, FlexLayoutModule, MatButtonModule, MatInputModule, MatFormFieldModule, FormsModule,
       CBPRootComponent, CBPProgressModule, CBPHeaderModule, CBPPipesModule
   ]
 })
 export class CBPRootModule {
-    constructor(mdIconRegistry: MdIconRegistry) {
+    constructor(mdIconRegistry: MatIconRegistry) {
         mdIconRegistry.registerFontClassAlias('fontawesome', 'fa');
     }
 }

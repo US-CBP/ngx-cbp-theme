@@ -15,19 +15,19 @@
   <cbp-app-right-nav>
     <div ngClass.gt-xs="app-right-nav-items" ngClass.lt-sm="app-stacked-nav">
       <div class="cbp-navbar-item">
-        <md-icon  fontSet="fontawesome" fontIcon="fa-print"></md-icon>
+        <mat-icon  fontSet="fontawesome" fontIcon="fa-print"></mat-icon>
       </div>
       <div class="cbp-navbar-item">
-        <md-icon  fontSet="fontawesome" fontIcon="fa-wifi"></md-icon>
+        <mat-icon  fontSet="fontawesome" fontIcon="fa-wifi"></mat-icon>
       </div>
     </div>
   </cbp-app-right-nav>
 </cbp-app-header>
 
 <ng-template #tabbedAppNav>
-  <md-tab-group class="mat-tab-header-pagination-controls-enabled">
-    <md-tab *ngFor="let appNav of appNavigations" label="{{appNav.name}}"></md-tab>
-  </md-tab-group>
+  <mat-tab-group class="mat-tab-header-pagination-controls-enabled">
+    <mat-tab *ngFor="let appNav of appNavigations" label="{{appNav.name}}"></mat-tab>
+  </mat-tab-group>
 </ng-template>
 
 

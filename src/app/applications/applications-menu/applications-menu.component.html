@@ -1,4 +1,4 @@
-<div class="cbp-applications-navitem" [mdMenuTriggerFor]="cbpMenu" #cbpMenuTrigger="mdMenuTrigger">
+<div class="cbp-applications-navitem" [matMenuTriggerFor]="cbpMenu" #cbpMenuTrigger="matMenuTrigger">
   <ng-template [ngTemplateOutlet]="application"></ng-template>
 </div>
 <div class="cbp-applications-navitem" *ngIf="menuDataLoaded && applicationsData.lastRetrieved !== null && !isXS">
@@ -8,9 +8,9 @@
   <ng-template [ngTemplateOutlet]="applicationsPanel" ></ng-template>
 </div>
 
-<md-menu #cbpMenu="mdMenu" yPosition="above" xPosition="after" [overlapTrigger]="false" class="cbp-menu-with-category applications-expansion-panel" >
+<mat-menu #cbpMenu="matMenu" yPosition="above" xPosition="after" [overlapTrigger]="false" class="cbp-menu-with-category applications-expansion-panel" >
   <ng-template [ngTemplateOutlet]="applicationsPanel"></ng-template>
-</md-menu>
+</mat-menu>
 
 
 <ng-template #applicationsPanel>
@@ -18,7 +18,7 @@
 
     <div class="cbp-menu-item-category" *ngIf="applicationsData.recents?.length > 0">Recent Apps</div>
     <div class="mat-menu-item" *ngFor="let app of applicationsData.recents">
-      <div class="cbp-applications-remove-icon"><md-icon  fontSet="fontawesome" fontIcon="fa-times" (click)="removeFromRecent(app, $event)" fxFlexAlign="center"></md-icon></div>
+      <div class="cbp-applications-remove-icon"><mat-icon  fontSet="fontawesome" fontIcon="fa-times" (click)="removeFromRecent(app, $event)" fxFlexAlign="center"></mat-icon></div>
       <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="" >
         {{app.name}}
       </a>
@@ -56,7 +56,7 @@
     </div>
     <div *ngIf="menuDataLoaded && applicationsData.currentApp && !applicationsDataLoading" class="cbp-current-application-name-container" (click)="toggleApplicationsMenu($event)">
       <span class="cbp-current-application-name">{{applicationsData.currentApp.name}}</span><span *ngIf="applicationsData.currentApp.version"> - {{applicationsData.currentApp.version}}</span>
-      <md-icon *ngIf="applicationsData.lastRetrieved" fontSet="fontawesome" fontIcon="fa-caret-down"></md-icon>
+      <mat-icon *ngIf="applicationsData.lastRetrieved" fontSet="fontawesome" fontIcon="fa-caret-down"></mat-icon>
     </div>
   </div>
 </ng-template>

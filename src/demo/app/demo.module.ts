@@ -8,7 +8,7 @@ import { DemoAppRoutingModule } from './demo-routing.module';
 import { DemoAppComponent } from './demo.component';
 import { MockUserService} from '../../mock-services/user.mock.service';
 
-import {MdIconModule, MdTabsModule} from '@angular/material';
+import {MatIconModule, MatTabsModule} from '@angular/material';
 
 import {DemoCBPAccordionComponent} from './demo-cbp-accordion/demo-cbp-accordion.component';
 import {DemoTypographyComponent} from './demo-typograqphy/demo-typography.component';
@@ -29,7 +29,7 @@ import {CBP_APPLICATIONS_SERVICE, CBPApplication} from '../../app/applications/c
   ],
   imports: [
       BrowserModule, HttpClientModule,
-      MdTabsModule, MdIconModule, // MdTabsModule is used only for demo cbp-app-header
+      MatTabsModule, MatIconModule, // MdTabsModule is used only for demo cbp-app-header
       DemoAppRoutingModule,
       CBPRootModule,
       CBPAccordionModule,
