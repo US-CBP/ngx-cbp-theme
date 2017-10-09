@@ -55,6 +55,8 @@ export class TestUserService implements CBPUserService {
     logout() {}
 }
 export class TestApplicationsService implements  CBPApplicationsService {
+    registerCurrentApplication(currentApplication: CBPApplication): void {
+    }
     removeRecentApplication(recentApplication: CBPApplication): Observable<boolean> {
         return null;
     }
@@ -77,7 +79,7 @@ export class TestApplicationsService implements  CBPApplicationsService {
         return null;
     }
 
-    search(token: string): Observable<CBPApplication[]> {
+    search(token: string): CBPApplication[] {
         return null;
     }
 

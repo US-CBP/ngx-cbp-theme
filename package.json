@@ -26,6 +26,8 @@
     "start:demo": "ng serve --app demo --port 4100",
     "build:demo": "ng build --app demo",
     "test": "ng test --app demo",
+    "test:demo": "ng test --app demo",
+    "test:lib": "ng test --app lib",
     "e2e:demo": "ng e2e --app demo --watch=false",
     "ci": "concurrently --kill-others-on-fail --names \"BUILD,LINTING,KARMA-UNIT,E2E-DEMO\" -c \"bgBlue.bold,bgCyan.bold,bgGreen.bold\" \"npm run build:lib\" \"npm run lint\" \"npm run test:once\" \"npm run e2e:demo\"",
     "test:once": "ng test --app demo --watch=false",
