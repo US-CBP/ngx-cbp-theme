@@ -5,12 +5,14 @@
   },
   "apps": [{
     "name": "lib",
-    "root": "src",
-    "main": "app/index.ts",
+    "root": "src/app",
+    "main": "test-entry.ts",
     "test": "test.ts",
+    "tsconfig": "tsconfig.app.json",
+    "testTsconfig": "tsconfig.spec.json",
     "prefix": "cbp",
     "outDir": "dist-lib",
-    "polyfills": "polyfills.ts",
+    "polyfills": "../polyfills.ts",
     "styles": [
       "ngx-cbp-theme.scss"
     ]
@@ -20,10 +22,12 @@
       "root": "src/demo",
       "main": "index.ts",
       "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
       "prefix": "demo",
       "outDir": "dist-demo",
       "index": "index.html",
-      "polyfills": "polyfills.ts",
+      "polyfills": "../polyfills.ts",
       "styles": [
         "demo.scss"
       ],

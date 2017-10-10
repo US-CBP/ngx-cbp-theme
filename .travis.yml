@@ -22,7 +22,7 @@ before_script:
 jobs:
   include:
     - stage: build & linting & test
-      script: npm run ci
+      script: npm run ready
     - stage : publish
       script: echo "Publishing to Github..."
       script: npm run build:demo

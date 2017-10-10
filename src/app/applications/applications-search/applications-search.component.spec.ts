@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CBPApplicationsSearchComponent } from './applications-search.component';
-import {MdFormFieldModule, MdInputModule} from '@angular/material';
+import {MatFormFieldModule, MatInputModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CBP_APPLICATIONS_SERVICE} from '../cbp-applications-service';
 import {MockApplicationsService} from '../../../mock-services/applications.mock.service';
@@ -15,7 +15,7 @@ describe('CBPApplicationsSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MdFormFieldModule, MdInputModule, FormsModule, ReactiveFormsModule , NoopAnimationsModule],
+      imports: [MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule , NoopAnimationsModule],
       declarations: [ CBPApplicationsSearchComponent ],
       providers: [
           {provide: CBP_APPLICATIONS_SERVICE, useClass: MockApplicationsService},

@@ -45,6 +45,8 @@ ___
 ## Getting Started - How To Use
 
 Note: For Windows users we recommend git-bash shell. Also check the node engine version.
+
+Use angular-cli version 1.4.5 
   
 * Install [angular-cli](https://cli.angular.io/) globally making sure we use same version as we have in `@angular/cli` inside package.json.
 * For new apps follow [angular-cli](https://cli.angular.io/) and create your application with styles = SCSS. Minimal e.g.

@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CBPAccordionComponent } from './accordion.component';
-import { MdButtonModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
 
 describe('CBPAccordionComponent', () => {
   let component: CBPAccordionComponent;
@@ -9,7 +9,7 @@ describe('CBPAccordionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-        imports: [ MdButtonModule],
+        imports: [ MatButtonModule],
         declarations: [CBPAccordionComponent]
     })
     .compileComponents();

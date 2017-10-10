@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CBPUserMenuComponent } from './user-menu/user-menu.component';
-import {MdButtonModule, MdIconModule, MdListModule, MdMenuModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatListModule, MatMenuModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {CBPProgressModule} from '../progress/progress.module';
 
 @NgModule({
   imports: [
-      CommonModule, MdListModule, MdMenuModule, FlexLayoutModule, MdIconModule, MdButtonModule, CBPProgressModule
+      CommonModule, MatListModule, MatMenuModule, FlexLayoutModule, MatIconModule, MatButtonModule, CBPProgressModule
   ],
-  exports: [CBPUserMenuComponent, MdMenuModule],
+  exports: [CBPUserMenuComponent, MatMenuModule],
   declarations: [CBPUserMenuComponent]
 })
 export class CBPUserModule { }

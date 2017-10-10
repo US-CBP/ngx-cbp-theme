@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CBPUserMenuComponent } from './user-menu.component';
-import {MdIconModule, MdMenuModule} from '@angular/material';
+import {MatIconModule, MatMenuModule} from '@angular/material';
 import {CBPProgressModule} from '../../progress/progress.module';
 import {CBP_USER_SERVICE} from '../user';
 import {MockUserService} from '../../../mock-services/user.mock.service';
@@ -13,7 +13,7 @@ describe('CBPUserMenuComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CBPUserMenuComponent ],
-      imports: [MdIconModule, MdMenuModule, CBPProgressModule],
+      imports: [MatIconModule, MatMenuModule, CBPProgressModule],
       providers: [{provide: CBP_USER_SERVICE, useClass: MockUserService}]
     })
     .compileComponents();

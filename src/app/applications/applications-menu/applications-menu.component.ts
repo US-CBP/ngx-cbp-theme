@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, Inject, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
-import {MdMenuTrigger} from '@angular/material';
+import {MatMenuTrigger} from '@angular/material';
 import {
     CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
     CBPApplicationsService
@@ -26,7 +26,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     private mediaSubscription: Subscription;
 
 
-    @ViewChild('cbpMenuTrigger') cbpMenuTrigger: MdMenuTrigger;
+    @ViewChild('cbpMenuTrigger') cbpMenuTrigger: MatMenuTrigger;
 
     public error: any;
 

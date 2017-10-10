@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CBPAccordionPanelComponent } from './accordion-panel.component';
-import {MdButtonModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material';
 import {CBPAccordionComponent} from './accordion.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -11,7 +11,7 @@ describe('CBPAccordionPanelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-        imports: [MdButtonModule, NoopAnimationsModule],
+        imports: [MatButtonModule, NoopAnimationsModule],
         declarations: [CBPAccordionPanelComponent],
         providers: [CBPAccordionComponent]
     })

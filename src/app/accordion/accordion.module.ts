@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {CBPAccordionComponent} from './accordion.component';
 import {CBPAccordionPanelComponent} from './accordion-panel.component';
-import {MdButtonModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material';
 
 @NgModule({
   imports: [
-    CommonModule, MdButtonModule
+    CommonModule, MatButtonModule
   ],
   declarations: [CBPAccordionComponent, CBPAccordionPanelComponent],
   exports: [

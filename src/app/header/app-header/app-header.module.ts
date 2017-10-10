@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {CBPAppHeaderComponent} from './app-header.component';
 import {
-    MdButtonModule, MdIconModule, MdListModule, MdMenuModule, MdTabsModule,
-    MdToolbarModule
+    MatButtonModule, MatIconModule, MatListModule, MatMenuModule, MatTabsModule,
+    MatToolbarModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { CBPAppTitleComponent } from './app-title/app-title.component';
@@ -14,7 +14,7 @@ import {CBPToolbarModule} from '../cbp-toolbar/cbp-toolbar.module';
 
 @NgModule({
   imports: [
-    CommonModule, MdTabsModule, MdListModule, MdMenuModule, MdToolbarModule, FlexLayoutModule, MdButtonModule, MdIconModule,
+    CommonModule, MatTabsModule, MatListModule, MatMenuModule, MatToolbarModule, FlexLayoutModule, MatButtonModule, MatIconModule,
     CBPToolbarModule
   ],
   declarations: [CBPAppHeaderComponent, CBPAppTitleComponent, CBPAppMainNavComponent, CBPAppRightNavComponent],
