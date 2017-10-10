@@ -16,8 +16,8 @@ node_js:
   - 8
 install:
   - npm install
-  - npm install npm-install-peers
-  - sh -e ./node_modules/.bin/npm-install-peers
+  - npm install npm-install-peers -g
+  - npm-install-peers
 before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
