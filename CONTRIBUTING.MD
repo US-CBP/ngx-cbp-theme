@@ -3,9 +3,6 @@
 Ensure angular-cli is as per [angular-cli](https://cli.angular.io/) which includes global npm install.
 Clone this repository.
 
-Install all dependencies including `peerDependencies`. (Useful for installing peers https://www.npmjs.com/package/npm-install-peers) 
-
-
 # Build
 
 Produces consumable artifacts as per [Angular Package Format](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/preview)
