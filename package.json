@@ -25,12 +25,13 @@
     "lint": "ng lint",
     "start:demo": "ng serve --app demo --port 4100",
     "build:demo": "ng build --app demo",
-    "test": "ng test --app demo",
     "test:demo": "ng test --app demo",
+    "test:demo:once": "ng test --app demo --watch=false",
     "test:lib": "ng test --app lib",
+    "test:lib:once": "ng test --app lib --watch=false",
     "e2e:demo": "ng e2e --app demo --watch=false",
     "ci": "concurrently --kill-others-on-fail --names \"BUILD,LINTING,KARMA-UNIT,E2E-DEMO\" -c \"bgBlue.bold,bgCyan.bold,bgGreen.bold\" \"npm run build:lib\" \"npm run lint\" \"npm run test:once\" \"npm run e2e:demo\"",
-    "test:once": "ng test --app demo --watch=false",
+    "test:once": "concurrently --kill-others-on-fail --names \"KARMA-LIB,KARMA-DEMO\" -c \"bgBlue.bold,bgGreen.bold\"  \"npm run test:lib:once\" \"npm run test:demo:once\"",
     "postinstall": "node postinstall.js"
   },
   "dependencies": {
