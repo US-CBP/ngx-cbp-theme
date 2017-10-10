@@ -12,24 +12,8 @@ import {
   BrowserDynamicTestingModule,
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing';
-import {CBPRootComponent} from './cbp-root/cbp-root.component';
-import {CBPProgressModule} from './progress/progress.module';
-import {CBPRootModule} from './cbp-root/cbp-root.module';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-@NgModule({
-    imports: [
-        CBPRootModule,
-        CBPProgressModule
-    ],
-    providers: [],
-    schemas: [],
-    bootstrap: [CBPRootComponent]
-})
-export class TestEntryModule {
-    constructor() {}
-}
-platformBrowserDynamic().bootstrapModule(TestEntryModule);
+
 
 // Unfortunately there's no typing for the `__karma__` variable. Just declare it as any.
 declare const __karma__: any;
