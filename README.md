@@ -160,11 +160,11 @@ Your `app.component.html` should be changed to following minimal structure:-
 
 
 ## Contributing
-We welcome contributions, please see our [Contribution Policy](https://github.com/US-CBP/open-source-policy/blob/master/CONTRIBUTING.MD)
+We welcome contributions, please see our [Contribution Policy](https://github.com/US-CBP/open-source-policy/blob/master/CONTRIBUTING.md)
 
-To get started developing, see contributing readme [here](./CONTRIBUTING.MD).
+To get started developing, see contributing readme [here](CONTRIBUTING.md).
 
 ## License
-Please refer to [CBP Open Source License](https://github.com/US-CBP/open-source-policy/blob/master/LICENSE.MD)
+Please refer to [CBP Open Source License](https://github.com/US-CBP/open-source-policy/blob/master/LICENSE.md)
 
 
