@@ -4,7 +4,6 @@ import { CBPRootModule} from '../../app/cbp-root/' ;
 import { CBPHeaderModule, CBPAppHeaderModule} from '../../app/header/' ;
 import { CBPAccordionModule} from '../../app/accordion/' ;
 
-import { DemoAppRoutingModule } from './demo-routing.module';
 import { DemoAppComponent } from './demo.component';
 import { MockUserService} from '../../mock-services/user.mock.service';
 
@@ -18,7 +17,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {MockApplicationsService} from '../../mock-services/applications.mock.service';
 import {CBP_USER_SERVICE} from '../../app/user/user';
 import {CBP_APPLICATIONS_SERVICE, CBPApplication} from '../../app/applications/cbp-applications-service';
-import {APP_BASE_HREF} from '@angular/common';
 
 
 
@@ -31,7 +29,6 @@ import {APP_BASE_HREF} from '@angular/common';
   imports: [
       BrowserModule, HttpClientModule,
       MatTabsModule, MatIconModule, // MdTabsModule is used only for demo cbp-app-header
-      DemoAppRoutingModule,
       CBPRootModule,
       CBPAccordionModule,
       CBPHeaderModule,
@@ -46,8 +43,7 @@ import {APP_BASE_HREF} from '@angular/common';
       MockUserService,
       MockApplicationsService,
       { provide: CBP_USER_SERVICE,          useExisting: MockUserService },
-      { provide: CBP_APPLICATIONS_SERVICE,  useExisting: MockApplicationsService },
-      { provide: APP_BASE_HREF, useValue: '/'}
+      { provide: CBP_APPLICATIONS_SERVICE,  useExisting: MockApplicationsService }
   ],
   schemas: [],
   bootstrap: [DemoAppComponent]
