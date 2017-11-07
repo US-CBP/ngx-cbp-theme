@@ -2,10 +2,12 @@
 
 .app-right-nav-items {
   display: inline-flex;
+
 }
 
 .app-title {
   padding: 0 $padding-base-horizontal;
+
   margin-top: 10px;
   &.vertical-divider {
     border-right: 1px solid $brand-default-border;

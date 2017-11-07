@@ -19,7 +19,7 @@
     <div class="cbp-menu-item-category" *ngIf="applicationsData.recents?.length > 0">Recent Apps</div>
     <div class="mat-menu-item" *ngFor="let app of applicationsData.recents">
       <div class="cbp-applications-remove-icon"><mat-icon  fontSet="fontawesome" fontIcon="fa-times" (click)="removeFromRecent(app, $event)" fxFlexAlign="center"></mat-icon></div>
-      <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="" >
+      <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="auto" >
         {{app.name}}
       </a>
     </div>
@@ -28,7 +28,7 @@
 
     <div class="cbp-menu-item-category" *ngIf="applicationsData.favorites?.length > 0">Favorite Apps</div>
     <div class="mat-menu-item" *ngFor="let app of applicationsData.favorites">
-      <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="" >
+      <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="auto" >
         {{app.name}}
       </a>
     </div>
