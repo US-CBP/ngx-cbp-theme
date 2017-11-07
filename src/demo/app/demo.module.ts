@@ -18,6 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {MockApplicationsService} from '../../mock-services/applications.mock.service';
 import {CBP_USER_SERVICE} from '../../app/user/user';
 import {CBP_APPLICATIONS_SERVICE, CBPApplication} from '../../app/applications/cbp-applications-service';
+import {APP_BASE_HREF} from '@angular/common';
 
 
 
@@ -45,7 +46,8 @@ import {CBP_APPLICATIONS_SERVICE, CBPApplication} from '../../app/applications/c
       MockUserService,
       MockApplicationsService,
       { provide: CBP_USER_SERVICE,          useExisting: MockUserService },
-      { provide: CBP_APPLICATIONS_SERVICE,  useExisting: MockApplicationsService }
+      { provide: CBP_APPLICATIONS_SERVICE,  useExisting: MockApplicationsService },
+      { provide: APP_BASE_HREF, useValue: '/'}
   ],
   schemas: [],
   bootstrap: [DemoAppComponent]
