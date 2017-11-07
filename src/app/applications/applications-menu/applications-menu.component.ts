@@ -45,7 +45,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
                                 this.isXS = false;
                             });
                         } else {
-                            if (this.cbpMenuTrigger) {
+                            if (this.cbpMenuTrigger && this.cbpMenuTrigger.menu) {
                                 this.isApplicationsExpanded = false;
                                 this.cbpMenuTrigger.closeMenu();
                             }
