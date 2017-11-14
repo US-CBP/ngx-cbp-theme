@@ -54,7 +54,10 @@ export class TestUserService implements CBPUserService {
 
     logout() {}
 }
-export class TestApplicationsService implements  CBPApplicationsService {
+export class TestApplicationsService extends CBPApplicationsService {
+    constructor() {
+        super();
+    }
     registerCurrentApplication(currentApplication: CBPApplication): void {
     }
     removeRecentApplication(recentApplication: CBPApplication): Observable<boolean> {
@@ -72,6 +75,8 @@ export class TestApplicationsService implements  CBPApplicationsService {
             new CBPApplication('Another CBPApplication', null),
             new CBPApplication('Yet Another CBPApplication', null)];
         data.currentApp = new CBPApplication('Kitchen Sink v4.0.1.0', null);
+
+        this.currentApp.next(data.currentApp);
         return Observable.of(data);
     }
 

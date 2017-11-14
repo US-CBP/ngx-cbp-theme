@@ -13,15 +13,16 @@ import {
 
 
 @Injectable()
-export class MockApplicationsService implements  CBPApplicationsService {
+export class MockApplicationsService extends  CBPApplicationsService {
 
 
 
     private subject: BehaviorSubject<CBPApplicationsData> = new BehaviorSubject<CBPApplicationsData>(null);
     private loaded = false;
-    private currentApp: CBPApplication;
 
-    constructor(@Inject(CBP_USER_SERVICE) private userService: CBPUserService) {}
+    constructor(@Inject(CBP_USER_SERVICE) private userService: CBPUserService) {
+        super();
+    }
 
     getApplicationsData(): Observable<CBPApplicationsData> {
         this._load();
@@ -44,18 +45,11 @@ export class MockApplicationsService implements  CBPApplicationsService {
         return [];
     }
 
-    removeFavoriteApplication(favoriteApplication: CBPApplication): Observable<boolean> {
-        let data: CBPApplicationsData  = this.subject.getValue();
-        return this._removeAppFromArray(favoriteApplication, data.favorites);
-    }
     removeRecentApplication(recentApplication: CBPApplication): Observable<boolean> {
         let data: CBPApplicationsData  = this.subject.getValue();
         return this._removeAppFromArray(recentApplication, data.recents);
     }
 
-    registerCurrentApplication(currentApp: CBPApplication) {
-        this.currentApp = currentApp;
-    }
 
     private _removeAppFromArray(app: CBPApplication, fromArray: CBPApplication[]): Observable<boolean> {
         let index = fromArray.indexOf(app);
@@ -83,11 +77,9 @@ export class MockApplicationsService implements  CBPApplicationsService {
     private _getData(): Observable<CBPApplicationsData> {
         return this._getMockHttpData()
             .map((data: CBPApplicationsData) => {
-                if (this.currentApp) {
-                    data.currentApp = this.currentApp;
-                }
-
                 data.lastRetrieved = new Date();
+                data.currentApp = new CBPApplication('Kitchen Sink Demo');
+                this.currentApp.next(data.currentApp);
                 return data;
             });
     }
