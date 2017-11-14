@@ -96,14 +96,14 @@ Use angular-cli version 1.4.5
   // inside my-user-service.ts
   import {CBPUserService, CBPUser} from 'ngx-cbp-theme';
   @Injectable()
-  export class MyUserService implements CBPUserService { 
+  export class MyUserService extends CBPUserService { 
   ...
   }
   // inside my-applications-service.ts
   
   import {CBPApplicationsService} from 'ngx-cbp-theme';
   @Injectable()
-  export class MyApplicationsService implements CBPApplicationsService { 
+  export class MyApplicationsService extends CBPApplicationsService { 
   ...
   ```
     

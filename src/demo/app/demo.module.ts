@@ -52,9 +52,9 @@ import {CBP_APPLICATIONS_SERVICE, CBPApplication} from '../../app/applications/c
 })
 export class DemoAppModule {
     constructor(applicationsService: MockApplicationsService) {
-        const thisApp = new CBPApplication('Kitchen Sink Demo');
-        thisApp.version = 'v0.0.0';
-        applicationsService.registerCurrentApplication(thisApp);
+        applicationsService.getCurrentApp().subscribe(currentApp => {
+            currentApp.version =  'v0.0.0';
+        });
     }
 }
 

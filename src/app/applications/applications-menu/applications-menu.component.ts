@@ -78,12 +78,6 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     }
 
 
-
-    removeFromFavorite(app: CBPApplication, $event: any) {
-        this.applicationsService.removeFavoriteApplication(app);
-        $event.stopPropagation();
-    }
-
     removeFromRecent(app: CBPApplication, $event: any) {
         this.applicationsService.removeRecentApplication(app);
         $event.stopPropagation();

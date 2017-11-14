@@ -1,14 +1,18 @@
 @import '~cbp-theme/dist/scss/vendor/_fontawesome';
 
-@mixin md-icon-size($size: 24px) {
+@mixin mat-icon-size($size: 24px) {
   font-size: $size;
   height: $size;
   width: $size;
 }
 
-md-icon.mat-icon {
+mat-icon.mat-icon {
   width: inherit;
 }
-.md-36 {
-  @include md-icon-size(36px);
+.mat-36 {
+  @include mat-icon-size(36px);
+}
+
+.cbp-icon-before-text.mat-icon {
+  text-align: right;
 }

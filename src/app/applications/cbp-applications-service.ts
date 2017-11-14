@@ -1,18 +1,20 @@
 import {Observable} from 'rxjs/Observable';
 import {InjectionToken} from '@angular/core';
+import {ReplaySubject} from 'rxjs/ReplaySubject';
 
 /**
  * Each application in the drop down and this application to refer by name/id etc.
  */
 export class CBPApplication {
-    public id: String;
-    public description: String;
-    public version: String;
-    constructor(public name?: String, public href?: String) {}
+    public id: string;
+    public description: string;
+    public version?: string;
+    public context?: string;
+    constructor(public name?: string, public href?: string) {}
 }
 
 /**
- * Models list of applications, recents, favorites etc.
+ * Models list of applications, recents, favorites, currentApp etc so that subscribers can get everything in one subscription.
  */
 export class CBPApplicationsData {
     public list: CBPApplication[] = [];
@@ -25,6 +27,7 @@ export class CBPApplicationsData {
 
 export abstract class CBPApplicationsService {
 
+    protected currentApp: ReplaySubject<CBPApplication> = new ReplaySubject(1);
 
     /**
      * For any data fetching and initialization before other API can be called.
@@ -44,12 +47,6 @@ export abstract class CBPApplicationsService {
      */
     abstract search(token: string): CBPApplication[];
 
-    /**
-     * Removes favorite.
-     * @param {CBPApplication} favoriteApplication
-     * @returns {Observable<void>}
-     */
-    abstract removeFavoriteApplication(favoriteApplication: CBPApplication): Observable<boolean>;
 
     /**
      * Removes recent.
@@ -59,12 +56,13 @@ export abstract class CBPApplicationsService {
     abstract removeRecentApplication(recentApplication: CBPApplication): Observable<boolean>;
 
     /**
-     * Sets the current application.
-     * Consuming Applications should register during module initialization.
-     * Default value is a dummy value - KitchenSink
-     * @param {CBPApplication} currentApplication
+     * Provides consumers to subscribe to current application so that they can do various things e.g. setting version etc.
+     * @returns {Observable<CBPApplication>}
      */
-    abstract registerCurrentApplication(currentApplication: CBPApplication): void;
+    public getCurrentApp(): Observable<CBPApplication> {
+        return this.currentApp;
+    }
+
 }
 
 export const CBP_APPLICATIONS_SERVICE = new InjectionToken<CBPApplicationsService>('cbp-applications-service');
