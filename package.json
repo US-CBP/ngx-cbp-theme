@@ -1,6 +1,6 @@
 {
   "name": "ngx-cbp-theme",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "main": "./bundles/ngx-cbp-theme.umd.js",
   "module": "./ngx-cbp-theme.es5.js",
   "es2015": "./ngx-cbp-theme.js",
