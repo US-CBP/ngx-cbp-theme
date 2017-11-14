@@ -1,6 +1,6 @@
 <div class="cbp-toolbar-row mat-toolbar mat-toolbar-row" fxLayout="row"  [@cbpToolbarState]="cbpToolbarState">
 
-  <div class="cbp-brand-nav-container"  fxFlexAlign="stretch" fxLayout="row">
+  <div class="cbp-brand-nav-container"  fxFlexAlign="stretch" >
     <ng-content select=".cbp-toolbar-title"></ng-content>
   </div>
 
@@ -8,11 +8,11 @@
     <ng-template [ngTemplateOutlet]="cbpToolbarMainNav"></ng-template>
   </div>
 
-  <div class="cbp-toolbar-right-nav-container" *ngIf="isToolbarExpanded ? false : true" fxFlex=""   fxShow="false" fxShow.gt-xs>
+  <div class="cbp-toolbar-right-nav-container" *ngIf="isToolbarExpanded ? false : true" fxFlex="auto"   fxShow="false" fxShow.gt-xs>
     <ng-template [ngTemplateOutlet]="cbpToolbarRightNav"></ng-template>
   </div>
 
-  <div fxFlex="" fxFlexOrder.lt-sm="1"  class="cbp-toolbar-expansion-container" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="end stretch" fxHide="false" fxHide.gt-xs>
+  <div fxFlex="auto" fxFlexOrder.lt-sm="1"  class="cbp-toolbar-expansion-container" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="end stretch" fxHide="false" fxHide.gt-xs>
     <div class="cbp-toolbar-expansion" (click)="isToolbarExpanded = ! isToolbarExpanded">
       <div class="cbp-toolbar-expansion-icon">
         <span class="icon-bar"></span>

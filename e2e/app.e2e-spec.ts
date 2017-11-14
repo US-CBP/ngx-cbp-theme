@@ -3,9 +3,10 @@ import { DemoAppPage } from './app.po';
 describe('ngx-cbp-theme-kitchensink-cli Demo App', () => {
     let page: DemoAppPage;
 
-    beforeAll(() => {
+    beforeAll((done: Function) => {
         page = new DemoAppPage();
-        page.navigateTo();
+        page.navigateTo().then(done);
+
     });
 
 

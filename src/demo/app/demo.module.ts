@@ -4,7 +4,6 @@ import { CBPRootModule} from '../../app/cbp-root/' ;
 import { CBPHeaderModule, CBPAppHeaderModule} from '../../app/header/' ;
 import { CBPAccordionModule} from '../../app/accordion/' ;
 
-import { DemoAppRoutingModule } from './demo-routing.module';
 import { DemoAppComponent } from './demo.component';
 import { MockUserService} from '../../mock-services/user.mock.service';
 
@@ -30,7 +29,6 @@ import {CBP_APPLICATIONS_SERVICE, CBPApplication} from '../../app/applications/c
   imports: [
       BrowserModule, HttpClientModule,
       MatTabsModule, MatIconModule, // MdTabsModule is used only for demo cbp-app-header
-      DemoAppRoutingModule,
       CBPRootModule,
       CBPAccordionModule,
       CBPHeaderModule,
