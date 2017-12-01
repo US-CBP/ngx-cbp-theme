@@ -89,8 +89,20 @@
       "check-separator",
       "check-type"
     ],
-    "directive-selector": [true, "attribute", "", "camelCase"],
-    "component-selector": [true, "element", "", "kebab-case"],
+    "directive-selector": [
+      true,
+      "attribute",
+      "cbp",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "cbp",
+      "kebab-case"
+    ],
+    "angular-whitespace": [true, "check-interpolation"],
+    "no-output-on-prefix": true,
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,

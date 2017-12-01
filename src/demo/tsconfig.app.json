@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "declaration": true,
     "module": "es2015",
@@ -9,25 +9,20 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "outDir": "../build-demo",
+    "outDir": "../../build-demo",
     "rootDir": ".",
     "lib": [
-      "es2015",
+      "es2017",
       "dom"
     ],
     "skipLibCheck": true,
     "types": []
   },
-  "angularCompilerOptions": {
-    "annotateForClosureCompiler": true,
-    "strictMetadataEmit": true,
-    "skipTemplateCodegen": true,
-    "flatModuleOutFile": "demo-ngx-cbp-theme.js",
-    "flatModuleId": "demo-ngx-cbp-theme"
-  },
   "files": [
+    "./polyfills.ts",
     "./index.ts",
     "./typings.d.ts"
+
   ]
 
 }

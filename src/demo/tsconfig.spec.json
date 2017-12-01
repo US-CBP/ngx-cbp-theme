@@ -1,7 +1,6 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-
     "emitDecoratorMetadata": true,
     "module": "commonjs",
     "baseUrl": "./",
@@ -14,13 +13,13 @@
     ],
     "typeRoots": [
       "node_modules/@types"
-    ],
-    "files": [
-      "test.ts"
-    ],
-    "include": [
-      "**/*.spec.ts",
-      "**/*.d.ts"
     ]
-  }
+  },
+  "files": [
+    "test.ts"
+  ],
+  "include": [
+    "**/*.spec.ts",
+    "**/*.d.ts"
+  ]
 }

@@ -1,5 +1,7 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
+    "rootDir": ".",
     "baseUrl": ".",
     "moduleResolution": "node",
     "target": "es5",
@@ -13,12 +15,10 @@
     "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true,
     "stripInternal": true,
-    "rootDir": ".",
     "lib": [
-      "es2015",
+      "es2017",
       "dom"
     ],
-    "skipLibCheck": true,
     "types": [
       "node",
       "jasmine"
