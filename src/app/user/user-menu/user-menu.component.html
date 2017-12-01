@@ -6,13 +6,13 @@
 </div>
 <div *ngIf="isLoggedIn && userDataLoaded && !toolbarExpanded" class="cbp-user-navitem" [matMenuTriggerFor]="userMenu">
   <mat-icon fontSet="fontawesome" fontIcon="fa-user"></mat-icon>
-  <span fxShow="false" fxShow.gt-sm fxShow.lt-sm>{{user.firstName}} {{user.lastName}}</span>
+  <span fxShow="false" fxShow.gt-sm fxShow.lt-sm>{{ user.firstName }} {{ user.lastName }}</span>
   <mat-icon fontSet="fontawesome" fontIcon="fa-caret-down"></mat-icon>
 </div>
 
 <div *ngIf="isLoggedIn && userDataLoaded && toolbarExpanded" class="cbp-user-navitem non-menu" (click)="toggleMenu()">
   <mat-icon class="cbp-icon-before-text" fontSet="fontawesome" fontIcon="fa-user"></mat-icon>
-  <span fxShow="false" fxShow.gt-sm fxShow.lt-sm>{{user.firstName}} {{user.lastName}}</span>
+  <span fxShow="false" fxShow.gt-sm fxShow.lt-sm>{{ user.firstName }} {{ user.lastName }}</span>
   <mat-icon fontSet="fontawesome" fontIcon="fa-caret-down"></mat-icon>
 </div>
 

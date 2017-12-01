@@ -20,7 +20,7 @@
     <div class="mat-menu-item" *ngFor="let app of applicationsData.recents">
       <div class="cbp-applications-remove-icon"><mat-icon  fontSet="fontawesome" fontIcon="fa-times" (click)="removeFromRecent(app, $event)" fxFlexAlign="center"></mat-icon></div>
       <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="auto" >
-        {{app.name}}
+        {{ app.name }}
       </a>
     </div>
 
@@ -29,7 +29,7 @@
     <div class="cbp-menu-item-category" *ngIf="applicationsData.favorites?.length > 0">Favorite Apps</div>
     <div class="mat-menu-item" *ngFor="let app of applicationsData.favorites">
       <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="auto" >
-        {{app.name}}
+        {{ app.name }}
       </a>
     </div>
 
@@ -44,7 +44,7 @@
       <div>Refresh</div>
     </a>
     <div class="cbp-applications-last-updated" (click)="stopPropogation($event)">
-      <small>Updated {{applicationsData.lastRetrieved | datetime}}</small>
+      <small>Updated {{ applicationsData.lastRetrieved | datetime }}</small>
     </div>
   </ng-container>
 
@@ -55,7 +55,7 @@
       <cbp-loading></cbp-loading>
     </div>
     <div *ngIf="menuDataLoaded && applicationsData.currentApp && !applicationsDataLoading" class="cbp-current-application-name-container" (click)="toggleApplicationsMenu($event)">
-      <span class="cbp-current-application-name">{{applicationsData.currentApp.name}}</span><span *ngIf="applicationsData.currentApp.version"> - {{applicationsData.currentApp.version}}</span>
+      <span class="cbp-current-application-name">{{ applicationsData.currentApp.name }}</span><span *ngIf="applicationsData.currentApp.version"> - {{ applicationsData.currentApp.version }}</span>
       <mat-icon *ngIf="applicationsData.lastRetrieved" fontSet="fontawesome" fontIcon="fa-caret-down"></mat-icon>
     </div>
   </div>

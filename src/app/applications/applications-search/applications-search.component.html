@@ -7,7 +7,7 @@
 <ng-container *ngIf="searchResults">
   <div class="mat-menu-item cbp-app-search-results" *ngFor="let app of searchResultsApplications | async">
     <a class="cbp-applications-link" title="{{app.description}}" href="{{app.href}}" fxFlex="auto" >
-      {{app.name}}
+      {{ app.name }}
     </a>
   </div>
   <div class="mat-divider" *ngIf="searchResults && searchResults.length > 0"></div>

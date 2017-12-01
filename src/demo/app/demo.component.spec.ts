@@ -5,7 +5,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserModule} from '@angular/platform-browser';
 import {CBPRootModule} from '../../app/cbp-root/cbp-root.module';
 import {CBPAccordionModule} from '../../app/accordion/accordion.module';
-import {CBPAppHeaderModule , CBPHeaderModule} from '../../app/header/';
+import {CBPAppHeaderModule , CBPHeaderModule} from '../../app/header';
 
 import {DemoCBPAccordionComponent} from './demo-cbp-accordion/demo-cbp-accordion.component';
 import {DemoTypographyComponent} from './demo-typograqphy/demo-typography.component';

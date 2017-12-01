@@ -26,7 +26,7 @@
 
 <ng-template #tabbedAppNav>
   <mat-tab-group class="mat-tab-header-pagination-controls-enabled">
-    <mat-tab *ngFor="let appNav of appNavigations" label="{{appNav.name}}"></mat-tab>
+    <mat-tab *ngFor="let appNav of appNavigations" label="{{ appNav.name }}"></mat-tab>
   </mat-tab-group>
 </ng-template>
 
@@ -34,8 +34,8 @@
 <ng-template #stackedAppNav>
     <ng-container>
         <div class="mat-menu-item" *ngFor="let appNav of appNavigations">
-            <div title="{{appNav.name}}"  fxFlex="auto" >
-                {{appNav.name}}
+            <div title="{{ appNav.name }}"  fxFlex="auto" >
+                {{ appNav.name }}
             </div>
         </div>
     </ng-container>

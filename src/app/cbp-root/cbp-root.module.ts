@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CBPRootComponent } from './cbp-root.component';
 import {
-    MATERIAL_COMPATIBILITY_MODE, MatButtonModule, MatFormFieldModule, MatIconModule, MatIconRegistry,
+    MatButtonModule, MatFormFieldModule, MatIconModule, MatIconRegistry,
     MatInputModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,7 +18,6 @@ import {FormsModule} from '@angular/forms';
     CommonModule, MatIconModule, BrowserAnimationsModule, FlexLayoutModule, MatButtonModule, MatInputModule, MatFormFieldModule, FormsModule
   ],
   declarations: [CBPRootComponent],
-  providers: [{provide: MATERIAL_COMPATIBILITY_MODE, useValue: true}],
   exports: [
       MatIconModule, BrowserAnimationsModule, FlexLayoutModule, MatButtonModule, MatInputModule, MatFormFieldModule, FormsModule,
       CBPRootComponent, CBPProgressModule, CBPHeaderModule, CBPPipesModule
