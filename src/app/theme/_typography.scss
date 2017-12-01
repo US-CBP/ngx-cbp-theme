@@ -2,7 +2,6 @@
 @import '../_variables';
 
 
-
 //TODO use mat-typography-config https://material.angular.io/guide/typography to change this
 //TODO this is from _globals which must be refactored
 body {
@@ -58,5 +57,9 @@ h4, .h4 { font-size: $font-size-h4; }
 h5, .h5 { font-size: $font-size-h5; }
 h6, .h6 { font-size: $font-size-h6; }
 
-//then import cbp-theme overrides to override
+
+
+// workaround for missing text-emphasis-variant
+@mixin text-emphasis-variant($a, $b) {}
+// then import cbp-theme overrides to override
 @import '~cbp-theme/dist/scss/custom/_type';

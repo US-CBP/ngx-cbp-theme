@@ -14,14 +14,14 @@
     ],
     "typeRoots": [
       "node_modules/@types"
-    ],
-    "files": [
-      "./test-entry.ts",
-      "./test.ts"
-    ],
-    "include": [
-      "**/*.spec.ts",
-      "**/*.d.ts"
     ]
-  }
+  },
+  "files": [
+    "./test-entry.ts",
+    "./test.ts"
+  ],
+  "include": [
+    "**/*.spec.ts",
+    "**/*.d.ts"
+  ]
 }

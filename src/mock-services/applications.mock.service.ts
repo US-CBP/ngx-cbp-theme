@@ -141,16 +141,5 @@ export class MockApplicationsService extends  CBPApplicationsService {
         });
         return favorites;
     }
-    private _randomlyGetFavorites(applications: CBPApplication[]): CBPApplication[] {
-        const favorites: CBPApplication[] = [];
-        let random = this._randomIndex(2 * applications.length / 10, 3 * applications.length / 10);
-        favorites.push(applications[random]);
-        random = this._randomIndex(3 * applications.length / 10, 4 * applications.length / 10);
-        favorites.push(applications[random]);
-        random = this._randomIndex(4 * applications.length / 10, 5 * applications.length / 10);
-        favorites.push(applications[random]);
-
-        return favorites;
-    }
 }
 

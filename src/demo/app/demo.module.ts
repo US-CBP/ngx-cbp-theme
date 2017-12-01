@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CBPRootModule} from '../../app/cbp-root/' ;
-import { CBPHeaderModule, CBPAppHeaderModule} from '../../app/header/' ;
-import { CBPAccordionModule} from '../../app/accordion/' ;
+import { CBPRootModule} from '../../app/cbp-root' ;
+import { CBPHeaderModule, CBPAppHeaderModule} from '../../app/header' ;
+import { CBPAccordionModule} from '../../app/accordion' ;
 
 import { DemoAppComponent } from './demo.component';
 import { MockUserService} from '../../mock-services/user.mock.service';
@@ -16,7 +16,7 @@ import {DemoAppHeaderModule} from './demo-app-header/demo-app-header.module';
 import {HttpClientModule} from '@angular/common/http';
 import {MockApplicationsService} from '../../mock-services/applications.mock.service';
 import {CBP_USER_SERVICE} from '../../app/user/user';
-import {CBP_APPLICATIONS_SERVICE, CBPApplication} from '../../app/applications/cbp-applications-service';
+import {CBP_APPLICATIONS_SERVICE} from '../../app/applications/cbp-applications-service';
 
 
 

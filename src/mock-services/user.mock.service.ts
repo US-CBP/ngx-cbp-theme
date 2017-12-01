@@ -37,6 +37,9 @@ export class MockUserService implements  CBPUserService {
         console.log('mock logout');
     }
 
+    isLoggedIn(): boolean {
+        return this.loggedIn;
+    }
     private _randomlyGetFavoritAppId(): String[] {
         const favoriteIds: String[] = [];
         let count = 2;

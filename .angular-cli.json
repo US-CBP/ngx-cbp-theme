@@ -5,7 +5,7 @@
   },
   "apps": [{
     "name": "lib",
-    "root": "src/app",
+    "root": "./src/app",
     "main": "test-entry.ts",
     "test": "test.ts",
     "tsconfig": "tsconfig.app.json",
@@ -19,7 +19,7 @@
   },
     {
       "name": "demo",
-      "root": "src/demo",
+      "root": "./src/demo",
       "main": "index.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
@@ -27,7 +27,7 @@
       "prefix": "demo",
       "outDir": "dist-demo",
       "index": "index.html",
-      "polyfills": "../polyfills.ts",
+      "polyfills": "polyfills.ts",
       "styles": [
         "demo.scss"
       ],

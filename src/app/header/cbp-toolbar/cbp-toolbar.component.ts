@@ -1,11 +1,11 @@
 import {
-    Component, EventEmitter, HostBinding, HostListener, Input, OnDestroy, OnInit, Output, QueryList, ViewChildren,
+    Component, EventEmitter, HostBinding, HostListener, Input, OnDestroy, OnInit, Output,
     ViewEncapsulation
 } from '@angular/core';
 import {CBPScrollShrinkAnimator} from './cbp-scrollshrink';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {Subscription} from 'rxjs/Subscription';
-import {fadeInContent, fadeInItems} from '@angular/material';
+import {fadeInContent} from '@angular/material';
 
 @Component({
     moduleId: module.id,
@@ -36,7 +36,7 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
     @Output() hideToolbarItem: EventEmitter<any> = new EventEmitter();
 
     private _isToolbarExpanded = false;
-    set isToolbarExpanded(expanded: boolean){
+    set isToolbarExpanded(expanded: boolean) {
         this._isToolbarExpanded = expanded;
         if (expanded) {
             this.toolbarExpanded.emit(null);
@@ -44,7 +44,7 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
             this.toolbarCollapsed.emit(null)
         }
     };
-    get isToolbarExpanded(): boolean{ return this._isToolbarExpanded};
+    get isToolbarExpanded(): boolean { return this._isToolbarExpanded};
 
     private _showToolbarItems = false;
     get showToolbarItems(): boolean { return this._showToolbarItems};

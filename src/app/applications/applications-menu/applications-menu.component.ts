@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Inject, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, Inject, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {MatMenuTrigger} from '@angular/material';

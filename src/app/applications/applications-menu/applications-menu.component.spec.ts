@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CBPApplicationsMenuComponent } from './applications-menu.component';
-import {MatIconModule, MatMenuModule} from '@angular/material';
+import {MatFormFieldModule, MatIconModule, MatMenuModule} from '@angular/material';
 import {CBPProgressModule} from '../../progress/progress.module';
 import {CBPPipesModule} from '../../pipes/pipes.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -19,7 +19,8 @@ describe('CBPApplicationsMenuComponent', () => {
   beforeEach(async(() => {
     // const  spiedAppService = jasmine.createSpy('mockAppService' , MockAppService);
     TestBed.configureTestingModule({
-      imports: [MatMenuModule, MatIconModule, CBPProgressModule, CBPPipesModule, FlexLayoutModule, FormsModule, ReactiveFormsModule],
+      imports: [MatMenuModule, MatIconModule, CBPProgressModule, CBPPipesModule, FlexLayoutModule, FormsModule, ReactiveFormsModule,
+          MatFormFieldModule],
       declarations: [ CBPApplicationsMenuComponent , CBPApplicationsSearchComponent],
       providers: [
           {provide: CBP_APPLICATIONS_SERVICE, useClass: MockApplicationsService},
