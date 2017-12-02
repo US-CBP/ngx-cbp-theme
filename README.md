@@ -7,7 +7,7 @@
 [![devDependencies Status](https://david-dm.org/us-cbp/ngx-cbp-theme/dev-status.svg)](https://david-dm.org/us-cbp/ngx-cbp-theme?type=dev)
 
 
-Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp-theme) for Angular 4.x applications. 
+Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp-theme) for Angular 5.x applications. 
 
 
 ___
