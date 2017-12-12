@@ -21,26 +21,22 @@ export abstract class CBPUserService {
     /**
      * User may not loaded or since user may not be "logged in".
      * If not logged in it internally calls login()
-     * @returns {Subject<CBPUser>}
+     * @returns Subject<CBPUser>
      */
     abstract getUser(): Subject<CBPUser>;
 
 
     /**
      * Must be called to perform login when the user is not logged in.
-     * @returns {Subject<CBPUser>}
+     * @returns Subject<CBPUser>
      */
     abstract login(): Subject<CBPUser>;
 
     /**
      * Provide implementation for logout.
-     * @returns {CBPUser}
+     * @returns CBPUser
      */
     abstract logout(): void;
 }
 
-/**
- * Injectable token that mus be provided by library users.
- * @type {InjectionToken<CBPUserService>}
- */
 export const CBP_USER_SERVICE = new InjectionToken<CBPUserService>('cbp-user-service');

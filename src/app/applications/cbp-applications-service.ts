@@ -31,33 +31,33 @@ export abstract class CBPApplicationsService {
 
     /**
      * For any data fetching and initialization before other API can be called.
-     * @returns {Observable<CBPApplicationsData>}
+     * @returns Observable<CBPApplicationsData>
      */
     abstract getApplicationsData(): Observable<CBPApplicationsData>;
 
     /**
      * To refresh data.
-     * @returns {Observable<void>}
+     * @returns Observable<void>
      */
     abstract refresh(): Observable<boolean>;
 
     /**
      * To refresh data.
-     * @returns {CBPApplication[]}
+     * @returns CBPApplication[]
      */
     abstract search(token: string): CBPApplication[];
 
 
     /**
      * Removes recent.
-     * @param {CBPApplication} recentApplication
-     * @returns {Observable<boolean>}
+     * @param CBPApplication recentApplication
+     * @returns Observable<boolean>
      */
     abstract removeRecentApplication(recentApplication: CBPApplication): Observable<boolean>;
 
     /**
      * Provides consumers to subscribe to current application so that they can do various things e.g. setting version etc.
-     * @returns {Observable<CBPApplication>}
+     * @returns Observable<CBPApplication>
      */
     public getCurrentApp(): Observable<CBPApplication> {
         return this.currentApp;
