@@ -46,14 +46,25 @@ ___
 
 Note: For Windows users we recommend git-bash shell. Also check the node engine version.
 
-Use angular-cli version 1.4.5 
-  
+Use @angular/cli global install version matching the version inside [package.json](https://github.com/US-CBP/ngx-cbp-theme/edit/master/package.json)
+
+ 
 * Install [angular-cli](https://cli.angular.io/) globally making sure we use same version as we have in `@angular/cli` inside package.json.
+
+### Quick Start
+
+* For Quick Start up you could just clone [my-app](https://github.com/yogeshgadge/my-app) and `npm install` however we recommend you to understand what is happening in here and follow the following steps.
+
+### Start From Scratch
+
 * For new apps follow [angular-cli](https://cli.angular.io/) and create your application with styles = SCSS. Minimal e.g.
   ```bash
-  ng new my-app --style scss
+  ng new my-app --style scss --skip-install
   ``` 
 * Ensure `polyfills.ts` is correct by following instructions in your `src/polyfills.ts`  to enable all `IE11` and `web-animations-js` polyfills. 
+
+* Ensure that you have exact version matches as per [package.json](https://github.com/US-CBP/ngx-cbp-theme/edit/master/package.json). This is because angular-cli has more relaxed versioning scheme which promotes early adoption which can be problematic with Material/RxJS/angular-flex combination.   
+
 * Ensure that it builds and runs correctly i.e. `ng start` runs fine. 
 * Stop any of running processes/scripts against your project and then run:
 
