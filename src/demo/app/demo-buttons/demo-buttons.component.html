@@ -16,11 +16,11 @@
 
 <h3>Toggle Switches</h3>
 <div>
-    <cbp-toggle-switch label="Access" [(ngModel)]="toggle.one" (changed)="toggle.one = $event"></cbp-toggle-switch>
-    <span style="padding: 10px;">value = {{toggle.one}}</span>
+    <cbp-toggle-switch label="Access" [initialValue]="toggle.one" (changed)="toggle.one = $event"></cbp-toggle-switch>
+    <span style="padding: 10px;">value = {{ toggle.one }}</span>
 </div>
 <br>
 <div>
-    <cbp-toggle-switch label="Alert" onLabel="YES" offLabel="NO" onValue="Y" offValue="N" [(ngModel)]="toggle.two" (changed)="toggle.two = $event"></cbp-toggle-switch>
-    <span style="padding: 10px;">value = {{toggle.two}}</span>
+    <cbp-toggle-switch label="Alert" onLabel="YES" offLabel="NO" onValue="Y" offValue="N" [initialValue]="toggle.two" (changed)="toggle.two = $event"></cbp-toggle-switch>
+    <span style="padding: 10px;">value = {{ toggle.two }}</span>
 </div>

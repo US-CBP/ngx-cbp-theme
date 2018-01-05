@@ -1,4 +1,4 @@
-import {Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 let toggleSwitchCounter = 1;
 
@@ -10,14 +10,12 @@ let toggleSwitchCounter = 1;
 })
 export class CBPToggleSwitchComponent implements OnInit {
 
-  // @HostBinding('attr.data-on') onLabel = 'ON';
-
   @Input() onLabel = 'ON';
   @Input() offLabel = 'OFF';
   @Input() onValue = true;
   @Input() offValue = false;
   @Input() label: string = null;
-  @Input() ngModel: any;
+  @Input() initialValue: any;
   @Input() required: boolean;
   @Output() changed = new EventEmitter<boolean>();
 

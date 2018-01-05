@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CBPToggleSwitchComponent } from './cbp-toggle-switch.component';
+import {CBPButtonsModule} from '../buttons.module';
 
 describe('CBPToggleSwitchComponent', () => {
   let component: CBPToggleSwitchComponent;
@@ -8,7 +9,7 @@ describe('CBPToggleSwitchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CBPToggleSwitchComponent ]
+      imports: [CBPButtonsModule]
     })
     .compileComponents();
   }));
