@@ -17,17 +17,18 @@ export class CBPToggleSwitchComponent implements OnInit {
   @Input() label: string = null;
   @Input() initialValue: any;
   @Input() required: boolean;
+  @Input() disabled: boolean;
   @Output() changed = new EventEmitter<boolean>();
 
+  isOn: Boolean;
 
   toggleSwitchId = `cbp-toggle-sw-${toggleSwitchCounter}`;
 
   constructor() {
       toggleSwitchCounter++;
-
   }
-
   ngOnInit() {
+      this.isOn = this.initialValue === this.onValue;
   }
 
   valueChange($event: any) {

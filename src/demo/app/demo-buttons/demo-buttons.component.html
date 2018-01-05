@@ -24,3 +24,18 @@
     <cbp-toggle-switch label="Alert" onLabel="YES" offLabel="NO" onValue="Y" offValue="N" [initialValue]="toggle.two" (changed)="toggle.two = $event"></cbp-toggle-switch>
     <span style="padding: 10px;">value = {{ toggle.two }}</span>
 </div>
+<br>
+<div>
+    <cbp-toggle-switch label="Undefined" onLabel="YES" offLabel="NO" onValue="Y" offValue="N" [initialValue]="toggle.something" (changed)="toggle.something = $event"></cbp-toggle-switch>
+    <span style="padding: 10px;">value = {{ toggle.something }}</span>
+</div>
+<br>
+<div>
+    <cbp-toggle-switch label="Disabled" disabled="true" onLabel="YES" offLabel="NO" onValue="Y" offValue="N" [initialValue]="toggle.disabled" (changed)="toggle.disabled = $event"></cbp-toggle-switch>
+    <span style="padding: 10px;">value = {{ toggle.disabled }}</span>
+</div>
+<br>
+<div>
+    <cbp-toggle-switch label="Disabled" disabled="true" onLabel="YES" offLabel="NO" [initialValue]="false"></cbp-toggle-switch>
+    <span style="padding: 10px;">value = false</span>
+</div>
