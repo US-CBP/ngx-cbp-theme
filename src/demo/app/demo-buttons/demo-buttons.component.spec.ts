@@ -3,11 +3,12 @@ import { TestBed, async } from '@angular/core/testing';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserModule} from '@angular/platform-browser';
 import {DemoButtonsComponent} from './demo-buttons.component';
+import {CBPButtonsModule} from '../../../app/buttons/buttons.module';
 
 describe('DemoButtonsComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [BrowserModule, NoopAnimationsModule],
+            imports: [BrowserModule, NoopAnimationsModule, CBPButtonsModule],
             declarations: [
                 DemoButtonsComponent]
         }).compileComponents();
