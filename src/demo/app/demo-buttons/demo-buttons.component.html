@@ -13,3 +13,14 @@
 <button mat-raised-button color="warn" disabled>Danger</button>
 <button mat-button disabled>Default</button>
 <a href mat-button mat-button-link disabled>SomeLink</a>
+
+<h3>Toggle Switches</h3>
+<div>
+    <cbp-toggle-switch label="Access" [(ngModel)]="toggle.one" (changed)="toggle.one = $event"></cbp-toggle-switch>
+    <span style="padding: 10px;">value = {{toggle.one}}</span>
+</div>
+<br>
+<div>
+    <cbp-toggle-switch label="Alert" onLabel="YES" offLabel="NO" onValue="Y" offValue="N" [(ngModel)]="toggle.two" (changed)="toggle.two = $event"></cbp-toggle-switch>
+    <span style="padding: 10px;">value = {{toggle.two}}</span>
+</div>
