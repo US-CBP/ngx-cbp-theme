@@ -1,0 +1,4 @@
+<span class="switch">
+  <input type="checkbox" [(ngModel)]="isOn" (ngModelChange)="valueChange($event)" [attr.required]="required" [attr.id]="toggleSwitchId" [attr.disabled]="disabled">
+  <label [attr.for]="toggleSwitchId"  [attr.data-on]="onLabel" [attr.data-off]="offLabel">{{ label }}</label>
+</span>
