@@ -14,3 +14,18 @@
   }
 }
 
+.cbp-app-search {
+  padding: 0px;
+  .mat-form-field {
+    display: block;
+  }
+  .mat-form-field-placeholder,
+  .cbp-applications-search-input {
+    margin-left: 16px;
+  }
+}
+.cbp-app-search-results.mat-menu-item {
+  cursor: inherit;
+  height: 32px;
+  line-height: 32px;
+}
