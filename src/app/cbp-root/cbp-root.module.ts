@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CBPRootComponent } from './cbp-root.component';
 import {
-    MatButtonModule, MatFormFieldModule, MatIconModule, MatIconRegistry,
+    MatButtonModule, MatDividerModule, MatFormFieldModule, MatIconModule, MatIconRegistry,
     MatInputModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +20,7 @@ import {FormsModule} from '@angular/forms';
   declarations: [CBPRootComponent],
   exports: [
       MatIconModule, BrowserAnimationsModule, FlexLayoutModule, MatButtonModule, MatInputModule, MatFormFieldModule, FormsModule,
-      CBPRootComponent, CBPProgressModule, CBPHeaderModule, CBPPipesModule
+      MatDividerModule, CBPRootComponent, CBPProgressModule, CBPHeaderModule, CBPPipesModule
   ]
 })
 export class CBPRootModule {

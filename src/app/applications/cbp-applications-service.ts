@@ -63,6 +63,10 @@ export abstract class CBPApplicationsService {
         return this.currentApp;
     }
 
+    public getApplicationsDirectoryUrl(): string {
+        return window.location.origin;
+    }
+
 }
 
 export const CBP_APPLICATIONS_SERVICE = new InjectionToken<CBPApplicationsService>('cbp-applications-service');
