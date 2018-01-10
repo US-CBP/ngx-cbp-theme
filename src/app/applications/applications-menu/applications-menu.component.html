@@ -24,7 +24,7 @@
       </a>
     </div>
 
-    <div *ngIf="applicationsData.recents?.length > 0" class="mat-divider"></div>
+    <mat-divider *ngIf="applicationsData.recents?.length > 0"></mat-divider>
 
     <div class="cbp-menu-item-category" *ngIf="applicationsData.favorites?.length > 0">Favorite Apps</div>
     <div class="mat-menu-item" *ngFor="let app of applicationsData.favorites">
@@ -34,12 +34,13 @@
     </div>
 
 
-    <div class="mat-divider" *ngIf="applicationsData.favorites?.length > 0"></div>
+    <mat-divider class="mat-divider" *ngIf="applicationsData.favorites?.length > 0"></mat-divider>
 
     <cbp-applications-search></cbp-applications-search>
 
-
-
+    <a class="mat-menu-item cbp-applications-see-all" href="{{ getApplicationsDirectoryUrl() }}">
+      <div>See All Available Apps...</div>
+    </a>
     <a class="mat-menu-item cbp-applications-refresh" (click)="reloadApplicationsData($event)">
       <div>Refresh</div>
     </a>

@@ -100,6 +100,9 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
         $event.stopPropagation();
     }
 
+    getApplicationsDirectoryUrl(): string {
+        return this.applicationsService.getApplicationsDirectoryUrl();
+    }
     toggleApplicationsMenu($event: Event) {
         if (this.menuDataLoaded && this._isToolbarExpanded) {
             this.isApplicationsExpanded = ! this.isApplicationsExpanded;
