@@ -12,5 +12,10 @@ export class DemoButtonsComponent {
         one: true,
         two: false,
         disabled: 'Y',
+        something: ''
+    };
+
+    constructor() {
+        delete this.toggle.something;
     }
 }

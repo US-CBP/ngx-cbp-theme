@@ -23,7 +23,7 @@ jobs:
   include:
     - stage: build & linting & test
       script: npm run ready
-      before_deploy: npm run build:demo
+      before_deploy: npm run build:demo:prod
       deploy:
         provider: pages
         skip_cleanup: true

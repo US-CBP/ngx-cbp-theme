@@ -10,7 +10,6 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "outDir": "../../build-demo",
-    "rootDir": ".",
     "lib": [
       "es2017",
       "dom"
