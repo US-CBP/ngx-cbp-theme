@@ -19,6 +19,20 @@ export class CBPUser {
 export abstract class CBPUserService {
 
     /**
+     * Set to true or false
+     * @type {boolean}
+     */
+
+    private _loginInProgress = false;
+    get loginInProgress(): boolean {
+        return this._loginInProgress;
+    };
+
+    set loginInProgress(loginInProgress: boolean ) {
+        this._loginInProgress = loginInProgress;
+    };
+
+    /**
      * User may not loaded or since user may not be "logged in".
      * If not logged in it internally calls login()
      * @returns Subject<CBPUser>

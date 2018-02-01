@@ -12,50 +12,51 @@ export class CBPUserMenuComponent implements OnInit, OnDestroy {
   private _isToolbarExpanded = false;
   userMenuExpanded =  false;
   user?: CBPUser;
-  loginProgress = false;
+
   isLoggedIn = false;
   userDataLoaded = false;
   error: any;
+
   private userServiceSubscription: Subscription;
 
 
   constructor(@Inject(CBP_USER_SERVICE) private userService: CBPUserService) { }
 
-  ngOnInit() {}
+  get loginProgress(): boolean {
+    return this.userService.loginInProgress;
+  }
+  set loginProgress(progress: boolean) {
+        this.userService.loginInProgress = progress;
+  }
+
+  ngOnInit() {
+      this.userServiceSubscription = this.userService.getUser().subscribe({
+          next: (data: CBPUser) => {
+              if (data) {
+                  this.user = data;
+                  this.userDataLoaded = true;
+                  this.loginProgress = false;
+                  this.isLoggedIn = true;
+              } else {
+                  this.loginProgress = false;
+                  this.isLoggedIn = false;
+                  this.user = data;
+                  this.userDataLoaded = false;
+              }
+          },
+          error: (err: any) => {
+              this.loginProgress = false;
+              this.isLoggedIn = false;
+              this.error = err;
+              this.userDataLoaded = false;
+          }
+      });
+  }
 
   login() {
       this.loginProgress = true;
       this.isLoggedIn = false;
-      if (this.userServiceSubscription) {
-          this.userService.login();
-      } else {
-          this.userServiceSubscription = this.userService.login().subscribe({
-              next: (data: CBPUser) => {
-                  if (data) {
-                      this.user = data;
-                      this.userDataLoaded = true;
-                      this.loginProgress = false;
-                      this.isLoggedIn = true;
-                  } else {
-                      this.loginProgress = false;
-                      this.isLoggedIn = false;
-                      this.user = data;
-                      this.userDataLoaded = false;
-                  }
-              },
-              error: (err: any) => {
-                  console.log('errr' + err);
-                  this.loginProgress = false;
-                  this.isLoggedIn = false;
-                  this.error = err;
-                  this.userDataLoaded = false;
-              },
-              complete: () => {
-                  console.log('completed');
-              }
-          });
-      }
-
+      this.userService.login();
   }
   ngOnDestroy() {
       if (this.userServiceSubscription) {

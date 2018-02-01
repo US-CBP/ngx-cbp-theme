@@ -49,7 +49,9 @@ import {CBP_APPLICATIONS_SERVICE} from '../../app/applications/cbp-applications-
   bootstrap: [DemoAppComponent]
 })
 export class DemoAppModule {
-    constructor(applicationsService: MockApplicationsService) {
+    constructor(applicationsService: MockApplicationsService, userService: MockUserService) {
+        userService.loginInProgress = true;
+        userService.login(3000);
         applicationsService.getCurrentApp().subscribe(currentApp => {
             currentApp.version =  'v0.0.0';
         });

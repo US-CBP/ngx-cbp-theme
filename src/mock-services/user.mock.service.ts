@@ -5,17 +5,19 @@ import {Subject} from 'rxjs/Subject';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
 
 @Injectable()
-export class MockUserService implements  CBPUserService {
+export class MockUserService extends  CBPUserService {
 
     private subject: ReplaySubject<CBPUser> = new ReplaySubject<CBPUser>();
     private loggedIn = false;
 
-    constructor() {};
+    constructor() {
+        super();
+    };
 
     getUser(): Subject<CBPUser> {
         return this.subject;
     }
-    login(): Subject<CBPUser> {
+    login(delay = 3000): Subject<CBPUser> {
         setTimeout(() => {
             this.loggedIn = true;
             let user = new CBPUser();
@@ -26,7 +28,7 @@ export class MockUserService implements  CBPUserService {
             };
             this.subject.next(user);
             // this.subject.complete();
-        }, 3000);
+        }, delay);
         return this.subject;
     }
 
