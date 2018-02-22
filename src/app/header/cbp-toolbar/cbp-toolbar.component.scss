@@ -21,6 +21,23 @@ cbp-toolbar {
     z-index: $zindex-appbar + 100;
     width: 100%;
     top: $navbar-height + $navbar-appheader-height;
+
+    .mat-menu-item {
+      cursor: inherit;
+      cursor: pointer;
+      @extend .cbp-navbar-item;
+    }
+
+    .mat-menu-item .cbp-applications-link {
+      text-decoration: none;
+      color: $gray-dark;
+      overflow: inherit;
+      text-overflow: inherit;
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
   }
 }
 

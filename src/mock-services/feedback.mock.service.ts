@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {CBPFeedbackService} from '../app/header/feedback.service';
+import {CBPFeedbackService} from '../app/feedback/feedback.service';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 
