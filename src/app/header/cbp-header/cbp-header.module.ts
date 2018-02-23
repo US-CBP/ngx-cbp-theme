@@ -7,7 +7,6 @@ import {CBPUserModule} from '../../user/user.module';
 import {CBPApplicationsModule} from '../../applications/applications.module';
 import {CBPToolbarModule} from '../cbp-toolbar/cbp-toolbar.module';
 import {CBPFeedbackModule} from '../../feedback/feedback.module';
-import {CBPHeaderBasicComponent} from './cbp-header-basic.component';
 import { CBPBrandComponent } from './cbp-brand/cbp-brand.component';
 
 
@@ -25,7 +24,7 @@ import { CBPBrandComponent } from './cbp-brand/cbp-brand.component';
       CBPToolbarModule,
       CBPFeedbackModule
   ],
-  declarations: [CBPHeaderComponent, CBPHeaderBasicComponent, CBPBrandComponent],
+  declarations: [CBPHeaderComponent, CBPBrandComponent],
   exports: [
       CBPHeaderComponent,
       MatButtonModule,
@@ -33,7 +32,6 @@ import { CBPBrandComponent } from './cbp-brand/cbp-brand.component';
       CBPApplicationsModule,
       CBPToolbarModule,
       CBPFeedbackModule,
-      CBPHeaderBasicComponent,
       CBPBrandComponent]
 })
 export class CBPHeaderModule { }

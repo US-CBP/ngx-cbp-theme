@@ -1,6 +1,5 @@
-import {Component, Inject, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
-import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {MatMenuTrigger} from '@angular/material';
 import {
     CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
@@ -9,9 +8,9 @@ import {
 import {CBPToolbarState, CBPToolbarStateChange} from '../../header/cbp-toolbar/cbp-toolbar-expanded';
 
 @Component({
-    selector: 'cbp-applications-menu',
-    templateUrl: './applications-menu.component.html',
-    styleUrls: ['./applications-menu.component.scss'],
+    selector: 'cbp-apps-menu',
+    templateUrl: './apps-menu.component.html',
+    styleUrls: ['./apps-menu.component.scss'],
     entryComponents: []
 })
 export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
@@ -32,7 +31,6 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     public error: any;
 
     constructor(@Inject(CBP_APPLICATIONS_SERVICE) public applicationsService: CBPApplicationsService,
-                private media: ObservableMedia,
                 private toolbarStateChange: CBPToolbarStateChange) {
     }
 

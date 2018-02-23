@@ -1,5 +1,5 @@
 import {
-    Component, EventEmitter, HostBinding, HostListener, Input, OnDestroy, OnInit, Output, QueryList, ViewChildren,
+    Component, EventEmitter, HostBinding, HostListener, Input, OnDestroy, OnInit, Output,
     ViewEncapsulation
 } from '@angular/core';
 import {CBPScrollShrinkAnimator} from './cbp-scrollshrink';
@@ -17,8 +17,7 @@ import {CBPToolbarState, CBPToolbarStateChange} from './cbp-toolbar-expanded';
     animations: [
         CBPScrollShrinkAnimator.createScrollShrinkTrigger('cbpToolbarScrollState', '*', '-50px'),
         fadeInContent
-    ],
-    providers: [CBPToolbarStateChange]
+    ]
 })
 export class CBPToolbarComponent implements OnInit, OnDestroy {
 
@@ -32,21 +31,21 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
     @Input() position: number;
     @HostBinding('attr.role') role = 'toolbar';
 
-    @Output() toolbarExpanded: EventEmitter<any> = new EventEmitter();
-    @Output() toolbarCollapsed: EventEmitter<any> = new EventEmitter();
     @Output() hideToolbarItem: EventEmitter<any> = new EventEmitter();
 
     private toolbarState = new CBPToolbarState();
 
     set isToolbarExpanded(expanded: boolean) {
         this.toolbarState.toolbarIsExpanded = expanded;
-        if (expanded) {
-            this.toolbarExpanded.emit(null);
-        } else {
-            this.toolbarCollapsed.emit(null)
-        }
-    };
-    get isToolbarExpanded(): boolean { return this.toolbarState.toolbarIsExpanded};
+        this.toolbarStateChange.next(this.toolbarState);
+    }
+    get isToolbarExpanded(): boolean { return this.toolbarState.toolbarIsExpanded}
+
+    set hasToolbarMenu(has: boolean) {
+        this.toolbarState.hasToolbarMenu = has;
+        this.toolbarStateChange.next(this.toolbarState);
+    }
+    get hasToolbarMenu(): boolean { return this.toolbarState.hasToolbarMenu}
 
     constructor(private media: ObservableMedia, private toolbarStateChange: CBPToolbarStateChange) {}
 
@@ -57,9 +56,9 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
             (change: MediaChange) => {
                 if ( change.mqAlias !== 'xs') {
                     this.isToolbarExpanded = false;
-                    this.toolbarState.hasToolbarMenu = false;
+                    this.hasToolbarMenu = false;
                 } else {
-                    this.toolbarState.hasToolbarMenu = true;
+                    this.hasToolbarMenu = true;
                 }
                 this.toolbarStateChange.next(this.toolbarState);
             }

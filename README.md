@@ -168,7 +168,18 @@ Your `app.component.html` should be changed to following minimal structure:-
 </cbp-root>
 ```  
 
+### Customizing <cbp-header></cbp-header>
 
+Customizable cbp-header:-  e.g. shows cbpAppsMenuExclude is excluded, cbp-feedback-link has custom action, cbp-user-menu has additional menu item Preference.
+
+```angular2html
+     <cbp-header [cbpAppsMenuExclude]="true">
+         <cbp-feedback-link (click)="myFeedbackAction()"></cbp-feedback-link>
+         <cbp-user-menu>
+             <div class="mat-menu-item" (click)="myPreferences()" cbp-user-menu-item>Preferences</div>
+         </cbp-user-menu>
+     </cbp-header>
+```
 
 ## Contributing
 We welcome contributions, please see our [Contribution Policy](https://github.com/US-CBP/open-source-policy/blob/master/CONTRIBUTING.md)
