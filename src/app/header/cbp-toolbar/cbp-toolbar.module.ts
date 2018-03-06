@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CBPToolbarComponent } from './cbp-toolbar.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {CBPToolbarStateChange} from './cbp-toolbar-expanded';
+import {CBPToolbarStateChange} from './cbp-toolbar-state.service';
 
 @NgModule({
   imports: [

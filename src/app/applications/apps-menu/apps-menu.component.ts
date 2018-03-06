@@ -5,7 +5,7 @@ import {
     CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
     CBPApplicationsService
 } from '../cbp-applications-service';
-import {CBPToolbarState, CBPToolbarStateChange} from '../../header/cbp-toolbar/cbp-toolbar-expanded';
+import {CBPToolbarState, CBPToolbarStateChange} from '../../header/cbp-toolbar/cbp-toolbar-state.service';
 
 @Component({
     selector: 'cbp-apps-menu',

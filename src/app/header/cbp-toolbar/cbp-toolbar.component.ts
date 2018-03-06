@@ -6,7 +6,7 @@ import {CBPScrollShrinkAnimator} from './cbp-scrollshrink';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {Subscription} from 'rxjs/Subscription';
 import {fadeInContent} from '@angular/material';
-import {CBPToolbarState, CBPToolbarStateChange} from './cbp-toolbar-expanded';
+import {CBPToolbarState, CBPToolbarStateChange} from './cbp-toolbar-state.service';
 
 @Component({
     moduleId: module.id,
@@ -22,7 +22,7 @@ import {CBPToolbarState, CBPToolbarStateChange} from './cbp-toolbar-expanded';
 export class CBPToolbarComponent implements OnInit, OnDestroy {
 
 
-    @Output() cbpToolbarScrollState: String;
+    @Output() cbpToolbarScrollState: 'up' | 'initial';
     private lastScrollY: number;
 
     private mediaSubscription: Subscription;
@@ -73,6 +73,7 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
     scrolled() {
         this.cbpToolbarScrollState = this.lastScrollY > window.pageYOffset ? 'initial' : 'up';
         this.lastScrollY = window.pageYOffset;
+        this.toolbarState.scrollState = this.cbpToolbarScrollState;
         this.isToolbarExpanded = false;
     }
 }

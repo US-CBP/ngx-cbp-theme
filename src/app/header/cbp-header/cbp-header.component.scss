@@ -36,6 +36,9 @@ cbp-header {
   .icon-bar {
     background-color: $navbar-inverse-toggle-icon-bar-bg;
   }
+  .mat-toolbar h1 {
+    font-weight: inherit;
+  }
 }
 
 .cbp-brand-nav {

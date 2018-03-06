@@ -63,3 +63,7 @@ h6, .h6 { font-size: $font-size-h6; }
 @mixin text-emphasis-variant($a, $b) {}
 // then import cbp-theme overrides to override
 @import '~cbp-theme/dist/scss/custom/_type';
+
+.mat-toolbar h2 {
+  @extend .h2
+}

@@ -5,7 +5,7 @@ import {MatMenuTrigger} from '@angular/material';
 import {
     CBPToolbarState,
     CBPToolbarStateChange
-} from '../../header/cbp-toolbar/cbp-toolbar-expanded';
+} from '../../header/cbp-toolbar/cbp-toolbar-state.service';
 
 @Component({
     selector: 'cbp-user-menu, [cbp-user-menu], .cbp-user-menu',

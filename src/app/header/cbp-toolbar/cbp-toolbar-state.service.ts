@@ -13,4 +13,5 @@ export class CBPToolbarStateChange extends ReplaySubject<CBPToolbarState> {
 export class CBPToolbarState {
     hasToolbarMenu: boolean;
     toolbarIsExpanded: boolean;
+    scrollState: 'up' | 'initial'
 }
