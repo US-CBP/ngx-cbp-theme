@@ -1,7 +1,10 @@
 import {
-    Component, Input,
+    Component, ContentChild, Input,
     ViewEncapsulation
 } from '@angular/core';
+import {CBPUserMenuComponent} from '../../user/user-menu/user-menu.component';
+import {CBPFeedbackLinkComponent} from '../../feedback/feedback-link.component';
+import {CBPApplicationsMenuComponent} from '../../applications/apps-menu/apps-menu.component';
 
 @Component({
     selector: 'cbp-header',
@@ -17,6 +20,13 @@ export class CBPHeaderComponent {
     @Input() cbpFeedbackLinkExclude: boolean;
     @Input() cbpUserMenuExclude: boolean;
 
+    @ContentChild(CBPApplicationsMenuComponent) cbpAppsMenu: CBPApplicationsMenuComponent;
+    @ContentChild(CBPFeedbackLinkComponent) cbpFeedbackLink: CBPFeedbackLinkComponent;
+    @ContentChild(CBPUserMenuComponent) cbpUserMenu: CBPUserMenuComponent;
+
     constructor() {};
 
+    isProvided(comp: any): boolean {
+      return comp ? true : false;
+    }
 }
