@@ -1,39 +1,23 @@
-<cbp-toolbar position="0" class="cbp-header" #cbpToolbar>
-  <div class="cbp-brand-nav cbp-toolbar-title" fxFlexAlign="stretch" fxLayout="row">
-    <div fxFlexAlign="center" fxLayout="column" fxLayoutAlign="start start">
-      <h1 class="cbp-brand"  fxShow="false" fxShow.gt-sm>U.S. Customs & Border Protection</h1>
-      <div class="cbp-brand-short" fxShow="false" fxShow.lt-md>U.S. CBP</div>
-      <div class="dhs-brand"  fxShow="false" fxShow.gt-sm>U.S. Department of Homeland Security</div>
-    </div>
-  </div>
-  <div class="cbp-toolbar-main-nav">
-    <ng-template [ngTemplateOutlet]="cbpApplicationsDropdown"></ng-template>
-  </div>
+<cbp-toolbar position="0" #cbpToolbar>
+
+  <cbp-brand class="cbp-brand-nav cbp-toolbar-title" fxFlexAlign="stretch" fxLayout="row"></cbp-brand>
+
+
+  <div class="cbp-toolbar-main-nav" *ngIf="!cbpAppsMenuExclude && !cbpAppsMenu"><cbp-apps-menu></cbp-apps-menu></div>
+  <!-- potential downstream customization of apps-menu -->
+  <div class="cbp-toolbar-main-nav" *ngIf="!cbpAppsMenuExclude && cbpAppsMenu"><ng-content select="cbp-applications-menu"></ng-content></div>
 
   <div class="cbp-toolbar-right-nav"  fxFlexAlign.gt-xs="end"  fxLayout.gt-xs="row" fxLayout.lt-sm="column">
-    <div fxFlex="auto"><ng-template [ngTemplateOutlet]="feedbackNavItem"></ng-template></div>
-    <div fxFlex="auto"><ng-template [ngTemplateOutlet]="userNavItem"></ng-template></div>
+
+    <div fxFlex="auto" *ngIf="!cbpFeedbackLinkExclude && !cbpFeedbackLink"><cbp-feedback-link></cbp-feedback-link></div>
+    <!-- potential downstream customization of feedback -->
+    <div fxFlex="auto" *ngIf="!cbpFeedbackLinkExclude && cbpFeedbackLink"><ng-content select="cbp-feedback-link"></ng-content></div>
+
+    <div fxFlex="auto" *ngIf="!cbpUserMenuExclude && !cbpUserMenu"><cbp-user-menu></cbp-user-menu></div>
+    <!-- downstream customization of user-menu e.g. additional cbp-user-menu-item -->
+    <div fxFlex="auto" *ngIf="!cbpUserMenuExclude && cbpUserMenu"><ng-content select="cbp-user-menu"></ng-content></div>
+
   </div>
-
-
-
 </cbp-toolbar>
 
-<ng-template #cbpApplicationsDropdown>
-  <cbp-applications-menu [toolbarExpanded]="cbpToolbar.isToolbarExpanded"></cbp-applications-menu>
-</ng-template>
-
-<!-- templates -->
-<ng-template #feedbackNavItem>
-  <div class="cbp-feedback-navitem" fxLayout="row" fxLayoutAlign="start center"  (click)="handleFeedback()">
-    <span><i class="fa fa-comment"></i></span>
-    <span  fxShow="false" fxShow.gt-sm fxShow.lt-sm style="padding-left: 3px;">Feedback</span>
-  </div>
-</ng-template>
-
-<ng-template #userNavItem>
-  <cbp-user-menu [toolbarExpanded]="cbpToolbar.isToolbarExpanded"></cbp-user-menu>
-</ng-template>
-
-<!-- hack  for mat-divider to work outside of mat-list-->
 <mat-list style="display: none"></mat-list>

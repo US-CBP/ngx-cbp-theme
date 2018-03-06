@@ -26,22 +26,6 @@
   padding: $padding-small-vertical $padding-xs-horizontal;
 }
 
-.mat-menu-item {
-  cursor: inherit;
-  height: 32px;
-  line-height: 32px;
-}
-
-.mat-menu-item .cbp-applications-link {
-    text-decoration: none;
-    color: $gray-dark;
-    overflow: inherit;
-    text-overflow: inherit;
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
-  }
 
 .mat-menu-item .cbp-applications-remove-icon .mat-icon {
     vertical-align: inherit;

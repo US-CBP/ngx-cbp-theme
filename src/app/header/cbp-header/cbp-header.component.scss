@@ -3,8 +3,6 @@
 
 // Can't import _navbar from CBP theme - several items must be refactored and variables defined - need to fix _navbar in cbp-theme
 
-
-
 cbp-header {
   z-index: $zindex-navbar;
   cbp-toolbar .cbp-toolbar-row {
@@ -38,10 +36,13 @@ cbp-header {
   .icon-bar {
     background-color: $navbar-inverse-toggle-icon-bar-bg;
   }
+  .mat-toolbar h1 {
+    font-weight: inherit;
+  }
 }
 
 .cbp-brand-nav {
- // copied from cbp-theme - until this becomes inheritable
+  // copied from cbp-theme - until this becomes inheritable
   font-size: 19px;
   transition: color 200ms ease-in-out;
   height: $navbar-height;
@@ -64,10 +65,4 @@ cbp-header {
 .cbp-applications-navitem, .cbp-user-navitem, .cbp-feedback-navitem, .cbp-toolbar-expansion {
   @extend .cbp-navbar-item;
 }
-
-
-
-
-
-
 

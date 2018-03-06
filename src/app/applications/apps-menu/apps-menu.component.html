@@ -1,9 +1,7 @@
-<div class="cbp-applications-navitem" [matMenuTriggerFor]="cbpMenu" #cbpMenuTrigger="matMenuTrigger">
+<div class="cbp-applications-navitem">
   <ng-template [ngTemplateOutlet]="application"></ng-template>
 </div>
-<div class="cbp-applications-navitem" *ngIf="menuDataLoaded && applicationsData.lastRetrieved !== null && !isXS">
 
-</div>
 <div class="applications-expansion-panel inverse" *ngIf="isApplicationsExpanded  && menuDataLoaded">
   <ng-template [ngTemplateOutlet]="applicationsPanel" ></ng-template>
 </div>
@@ -61,3 +59,5 @@
     </div>
   </div>
 </ng-template>
+
+<div [matMenuTriggerFor]="cbpMenu"></div>

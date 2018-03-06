@@ -12,6 +12,10 @@ import {DemoTypographyComponent} from './demo-typograqphy/demo-typography.compon
 
 import {DemoButtonsModule} from './demo-buttons/demo-buttons.module';
 import {DemoAppHeaderModule} from './demo-app-header/demo-app-header.module';
+import {MockUserService} from '../../mock-services/user.mock.service';
+import {MockApplicationsService} from '../../mock-services/applications.mock.service';
+import {CBP_APPLICATIONS_SERVICE} from '../../app/applications/cbp-applications-service';
+import {CBP_USER_SERVICE} from '../../app/user/user';
 
 describe('DemoAppComponent', () => {
   beforeEach(async(() => {
@@ -27,7 +31,13 @@ describe('DemoAppComponent', () => {
         declarations: [
             DemoAppComponent,
             DemoCBPAccordionComponent,
-            DemoTypographyComponent]
+            DemoTypographyComponent],
+        providers: [
+            MockUserService,
+            MockApplicationsService,
+            { provide: CBP_USER_SERVICE,          useExisting: MockUserService },
+            { provide: CBP_APPLICATIONS_SERVICE,  useExisting: MockApplicationsService }
+        ]
     }).compileComponents();
   }));
 

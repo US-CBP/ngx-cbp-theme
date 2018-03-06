@@ -1,29 +1,35 @@
-<div *ngIf="!isLoggedIn && !loginProgress" class="cbp-user-navitem" (click)="login()">
-  <i class="fa fa-sign-in"></i><span>&nbsp;Login</span>
-</div>
-<div *ngIf="!isLoggedIn && loginProgress" class="cbp-user-navitem">
-  <cbp-loading></cbp-loading>
-</div>
-<div *ngIf="isLoggedIn && userDataLoaded && !toolbarExpanded" class="cbp-user-navitem" [matMenuTriggerFor]="userMenu">
-  <mat-icon fontSet="fontawesome" fontIcon="fa-user"></mat-icon>
-  <span fxShow="false" fxShow.gt-sm fxShow.lt-sm>{{ user.firstName }} {{ user.lastName }}</span>
-  <mat-icon fontSet="fontawesome" fontIcon="fa-caret-down"></mat-icon>
+<div class="cbp-user-navitem">
+  <ng-template [ngTemplateOutlet]="userView"></ng-template>
 </div>
 
-<div *ngIf="isLoggedIn && userDataLoaded && toolbarExpanded" class="cbp-user-navitem non-menu" (click)="toggleMenu()">
-  <mat-icon class="cbp-icon-before-text" fontSet="fontawesome" fontIcon="fa-user"></mat-icon>
-  <span fxShow="false" fxShow.gt-sm fxShow.lt-sm>{{ user.firstName }} {{ user.lastName }}</span>
-  <mat-icon fontSet="fontawesome" fontIcon="fa-caret-down"></mat-icon>
-</div>
-
-<div class="cbp-user-navitem expanded" *ngIf="toolbarExpanded && userMenuExpanded">
-  <ng-template [ngTemplateOutlet]="userMenuContents"></ng-template>
-</div>
+<ng-template #userView>
+  <div *ngIf="!isLoggedIn && !loginProgress" (click)="login($event)">
+    <i class="fa fa-sign-in"></i><span fxShow="false" fxShow.gt-sm fxShow.lt-sm>&nbsp;Login</span>
+  </div>
+  <div *ngIf="!isLoggedIn && loginProgress">
+    <cbp-loading></cbp-loading>
+  </div>
+  <div *ngIf="isLoggedIn && userDataLoaded"  (click)="toggleMenu($event)">
+    <mat-icon fontSet="fontawesome" fontIcon="fa-user"></mat-icon>
+    <span fxShow="false" fxShow.gt-sm fxShow.lt-sm>{{ user.firstName }} {{ user.lastName }}</span>
+    <mat-icon fontSet="fontawesome" fontIcon="fa-caret-down"></mat-icon>
+  </div>
+</ng-template>
 
 <mat-menu #userMenu="matMenu" yPosition="above" xPosition="before" [overlapTrigger]="false">
-  <ng-template [ngTemplateOutlet]="userMenuContents"></ng-template>
+  <ng-template [ngTemplateOutlet]="userMenuPanel"></ng-template>
 </mat-menu>
 
-<ng-template #userMenuContents let-fromMenu="fromMenu">
-  <div class="mat-menu-item" (click)="logout()">Logout</div>
+<div class="cbp-user-panel-expanded" *ngIf="toolbarState?.toolbarIsExpanded && userDataLoaded && userMenuExpanded">
+  <ng-template [ngTemplateOutlet]="userMenuPanel"></ng-template>
+</div>
+
+
+
+
+<ng-template #userMenuPanel>
+  <ng-content select="div[cbp-user-menu-item]"></ng-content>
+  <div class="mat-menu-item" (click)="logout()"> <i class="fa fa-sign-out"></i>Logout</div>
 </ng-template>
+
+<div [matMenuTriggerFor]="userMenu"></div>

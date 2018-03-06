@@ -5,6 +5,7 @@ import {MatIconModule, MatMenuModule} from '@angular/material';
 import {CBPProgressModule} from '../../progress/progress.module';
 import {CBP_USER_SERVICE} from '../user';
 import {MockUserService} from '../../../mock-services/user.mock.service';
+import {CBPToolbarStateChange} from '../../header/cbp-toolbar/cbp-toolbar-state.service';
 
 describe('CBPUserMenuComponent', () => {
   let component: CBPUserMenuComponent;
@@ -14,7 +15,10 @@ describe('CBPUserMenuComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ CBPUserMenuComponent ],
       imports: [MatIconModule, MatMenuModule, CBPProgressModule],
-      providers: [{provide: CBP_USER_SERVICE, useClass: MockUserService}]
+      providers: [
+          CBPToolbarStateChange,
+          {provide: CBP_USER_SERVICE, useClass: MockUserService}
+      ]
     })
     .compileComponents();
   }));

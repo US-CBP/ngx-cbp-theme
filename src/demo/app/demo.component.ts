@@ -9,6 +9,13 @@ import {Component} from '@angular/core';
 })
 export class DemoAppComponent {
 
+  myFeedbackAction(): void {
+    console.log('demo::myFeedbackAction implementation');
+  }
+
+  myPreferences(): void {
+      console.log('demo::myPreferences implementation');
+  }
 }
 
 

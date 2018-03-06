@@ -6,6 +6,7 @@ import {CBPScrollShrinkAnimator} from './cbp-scrollshrink';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {Subscription} from 'rxjs/Subscription';
 import {fadeInContent} from '@angular/material';
+import {CBPToolbarState, CBPToolbarStateChange} from './cbp-toolbar-state.service';
 
 @Component({
     moduleId: module.id,
@@ -14,14 +15,14 @@ import {fadeInContent} from '@angular/material';
     styleUrls: ['./cbp-toolbar.component.scss'],
     encapsulation: ViewEncapsulation.None,
     animations: [
-        CBPScrollShrinkAnimator.createScrollShrinkTrigger('cbpToolbarState', '*', '-50px'),
+        CBPScrollShrinkAnimator.createScrollShrinkTrigger('cbpToolbarScrollState', '*', '-50px'),
         fadeInContent
     ]
 })
 export class CBPToolbarComponent implements OnInit, OnDestroy {
 
 
-    @Output() cbpToolbarState: String;
+    @Output() cbpToolbarScrollState: 'up' | 'initial';
     private lastScrollY: number;
 
     private mediaSubscription: Subscription;
@@ -30,51 +31,36 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
     @Input() position: number;
     @HostBinding('attr.role') role = 'toolbar';
 
-    @Output() toolbarExpanded: EventEmitter<any> = new EventEmitter();
-    @Output() toolbarCollapsed: EventEmitter<any> = new EventEmitter();
-    @Output() showToolbarItem: EventEmitter<any> = new EventEmitter();
     @Output() hideToolbarItem: EventEmitter<any> = new EventEmitter();
 
-    private _isToolbarExpanded = false;
+    private toolbarState = new CBPToolbarState();
+
     set isToolbarExpanded(expanded: boolean) {
-        this._isToolbarExpanded = expanded;
-        if (expanded) {
-            this.toolbarExpanded.emit(null);
-        } else {
-            this.toolbarCollapsed.emit(null)
-        }
-    };
-    get isToolbarExpanded(): boolean { return this._isToolbarExpanded};
+        this.toolbarState.toolbarIsExpanded = expanded;
+        this.toolbarStateChange.next(this.toolbarState);
+    }
+    get isToolbarExpanded(): boolean { return this.toolbarState.toolbarIsExpanded}
 
-    private _showToolbarItems = false;
-    get showToolbarItems(): boolean { return this._showToolbarItems};
-    set showToolbarItems(show: boolean) {
-        this._showToolbarItems = show;
-        if (show) {
-            this.showToolbarItem.emit(null);
-        } else {
-            this.hideToolbarItem.emit(null)
-        }
-    };
+    set hasToolbarMenu(has: boolean) {
+        this.toolbarState.hasToolbarMenu = has;
+        this.toolbarStateChange.next(this.toolbarState);
+    }
+    get hasToolbarMenu(): boolean { return this.toolbarState.hasToolbarMenu}
 
-    constructor(private media: ObservableMedia) {}
+    constructor(private media: ObservableMedia, private toolbarStateChange: CBPToolbarStateChange) {}
 
     ngOnInit() {
-        this.cbpToolbarState = 'initial';
+        this.cbpToolbarScrollState = 'initial';
         this.lastScrollY = 0;
         this.mediaSubscription = this.media.subscribe(
             (change: MediaChange) => {
                 if ( change.mqAlias !== 'xs') {
                     this.isToolbarExpanded = false;
-                    this.showToolbarItems = false;
+                    this.hasToolbarMenu = false;
                 } else {
-                    if (this.isToolbarExpanded) {
-                        this.showToolbarItems = true;
-                    } else {
-                        this.showToolbarItems = false;
-                    }
-
+                    this.hasToolbarMenu = true;
                 }
+                this.toolbarStateChange.next(this.toolbarState);
             }
         );
     }
@@ -85,8 +71,9 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
 
     @HostListener('window:scroll', ['$event'])
     scrolled() {
-        this.cbpToolbarState = this.lastScrollY > window.pageYOffset ? 'initial' : 'up';
+        this.cbpToolbarScrollState = this.lastScrollY > window.pageYOffset ? 'initial' : 'up';
         this.lastScrollY = window.pageYOffset;
+        this.toolbarState.scrollState = this.cbpToolbarScrollState;
         this.isToolbarExpanded = false;
     }
 }
