@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {CBPApplicationsMenuComponent} from './applications-menu/applications-menu.component';
+import {CBPApplicationsMenuComponent} from './apps-menu/apps-menu.component';
 import {
     MatDividerModule, MatFormFieldModule, MatIconModule, MatInputModule,
     MatMenuModule

@@ -1,7 +1,27 @@
 <!--This is "THE" Kitchen Sink Demo -->
 <cbp-root>
-    <cbp-header></cbp-header>
+
+
+    <cbp-header>
+        <cbp-user-menu>
+            <div class="mat-menu-item" (click)="myPreferences()" cbp-user-menu-item>Preferences</div>
+        </cbp-user-menu>
+    </cbp-header>
+
+
+    <!--
+    Hint:
+      Customizable header:-  e.g. shows cbpAppsMenuExclude is excluded, cbp-feedback-link has custom action, cbp-user-menu has additional menu item Preference
+    <cbp-header [cbpAppsMenuExclude]="true" [cbpFeedbackLinkExclude]="true">
+        <cbp-feedback-link (click)="myFeedbackAction()"></cbp-feedback-link>
+        <cbp-user-menu>
+            <div class="mat-menu-item" (click)="myPreferences()" cbp-user-menu-item>Preferences</div>
+        </cbp-user-menu>
+    </cbp-header>
+     -->
+
     <demo-demo-app-header></demo-demo-app-header>
+
     <div class="app-content">
         <demo-typography></demo-typography>
         <demo-buttons></demo-buttons>

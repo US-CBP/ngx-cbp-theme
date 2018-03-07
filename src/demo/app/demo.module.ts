@@ -49,7 +49,12 @@ import {CBP_APPLICATIONS_SERVICE} from '../../app/applications/cbp-applications-
   bootstrap: [DemoAppComponent]
 })
 export class DemoAppModule {
-    constructor(applicationsService: MockApplicationsService) {
+    constructor(applicationsService: MockApplicationsService, userService: MockUserService) {
+        // Handle your SSO login here for now
+        userService.loginInProgress = true;
+        // set this delay to zero if already loggedIn
+        // and implement userService so that getUser() immediately returns subject after login()
+        userService.login(3000);
         applicationsService.getCurrentApp().subscribe(currentApp => {
             currentApp.version =  'v0.0.0';
         });

@@ -1,39 +1,32 @@
 import {
-    Component, Inject,
+    Component, ContentChild, Input,
     ViewEncapsulation
 } from '@angular/core';
-
-import {CBP_FEEDBACK_SERVICE, CBPFeedbackService} from '../feedback.service';
-
-
+import {CBPUserMenuComponent} from '../../user/user-menu/user-menu.component';
+import {CBPFeedbackLinkComponent} from '../../feedback/feedback-link.component';
+import {CBPApplicationsMenuComponent} from '../../applications/apps-menu/apps-menu.component';
 
 @Component({
-  selector: 'cbp-header',
-  moduleId: module.id,
-  templateUrl: './cbp-header.component.html',
-  styleUrls: ['./cbp-header.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'cbp-header',
+    moduleId: module.id,
+    templateUrl: './cbp-header.component.html',
+    styleUrls: ['./cbp-header.component.scss'],
+    encapsulation: ViewEncapsulation.None
 
 })
-export class CBPHeaderComponent  {
+export class CBPHeaderComponent {
 
-  @Inject(CBP_FEEDBACK_SERVICE)
-  feedbackService: CBPFeedbackService;
+    @Input() cbpAppsMenuExclude: boolean;
+    @Input() cbpFeedbackLinkExclude: boolean;
+    @Input() cbpUserMenuExclude: boolean;
 
-  constructor() {
-      if (this.feedbackService) {
-          this.feedbackService.onFeedbackClose(this.feedbackDone);
-      }
-  };
+    @ContentChild(CBPApplicationsMenuComponent) cbpAppsMenu: CBPApplicationsMenuComponent;
+    @ContentChild(CBPFeedbackLinkComponent) cbpFeedbackLink: CBPFeedbackLinkComponent;
+    @ContentChild(CBPUserMenuComponent) cbpUserMenu: CBPUserMenuComponent;
 
-  handleFeedback(): void {
-    if (this.feedbackService) {
-        this.feedbackService.handleFeedback();
+    constructor() {};
+
+    isProvided(comp: any): boolean {
+      return comp ? true : false;
     }
-  }
-
-  /**
-   * Not sure what we do here but we have it.
-   */
-  private feedbackDone(): void {}
 }

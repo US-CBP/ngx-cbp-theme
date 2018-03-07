@@ -1,62 +1,49 @@
-import {Component, Inject, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
-import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {MatMenuTrigger} from '@angular/material';
 import {
     CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
     CBPApplicationsService
 } from '../cbp-applications-service';
+import {CBPToolbarState, CBPToolbarStateChange} from '../../header/cbp-toolbar/cbp-toolbar-state.service';
 
 @Component({
-    selector: 'cbp-applications-menu',
-    templateUrl: './applications-menu.component.html',
-    styleUrls: ['./applications-menu.component.scss'],
+    selector: 'cbp-apps-menu',
+    templateUrl: './apps-menu.component.html',
+    styleUrls: ['./apps-menu.component.scss'],
     entryComponents: []
 })
 export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
 
 
-    private _isToolbarExpanded: boolean;
+    toolbarState: CBPToolbarState = new CBPToolbarState();
+
     menuDataLoaded = false;
     applicationsDataLoading = true;
     isApplicationsExpanded = false;
-    isXS = false;
     applicationsData?: CBPApplicationsData;
     private applicationsServiceSubscription: Subscription;
-    private mediaSubscription: Subscription;
+    private toolbarStateChangeSubscription: Subscription;
 
 
-    @ViewChild('cbpMenuTrigger') cbpMenuTrigger: MatMenuTrigger;
+    @ViewChild(MatMenuTrigger) cbpMenuTrigger: MatMenuTrigger;
 
     public error: any;
 
-    constructor(@Inject(CBP_APPLICATIONS_SERVICE) public applicationsService: CBPApplicationsService, private media: ObservableMedia    ) {
+    constructor(@Inject(CBP_APPLICATIONS_SERVICE) public applicationsService: CBPApplicationsService,
+                private toolbarStateChange: CBPToolbarStateChange) {
     }
 
     ngOnInit() {
-        if (this.media) {
-            this.mediaSubscription = this.media.subscribe(
-                (change: MediaChange) => {
-                    if (change) {
-                        if (change.mqAlias !== 'xs') {
-                            this._isToolbarExpanded = false;
-                            this.isApplicationsExpanded = false;
-                            setTimeout(() => {
-                                this.isXS = false;
-                            });
-                        } else {
-                            if (this.cbpMenuTrigger && this.cbpMenuTrigger.menu) {
-                                this.isApplicationsExpanded = false;
-                                this.cbpMenuTrigger.closeMenu();
-                            }
-                            setTimeout(() => {
-                                this.isXS = true;
-                            });
-                        }
-                    }
+        this.toolbarStateChangeSubscription = this.toolbarStateChange.subscribe((state: CBPToolbarState) => {
+            if (state) {
+                this.toolbarState = state;
+                if (this.cbpMenuTrigger && this.cbpMenuTrigger.menu) {
+                    this.isApplicationsExpanded = false;
+                    this.cbpMenuTrigger.closeMenu();
                 }
-            );
-        }
+            }
+        });
 
         if (this.applicationsService) {
             this.applicationsServiceSubscription = this.applicationsService.getApplicationsData().subscribe(
@@ -73,8 +60,6 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
                 }
             );
         }
-
-
     }
 
 
@@ -84,12 +69,11 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        console.log('ngDestroy Called');
         if (this.applicationsServiceSubscription) {
             this.applicationsServiceSubscription.unsubscribe();
         }
-        if (this.mediaSubscription) {
-            this.mediaSubscription.unsubscribe();
+        if (this.toolbarStateChangeSubscription) {
+            this.toolbarStateChangeSubscription.unsubscribe();
         }
 
     }
@@ -103,18 +87,17 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     getApplicationsDirectoryUrl(): string {
         return this.applicationsService.getApplicationsDirectoryUrl();
     }
-    toggleApplicationsMenu($event: Event) {
-        if (this.menuDataLoaded && this._isToolbarExpanded) {
-            this.isApplicationsExpanded = ! this.isApplicationsExpanded;
-            $event.stopPropagation();
-        }
-    }
-    @Input()
-    set toolbarExpanded(expanded: boolean) {
-        this._isToolbarExpanded = expanded;
-    }
 
-    get toolbarExpanded(): boolean { return this._isToolbarExpanded; }
+    toggleApplicationsMenu($event: Event) {
+       if (this.toolbarState.toolbarIsExpanded) {
+            this.isApplicationsExpanded = !this.isApplicationsExpanded;
+            $event.stopPropagation();
+       } else {
+           if (this.cbpMenuTrigger) {
+               this.cbpMenuTrigger.toggleMenu();
+           }
+       }
+    }
 
 
     // TODO find a way to share this
