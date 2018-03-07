@@ -8,7 +8,7 @@ import {CBPAccordionModule} from '../../app/accordion/accordion.module';
 import {CBPAppHeaderModule , CBPHeaderModule} from '../../app/header';
 
 import {DemoCBPAccordionComponent} from './demo-cbp-accordion/demo-cbp-accordion.component';
-import {DemoTypographyComponent} from './demo-typograqphy/demo-typography.component';
+import {DemoTypographyComponent} from './demo-typography/demo-typography.component';
 
 import {DemoButtonsModule} from './demo-buttons/demo-buttons.module';
 import {DemoAppHeaderModule} from './demo-app-header/demo-app-header.module';

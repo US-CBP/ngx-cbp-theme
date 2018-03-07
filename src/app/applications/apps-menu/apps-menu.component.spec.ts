@@ -11,7 +11,7 @@ import {CBP_USER_SERVICE} from '../../user/user';
 import {MockUserService} from '../../../mock-services/user.mock.service';
 import {CBPApplicationsSearchComponent} from '../applications-search/applications-search.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {CBPToolbarState, CBPToolbarStateChange} from '../../header/cbp-toolbar/cbp-toolbar-state.service';
+import {CBPToolbarState, CBP_HEADER_STATE} from '../../header/cbp-toolbar/cbp-toolbar-state';
 import { By }              from '@angular/platform-browser';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
 import {CommonModule} from '@angular/common';
@@ -31,9 +31,10 @@ describe('CBPApplicationsMenuComponent', () => {
                 MatDividerModule, CBPProgressModule, CBPPipesModule],
             declarations: [CBPApplicationsMenuComponent, CBPApplicationsSearchComponent],
             providers: [
-                CBPToolbarStateChange, MockApplicationsService, MockUserService,
+                MockApplicationsService, MockUserService,
                 {provide: CBP_APPLICATIONS_SERVICE, useExisting: MockApplicationsService},
-                {provide: CBP_USER_SERVICE, useExisting: MockUserService}
+                {provide: CBP_USER_SERVICE, useExisting: MockUserService},
+                {provide: CBP_HEADER_STATE, useClass: CBPToolbarState}
             ]
         })
             .compileComponents();
@@ -50,8 +51,7 @@ describe('CBPApplicationsMenuComponent', () => {
         fixture = TestBed.createComponent(CBPApplicationsMenuComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
-        this.toolbarStateChange = TestBed.get(CBPToolbarStateChange);
-        this.toolbarState = new CBPToolbarState();
+        this.toolbarStateChange = TestBed.get(CBP_HEADER_STATE);
       });
 
 
@@ -66,10 +66,9 @@ describe('CBPApplicationsMenuComponent', () => {
     xdescribe('toolbarIsExpanded state', () => {
 
         beforeEach(() => {
-            this.toolbarState.hasToolbarMenu = true;
-            this.toolbarState.toolbarIsExpanded = false;
+            this.toolbarState.hasToolbarMenu.next(false);
+            this.toolbarState.toolbarIsExpanded.next(false);
             this.appsDataSubject.next(new CBPApplicationsData());
-            this.toolbarStateChange.next(this.toolbarState);
             // fixture.detectChanges();
             spyOn(component.cbpMenuTrigger, 'toggleMenu').and.callThrough();
             // done();
@@ -86,8 +85,7 @@ describe('CBPApplicationsMenuComponent', () => {
         });
 
         xit('when true menu is not triggered and vanilla panel is enabled', fakeAsync(() => {
-            this.toolbarState.toolbarIsExpanded = true;
-            this.toolbarStateChange.next(this.toolbarState);
+            this.toolbarState.toolbarIsExpanded.next(true);
             fixture.detectChanges();
             const menuClickTarget = fixture.debugElement.query(By.css('.cbp-current-application-name-container'));
             const fakeEvent = jasmine.createSpyObj('Event' , ['stopPropagation']);
@@ -98,8 +96,7 @@ describe('CBPApplicationsMenuComponent', () => {
             expect(fixture.debugElement.query(By.css('.applications-expansion-panel'))).toBeDefined();
         }));
         xit('when false menu is triggered & applications-expansion-panel is not present', (done: any) => {
-            this.toolbarState.toolbarIsExpanded = false;
-            this.toolbarStateChange.next(this.toolbarState);
+            this.toolbarState.toolbarIsExpanded.next( false);
             fixture.detectChanges();
             const menuClickTarget = fixture.debugElement.query(By.css('.cbp-current-application-name-container'));
             menuClickTarget.triggerEventHandler('click', null);

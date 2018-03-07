@@ -5,7 +5,7 @@ import {
     CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
     CBPApplicationsService
 } from '../cbp-applications-service';
-import {CBPToolbarState, CBPToolbarStateChange} from '../../header/cbp-toolbar/cbp-toolbar-state.service';
+import {CBPToolbarState, CBP_HEADER_STATE} from '../../header/cbp-toolbar/cbp-toolbar-state';
 
 @Component({
     selector: 'cbp-apps-menu',
@@ -16,14 +16,11 @@ import {CBPToolbarState, CBPToolbarStateChange} from '../../header/cbp-toolbar/c
 export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
 
 
-    toolbarState: CBPToolbarState = new CBPToolbarState();
-
     menuDataLoaded = false;
     applicationsDataLoading = true;
     isApplicationsExpanded = false;
     applicationsData?: CBPApplicationsData;
-    private applicationsServiceSubscription: Subscription;
-    private toolbarStateChangeSubscription: Subscription;
+    private subscriptions: Subscription[] = [];
 
 
     @ViewChild(MatMenuTrigger) cbpMenuTrigger: MatMenuTrigger;
@@ -31,34 +28,35 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     public error: any;
 
     constructor(@Inject(CBP_APPLICATIONS_SERVICE) public applicationsService: CBPApplicationsService,
-                private toolbarStateChange: CBPToolbarStateChange) {
+                @Inject(CBP_HEADER_STATE) private toolbarStateChange: CBPToolbarState) {
     }
 
+    get toolbarIsExpanded(): boolean {
+        return this.toolbarStateChange.toolbarIsExpanded.getValue();
+    }
     ngOnInit() {
-        this.toolbarStateChangeSubscription = this.toolbarStateChange.subscribe((state: CBPToolbarState) => {
-            if (state) {
-                this.toolbarState = state;
+        this.subscriptions.push(this.toolbarStateChange.hasToolbarMenu.
+            subscribe(() => {
                 if (this.cbpMenuTrigger && this.cbpMenuTrigger.menu) {
                     this.isApplicationsExpanded = false;
                     this.cbpMenuTrigger.closeMenu();
                 }
-            }
-        });
+        }));
 
         if (this.applicationsService) {
-            this.applicationsServiceSubscription = this.applicationsService.getApplicationsData().subscribe(
-                (data: CBPApplicationsData) => {
-                    this.applicationsData = data;
-                    if (data) {
-                        this.menuDataLoaded = true;
+            this.subscriptions.push(this.applicationsService.getApplicationsData()
+                .subscribe(
+                   (data: CBPApplicationsData) => {
+                        this.applicationsData = data;
+                        if (data) {
+                            this.menuDataLoaded = true;
+                            this.applicationsDataLoading = false;
+                        }
+                    },
+                   (err) => {
+                        this.error = err;
                         this.applicationsDataLoading = false;
-                    }
-                },
-                (err) => {
-                    this.error = err;
-                    this.applicationsDataLoading = false;
-                }
-            );
+                    }));
         }
     }
 
@@ -69,13 +67,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        if (this.applicationsServiceSubscription) {
-            this.applicationsServiceSubscription.unsubscribe();
-        }
-        if (this.toolbarStateChangeSubscription) {
-            this.toolbarStateChangeSubscription.unsubscribe();
-        }
-
+        this.subscriptions.forEach( (subscription) => subscription.unsubscribe());
     }
 
     reloadApplicationsData($event: Event): void {
@@ -89,7 +81,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     }
 
     toggleApplicationsMenu($event: Event) {
-       if (this.toolbarState.toolbarIsExpanded) {
+       if (this.toolbarStateChange.toolbarIsExpanded.getValue()) {
             this.isApplicationsExpanded = !this.isApplicationsExpanded;
             $event.stopPropagation();
        } else {
