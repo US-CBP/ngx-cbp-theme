@@ -51,7 +51,7 @@ describe('CBPApplicationsMenuComponent', () => {
         fixture = TestBed.createComponent(CBPApplicationsMenuComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
-        this.toolbarStateChange = TestBed.get(CBP_HEADER_STATE);
+        this.toolbarState = TestBed.get(CBP_HEADER_STATE);
       });
 
 

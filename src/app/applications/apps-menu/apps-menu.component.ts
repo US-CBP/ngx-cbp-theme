@@ -28,14 +28,14 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     public error: any;
 
     constructor(@Inject(CBP_APPLICATIONS_SERVICE) public applicationsService: CBPApplicationsService,
-                @Inject(CBP_HEADER_STATE) private toolbarStateChange: CBPToolbarState) {
+                @Inject(CBP_HEADER_STATE) private toolbarState: CBPToolbarState) {
     }
 
     get toolbarIsExpanded(): boolean {
-        return this.toolbarStateChange.toolbarIsExpanded.getValue();
+        return this.toolbarState.toolbarIsExpanded.getValue();
     }
     ngOnInit() {
-        this.subscriptions.push(this.toolbarStateChange.hasToolbarMenu.
+        this.subscriptions.push(this.toolbarState.hasToolbarMenu.
             subscribe(() => {
                 if (this.cbpMenuTrigger && this.cbpMenuTrigger.menu) {
                     this.isApplicationsExpanded = false;
@@ -81,7 +81,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     }
 
     toggleApplicationsMenu($event: Event) {
-       if (this.toolbarStateChange.toolbarIsExpanded.getValue()) {
+       if (this.toolbarState.toolbarIsExpanded.getValue()) {
             this.isApplicationsExpanded = !this.isApplicationsExpanded;
             $event.stopPropagation();
        } else {
