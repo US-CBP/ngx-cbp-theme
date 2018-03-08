@@ -30,7 +30,7 @@
     "test:lib": "ng test --app lib",
     "test:lib:once": "ng test --app lib --watch=false",
     "e2e:demo": "ng e2e --app demo --watch=false",
-    "ready": "npm-run-all --parallel build:lib lint test:once e2e:demo build:demo:prod",
+    "ready": "npm-run-all --parallel build:lib lint test:once e2e:demo",
     "test:once": "npm-run-all --serial  test:lib:once test:demo:once",
     "postinstall": "node postinstall.js"
   },
