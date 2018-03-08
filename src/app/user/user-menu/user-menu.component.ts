@@ -2,10 +2,8 @@ import {Component, Inject, OnDestroy, OnInit, ViewChild, ViewEncapsulation} from
 import {CBP_USER_SERVICE, CBPUser, CBPUserService} from '../user';
 import {Subscription} from 'rxjs/Subscription';
 import {MatMenuTrigger} from '@angular/material';
-import {
-    CBPToolbarState,
-    CBPToolbarStateChange
-} from '../../header/cbp-toolbar/cbp-toolbar-state.service';
+import {CBPToolbarState, CBP_HEADER_STATE} from '../../header/cbp-toolbar/cbp-toolbar-state';
+
 
 @Component({
     selector: 'cbp-user-menu, [cbp-user-menu], .cbp-user-menu',
@@ -15,21 +13,22 @@ import {
 })
 export class CBPUserMenuComponent implements OnInit, OnDestroy {
 
-    toolbarState: CBPToolbarState = new CBPToolbarState();
     userMenuExpanded = false;
     user: CBPUser;
     isLoggedIn = false;
     userDataLoaded = false;
     error: any;
 
-    private userServiceSubscription: Subscription;
-    private toolbarStateChangeSubscription: Subscription;
+    private subscriptions: Subscription[] = [];
 
     @ViewChild(MatMenuTrigger) userMenuTrigger: MatMenuTrigger;
 
-    constructor(@Inject(CBP_USER_SERVICE) private userService: CBPUserService,
-                private toolbarStateChange: CBPToolbarStateChange) {
+    get toolbarIsExpanded(): boolean {
+        return this.toolbarState.toolbarIsExpanded.getValue();
     }
+
+    constructor(@Inject(CBP_USER_SERVICE) private userService: CBPUserService,
+                @Inject(CBP_HEADER_STATE) public toolbarState: CBPToolbarState) {}
 
 
     get loginProgress(): boolean {
@@ -41,15 +40,14 @@ export class CBPUserMenuComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.toolbarStateChangeSubscription = this.toolbarStateChange.subscribe((state: CBPToolbarState) => {
-            this.toolbarState = state;
+        this.subscriptions.push( this.toolbarState.hasToolbarMenu.subscribe(() => {
             if (this.userMenuTrigger && this.userMenuTrigger.menu) {
                 this.userMenuExpanded = false;
                 this.userMenuTrigger.closeMenu();
             }
-        });
+        }));
 
-        this.userServiceSubscription = this.userService.getUser().subscribe({
+        this.subscriptions.push( this.userService.getUser().subscribe({
             next: (data: CBPUser) => {
                 if (data) {
                     this.user = data;
@@ -69,7 +67,7 @@ export class CBPUserMenuComponent implements OnInit, OnDestroy {
                 this.error = err;
                 this.userDataLoaded = false;
             }
-        });
+        }));
 
     }
 
@@ -80,13 +78,7 @@ export class CBPUserMenuComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        if (this.userServiceSubscription) {
-            this.userServiceSubscription.unsubscribe();
-        }
-
-        if (this.toolbarStateChangeSubscription) {
-            this.toolbarStateChangeSubscription.unsubscribe();
-        }
+        this.subscriptions.forEach(subscription => subscription.unsubscribe());
         this.user = undefined;
         this.userDataLoaded = false;
     }
@@ -101,7 +93,7 @@ export class CBPUserMenuComponent implements OnInit, OnDestroy {
         if (!this.isLoggedIn || !this.userDataLoaded) {
             return;
         }
-        if (this.toolbarState.toolbarIsExpanded) {
+        if (this.toolbarState.toolbarIsExpanded.getValue()) {
             this.userMenuExpanded = !this.userMenuExpanded;
             $event.stopPropagation();
         } else {

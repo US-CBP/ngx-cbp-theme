@@ -20,7 +20,7 @@
   <ng-template [ngTemplateOutlet]="userMenuPanel"></ng-template>
 </mat-menu>
 
-<div class="cbp-user-panel-expanded" *ngIf="toolbarState?.toolbarIsExpanded && userDataLoaded && userMenuExpanded">
+<div class="cbp-user-panel-expanded" *ngIf="toolbarIsExpanded && userDataLoaded && userMenuExpanded">
   <ng-template [ngTemplateOutlet]="userMenuPanel"></ng-template>
 </div>
 

@@ -1,6 +1,6 @@
-import {Component, Output, OnInit, OnDestroy} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit, Output} from '@angular/core';
 import {CBPScrollShrinkAnimator} from '../cbp-toolbar/cbp-scrollshrink';
-import {CBPToolbarState, CBPToolbarStateChange} from '../cbp-toolbar/cbp-toolbar-state.service';
+import {APP_HEADER_STATE, CBPToolbarState} from '../cbp-toolbar/cbp-toolbar-state';
 import {Subscription} from 'rxjs/Subscription';
 
 
@@ -13,26 +13,23 @@ import {Subscription} from 'rxjs/Subscription';
         CBPScrollShrinkAnimator.createScrollShrinkTrigger('appHeaderState', '50px', '0')
     ]
 })
-export class CBPAppHeaderComponent implements OnInit , OnDestroy {
+export class CBPAppHeaderComponent implements OnInit, OnDestroy {
 
     @Output() appHeaderState: String;
-    toolbarState: CBPToolbarState;
     private subscriptions: Subscription[] = [];
 
-    constructor(private toolbarStateChange: CBPToolbarStateChange) {}
+    constructor(@Inject(APP_HEADER_STATE) public toolbarState: CBPToolbarState) {
+    }
 
     ngOnInit() {
         this.appHeaderState = 'initial';
-        this.subscriptions.push(this.toolbarStateChange.subscribe((state: CBPToolbarState) => {
-            this.toolbarState = state;
-            this.appHeaderState = this.toolbarState.scrollState ? this.toolbarState.scrollState : 'initial';
+        this.subscriptions.push(this.toolbarState.scrollState.subscribe((state) => {
+            this.appHeaderState = state ? state : 'initial';
         }));
     }
 
     ngOnDestroy() {
-        this.subscriptions.forEach( subscription => subscription.unsubscribe());
+        this.subscriptions.forEach(subscription => subscription.unsubscribe());
     }
 
 }
-
-

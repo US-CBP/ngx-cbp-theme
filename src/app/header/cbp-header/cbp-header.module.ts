@@ -8,6 +8,7 @@ import {CBPApplicationsModule} from '../../applications/applications.module';
 import {CBPToolbarModule} from '../cbp-toolbar/cbp-toolbar.module';
 import {CBPFeedbackModule} from '../../feedback/feedback.module';
 import { CBPBrandComponent } from './cbp-brand/cbp-brand.component';
+import {CBP_HEADER_STATE, CBPToolbarState} from '../cbp-toolbar/cbp-toolbar-state';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CBPBrandComponent } from './cbp-brand/cbp-brand.component';
       CBPApplicationsModule,
       CBPToolbarModule,
       CBPFeedbackModule,
-      CBPBrandComponent]
+      CBPBrandComponent],
+  providers: [{ provide: CBP_HEADER_STATE, useClass: CBPToolbarState }]
 })
 export class CBPHeaderModule { }

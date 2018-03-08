@@ -24,7 +24,7 @@
     "docs:watch:lib": "npm run docs:build:lib -- -s -w",
     "lint": "ng lint",
     "start:demo": "ng serve --app demo --port 4100",
-    "build:demo:prod": "ng build --prod --aot --build-optimizer --vendor-chunk true --app demo",
+    "build:demo:prod": "rimraf ./dist-demo && ng build --prod --aot --build-optimizer --vendor-chunk true --app demo",
     "test:demo": "ng test --app demo",
     "test:demo:once": "ng test --app demo --watch=false",
     "test:lib": "ng test --app lib",

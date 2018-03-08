@@ -6,7 +6,7 @@ import {CBPScrollShrinkAnimator} from './cbp-scrollshrink';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {Subscription} from 'rxjs/Subscription';
 import {fadeInContent} from '@angular/material';
-import {CBPToolbarState, CBPToolbarStateChange} from './cbp-toolbar-state.service';
+import {CBPToolbarState} from './cbp-toolbar-state';
 
 @Component({
     moduleId: module.id,
@@ -31,23 +31,21 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
     @Input() position: number;
     @HostBinding('attr.role') role = 'toolbar';
 
+    @Input() toolbarState: CBPToolbarState;
     @Output() hideToolbarItem: EventEmitter<any> = new EventEmitter();
 
-    private toolbarState = new CBPToolbarState();
 
     set isToolbarExpanded(expanded: boolean) {
-        this.toolbarState.toolbarIsExpanded = expanded;
-        this.toolbarStateChange.next(this.toolbarState);
+        this.toolbarState.toolbarIsExpanded.next(expanded);
     }
-    get isToolbarExpanded(): boolean { return this.toolbarState.toolbarIsExpanded}
+    get isToolbarExpanded(): boolean { return this.toolbarState.toolbarIsExpanded.getValue(); }
 
     set hasToolbarMenu(has: boolean) {
-        this.toolbarState.hasToolbarMenu = has;
-        this.toolbarStateChange.next(this.toolbarState);
+        this.toolbarState.hasToolbarMenu.next(has);
     }
-    get hasToolbarMenu(): boolean { return this.toolbarState.hasToolbarMenu}
 
-    constructor(private media: ObservableMedia, private toolbarStateChange: CBPToolbarStateChange) {}
+
+    constructor(private media: ObservableMedia) {}
 
     ngOnInit() {
         this.cbpToolbarScrollState = 'initial';
@@ -60,7 +58,6 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
                 } else {
                     this.hasToolbarMenu = true;
                 }
-                this.toolbarStateChange.next(this.toolbarState);
             }
         );
     }
@@ -71,9 +68,15 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
 
     @HostListener('window:scroll', ['$event'])
     scrolled() {
-        this.cbpToolbarScrollState = this.lastScrollY > window.pageYOffset ? 'initial' : 'up';
-        this.lastScrollY = window.pageYOffset;
-        this.toolbarState.scrollState = this.cbpToolbarScrollState;
-        this.isToolbarExpanded = false;
+        if ( ! this.toolbarState.scrollShrinkSuspended) {
+            this.cbpToolbarScrollState = this.lastScrollY > window.pageYOffset ? 'initial' : 'up';
+            this.lastScrollY = window.pageYOffset;
+            this.toolbarState.scrollState.next( this.cbpToolbarScrollState );
+            this.isToolbarExpanded = false;
+        }
+    }
+
+    getToolbarExpansionPanelTop(): string {
+        return this.toolbarState.scrollState.getValue() === 'initial' ? '98px' : '50px';
     }
 }
