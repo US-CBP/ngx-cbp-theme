@@ -78,7 +78,7 @@ export class MockApplicationsService extends  CBPApplicationsService {
         return this._getMockHttpData()
             .map((data: CBPApplicationsData) => {
                 data.lastRetrieved = new Date();
-                data.currentApp = new CBPApplication('Kitchen Sink Demo');
+                data.currentApp = new CBPApplication('Kitchen Sink');
                 this.currentApp.next(data.currentApp);
                 return data;
             });

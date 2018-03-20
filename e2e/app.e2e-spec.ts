@@ -11,6 +11,6 @@ describe('ngx-cbp-theme-kitchensink-cli Demo App', () => {
 
 
     it('should display app header title', () => {
-       expect(page.getCurrentAppName()).toEqual('Kitchen Sink Demo');
+       expect(page.getCurrentAppName()).toEqual('Kitchen Sink');
     });
 });

@@ -18,18 +18,18 @@
     ]
   },
     {
-      "name": "demo",
-      "root": "src/demo",
+      "name": "kitchensink",
+      "root": "src/kitchensink",
       "main": "index.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "demo",
-      "outDir": "dist-demo",
+      "outDir": "dist-kitchensink",
       "index": "index.html",
       "polyfills": "polyfills.ts",
       "styles": [
-        "demo.scss"
+        "kitchensink.scss"
       ],
       "assets": [
         "assets"

@@ -18,11 +18,6 @@ export class CBPUser {
  */
 export abstract class CBPUserService {
 
-    /**
-     * Set to true or false
-     * @type {boolean}
-     */
-
     private _loginInProgress = false;
     get loginInProgress(): boolean {
         return this._loginInProgress;
