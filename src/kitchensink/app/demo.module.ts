@@ -17,8 +17,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {MockApplicationsService} from '../../mock-services/applications.mock.service';
 import {CBP_USER_SERVICE} from '../../app/user/user';
 import {CBP_APPLICATIONS_SERVICE} from '../../app/applications/cbp-applications-service';
+import * as pkg from '../../../package.json';
 
-
+export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
 
 @NgModule({
   declarations: [
@@ -56,7 +57,7 @@ export class DemoAppModule {
         // and implement userService so that getUser() immediately returns subject after login()
         userService.login(3000);
         applicationsService.getCurrentApp().subscribe(currentApp => {
-            currentApp.version =  'v0.0.0';
+            currentApp.version =  `v${KITCHENSINK_APP_VERSION}`;
         });
     }
 }

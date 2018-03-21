@@ -11,7 +11,7 @@ Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp
 
 
 ___
-[![Kitchen Sink Demo](https://us-cbp.github.io/ngx-cbp-theme/assets/kitchen-sink-preview.png)](https://us-cbp.github.io/ngx-cbp-theme/assets/kitchen-sink-preview.png)
+[![Kitchen Sink](https://us-cbp.github.io/ngx-cbp-theme/assets/kitchen-sink-preview.png)](https://us-cbp.github.io/ngx-cbp-theme/assets/kitchen-sink-preview.png)
 ___
 
 

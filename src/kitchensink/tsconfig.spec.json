@@ -5,7 +5,7 @@
     "module": "commonjs",
     "baseUrl": "./",
     "rootDir": ".",
-    "outDir": "../build-demo",
+    "outDir": "../build-kitchensink",
     "declaration" : false,
     "types": [
       "node",
