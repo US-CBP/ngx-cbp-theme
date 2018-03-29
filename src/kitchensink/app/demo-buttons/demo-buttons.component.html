@@ -31,6 +31,16 @@
     <span style="padding: 10px;">value = {{ toggle.something }}</span>
     <input name="toggle-something" style="padding: 5px;" placeholder="Y -> On - anything -> Off" [(ngModel)]="toggle.something"/>
 </div>
+<div>
+    <br>
+    <mat-checkbox class="turn-into-apple-toggle-switch" [disableRipple]="true" name="applified-checkbox"  onLabel="YES" offLabel="NO"  [(ngModel)]="toggle.appledMatCheckbox">Toggle</mat-checkbox>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <mat-checkbox [disableRipple]="true" name="applified-checkbox2" [(ngModel)]="toggle.appledMatCheckbox">Toggle</mat-checkbox>
+    <span style="padding: 10px;">value = {{ toggle.something }}</span>
+    <input name="toggle-appledMatCheckbox" style="padding: 5px;" placeholder="nothing -> Off : anything -> ON" [(ngModel)]="toggle.appledMatCheckbox"/>
+    <!--<mat-checkbox [disableRipple]="true"  [(ngModel)]="toggle.appledMatCheckbox">Toggle</mat-checkbox>-->
+</div>
+
 <br>
 <div>
     <cbp-toggle-switch label="Disabled" disabled="true" onLabel="YES" offLabel="NO" onValue="Y" offValue="N"  [(isOn)]="toggle.disabled"  (changed)="toggle.disabled = $event"></cbp-toggle-switch>

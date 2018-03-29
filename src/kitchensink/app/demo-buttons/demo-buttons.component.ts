@@ -12,7 +12,8 @@ export class DemoButtonsComponent {
         one: true,
         two: false,
         disabled: 'Y',
-        something: ''
+        something: '',
+        appledMatCheckbox: true
     };
 
     constructor() {
