@@ -14,7 +14,7 @@ export class DemoButtonsComponent {
         disabled: 'Y',
         something: '',
         something2: '',
-        appledMatCheckbox: true
+        yn: 'Y'
     };
 
     changed($event: any) {

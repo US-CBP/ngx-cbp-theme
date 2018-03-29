@@ -1,4 +1,5 @@
 import {
+    Attribute,
     ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, forwardRef, HostBinding,
     Input, OnInit,
     Output,
@@ -8,16 +9,13 @@ import {CanColor, CanDisable, mixinColor, mixinDisabled, mixinTabIndex, ThemePal
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {HasTabIndex} from '@angular/material/core/typings/common-behaviors/tabindex';
 
+
 export class CBPToggleSwitchChange {
     checked: boolean;
     source: CBPToggleSwitchComponent;
 
 }
-export const CBP_TOGGLE_SWITCH_CONTROL_VALUE_ACCESSOR: any = {
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => CBPToggleSwitchComponent),
-    multi: true
-};
+
 
 export class CBPToggleSwitchComponentBase {
     constructor(public _elementRef: ElementRef) {}
@@ -27,6 +25,13 @@ export const _CBPToggleSwitchMixinBase =
     mixinTabIndex(mixinColor(mixinDisabled(CBPToggleSwitchComponentBase), 'accent'));
 
 let toggleSwitchCounter = 1;
+
+export const CBP_TOGGLE_SWITCH_CONTROL_VALUE_ACCESSOR: any = {
+    provide: NG_VALUE_ACCESSOR,
+    // tslint:disable-next-line:no-use-before-declare
+    useExisting: forwardRef(() => CBPToggleSwitchComponent),
+    multi: true
+}
 
 @Component({
     moduleId: module.id,
@@ -38,11 +43,8 @@ let toggleSwitchCounter = 1;
     providers: [CBP_TOGGLE_SWITCH_CONTROL_VALUE_ACCESSOR],
     preserveWhitespaces: false // seems to trim whitespace content
 })
-export class CBPToggleSwitchComponent extends _CBPToggleSwitchMixinBase implements OnInit, CanColor, CanDisable, ControlValueAccessor {
-
-    @HostBinding('class') className = 'cbp-toggle-switch';
-    @HostBinding('id') id = `cbp-toggle-switch-${++toggleSwitchCounter}`;
-    @HostBinding('class.cbp-toggle-switch-checked') _checked: Boolean = null;
+export class CBPToggleSwitchComponent extends _CBPToggleSwitchMixinBase
+    implements OnInit, CanColor, CanDisable, ControlValueAccessor, HasTabIndex {
 
     @Input() ariaLabel =  '';
     @Input() ariaLabelledby: string | null = null;
@@ -52,24 +54,30 @@ export class CBPToggleSwitchComponent extends _CBPToggleSwitchMixinBase implemen
     @Input() onLabel =  'ON';
     @Input() offLabel =  'OFF';
     @Input() label =  '';
-
     @Input() disabled: boolean;
     @Input() color: ThemePalette;
+    @Input() name: string | null = null;
+
+    @HostBinding('class') className = 'cbp-toggle-switch';
+    @HostBinding('id') id = `cbp-toggle-switch-${++toggleSwitchCounter}`;
+    @HostBinding('class.cbp-toggle-switch-checked') _checked: Boolean = null;
+
+
 
     @Input()
     get required(): boolean { return this._required; }
     set required(value: boolean) { this._required = value !== null && `${value}` !== 'false' && value !== false ? true : false; }
     private _required: boolean;
 
-    @Input() name: string | null = null;
-
     inputId = this.id + 'input';
 
     @Output() readonly change: EventEmitter<CBPToggleSwitchChange> = new EventEmitter<CBPToggleSwitchChange>();
 
     constructor(elementRef: ElementRef,
-                private _changeDetectorRef: ChangeDetectorRef) {
+                private _changeDetectorRef: ChangeDetectorRef,
+                @Attribute('tabindex') tabIndex: string) {
         super(elementRef);
+        this.tabIndex = Number.parseInt(tabIndex) || 0;
     }
 
     @Input()
@@ -126,10 +134,11 @@ export class CBPToggleSwitchComponent extends _CBPToggleSwitchMixinBase implemen
      * Focus control not implemented yet
      * @param fn
      */
-    registerOnTouched(fn: any): void {}
+    registerOnTouched(): void {}
 
     setDisabledState(isDisabled: boolean): void {
         this.disabled = isDisabled;
         this._changeDetectorRef.markForCheck();
     }
 }
+
