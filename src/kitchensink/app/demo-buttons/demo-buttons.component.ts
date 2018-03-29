@@ -10,13 +10,18 @@ export class DemoButtonsComponent {
 
     toggle = {
         one: true,
-        two: false,
+        two: true,
         disabled: 'Y',
         something: '',
+        something2: '',
         appledMatCheckbox: true
     };
 
+    changed($event: any) {
+        console.log('demo toggle changed - ', $event);
+    }
     constructor() {
         delete this.toggle.something;
+        delete this.toggle.something2;
     }
 }

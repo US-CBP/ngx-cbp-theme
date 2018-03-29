@@ -1,17 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-    CBPToggleSwitchComponent,
-    CBPToggleSwitchMatCheckboxLabelDirective
-} from './cbp-toggle-switch/cbp-toggle-switch.component';
 import {FormsModule} from '@angular/forms';
-import { MatCheckboxModule} from '@angular/material';
+import { CBPToggleSwitchComponent } from './cbp-toggle-switch/cbp-toggle-switch.component';
 
 @NgModule({
   imports: [
-    CommonModule, FormsModule, MatCheckboxModule
+    CommonModule, FormsModule
   ],
-  exports: [CBPToggleSwitchComponent, CBPToggleSwitchMatCheckboxLabelDirective],
-  declarations: [CBPToggleSwitchComponent, CBPToggleSwitchMatCheckboxLabelDirective]
+  exports: [CBPToggleSwitchComponent],
+  declarations: [CBPToggleSwitchComponent]
 })
 export class CBPButtonsModule { }

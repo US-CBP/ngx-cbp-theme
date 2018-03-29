@@ -16,39 +16,39 @@
 
 <h3>Toggle Switches</h3>
 <form>
-<div>
-    <cbp-toggle-switch label="Access" [(isOn)]="toggle.one" (changed)="toggle.one = $event"></cbp-toggle-switch>
-    <span style="padding: 10px;">value = {{ toggle.one }}</span>
-</div>
-<br>
-<div>
-    <cbp-toggle-switch label="Alert" onLabel="YES" offLabel="NO" onValue="Y" offValue="N" [(isOn)]="toggle.two" (changed)="toggle.two = $event"></cbp-toggle-switch>
-    <span style="padding: 10px;">value = {{ toggle.two }}</span>
-</div>
-<br>
-<div>
-    <cbp-toggle-switch label="Undefined" onLabel="YES" offLabel="NO" onValue="Y" offValue="N"  [(isOn)]="toggle.something" (changed)="toggle.something = $event"></cbp-toggle-switch>
-    <span style="padding: 10px;">value = {{ toggle.something }}</span>
-    <input name="toggle-something" style="padding: 5px;" placeholder="Y -> On - anything -> Off" [(ngModel)]="toggle.something"/>
-</div>
-<div>
+    <div>
+        <cbp-toggle-switch label="Access" name="toggle-one" [(ngModel)]="toggle.one"
+                           (changed)="toggle.one = $event"></cbp-toggle-switch>
+        <span style="padding: 10px;">value = {{ toggle.one }}</span>
+    </div>
     <br>
-    <mat-checkbox class="turn-into-apple-toggle-switch" [disableRipple]="true" name="applified-checkbox"  onLabel="YES" offLabel="NO"  [(ngModel)]="toggle.appledMatCheckbox">Toggle</mat-checkbox>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <mat-checkbox [disableRipple]="true" name="applified-checkbox2" [(ngModel)]="toggle.appledMatCheckbox">Toggle</mat-checkbox>
-    <span style="padding: 10px;">value = {{ toggle.something }}</span>
-    <input name="toggle-appledMatCheckbox" style="padding: 5px;" placeholder="nothing -> Off : anything -> ON" [(ngModel)]="toggle.appledMatCheckbox"/>
-    <!--<mat-checkbox [disableRipple]="true"  [(ngModel)]="toggle.appledMatCheckbox">Toggle</mat-checkbox>-->
-</div>
-
-<br>
-<div>
-    <cbp-toggle-switch label="Disabled" disabled="true" onLabel="YES" offLabel="NO" onValue="Y" offValue="N"  [(isOn)]="toggle.disabled"  (changed)="toggle.disabled = $event"></cbp-toggle-switch>
-    <span style="padding: 10px;">value = {{ toggle.disabled }}</span>
-</div>
-<br>
-<div>
-    <cbp-toggle-switch label="Disabled" disabled="true" onLabel="YES" offLabel="NO" [isOn]="false"></cbp-toggle-switch>
-    <span style="padding: 10px;">value = false</span>
-</div>
+    <div>
+        <cbp-toggle-switch name="toggle-something2" label="Undefined" onLabel="YES" offLabel="NO" onValue="Y"
+                           offValue="N" name="toggle-something" [(ngModel)]="toggle.something2"
+                           (changed)="changed($event)"></cbp-toggle-switch>
+        <span style="padding: 10px;">value = {{ toggle.something2 }}</span>
+        <input name="toggle-something2-input" style="padding: 5px;" placeholder="Y -> On - anything -> Off"
+               [(ngModel)]="toggle.something2"/>
+        <mat-checkbox [disableRipple]="true" name="toggle-something2--checkbox" [(ngModel)]="toggle.something2">Toggle
+        </mat-checkbox>
+    </div>
+    <br>
+    <div>
+        <cbp-toggle-switch label="Alert" name="toggle-two" onLabel="YES" offLabel="NO"
+                           [(ngModel)]="toggle.two" (changed)="changed($event)"></cbp-toggle-switch>
+        <span style="padding: 10px; width: 50px;">value = {{ toggle.two }}</span>
+        <span style="padding: 10px; width: 50px;">value = {{ toggle.two }}</span>
+    </div>
+    <br>
+    <div>
+        <cbp-toggle-switch label="Disabled" disabled="true" onLabel="YES" offLabel="NO" onValue="Y" offValue="N"
+                           name="toggle-disabled" [(ngModel)]="toggle.disabled"
+                           (changed)="toggle.disabled = $event"></cbp-toggle-switch>
+        <span style="padding: 10px;">value = {{ toggle.disabled }}</span>
+    </div>
+    <br>
+    <div>
+        <cbp-toggle-switch label="Disabled" [disabled]="true" onLabel="YES" offLabel="NO"></cbp-toggle-switch>
+        <span style="padding: 10px;">value = false</span>
+    </div>
 </form>
