@@ -3,59 +3,7 @@
 // Can't import https://github.com/US-CBP/cbp-theme/issues/205
 // @import '~cbp-theme/dist/scss/custom/alerts';
 
-/*
-.alert {
-  display: inline-block;
-  width: 100%;
-  padding: $alert-padding $alert-padding*2;
 
-  a {
-    text-decoration: underline;
-  }
-
-  .close {
-    //margin-top: -3px;
-    margin-left: 8px;
-    //margin-right: -3px;
-    text-shadow: none;
-    opacity: .6;
-
-  }
-
-  .alert-icon {
-    // @extend .fa;
-    margin-right: 3px;
-    width: 18px;
-    margin-left: -4px;
-    text-align: center;
-    display: inline-block;
-  }
-
-  .btn {
-    margin: -2px;
-    margin-left: 10px;
-    text-decoration: underline;
-    // margin-right: -10px;
-    // text-transform: uppercase;
-  }
-}
-.alert-icon-info{
-  @extend .fa-info-circle;
-}
-
-
-.alert-icon-success {
-  @extend .fa-check ;
-}
-
-.alert-icon-danger {
-  @extend .fa-times-circle ;
-}
-
-.alert-icon-warning {
-  @extend .fa-warning ;
-}
-*/
 .toast-list {
   &.static-demo {
     position: inherit;
@@ -69,56 +17,5 @@
   top: 52px;
   right: 0px;
   z-index: 10000;
-
-  .toast {
-    position: relative;
-    border: 1px solid #ddd;
-    border-left-width: 4px;
-    border-radius: 2px;
-    margin-bottom: 9px;
-    position: relative;
-    background: #fff;
-    box-shadow: 0px 1px 3px rgba(0,0,0,.1);
-    padding: $alert-padding*2;
-
-    &.toast-info {
-      border-left-color: $brand-info;
-    }
-    &.toast-primary {
-      border-left-color: $brand-primary;
-    }
-    &.toast-success {
-      border-left-color: $brand-success;
-    }
-    &.toast-danger {
-      border-left-color: $brand-danger;
-    }
-    &.toast-warning {
-      border-left-color: $brand-warning;
-    }
-
-    .toast-content {
-    }
-
-    .toast-actions {
-      margin-top: $alert-padding;
-      padding-top: 0;
-      display: inline-block;
-      width: 100%;
-
-      > .btn-link {
-        padding: 0px;
-        margin-right: 8px;
-      }
-    }
-
-    button.close {
-      position: absolute;
-      font-size: 24px;
-      right: 0;
-      top: 0;
-      opacity: .6;
-    }
-  }
 }
 
