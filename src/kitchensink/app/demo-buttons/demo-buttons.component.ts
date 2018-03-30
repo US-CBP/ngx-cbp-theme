@@ -14,7 +14,8 @@ export class DemoButtonsComponent {
         disabled: 'Y',
         something: '',
         something2: '',
-        yn: 'Y'
+        yn: 'Y',
+        three: <any>undefined
     };
 
     changed($event: any) {

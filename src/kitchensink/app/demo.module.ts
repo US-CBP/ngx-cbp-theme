@@ -18,6 +18,7 @@ import {MockApplicationsService} from '../../mock-services/applications.mock.ser
 import {CBP_USER_SERVICE} from '../../app/user/user';
 import {CBP_APPLICATIONS_SERVICE} from '../../app/applications/cbp-applications-service';
 import * as pkg from '../../../package.json';
+import {DemoAlertsNotificationsModule} from './demo-alerts-notifications/demo-alerts-notifications.module';
 
 export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
 
@@ -37,7 +38,8 @@ export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
       // CBPProgressModule,
       // demo
       DemoButtonsModule,
-      DemoAppHeaderModule
+      DemoAppHeaderModule,
+      DemoAlertsNotificationsModule
   ],
   exports: [DemoButtonsModule, DemoAppHeaderModule],
   providers: [

@@ -1,0 +1,51 @@
+@import '../../../../app/variables';
+
+.toast {
+  position: relative;
+  border: 1px solid #ddd;
+  border-left-width: 4px;
+  border-radius: 2px;
+  margin-bottom: 9px;
+  position: relative;
+  background: #fff;
+  box-shadow: 0px 1px 3px rgba(0,0,0,.1);
+  padding: $alert-padding*2;
+
+  &.toast-info {
+    border-left-color: $brand-info;
+  }
+  &.toast-primary {
+    border-left-color: $brand-primary;
+  }
+  &.toast-success {
+    border-left-color: $brand-success;
+  }
+  &.toast-danger {
+    border-left-color: $brand-danger;
+  }
+  &.toast-warning {
+    border-left-color: $brand-warning;
+  }
+
+  .toast-content {
+  }
+
+  .toast-actions {
+    margin-top: $alert-padding;
+    padding-top: 0;
+    width: 100%;
+
+    > .btn-link {
+      padding: 0px;
+      margin-right: 8px;
+    }
+  }
+
+  button.close {
+    position: absolute;
+    font-size: 24px;
+    right: 0;
+    top: 0;
+    opacity: .6;
+  }
+}
