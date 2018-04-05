@@ -16,4 +16,8 @@ export class DemoAlertsNotificationsComponent implements OnInit {
   toggleToasts() {
       this.showing = ! this.showing;
   }
+
+  alert() {
+
+  }
 }

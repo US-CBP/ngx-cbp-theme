@@ -1,0 +1,24 @@
+<div [@animationState]="animationState" *ngIf="show">
+    <div class="toast" [ngClass]="toastTypeClass" tabindex="-1" aria-live="polite"><span class="cdk-visually-hidden">{{notification?.type}} notification</span>
+        <button mat-icon-button class="close" aria-label="Close" (click)="hide()">
+            <span>&times;</span>
+        </button>
+        <ng-container *ngIf="notification.message">
+            <span  class="cbp-notification-contents"  cbpNotificationContent>{{notification.message}}</span>
+        </ng-container>
+        <!--<div class="toast-content">-->
+
+        <!--<ng-content select="[cbpNotificationContent]"></ng-content>-->
+        <!--</div>-->
+        <!--<div class="toast-actions">-->
+        <!--<ng-content select="[cbpNotificationActions]"></ng-content>-->
+        <!--</div>-->
+        <!--<div class="toast-content">-->
+            <!--<ng-content select=".cbp-notification-contents"></ng-content>-->
+        <!--</div>-->
+        <!--<div class="toast-actions">-->
+            <!--<ng-content select=".cbp-notification-actions"></ng-content>-->
+        <!--</div>-->
+        <ng-content></ng-content>
+    </div>
+</div>

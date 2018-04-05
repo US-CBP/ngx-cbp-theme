@@ -19,6 +19,8 @@ import {CBP_USER_SERVICE} from '../../app/user/user';
 import {CBP_APPLICATIONS_SERVICE} from '../../app/applications/cbp-applications-service';
 import * as pkg from '../../../package.json';
 import {DemoAlertsNotificationsModule} from './demo-alerts-notifications/demo-alerts-notifications.module';
+import {DemoNotificationsModule} from './demo-notifications/demo-notifications.module';
+import {CBPNotificationsModule} from '../../app/notifications';
 
 export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
 
@@ -35,11 +37,14 @@ export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
       CBPAccordionModule,
       CBPHeaderModule,
       CBPAppHeaderModule,
+      CBPNotificationsModule,
       // CBPProgressModule,
       // demo
       DemoButtonsModule,
       DemoAppHeaderModule,
-      DemoAlertsNotificationsModule
+      DemoAlertsNotificationsModule,
+
+      DemoNotificationsModule
   ],
   exports: [DemoButtonsModule, DemoAppHeaderModule],
   providers: [

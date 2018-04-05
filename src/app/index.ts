@@ -6,3 +6,4 @@ export * from './header/index';
 export * from './pipes/index';
 export * from './progress/index';
 export * from './user/index';
+export * from './notifications/index';

@@ -1,5 +1,5 @@
 import {Component, ContentChild, Directive, Input, OnInit} from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Directive({ selector: '[demoDemoToastContents], [cbpDemoDemoToastContents]'})
 export class DemoToastContentsDirective { constructor() { }}
@@ -27,7 +27,7 @@ export class DemoToastActionsDirective { constructor() { }}
         // )
 
         trigger(
-            'enterAnimation', [
+            'animationState', [
                 transition('* => enter', [
                     style({transform: 'translateX(100%)', opacity: 0}),
                     animate('500ms', style({transform: 'translateX(0)', opacity: 1}))
