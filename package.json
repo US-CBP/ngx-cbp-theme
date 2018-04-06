@@ -30,7 +30,7 @@
     "test:lib": "ng test --app lib",
     "test:lib:once": "ng test --app lib --watch=false",
     "e2e:kitchensink": "ng e2e --app kitchensink --watch=false",
-    "ready": "npm-run-all --parallel build:lib lint test:once e2e:kitchensink",
+    "ready": "npm-run-all --parallel build:kitchensink:prod build:lib lint test:once e2e:kitchensink",
     "test:once": "npm-run-all --serial  test:lib:once test:kitchensink:once",
     "postinstall": "node postinstall.js"
   },
