@@ -16,6 +16,8 @@ import {MockUserService} from '../../mock-services/user.mock.service';
 import {MockApplicationsService} from '../../mock-services/applications.mock.service';
 import {CBP_APPLICATIONS_SERVICE} from '../../app/applications/cbp-applications-service';
 import {CBP_USER_SERVICE} from '../../app/user/user';
+import {DemoNotificationsModule} from './demo-notifications/demo-notifications.module';
+import {CBPNotificationsModule} from '../../app/notifications';
 
 describe('DemoAppComponent', () => {
   beforeEach(async(() => {
@@ -25,8 +27,10 @@ describe('DemoAppComponent', () => {
             CBPAccordionModule,
             CBPHeaderModule,
             CBPAppHeaderModule,
+            CBPNotificationsModule,
             DemoButtonsModule,
-            DemoAppHeaderModule
+            DemoAppHeaderModule,
+            DemoNotificationsModule
         ],
         declarations: [
             DemoAppComponent,

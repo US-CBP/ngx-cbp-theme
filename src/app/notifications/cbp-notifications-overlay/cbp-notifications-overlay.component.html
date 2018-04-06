@@ -1,12 +1,5 @@
 <div class="cbp-notifications-overlay">
     <cbp-notification [notification]="notification" *ngFor="let notification of notifications" (close)="onClose($event)">
-
-
-        <!--<ng-container *ngIf="notification.content">-->
-            <!--<ng-template [cdkPortalOutlet]="notification.contentPortal"></ng-template>-->
-        <!--</ng-container>-->
         <ng-template [cdkPortalOutlet]="notification.contentPortal"></ng-template>
-
-        <!--<span *ngIf="notification.message" cbpNotificationActions>{{notification.message}}</span>-->
     </cbp-notification>
 </div>

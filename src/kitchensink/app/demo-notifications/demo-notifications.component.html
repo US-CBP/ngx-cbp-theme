@@ -1,0 +1,54 @@
+<h2>Notifications</h2>
+
+
+<button mat-raised-button color="primary" (click)="notifyMe('You got notified!')">Notify Me</button>
+<button mat-raised-button color="accent" (click)="notifyInfo()">Comment Added</button>
+<button mat-raised-button (click)="notifyWarning()">Snooze</button>
+<button mat-raised-button color="warn" (click)="notifyDanger()">Retry & Close</button>
+
+<div class="demo-notifications-pre-build">
+    <cbp-notification [type]="'success'" [message]="'Message sent to Jerry'" [autoShow]="true"></cbp-notification>
+
+    <cbp-notification [type]="'info'" [autoShow]="true">
+        <ng-template [ngTemplateOutlet]="infoNotification"></ng-template>
+    </cbp-notification>
+
+    <!-- Note: warn is danger in Material but this is an exception. This shows Yellow/Orange. -->
+    <cbp-notification [type]="'warning'" [autoShow]="true">
+        <ng-template [ngTemplateOutlet]="warnNotification"></ng-template>
+    </cbp-notification>
+
+    <cbp-notification [type]="'danger'" [(show)]="dangerShow" [autoShow]="true">
+        <ng-template [ngTemplateOutlet]="dangerNotification"></ng-template>
+    </cbp-notification>
+
+</div>
+
+
+
+
+<ng-template #infoNotification>
+    <span class="cbp-notification-contents">
+        Jerry added a comment to one of your cases <strong>(90/098,881)</strong>.
+    </span>
+    <span class="cbp-notification-actions" >
+        <a mat-raised-button color="accent" (click)="viewComment()" >View comment</a>
+    </span>
+</ng-template>
+
+<ng-template #warnNotification>
+    <span class="cbp-notification-contents">Case 90/842,381 is due tomorrow.</span>
+    <span class="cbp-notification-actions">
+            <a mat-raised-button color="accent" (click)="caseViewed()">View case</a>
+            <a mat-raised-button (click)="snoozeSnoozing(3000)">Snooze 3 sec</a>
+    </span>
+</ng-template>
+
+
+<ng-template #dangerNotification>
+    <span class="cbp-notification-contents">Connection has been lost. Retrying in 30 seconds.</span>
+    <span class="cbp-notification-actions">
+            <a mat-raised-button color="warn" (click)="retryAndClose()">Retry & Close</a>
+    </span>
+</ng-template>
+

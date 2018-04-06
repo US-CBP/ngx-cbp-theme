@@ -18,7 +18,7 @@ export class CBPNotificationsOverlayComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.notificationsService.getNotifications().subscribe( notification => {
-      if (notification.content) {
+      if (notification.content && !notification.contentPortal) {
           notification.contentPortal = new TemplatePortal(notification.content, null!);
       }
       this.notifications.push(notification);
@@ -28,7 +28,11 @@ export class CBPNotificationsOverlayComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this._subscriptions.forEach( sub => sub.unsubscribe());
   }
-  onClose($event: Event) {
-    console.log('closed notification $event', $event);
+  onClose(closed: CBPNotification) {
+
+    console.log('closed notification $event here', this.notifications.length);
+    const index = this.notifications.indexOf(closed);
+    this.notifications.splice(index, 1);
+    console.log('closed notification $event here', this.notifications.length);
   }
 }

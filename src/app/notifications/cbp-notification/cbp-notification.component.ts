@@ -1,23 +1,12 @@
-import {
-    Component, ContentChild, Directive, EventEmitter, HostBinding, Input, OnInit, Output,
-    ViewEncapsulation
-} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
 import {CBPNotification} from '../cbp-notification';
-import {Portal, TemplatePortal} from '@angular/cdk/portal';
+import {Subscription} from 'rxjs/Subscription';
+import {Observable} from 'rxjs/Observable';
 
-@Directive({selector: '[cbpNotificationContent], .cbp-notification-contents'})
-export class CBPNotificationContentsDirective {
-    @HostBinding('class') thisClass = 'toast-content';
-    constructor() {
-    }
-}
+import 'rxjs/add/observable/empty';
+import 'rxjs/add/operator/delay';
 
-@Directive({selector: '[cbpNotificationActions]'})
-export class CBPNotificationActionsDirective {
-    constructor() {
-    }
-}
 
 @Component({
     selector: 'cbp-notification',
@@ -39,18 +28,22 @@ export class CBPNotificationActionsDirective {
         )
     ]
 })
-export class CBPNotificationComponent implements OnInit {
+export class CBPNotificationComponent implements OnInit, OnDestroy {
+    @Input() type?: 'success' | 'danger' | 'warning' | 'info' = 'info';
+    @Input() message?: string;
+    // OR
     @Input() notification: CBPNotification;
+
+    @Input() autoShow = false;
     @Input() delay = 100;
+    @Input() show = false;
+
     animationState: any;
+    private _subscriptions: Subscription[] = [];
 
 
-    @Output() close = new EventEmitter<any>();
-    @ContentChild(CBPNotificationContentsDirective) toastContents: CBPNotificationContentsDirective;
-    @ContentChild(CBPNotificationActionsDirective) toastActions: CBPNotificationActionsDirective;
+    @Output() close = new EventEmitter<CBPNotification>();
 
-
-    private show = false;
 
     constructor() {
     }
@@ -60,25 +53,45 @@ export class CBPNotificationComponent implements OnInit {
     }
 
     ngOnInit() {
-        if (this.delay > 0) {
-            setTimeout(() => {
-                this.activate();
-            }, this.delay);
-        } else {
-            this.show = true;
+        if (!this.notification) {
+            this.notification = new CBPNotification(this.autoShow);
+            if (!this.notification.message) {
+                this.notification.message = this.message;
+            }
+            if (!this.notification.type) {
+                this.notification.type = this.type;
+            }
+        } else if (!this.notification.open) {
+            throw new Error('Must be an instance of CBPNotification');
         }
+
+        this._subscriptions.push(this.notification.isOpen().subscribe( state => {
+            if (state) {
+                this.activate();
+            } else {
+                this.remove();
+            }
+        }));
     }
 
+    ngOnDestroy() {
+        this._subscriptions.forEach(sub => sub.unsubscribe());
+    }
 
     activate() {
         this.show = true;
         this.animationState = 'enter'
     }
 
-    hide() {
+    dismiss() {
         this.show = false;
         this.animationState = 'leave';
-        this.close.emit(true);
+    }
+    remove() {
+        this.dismiss();
+        Observable.empty().delay(300).subscribe( null, null, () => {
+            this.close.emit(this.notification);
+        });
     }
 
 }

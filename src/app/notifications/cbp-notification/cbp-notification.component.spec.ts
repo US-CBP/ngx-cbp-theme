@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CBPNotificationComponent } from './cbp-notification.component';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 describe('CBPNotificationComponent', () => {
   let component: CBPNotificationComponent;
@@ -8,7 +9,8 @@ describe('CBPNotificationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CBPNotificationComponent ]
+      declarations: [ CBPNotificationComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));
