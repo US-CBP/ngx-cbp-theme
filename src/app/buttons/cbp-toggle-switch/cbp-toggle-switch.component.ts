@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import {CanColor, CanDisable, mixinColor, mixinDisabled, mixinTabIndex, ThemePalette} from '@angular/material';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {HasTabIndex} from '@angular/material/core/typings/common-behaviors/tabindex';
+import {HasTabIndex} from '@angular/material';
 
 
 export class CBPToggleSwitchChange {
