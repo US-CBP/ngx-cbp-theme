@@ -32,7 +32,3 @@ jobs:
         on:
           branch: master
 
-
-cache:
-  directories:
-    - node_modules
