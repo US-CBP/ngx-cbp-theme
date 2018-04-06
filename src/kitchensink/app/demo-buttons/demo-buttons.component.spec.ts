@@ -5,11 +5,12 @@ import {BrowserModule} from '@angular/platform-browser';
 import {DemoButtonsComponent} from './demo-buttons.component';
 import {CBPButtonsModule} from '../../../app/buttons/buttons.module';
 import {FormsModule} from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material';
 
 describe('DemoButtonsComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [BrowserModule, NoopAnimationsModule, CBPButtonsModule, FormsModule],
+            imports: [BrowserModule, NoopAnimationsModule, CBPButtonsModule, FormsModule, MatCheckboxModule],
             declarations: [
                 DemoButtonsComponent]
         }).compileComponents();

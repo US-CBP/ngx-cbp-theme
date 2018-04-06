@@ -1,0 +1,14 @@
+.cbp-notifications-overlay {
+  //&.static-demo {
+  //  position: inherit;
+  //  top: 42px; right: 0px;
+  //  z-index: inherit;
+  //
+  //}
+  width: 400px;
+
+  position: fixed;
+  top: 52px;
+  right: 0px;
+  z-index: 10000;
+}

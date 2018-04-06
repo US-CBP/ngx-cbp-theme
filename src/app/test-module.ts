@@ -7,6 +7,7 @@ import {CBPAppHeaderModule} from './header/app-header/app-header.module';
 import {CBPProgressModule} from './progress/progress.module';
 import {CBPRootComponent} from './cbp-root/cbp-root.component';
 import {CBPButtonsModule} from './buttons/buttons.module';
+import {CBPNotificationsModule} from './notifications';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {CBPButtonsModule} from './buttons/buttons.module';
         CBPHeaderModule,
         CBPAppHeaderModule,
         CBPProgressModule,
-        CBPButtonsModule
+        CBPButtonsModule,
+        CBPNotificationsModule
     ],
     providers: [],
     schemas: [],

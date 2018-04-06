@@ -10,12 +10,19 @@ export class DemoButtonsComponent {
 
     toggle = {
         one: true,
-        two: false,
+        two: true,
         disabled: 'Y',
-        something: ''
+        something: '',
+        something2: '',
+        yn: 'Y',
+        three: <any>undefined
     };
 
+    changed($event: any) {
+        console.log('demo toggle changed - ', $event);
+    }
     constructor() {
         delete this.toggle.something;
+        delete this.toggle.something2;
     }
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CBPToggleSwitchComponent } from './cbp-toggle-switch/cbp-toggle-switch.component';
 import {FormsModule} from '@angular/forms';
+import { CBPToggleSwitchComponent } from './cbp-toggle-switch/cbp-toggle-switch.component';
 
 @NgModule({
   imports: [
