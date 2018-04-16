@@ -9,6 +9,7 @@ import 'rxjs/add/operator/delay';
 
 
 @Component({
+    moduleId: module.id,
     selector: 'cbp-notification',
     templateUrl: './cbp-notification.component.html',
     styleUrls: ['./cbp-notification.component.scss'],

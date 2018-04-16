@@ -5,6 +5,7 @@ import {Subscription} from 'rxjs/Subscription';
 import {TemplatePortal} from '@angular/cdk/portal';
 
 @Component({
+  moduleId: module.id,
   selector: 'cbp-notifications-overlay',
   templateUrl: './cbp-notifications-overlay.component.html',
   styleUrls: ['./cbp-notifications-overlay.component.scss']
