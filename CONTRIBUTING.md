@@ -39,6 +39,11 @@ Huge discussion threads here:-
 [[RFC] Library Support and Boilerplate Comment Thread](https://github.com/angular/angular-cli/issues/6510) 
 
 
+# special build
+
+Utilizes rollup and ngc to produce FESM5 modules which are flat. In order to maintain/generate flat module exports so that downstream production builds don't break we need to generate barrels.
+To do so as a convention we must generate index.ts for every directory and re-export all the public classes ultimately re-exporting all these `index.ts` into the top level `src/app/index.ts`  
+
 # bootstrap vs. material
 
 We have started with material to customize it for bootstrap wherever it is needed. 
