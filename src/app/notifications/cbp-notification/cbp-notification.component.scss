@@ -32,7 +32,6 @@
 
   button.close {
     position: absolute;
-    font-size: 24px;
     right: 0;
     top: 0;
     opacity: .6;
@@ -42,6 +41,7 @@
 .cbp-notification-contents {
   display: inline-block;
   margin-bottom: $alert-padding;
+  margin-right: $modal-inner-padding;
 }
 .cbp-notification-actions {
   display: inline-block;

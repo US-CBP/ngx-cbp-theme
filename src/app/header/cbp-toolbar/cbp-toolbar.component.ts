@@ -2,7 +2,7 @@ import {
     Component, EventEmitter, HostBinding, HostListener, Input, OnDestroy, OnInit, Output,
     ViewEncapsulation
 } from '@angular/core';
-import {CBPScrollShrinkAnimator} from './cbp-scrollshrink';
+import {CBPScrollShrinkAnimator} from './cbp-scrollshrink-animator';
 import {MediaChange, ObservableMedia} from '@angular/flex-layout';
 import {Subscription} from 'rxjs/Subscription';
 import {fadeInContent} from '@angular/material';
@@ -23,7 +23,6 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
 
 
     @Output() cbpToolbarScrollState: 'up' | 'initial';
-    private lastScrollY: number;
 
     private mediaSubscription: Subscription;
 
@@ -49,7 +48,6 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.cbpToolbarScrollState = 'initial';
-        this.lastScrollY = 0;
         this.mediaSubscription = this.media.subscribe(
             (change: MediaChange) => {
                 if ( change.mqAlias !== 'xs') {
@@ -69,8 +67,7 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
     @HostListener('window:scroll', ['$event'])
     scrolled() {
         if ( ! this.toolbarState.scrollShrinkSuspended) {
-            this.cbpToolbarScrollState = this.lastScrollY > window.pageYOffset ? 'initial' : 'up';
-            this.lastScrollY = window.pageYOffset;
+            this.cbpToolbarScrollState = window.pageYOffset <= 50 ? 'initial' : 'up';
             this.toolbarState.scrollState.next( this.cbpToolbarScrollState );
             this.isToolbarExpanded = false;
         }

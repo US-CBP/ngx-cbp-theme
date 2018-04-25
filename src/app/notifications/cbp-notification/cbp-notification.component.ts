@@ -66,7 +66,7 @@ export class CBPNotificationComponent implements OnInit, OnDestroy {
             throw new Error('Must be an instance of CBPNotification');
         }
 
-        this._subscriptions.push(this.notification.isOpen().subscribe( state => {
+        this._subscriptions.push(this.notification.isOpen$.subscribe( state => {
             if (state) {
                 this.activate();
             } else {
@@ -88,8 +88,11 @@ export class CBPNotificationComponent implements OnInit, OnDestroy {
         this.show = false;
         this.animationState = 'leave';
     }
-    remove() {
+    remove(userTriggered?: boolean) {
         this.dismiss();
+        if (userTriggered) {
+          this.notification.close();
+        }
         Observable.empty().delay(300).subscribe( null, null, () => {
             this.close.emit(this.notification);
         });
