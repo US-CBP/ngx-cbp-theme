@@ -1,11 +1,9 @@
 import {TemplateRef} from '@angular/core';
 import {Portal} from '@angular/cdk/portal';
 import {Observable} from 'rxjs/Observable';
-import {ReplaySubject} from 'rxjs/ReplaySubject';
 
-import 'rxjs/add/observable/empty';
-import 'rxjs/add/operator/delay';
-import {BehaviorSubject} from "rxjs/BehaviorSubject";
+
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 let notificationCounter = 0;
 export class CBPNotification {
@@ -26,7 +24,7 @@ export class CBPNotification {
     contentPortal?: Portal<any>;
 
     private _isOpen$: BehaviorSubject<boolean> = new BehaviorSubject(false);
-    isOpen$ = this._isOpen$.asObservable();
+    isOpen$: Observable<boolean> = this._isOpen$.asObservable();
     private _id: number;
     get id() {
         return this._id;
