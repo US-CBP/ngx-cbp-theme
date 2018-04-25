@@ -30,10 +30,8 @@ export class CBPNotificationsOverlayComponent implements OnInit, OnDestroy {
     this._subscriptions.forEach( sub => sub.unsubscribe());
   }
   onClose(closed: CBPNotification) {
-
-    console.log('closed notification $event here', this.notifications.length);
+    closed.close();
     const index = this.notifications.indexOf(closed);
     this.notifications.splice(index, 1);
-    console.log('closed notification $event here', this.notifications.length);
   }
 }
