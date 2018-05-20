@@ -21,7 +21,7 @@ export class CBPNotificationsService {
 
     /**
      * Adds and opens a notification.
-     * @param {CBPNotification} notification
+     * @param CBPNotification notification
      */
     notify(notification: CBPNotification) {
         notification.open();
@@ -30,8 +30,8 @@ export class CBPNotificationsService {
 
     /**
      * Snoozes a notification
-     * @param {CBPNotification} notification
-     * @param {number} wakeUpAfter
+     * @param CBPNotification notification
+     * @param number wakeUpAfter
      */
     snooze(notification: CBPNotification, wakeUpAfter = 5000) {
         notification.close();

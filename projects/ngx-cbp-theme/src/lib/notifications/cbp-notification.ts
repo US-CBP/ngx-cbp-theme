@@ -38,7 +38,7 @@ export class CBPNotification {
 
     /**
      * Is the notification currently open ?
-     * @returns {Observable<boolean>}
+     * @returns
      */
     isOpen(): boolean {
         return this._isOpen$.getValue();

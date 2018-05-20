@@ -16,6 +16,7 @@ import {CBPToolbarState, CBP_HEADER_STATE} from '../cbp-toolbar/cbp-toolbar-stat
 })
 export class CBPHeaderComponent {
 
+    public toolbarState: CBPToolbarState;
     @Input() cbpAppsMenuExclude: boolean;
     @Input() cbpFeedbackLinkExclude: boolean;
     @Input() cbpUserMenuExclude: boolean;
@@ -24,7 +25,9 @@ export class CBPHeaderComponent {
     @ContentChild(CBPFeedbackLinkComponent) cbpFeedbackLink: CBPFeedbackLinkComponent;
     @ContentChild(CBPUserMenuComponent) cbpUserMenu: CBPUserMenuComponent;
 
-    constructor(@Inject(CBP_HEADER_STATE) public toolbarState: CBPToolbarState) {};
+    constructor(@Inject(CBP_HEADER_STATE) state: CBPToolbarState) {
+      this.toolbarState = state;
+    };
 
     isProvided(comp: any): boolean {
       return comp ? true : false;

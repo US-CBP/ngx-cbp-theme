@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CBPRootModule} from '../../app/cbp-root' ;
+// import { CBPRootModule} from '../../app/cbp-root' ;
 import { CBPHeaderModule, CBPAppHeaderModule} from '../../app/header' ;
 import { CBPAccordionModule} from '../../app/accordion' ;
 
@@ -20,6 +20,7 @@ import {CBP_APPLICATIONS_SERVICE} from '../../app/applications/cbp-applications-
 import * as pkg from '../../../package.json';
 import {DemoNotificationsModule} from './demo-notifications/demo-notifications.module';
 import {CBPNotificationsModule} from '../../app/notifications';
+import {CBPRootModule} from 'ngx-cbp-theme';
 
 export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
 
