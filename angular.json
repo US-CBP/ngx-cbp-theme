@@ -3,85 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lib": {
-      "root": "",
-      "sourceRoot": "src",
-      "projectType": "application",
+    "ngx-cbp-theme": {
+      "root": "projects/ngx-cbp-theme",
+      "sourceRoot": "projects/ngx-cbp-theme/src",
+      "projectType": "library",
+      "prefix": "cbp",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "outputPath": "dist-lib",
-            "index": "src/index.html",
-            "main": "src/test-entry.ts",
-            "tsConfig": "src/tsconfig.app.json",
-            "polyfills": "src/polyfills.ts",
-            "assets": [],
-            "styles": [
-              "src/ngx-cbp-theme.scss"
-            ],
-            "scripts": []
+            "tsConfig": "projects/ngx-cbp-theme/tsconfig.lib.json",
+            "project": "projects/ngx-cbp-theme/ng-package.json"
           },
-          "configurations": {}
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "lib:build"
-          },
-          "configurations": {}
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "lib:build"
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-cbp-theme/ng-package.prod.json"
+            }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "karmaConfig": "./karma.conf.js",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "scripts": [],
-            "styles": [
-              "src/ngx-cbp-theme.scss"
-            ],
-            "assets": []
+            "main": "projects/ngx-cbp-theme/src/test.ts",
+            "tsConfig": "projects/ngx-cbp-theme/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-cbp-theme/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "lib-e2e": {
-      "root": "",
-      "sourceRoot": "",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "lib:serve"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "e2e/tsconfig.e2e.json"
+              "projects/ngx-cbp-theme/tsconfig.lib.json",
+              "projects/ngx-cbp-theme/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -91,30 +44,37 @@
       }
     },
     "kitchensink": {
-      "root": "",
-      "sourceRoot": "src",
+      "root": "projects/kitchensink/",
+      "sourceRoot": "projects/kitchensink/src",
       "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist-kitchensink",
-            "index": "src/kitchensink/index.html",
-            "main": "src/kitchensink/index.ts",
-            "tsConfig": "src/kitchensink/tsconfig.app.json",
-            "polyfills": "src/kitchensink/polyfills.ts",
+            "outputPath": "dist/kitchensink",
+            "index": "projects/kitchensink/src/index.html",
+            "main": "projects/kitchensink/src/main.ts",
+            "polyfills": "projects/kitchensink/src/polyfills.ts",
+            "tsConfig": "projects/kitchensink/tsconfig.app.json",
             "assets": [
-              "src/kitchensink/assets"
+              "projects/kitchensink/src/favicon.ico",
+              "projects/kitchensink/src/assets"
             ],
             "styles": [
-              "src/kitchensink/kitchensink.scss"
+              "projects/kitchensink/src/styles.css"
             ],
-            "scripts": [
-              "node_modules/tota11y/build/tota11y.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/kitchensink/src/environments/environment.ts",
+                  "with": "projects/kitchensink/src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -123,13 +83,7 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/kitchensink/environments/environment.ts",
-                  "with": "src/kitchensink/environments/environment.prod.ts"
-                }
-              ]
+              "buildOptimizer": true
             }
           }
         },
@@ -153,18 +107,17 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/kitchensink/test.ts",
-            "karmaConfig": "./karma.conf.js",
-            "polyfills": "src/kitchensink/polyfills.ts",
-            "tsConfig": "src/kitchensink/tsconfig.spec.json",
-            "scripts": [
-              "node_modules/tota11y/build/tota11y.min.js"
-            ],
+            "main": "projects/kitchensink/src/test.ts",
+            "polyfills": "projects/kitchensink/src/polyfills.ts",
+            "tsConfig": "projects/kitchensink/tsconfig.spec.json",
+            "karmaConfig": "projects/kitchensink/karma.conf.js",
             "styles": [
-              "src/kitchensink/kitchensink.scss"
+              "projects/kitchensink/src/styles.css"
             ],
+            "scripts": [],
             "assets": [
-              "src/kitchensink/assets"
+              "projects/kitchensink/src/favicon.ico",
+              "projects/kitchensink/src/assets"
             ]
           }
         },
@@ -172,8 +125,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "projects/kitchensink/tsconfig.app.json",
+              "projects/kitchensink/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -183,23 +136,20 @@
       }
     },
     "kitchensink-e2e": {
-      "root": "",
-      "sourceRoot": "",
+      "root": "projects/kitchensink-e2e/",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "./protractor.conf.js",
+            "protractorConfig": "projects/kitchensink-e2e/protractor.conf.js",
             "devServerTarget": "kitchensink:serve"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "e2e/tsconfig.e2e.json"
-            ],
+            "tsConfig": "projects/kitchensink-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -208,7 +158,7 @@
       }
     }
   },
-  "defaultProject": "lib",
+  "defaultProject": "kitchensink",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "cbp",
