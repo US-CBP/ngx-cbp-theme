@@ -71,7 +71,7 @@ export class CBPUserMenuComponent implements OnInit, OnDestroy {
 
     }
 
-    login() {
+    login($event: any) {
         this.loginProgress = true;
         this.isLoggedIn = false;
         this.userService.login();
