@@ -27,7 +27,7 @@
     "lint": "ng lint",
     "start:kitchensink": "ng serve kitchensink --port 4100",
     "clean:kitchensink": "rimraf ./dist/kitchensink",
-    "build:kitchensink": "ng build kitchensink --prod",
+    "build:kitchensink": "ng build kitchensink --prod --base-href ngx-cbp-theme",
     "build:kitchensink:prod": "npm-run-all clean:kitchensink build:ngx-cbp-theme build:kitchensink",
     "test:kitchensink": "ng test kitchensink",
     "test:kitchensink:once": "ng test kitchensink --watch=false  --progress=false",
