@@ -30,12 +30,12 @@
     "build:kitchensink": "ng build kitchensink --prod",
     "build:kitchensink:prod": "npm-run-all clean:kitchensink build:ngx-cbp-theme build:kitchensink",
     "test:kitchensink": "ng test kitchensink",
-    "test:kitchensink:once": "ng test kitchensink --watch=false",
+    "test:kitchensink:once": "ng test kitchensink --watch=false  --progress=false",
     "test:ngx-cbp-theme": "ng test ngx-cbp-theme",
-    "test:ngx-cbp-theme:once": "ng test ngx-cbp-theme --watch=false",
+    "test:ngx-cbp-theme:once": "ng test ngx-cbp-theme --watch=false --progress=false",
     "e2e:kitchensink": "ng e2e kitchensink-e2e",
-    "ready": "npm-run-all --parallel lint  build:kitchensink:prod test:once e2e:kitchensink",
-    "test:once": "npm-run-all --serial  test:ngx-cbp-theme:once test:kitchensink:once",
+    "ready": "npm-run-all lint --parallel build:kitchensink:prod test:once e2e:kitchensink",
+    "test:once": "npm-run-all --parallel  test:ngx-cbp-theme:once test:kitchensink:once",
     "postinstall": "node postinstall.js"
   },
   "dependencies": {

@@ -55,6 +55,7 @@ describe('CBPApplicationsMenuComponent', () => {
         fixture = TestBed.createComponent(CBPApplicationsMenuComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
+        userServices.getUser();
         toolbarState = TestBed.get(CBP_HEADER_STATE);
       });
 
