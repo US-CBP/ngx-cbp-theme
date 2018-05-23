@@ -1,6 +1,5 @@
 import {Component, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {CBPNotification} from '../../../app/notifications/cbp-notification';
-import {CBPNotificationsService} from '../../../app/notifications/cbp-notifications.service';
+import {CBPNotification, CBPNotificationsService} from 'ngx-cbp-theme';
 import 'rxjs/add/observable/empty';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/filter';

@@ -4,12 +4,8 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/merge';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {CBP_USER_SERVICE, CBPUser, CBPUserService} from '../app/user/user';
-import {
-    CBPApplication, CBPApplicationsData,
-    CBPApplicationsService
-} from '../app/applications/cbp-applications-service';
-
+import {CBP_USER_SERVICE, CBPUser, CBPUserService} from '../user/user';
+import {CBPApplication, CBPApplicationsData, CBPApplicationsService} from '../applications/cbp-applications-service';
 
 
 @Injectable()
@@ -101,10 +97,9 @@ export class MockApplicationsService extends  CBPApplicationsService {
 
     /**
      * Fakeology - it does not even use user object
-     * @param {CBPUser} user
-     * @param {CBPApplicationsData} data
-     * @returns {CBPApplicationsData}
-     * @private
+     * @param CBPUser user
+     * @param CBPApplicationsData data
+     * @returns CBPApplicationsData
      */
     private _applyUserToApplications(user: CBPUser, data: CBPApplicationsData): CBPApplicationsData {
 

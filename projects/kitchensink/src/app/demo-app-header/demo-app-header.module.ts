@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DemoAppHeaderComponent } from './demo-app-header.component';
-import {CBPAppHeaderModule} from '../../../app/header/app-header/app-header.module';
+import {CBPAppHeaderModule} from 'ngx-cbp-theme';
 import {MatIconModule, MatTabsModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 

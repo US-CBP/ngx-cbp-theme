@@ -1,11 +1,9 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-// import { CBPRootModule} from '../../app/cbp-root' ;
-import {} from '../../app/header' ;
-import {} from '../../app/accordion' ;
+
 
 import {DemoAppComponent} from './demo.component';
-import {MockUserService} from '../../../mock-services/user.mock.service';
+
 
 import {MatIconModule, MatTabsModule} from '@angular/material';
 
@@ -14,17 +12,19 @@ import {DemoTypographyComponent} from './demo-typography/demo-typography.compone
 import {DemoButtonsModule} from './demo-buttons/demo-buttons.module';
 import {DemoAppHeaderModule} from './demo-app-header/demo-app-header.module';
 import {HttpClientModule} from '@angular/common/http';
-import {MockApplicationsService} from '../../../mock-services/applications.mock.service';
+
 import * as pkg from '../../../../package.json';
 import {DemoNotificationsModule} from './demo-notifications/demo-notifications.module';
 import {
-  CBPRootModule,
-  CBPHeaderModule,
-  CBPAppHeaderModule,
-  CBPAccordionModule,
-  CBP_USER_SERVICE,
   CBP_APPLICATIONS_SERVICE,
-  CBPNotificationsModule
+  CBP_USER_SERVICE,
+  CBPAccordionModule,
+  CBPAppHeaderModule,
+  CBPHeaderModule,
+  CBPNotificationsModule,
+  CBPRootModule,
+  MockUserService,
+  MockApplicationsService
 } from 'ngx-cbp-theme';
 
 export const KITCHENSINK_APP_VERSION = (<any>pkg).version;

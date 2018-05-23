@@ -26,7 +26,7 @@
     "docs:watch:ngx-cbp-theme": "npm run docs:build:ngx-cbp-theme -- -s -w",
     "lint": "ng lint",
     "start:kitchensink": "ng serve kitchensink --port 4100",
-    "build:kitchensink:prod": "rimraf ./dist-kitchensink && ng build kitchensink --prod --build-optimizer --vendor-chunk true",
+    "build:kitchensink:prod": "rimraf ./dist/kitchensink && ng build kitchensink --prod",
     "test:kitchensink": "ng test kitchensink",
     "test:kitchensink:once": "ng test kitchensink --watch=false",
     "test:ngx-cbp-theme": "ng test ngx-cbp-theme",

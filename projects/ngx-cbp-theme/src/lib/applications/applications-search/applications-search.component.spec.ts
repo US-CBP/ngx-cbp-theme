@@ -4,8 +4,8 @@ import { CBPApplicationsSearchComponent } from './applications-search.component'
 import {MatDividerModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CBP_APPLICATIONS_SERVICE} from '../cbp-applications-service';
-import {MockApplicationsService} from '../../../../../mock-services/applications.mock.service';
-import {MockUserService} from '../../../../../mock-services/user.mock.service';
+import {MockApplicationsService} from '../../mock-services/applications.mock.service';
+import {MockUserService} from '../../mock-services/user.mock.service';
 import {CBP_USER_SERVICE} from '../../user/user';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 

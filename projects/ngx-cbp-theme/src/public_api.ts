@@ -11,3 +11,6 @@ export * from './lib/pipes/index';
 export * from './lib/progress/index';
 export * from './lib/user/index';
 export * from './lib/notifications/index';
+
+export * from './lib/mock-services/index';
+
