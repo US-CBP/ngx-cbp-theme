@@ -2,7 +2,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {DemoNotificationsComponent} from './demo-notifications.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {CBPNotificationsService} from '../../../app/notifications/cbp-notifications.service';
+import {CBPNotificationsService} from 'ngx-cbp-theme';
 
 describe('DemoNotificationsComponent', () => {
     let component: DemoNotificationsComponent;

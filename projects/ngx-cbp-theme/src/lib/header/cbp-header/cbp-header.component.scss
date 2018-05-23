@@ -39,6 +39,7 @@ cbp-header {
   .mat-toolbar h1 {
     font-weight: inherit;
   }
+
 }
 
 .cbp-brand-nav {
@@ -66,3 +67,24 @@ cbp-header {
   @extend .cbp-navbar-item;
 }
 
+.cbp-theme cbp-toolbar  {
+  // flush buttons
+  .mat-button {
+    border: inherit;
+    font-size: 15px;
+    height: $navbar-height - 2;
+
+    .mat-button-wrapper {
+      font-weight: inherit;
+    }
+    .mat-icon {
+      height: inherit;
+      padding: 2px;
+      width: inherit;
+    }
+  }
+  .mat-icon {
+    height: inherit;
+    padding: 2px;
+  }
+}

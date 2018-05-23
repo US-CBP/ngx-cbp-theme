@@ -3,14 +3,17 @@
 .cbp-navbar-item {
   font-size: 15px;
   cursor: pointer;
-  line-height: $navbar-height;
-  padding: 0 15px;
   &:hover,
   &:focus {
     outline: thin dotted;
     outline-offset: -2px;
     text-decoration: none;
   }
+  display: flex;
+  align-content: center;
+  align-items: center;
+  vertical-align: middle;
+  height: $navbar-height - 2;
 }
 .cbp-toolbar-expansion-container {
   &:hover {

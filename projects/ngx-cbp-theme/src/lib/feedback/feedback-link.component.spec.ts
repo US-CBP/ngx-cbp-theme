@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CBPFeedbackLinkComponent } from './feedback-link.component';
+import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
 
 describe('CBPFeedbackLinkComponent', () => {
   let component: CBPFeedbackLinkComponent;
@@ -8,7 +9,8 @@ describe('CBPFeedbackLinkComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CBPFeedbackLinkComponent ]
+      declarations: [ CBPFeedbackLinkComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));

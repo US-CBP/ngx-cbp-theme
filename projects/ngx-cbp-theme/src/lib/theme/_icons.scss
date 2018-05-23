@@ -7,9 +7,7 @@ $fa-font-path: "../node_modules/font-awesome/fonts" !default;
   width: $size;
 }
 
-mat-icon.mat-icon {
-  width: inherit;
-}
+
 .mat-36 {
   @include mat-icon-size(36px);
 }

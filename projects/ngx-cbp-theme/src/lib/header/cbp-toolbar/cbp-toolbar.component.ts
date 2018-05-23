@@ -24,7 +24,7 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
 
   @Output() cbpToolbarScrollState: 'up' | 'initial';
 
-  private mediaSubscription: Subscription;
+  private _subscription = new Subscription();
 
 
   @Input() position: number;
@@ -51,7 +51,7 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.cbpToolbarScrollState = 'initial';
-    this.mediaSubscription = this.media.subscribe(
+    this._subscription.add(this.media.subscribe(
       (change: MediaChange) => {
         if (change.mqAlias !== 'xs') {
           this.isToolbarExpanded = false;
@@ -60,11 +60,11 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
           this.hasToolbarMenu = true;
         }
       }
-    );
+    ));
   }
 
   ngOnDestroy() {
-    this.mediaSubscription.unsubscribe();
+    this._subscription.unsubscribe();
   }
 
   @HostListener('window:scroll', ['$event'])

@@ -1,23 +1,23 @@
 @import '../../variables';
 
-.cbp-header {
-  .cbp-current-application {
-    height: $navbar-height;
-  }
+.cbp-current-application {
+  height: $navbar-height;
+}
 
-  .cbp-current-application-name {
-    line-height: 1em;
-    .mat-icon {
-      margin-left: 5px;
-      height: 14px;
-    }
-  }
-  .cbp-current-application-version {
-    line-height: $line-height-base;
-    font-size: $font-size-smallest;
-    font-style: italic;
+.cbp-current-application-name {
+  line-height: 1em;
+  .mat-icon {
+    margin-left: 5px;
+    height: 14px;
   }
 }
+
+.cbp-current-application-version {
+  line-height: $line-height-base;
+  font-size: $font-size-smallest;
+  font-style: italic;
+}
+
 
 
 .cbp-menu-item-category {
@@ -29,6 +29,7 @@
 
 .mat-menu-item .cbp-applications-remove-icon .mat-icon {
     vertical-align: inherit;
+    margin-right: 8px;
     &:hover,
     &:focus {
       color: $gray-darker;

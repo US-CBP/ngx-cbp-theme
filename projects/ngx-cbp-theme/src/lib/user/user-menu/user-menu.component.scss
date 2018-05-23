@@ -1,8 +1,18 @@
 @import '../../variables';
 
+
 :host {
   user-select: none;
 }
 .cbp-user-panel-expanded .mat-menu-item {
   color: $brand-default !important;
+}
+
+.cbp-user-not-logged-in,
+.cbp-user-login-in-progress {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  vertical-align: middle;
+  height: $navbar-height - 2;
 }

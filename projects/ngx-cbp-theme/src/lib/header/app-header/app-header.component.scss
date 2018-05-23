@@ -16,10 +16,6 @@
   }
 }
 
-:host >>> .cbp-toolbar-expansion-panel {
-    //top: $navbar-height + $navbar-appheader-height !important;
-  }
-
 
 :host .cbp-toolbar-expansion-container {
   z-index: $zindex-appbar + 100;

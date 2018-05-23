@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DemoAppHeaderComponent } from './demo-app-header.component';
 import {CommonModule} from '@angular/common';
-import {CBPAppHeaderModule} from '../../../app/header/app-header/app-header.module';
+import {CBPAppHeaderModule} from 'ngx-cbp-theme';
 import {MatIconModule, MatTabsModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';

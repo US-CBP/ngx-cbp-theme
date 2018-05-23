@@ -4,7 +4,7 @@ import { CBPUserMenuComponent } from './user-menu.component';
 import {MatIconModule, MatMenuModule} from '@angular/material';
 import {CBPProgressModule} from '../../progress/progress.module';
 import {CBP_USER_SERVICE} from '../user';
-import {MockUserService} from '../../../mock-services/user.mock.service';
+import {MockUserService} from '../../mock-services/user.mock.service';
 import {CBPToolbarState, CBP_HEADER_STATE} from '../../header/cbp-toolbar/cbp-toolbar-state';
 
 describe('CBPUserMenuComponent', () => {
