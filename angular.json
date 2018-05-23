@@ -47,8 +47,12 @@
       "root": "projects/kitchensink/",
       "sourceRoot": "projects/kitchensink/src",
       "projectType": "application",
-      "prefix": "app",
-      "schematics": {},
+      "prefix": "demo",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -63,7 +67,7 @@
               "projects/kitchensink/src/assets"
             ],
             "styles": [
-              "projects/kitchensink/src/styles.css"
+              "projects/kitchensink/src/kitchnsink.scss"
             ],
             "scripts": []
           },
@@ -112,7 +116,7 @@
             "tsConfig": "projects/kitchensink/tsconfig.spec.json",
             "karmaConfig": "projects/kitchensink/karma.conf.js",
             "styles": [
-              "projects/kitchensink/src/styles.css"
+              "projects/kitchensink/src/kitchensink.scss"
             ],
             "scripts": [],
             "assets": [

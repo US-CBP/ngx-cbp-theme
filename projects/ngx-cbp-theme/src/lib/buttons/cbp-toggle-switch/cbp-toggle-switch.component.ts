@@ -1,13 +1,27 @@
 import {
-    Attribute,
-    ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, forwardRef, HostBinding,
-    Input, OnInit,
-    Output, ExistingProvider,
-    ViewEncapsulation
+  Attribute,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  EventEmitter,
+  forwardRef,
+  HostBinding,
+  Input,
+  OnInit,
+  Output,
+  ViewEncapsulation
 } from '@angular/core';
-import {CanColor, CanDisable, mixinColor, mixinDisabled, mixinTabIndex, ThemePalette} from '@angular/material';
+import {
+  CanColor,
+  CanDisable,
+  HasTabIndex,
+  mixinColor,
+  mixinDisabled,
+  mixinTabIndex,
+  ThemePalette
+} from '@angular/material';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {HasTabIndex} from '@angular/material';
 
 
 export class CBPToggleSwitchChange {
