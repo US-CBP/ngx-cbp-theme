@@ -1,6 +1,6 @@
 {
   "name": "ngx-cbp-theme",
-  "version": "2.2.6",
+  "version": "6.0.3",
   "main": "./bundles/ngx-cbp-theme.umd.js",
   "module": "./ngx-cbp-theme.es5.js",
   "es2015": "./ngx-cbp-theme.js",
@@ -19,6 +19,8 @@
   "scripts": {
     "ng": "ng",
     "build:ngx-cbp-theme": "ng build ngx-cbp-theme --prod && npm run copy:scss",
+    "copy:liscense": "cpx \"LICEN*\" \"dist/ngx-cbp-theme\" -u",
+    "copy:readme": "cpx \"readme*\" \"dist/ngx-cbp-theme\" -u",
     "copy:scss": "mkdirp \"dist/ngx-cbp-theme/styles\" && cpx \"projects/ngx-cbp-theme/src/lib/**/*.scss\" \"dist/ngx-cbp-theme/styles/\" -u",
     "docs": "npm run docs:build:ngx-cbp-theme",
     "docs:build:ngx-cbp-theme": "compodoc -p ./src/tsconfig.app.json -n ngx-cpb-theme -d docs --hideGenerator",
@@ -35,6 +37,9 @@
     "test:ngx-cbp-theme:once": "ng test ngx-cbp-theme --watch=false --progress=false",
     "e2e:kitchensink": "ng e2e kitchensink-e2e",
     "ready": "npm-run-all lint --parallel build:kitchensink:prod test:once e2e:kitchensink",
+    "preversion": "npm-run-all build:ngx-cbp-theme copy:readme copy:liscense",
+    "version": "npm-run-all copy:readme copy:liscense",
+    "postversion": "node replaceversion.js",
     "test:once": "npm-run-all --parallel  test:ngx-cbp-theme:once test:kitchensink:once",
     "postinstall": "node postinstall.js"
   },
@@ -95,6 +100,6 @@
     "zone.js": "0.8.26"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=9.0.0"
   }
 }

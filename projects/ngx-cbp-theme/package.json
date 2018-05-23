@@ -3,6 +3,43 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/forms": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/http": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/animations": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/platform-browser": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/platform-browser-dynamic": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/router": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/cdk": "^6.1.0",
+    "@angular/material": "^6.1.0",
+    "@angular/flex-layout": "6.0.0-beta.15",
+    "rxjs-compat": "^6.0.0-rc.0",
+    "rxjs": "^6.2.0",
+    "cbp-theme": "1.9.0",
+    "classlist.js": "1.1.20150312",
+    "del": "^3.0.0",
+    "replace": "^1.0.0",
+    "web-animations-js": "^2.3.1"
+  },
+  "dependencies": {
+    "cbp-theme": "1.9.0",
+    "classlist.js": "1.1.20150312",
+    "del": "^3.0.0",
+    "replace": "^1.0.0",
+    "web-animations-js": "^2.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/US-CBP/ngx-cbp-theme.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/US-CBP/ngx-cbp-theme.git/issues"
+  },
+  "engines": {
+    "node": ">=9.0.0"
   }
 }
