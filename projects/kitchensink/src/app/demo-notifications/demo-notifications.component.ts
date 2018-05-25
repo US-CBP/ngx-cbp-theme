@@ -1,11 +1,8 @@
+import {EMPTY, Subscription} from 'rxjs';
+
+import {delay, filter, first} from 'rxjs/operators';
 import {Component, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {CBPNotification, CBPNotificationsService} from 'ngx-cbp-theme';
-import 'rxjs/add/observable/empty';
-import 'rxjs/add/operator/delay';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/first';
-import {Observable} from 'rxjs/Observable';
-import {Subscription} from 'rxjs/Subscription';
 
 @Component({
   selector: 'demo-notifications, cbp-demo-notifications',
@@ -60,10 +57,10 @@ export class DemoNotificationsComponent implements OnInit, OnDestroy {
     this.snoozingNotification.content = this.warnNotificationRef;
     this.notificationService.notify(this.snoozingNotification);
     this.snoozerNotifClosingSubscription.add(
-      this.snoozingNotification.isOpen$
-        .filter((open: boolean) => open === false)
-        .first()
-        .delay(600)
+      this.snoozingNotification.isOpen$.pipe(
+        filter((open: boolean) => open === false),
+        first(),
+        delay(600),)
         .subscribe(() => {
           this.notifyMe('You just closed Snoozer Notification');
         }));
@@ -99,7 +96,7 @@ export class DemoNotificationsComponent implements OnInit, OnDestroy {
    */
   retryAndClose() {
     this.notifyMe('Connection Successful!');
-    Observable.empty().delay(2000).subscribe(null, null, () => {
+    EMPTY.pipe(delay(2000)).subscribe(null, null, () => {
       if (this.connectionLostNotification) {
         this.connectionLostNotification.close();
       } else {

@@ -1,7 +1,9 @@
+
+import {debounceTime} from 'rxjs/operators';
 import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {CBPToolbarState, APP_HEADER_STATE} from 'ngx-cbp-theme';
-import 'rxjs/add/operator/debounceTime';
-import {Subscription} from 'rxjs/Subscription';
+
+import {Subscription} from 'rxjs';
 @Component({
     selector: 'cbp-demo-typography, demo-typography',
     templateUrl: './demo-typography.component.html',
@@ -15,7 +17,7 @@ export class DemoTypographyComponent implements OnInit, OnDestroy {
     constructor(@Inject(APP_HEADER_STATE) public toolbarState: CBPToolbarState) {}
 
     ngOnInit() {
-        this.subscriptions.push(this.toolbarState.scrollState.debounceTime(100).subscribe((state: any) => {
+        this.subscriptions.push(this.toolbarState.scrollState.pipe(debounceTime(100)).subscribe((state: any) => {
             this.scrollState = state;
             console.log('demo toolbar state ', state);
         }));
