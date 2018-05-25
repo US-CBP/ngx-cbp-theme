@@ -1,11 +1,9 @@
+import {EMPTY, Subscription} from 'rxjs';
+
+import {delay} from 'rxjs/operators';
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
 import {CBPNotification} from '../cbp-notification';
-import {Subscription} from 'rxjs/Subscription';
-import {Observable} from 'rxjs/Observable';
-
-import 'rxjs/add/observable/empty';
-import 'rxjs/add/operator/delay';
 
 
 @Component({
@@ -92,7 +90,7 @@ export class CBPNotificationComponent implements OnInit, OnDestroy {
         if (userTriggered) {
           this.notification.close();
         }
-        Observable.empty().delay(300).subscribe( null, null, () => {
+        EMPTY.pipe(delay(300)).subscribe( null, null, () => {
             this.close.emit(this.notification);
         });
     }

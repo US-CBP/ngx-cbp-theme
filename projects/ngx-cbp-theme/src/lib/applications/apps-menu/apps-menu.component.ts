@@ -1,5 +1,5 @@
 import {Component, Inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {MatMenuTrigger} from '@angular/material';
 import {
     CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,

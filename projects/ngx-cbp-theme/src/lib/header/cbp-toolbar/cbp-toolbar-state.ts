@@ -1,5 +1,5 @@
-import 'rxjs/add/operator/debounceTime';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+
+import {BehaviorSubject} from 'rxjs';
 import {InjectionToken} from '@angular/core';
 
 

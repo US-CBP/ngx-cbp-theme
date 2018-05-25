@@ -1,9 +1,6 @@
 import {TemplateRef} from '@angular/core';
 import {Portal} from '@angular/cdk/portal';
-import {Observable} from 'rxjs/Observable';
-
-
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {Observable, BehaviorSubject} from 'rxjs';
 
 let notificationCounter = 0;
 export class CBPNotification {

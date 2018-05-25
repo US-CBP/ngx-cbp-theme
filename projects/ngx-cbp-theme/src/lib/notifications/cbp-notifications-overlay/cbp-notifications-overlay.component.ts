@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CBPNotification} from '../cbp-notification';
 import {CBPNotificationsService} from '../cbp-notifications.service';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {TemplatePortal} from '@angular/cdk/portal';
 
 @Component({
@@ -12,21 +12,21 @@ import {TemplatePortal} from '@angular/cdk/portal';
 export class CBPNotificationsOverlayComponent implements OnInit, OnDestroy {
 
   notifications: CBPNotification[] = [];
-  private _subscriptions: Subscription[] = [];
+  private _subscriptions = new Subscription();
 
   constructor(private notificationsService: CBPNotificationsService) { }
 
   ngOnInit() {
-    this.notificationsService.getNotifications().subscribe( notification => {
+    this._subscriptions.add(this.notificationsService.getNotifications().subscribe( notification => {
       if (notification.content && !notification.contentPortal) {
           notification.contentPortal = new TemplatePortal(notification.content, null!);
       }
       this.notifications.push(notification);
-    });
+    }));
   }
 
   ngOnDestroy() {
-    this._subscriptions.forEach( sub => sub.unsubscribe());
+    this._subscriptions.unsubscribe();
   }
   onClose(closed: CBPNotification) {
     closed.close();

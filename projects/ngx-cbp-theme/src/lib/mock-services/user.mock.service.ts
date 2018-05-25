@@ -1,8 +1,7 @@
 
 import {Injectable} from '@angular/core';
 import {CBPUser, CBPUserService} from '../user';
-import {Subject} from 'rxjs/Subject';
-import {ReplaySubject} from 'rxjs/ReplaySubject';
+import {Subject, ReplaySubject} from 'rxjs';
 
 @Injectable()
 export class MockUserService extends  CBPUserService {

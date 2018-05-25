@@ -1,9 +1,11 @@
+
+import {map, startWith} from 'rxjs/operators';
 import {Component, Inject, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsService} from '../cbp-applications-service';
 import {FormControl} from '@angular/forms';
-import 'rxjs/add/operator/startWith';
-import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs/Observable';
+
+
+import {Observable} from 'rxjs';
 
 @Component({
         selector: 'cbp-applications-search',
@@ -25,9 +27,9 @@ import {Observable} from 'rxjs/Observable';
     constructor(@Inject(CBP_APPLICATIONS_SERVICE) public applicationsService: CBPApplicationsService) {}
 
     ngOnInit() {
-        this.searchResultsApplications = this.searchTokenControl.valueChanges
-            .startWith(null)
-            .map(token => this._search(token));
+        this.searchResultsApplications = this.searchTokenControl.valueChanges.pipe(
+            startWith(null),
+            map(token => this._search(token)));
     }
 
     private _search(token: string) {

@@ -1,6 +1,5 @@
-import {Observable} from 'rxjs/Observable';
+import {Observable, ReplaySubject} from 'rxjs';
 import {InjectionToken} from '@angular/core';
-import {ReplaySubject} from 'rxjs/ReplaySubject';
 
 /**
  * Each application in the drop down and this application to refer by name/id etc.

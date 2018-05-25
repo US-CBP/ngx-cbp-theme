@@ -1,9 +1,8 @@
+
+import {of as observableOf, Observable, BehaviorSubject} from 'rxjs';
+
+import {map} from 'rxjs/operators';
 import {Inject, Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/merge';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {CBP_USER_SERVICE, CBPUser, CBPUserService} from '../user/user';
 import {CBPApplication, CBPApplicationsData, CBPApplicationsService} from '../applications/cbp-applications-service';
 
@@ -71,13 +70,13 @@ export class MockApplicationsService extends  CBPApplicationsService {
         }
     }
     private _getData(): Observable<CBPApplicationsData> {
-        return this._getMockHttpData()
-            .map((data: CBPApplicationsData) => {
+        return this._getMockHttpData().pipe(
+            map((data: CBPApplicationsData) => {
                 data.lastRetrieved = new Date();
                 data.currentApp = new CBPApplication('Kitchen Sink');
                 this.currentApp.next(data.currentApp);
                 return data;
-            });
+            }));
     }
 
     private _getMockHttpData(): Observable<CBPApplicationsData> {
@@ -91,7 +90,7 @@ export class MockApplicationsService extends  CBPApplicationsService {
 
         let data = new CBPApplicationsData();
         data.list = <CBPApplication[]> rawList;
-        return Observable.of(data);
+        return observableOf(data);
 
     }
 

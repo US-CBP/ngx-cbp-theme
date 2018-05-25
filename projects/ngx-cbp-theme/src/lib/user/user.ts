@@ -1,5 +1,5 @@
 import {InjectionToken} from '@angular/core';
-import {Subject} from 'rxjs/Subject';
+import {Subject} from 'rxjs';
 
 /**
  * CBPUser class can be extended by the library users to include additional attributes.

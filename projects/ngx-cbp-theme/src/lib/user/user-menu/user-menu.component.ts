@@ -1,6 +1,6 @@
 import {Component, Inject, OnDestroy, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {CBP_USER_SERVICE, CBPUser, CBPUserService} from '../user';
-import {Subscription} from 'rxjs/Subscription';
+import {Subscription} from 'rxjs';
 import {MatMenuTrigger} from '@angular/material';
 import {CBPToolbarState, CBP_HEADER_STATE} from '../../header/cbp-toolbar/cbp-toolbar-state';
 

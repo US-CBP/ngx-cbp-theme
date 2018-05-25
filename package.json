@@ -20,7 +20,7 @@
     "ng": "ng",
     "build:ngx-cbp-theme": "ng build ngx-cbp-theme --prod && npm run copy:scss",
     "copy:liscense": "cpx \"LICEN*\" \"dist/ngx-cbp-theme\" -u",
-    "copy:readme": "cpx \"readme*\" \"dist/ngx-cbp-theme\" -u",
+    "copy:readme": "cpx \"README*\" \"dist/ngx-cbp-theme\" -u",
     "copy:scss": "mkdirp \"dist/ngx-cbp-theme/styles\" && cpx \"projects/ngx-cbp-theme/src/lib/**/*.scss\" \"dist/ngx-cbp-theme/styles/\" -u",
     "docs": "npm run docs:build:ngx-cbp-theme",
     "docs:build:ngx-cbp-theme": "compodoc -p ./src/tsconfig.app.json -n ngx-cpb-theme -d docs --hideGenerator",

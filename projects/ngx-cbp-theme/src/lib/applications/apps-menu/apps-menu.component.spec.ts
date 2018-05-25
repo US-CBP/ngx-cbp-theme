@@ -13,7 +13,7 @@ import {CBPApplicationsSearchComponent} from '../applications-search/application
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CBPToolbarState, CBP_HEADER_STATE} from '../../header/cbp-toolbar/cbp-toolbar-state';
 import { By }              from '@angular/platform-browser';
-import {ReplaySubject} from 'rxjs/ReplaySubject';
+import {ReplaySubject} from 'rxjs';
 import {CommonModule} from '@angular/common';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
