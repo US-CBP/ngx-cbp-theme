@@ -60,7 +60,7 @@ export class DemoNotificationsComponent implements OnInit, OnDestroy {
       this.snoozingNotification.isOpen$.pipe(
         filter((open: boolean) => open === false),
         first(),
-        delay(600),)
+        delay(600))
         .subscribe(() => {
           this.notifyMe('You just closed Snoozer Notification');
         }));
