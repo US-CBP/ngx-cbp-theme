@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "migration-01": {
+      "version": "6.0.3",
+      "description": "Updates cbp-theme from version 2 to 6.0.3",
+      "factory": "./update/update-6_0_3"
+    }
+  }
+}
