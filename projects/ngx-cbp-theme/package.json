@@ -9,10 +9,7 @@
     "@angular/animations": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/platform-browser": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/platform-browser-dynamic": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/router": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/cdk": "^6.1.0",
-    "@angular/material": "^6.1.0",
-    "rxjs": "^6.1.0"
+    "@angular/router": "^6.0.0-rc.0 || ^6.0.0"
   },
   "dependencies": {
     "@angular/flex-layout": "6.0.0-beta.15",
@@ -37,7 +34,7 @@
     "node": ">=9.0.0"
   },
   "publishConfig": {
-    "registry" : "http://registry.npmjs.org"
+    "registry" : "https://registry.npmjs.org"
   },
   "ng-update": {
     "migrations": "./schematics/migration.json",

@@ -18,7 +18,8 @@
   },
   "scripts": {
     "ng": "ng",
-    "build:ngx-cbp-theme": "ng build ngx-cbp-theme --prod && npm run copy:scss",
+    "build:ngx-cbp-theme:schematics": "tsc -p projects/ngx-cbp-theme/schematics/ && cpx \"projects/ngx-cbp-theme/schematics/**/*.json\" \"dist/ngx-cbp-theme/schematics/\" -u",
+    "build:ngx-cbp-theme": "ng build ngx-cbp-theme --prod && npm run copy:scss && npm run build:ngx-cbp-theme:schematics",
     "copy:liscense": "cpx \"LICEN*\" \"dist/ngx-cbp-theme\" -u",
     "copy:readme": "cpx \"README*\" \"dist/ngx-cbp-theme\" -u",
     "copy:scss": "mkdirp \"dist/ngx-cbp-theme/styles\" && cpx \"projects/ngx-cbp-theme/src/lib/**/*.scss\" \"dist/ngx-cbp-theme/styles/\" -u",
