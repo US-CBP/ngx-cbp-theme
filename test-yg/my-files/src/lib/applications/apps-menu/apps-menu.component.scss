@@ -1,0 +1,65 @@
+@import '../../variables';
+
+.cbp-current-application {
+  height: $navbar-height;
+}
+
+.cbp-current-application-name {
+  line-height: 1em;
+  .mat-icon {
+    margin-left: 5px;
+    height: 14px;
+  }
+}
+
+.cbp-current-application-version {
+  line-height: $line-height-base;
+  font-size: $font-size-smallest;
+  font-style: italic;
+}
+
+
+
+.cbp-menu-item-category {
+  margin-left: $box-padding;
+  pointer-events: none;
+  padding: $padding-small-vertical $padding-xs-horizontal;
+}
+
+
+.mat-menu-item .cbp-applications-remove-icon .mat-icon {
+    vertical-align: inherit;
+    margin-right: 8px;
+    &:hover,
+    &:focus {
+      color: $gray-darker;
+      cursor: pointer;
+    }
+  }
+.cbp-applications-refresh {
+  cursor: pointer;
+}
+.cbp-applications-last-updated {
+  float: left;
+  padding: 0 $padding-large-horizontal $padding-base-vertical;
+  color: $headings-small-color;
+  user-select: none;
+
+}
+
+// TODO !important :(
+.applications-expansion-panel.inverse .cbp-applications-refresh,
+.applications-expansion-panel.inverse .cbp-applications-link,
+.applications-expansion-panel.inverse .cbp-applications-remove-icon .mat-icon {
+  color: $brand-default !important;
+}
+
+.applications-expansion-panel {
+  user-select: none;
+  overflow-x: hidden;
+}
+.cbp-menu-item-category {
+  margin-left: $box-padding;
+  pointer-events: none;
+  padding: $padding-small-vertical $padding-xs-horizontal;
+}

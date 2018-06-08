@@ -1,0 +1,7 @@
+{
+  "rulesDirectory": "schematics/update/rules",
+
+  "rules": {
+    "check-import-misc": true
+  }
+}

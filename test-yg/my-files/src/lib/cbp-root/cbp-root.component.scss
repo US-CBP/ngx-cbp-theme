@@ -1,0 +1,32 @@
+@import '../variables';
+
+/** Hacks - Certain material2 components can't be styled well without this higher level css */
+.cbp-theme {
+
+
+
+  .cbp-app-header.mat-toolbar,
+  .cbp-header.mat-toolbar {
+    padding: 0;
+    min-height: inherit;
+  }
+
+  .mat-toolbar {
+    font-weight: inherit !important;
+    min-height: inherit;
+  }
+
+  .mat-tab-label, .mat-tab-link {
+    font-size: 15px !important;
+    opacity: inherit !important;
+  }
+}
+
+cbp-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  place-content: stretch flex-start;
+  align-items: stretch;
+  max-width: 100%;
+}
