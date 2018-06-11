@@ -69,7 +69,7 @@
             "styles": [
               "projects/kitchensink/src/kitchensink.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/tota11y/build/tota11y.min.js"]
           },
           "configurations": {
             "production": {
