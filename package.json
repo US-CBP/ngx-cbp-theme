@@ -1,6 +1,6 @@
 {
   "name": "ngx-cbp-theme",
-  "version": "6.0.2",
+  "version": "6.0.4",
   "main": "./bundles/ngx-cbp-theme.umd.js",
   "module": "./ngx-cbp-theme.es5.js",
   "es2015": "./ngx-cbp-theme.js",
@@ -29,7 +29,7 @@
     "docs:serve:ngx-cbp-theme": "npm run docs:build:ngx-cbp-theme -- -s",
     "docs:watch:ngx-cbp-theme": "npm run docs:build:ngx-cbp-theme -- -s --watch",
     "lint": "ng lint",
-    "start:kitchensink": "ng serve kitchensink --port 4100",
+    "start:kitchensink": "ng serve kitchensink --port 4100 --watch",
     "clean:kitchensink": "rimraf ./dist/kitchensink",
     "build:kitchensink": "ng build kitchensink --prod --base-href ngx-cbp-theme",
     "build:kitchensink:watch": "ng build kitchensink --prod --base-href ngx-cbp-theme --watch",

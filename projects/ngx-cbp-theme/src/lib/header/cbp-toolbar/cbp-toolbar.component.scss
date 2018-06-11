@@ -4,6 +4,7 @@
 cbp-toolbar {
   width: 100%;
 
+
   .cbp-toolbar-row {
     border-bottom-width: 1px;
     border-bottom-style: solid;
@@ -12,6 +13,9 @@ cbp-toolbar {
     width: 100%;
   }
 
+  .cbp-toolbar-expansion {
+    padding: 4px;
+  }
   .cbp-toolbar-expansion-panel {
     position: fixed;
     background-color: $navbar-inverse-bg;
@@ -23,7 +27,6 @@ cbp-toolbar {
     top: $navbar-height + $navbar-appheader-height;
 
     .mat-menu-item {
-      cursor: inherit;
       cursor: pointer;
       @extend .cbp-navbar-item;
     }

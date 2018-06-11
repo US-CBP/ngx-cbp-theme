@@ -23,7 +23,6 @@ import {
 } from '@angular/material';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
-/* tslint:disable */
 
 export class CBPToggleSwitchChange {
   checked: boolean;
@@ -42,12 +41,6 @@ export const _CBPToggleSwitchMixinBase =
 
 let toggleSwitchCounter = 1;
 
-export const CBP_TOGGLE_SWITCH_CONTROL_VALUE_ACCESSOR = {
-  provide: NG_VALUE_ACCESSOR,
-  // tslint:disable-next-line:no-use-before-declare
-  useExisting: forwardRef(() => CBPToggleSwitchComponent),
-  multi: true
-};
 
 
 @Component({
@@ -56,10 +49,16 @@ export const CBP_TOGGLE_SWITCH_CONTROL_VALUE_ACCESSOR = {
   styleUrls: ['./cbp-toggle-switch.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  providers: [CBP_TOGGLE_SWITCH_CONTROL_VALUE_ACCESSOR],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    // tslint:disable-next-line:no-use-before-declare
+    useExisting: forwardRef(() => CBPToggleSwitchComponent),
+    multi: true
+  }],
   preserveWhitespaces: false // seems to trim whitespace content
 })
 
+/* tslint:disable-next-line */
 export class CBPToggleSwitchComponent extends _CBPToggleSwitchMixinBase
   implements OnInit, CanColor, CanDisable, ControlValueAccessor, HasTabIndex {
 

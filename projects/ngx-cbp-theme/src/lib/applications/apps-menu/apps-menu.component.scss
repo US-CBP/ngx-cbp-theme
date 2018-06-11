@@ -50,9 +50,22 @@
 // TODO !important :(
 .applications-expansion-panel.inverse .cbp-applications-refresh,
 .applications-expansion-panel.inverse .cbp-applications-link,
-.applications-expansion-panel.inverse .cbp-applications-remove-icon .mat-icon {
+.inverse .applications-expansion-panel .cbp-applications-remove-icon .mat-icon {
   color: $brand-default !important;
 }
+
+.cbp-applications-remove-icon .mat-icon {
+  height: inherit !important;
+  vertical-align: inherit;
+  margin-right: 0;
+}
+
+.applications-expansion-panel {
+  .mat-menu-item .mat-icon {
+    margin-right: 16px;
+  }
+}
+
 
 .applications-expansion-panel {
   user-select: none;
@@ -62,4 +75,14 @@
   margin-left: $box-padding;
   pointer-events: none;
   padding: $padding-small-vertical $padding-xs-horizontal;
+}
+.mat-button {
+  font-weight: 400 !important;
+  :hover {
+    background-color: $navbar-inverse-bg;
+  }
+
+}
+.mat-menu-item .mat-icon {
+  margin-right: 0;
 }

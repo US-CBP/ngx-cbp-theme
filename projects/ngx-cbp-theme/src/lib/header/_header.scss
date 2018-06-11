@@ -13,7 +13,8 @@
   align-content: center;
   align-items: center;
   vertical-align: middle;
-  height: $navbar-height - 2;
+  height: $navbar-height;
+  padding: 0 16px;
 }
 .cbp-toolbar-expansion-container {
   &:hover {
@@ -27,7 +28,7 @@
     .cbp-toolbar-expansion-icon {
       border: 1px solid $navbar-default-toggle-border-color;
       position: relative;
-      margin-top: 8px;
+      margin: 0;
       cursor: inherit;
       padding: 9px 10px;
       border-radius: 2px;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'cbp-loading',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CBPLoadingComponent implements OnInit {
 
+  @Input() loadingText = 'Loading ...';
   constructor() { }
 
   ngOnInit() {
