@@ -38,6 +38,8 @@
   "publishConfig": {
     "registry" : "https://registry.npmjs.org"
   },
+  "schematics": "./schematics/collection.json",
+  "sideEffects": false,
   "ng-update": {
     "migrations": "./schematics/migration.json",
     "packageGroup": [
