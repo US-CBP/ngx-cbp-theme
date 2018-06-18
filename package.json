@@ -1,6 +1,6 @@
 {
   "name": "ngx-cbp-theme",
-  "version": "6.0.4",
+  "version": "6.0.5",
   "main": "./bundles/ngx-cbp-theme.umd.js",
   "module": "./ngx-cbp-theme.es5.js",
   "es2015": "./ngx-cbp-theme.js",
@@ -19,7 +19,9 @@
   "scripts": {
     "ng": "ng",
     "build:ngx-cbp-theme:schematics": "tsc -p projects/ngx-cbp-theme/schematics/ && cpx \"projects/ngx-cbp-theme/schematics/**/*.json\" \"dist/ngx-cbp-theme/schematics/\" -u",
-    "build:ngx-cbp-theme": "ng build ngx-cbp-theme --prod && npm run copy:scss && npm run build:ngx-cbp-theme:schematics",
+    "clean:ngx-cbp-theme": "rimraf dist/ngx-cbp-theme",
+    "build:ngx-cbp-theme": "npm-run-all clean:ngx-cbp-theme build:ngx-cbp-theme:prod copy:scss build:ngx-cbp-theme:schematics",
+    "build:ngx-cbp-theme:prod": "ng build ngx-cbp-theme --prod",
     "build:ngx-cbp-theme:dev": "ng build ngx-cbp-theme --watch",
     "copy:liscense": "cpx \"LICEN*\" \"dist/ngx-cbp-theme\" -u",
     "copy:readme": "cpx \"README*\" \"dist/ngx-cbp-theme\" -u",
@@ -39,13 +41,12 @@
     "test:ngx-cbp-theme": "ng test ngx-cbp-theme",
     "test:ngx-cbp-theme:once": "ng test ngx-cbp-theme --watch=false --progress=false",
     "e2e:kitchensink": "ng e2e kitchensink-e2e",
-    "ready": "npm-run-all lint --parallel build:kitchensink:prod test:once e2e:kitchensink",
+    "ready": "npm-run-all lint build:kitchensink:prod test:once e2e:kitchensink",
     "preversion": "npm-run-all build:ngx-cbp-theme copy:readme copy:liscense",
     "version": "npm-run-all copy:readme copy:liscense",
     "postversion": "node replaceversion.js",
     "test:once": "npm-run-all --parallel  test:ngx-cbp-theme:once test:kitchensink:once",
-    "postinstall": "node postinstall.js",
-    "yg-test": "tslint -p test-yg"
+    "postinstall": "node postinstall.js"
   },
   "dependencies": {
     "@angular/cdk": "^6.2.1",

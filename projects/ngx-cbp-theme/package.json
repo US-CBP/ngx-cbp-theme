@@ -2,17 +2,19 @@
   "name": "ngx-cbp-theme",
   "version": "0.0.1-PLACEHOLDER",
   "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/forms": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/http": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/animations": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/platform-browser": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/platform-browser-dynamic": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/router": "^6.0.0-rc.0 || ^6.0.0"
+    "@angular/common": "^6",
+    "@angular/core": "^6",
+    "@angular/forms": "^6",
+    "@angular/http": "^6",
+    "@angular/animations": "^6",
+    "@angular/platform-browser": "^6",
+    "@angular/platform-browser-dynamic": "^6",
+    "@angular/router": "^6",
+    "@angular/material": "^6",
+    "@angular/cdk": "^6",
+    "@angular/flex-layout": "6.0.0-beta.15 || 6.0.0-beta.15 || 6^"
   },
   "dependencies": {
-    "@angular/flex-layout": "6.0.0-beta.15",
     "cbp-theme": "1.9.0",
     "classlist.js": "1.1.20150312",
     "del": "^3.0.0",

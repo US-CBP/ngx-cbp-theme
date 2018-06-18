@@ -1,5 +1,0 @@
-<div class="cbp-notifications-overlay">
-    <cbp-notification [notification]="notification" *ngFor="let notification of notifications" (close)="onClose($event)">
-        <ng-template [cdkPortalOutlet]="notification.contentPortal"></ng-template>
-    </cbp-notification>
-</div>

@@ -1,7 +1,0 @@
-@import "~cbp-theme/dist/scss/custom/_variables";
-
-$navbar-appheader-height: $navbar-height - 2;
-
-$font-size-smallest: 12px; // We cannot use $font-size-small because it is not 12 px as required by DHS brand (we also use it for version)
-$brand-padding: 0 70px 0 15px;
-

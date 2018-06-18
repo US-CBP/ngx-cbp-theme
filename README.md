@@ -89,6 +89,7 @@ Use @angular/cli global install version matching the version inside [package.jso
   Since this is just a guide we will create my-user.service (to fake User) and my-applications.service (to fake basic set of applications for header menu). 
   
   Lets go ahead and create those using `angular-cli`.
+  
     
   ```bash
   ng g s my-user
