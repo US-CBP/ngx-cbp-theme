@@ -46,7 +46,7 @@
     "version": "npm-run-all copy:readme copy:liscense",
     "postversion": "node replaceversion.js",
     "test:once": "npm-run-all --parallel  test:ngx-cbp-theme:once test:kitchensink:once",
-    "postinstall": "node postinstall.js"
+    "postinstall": "node projects/ngx-cbp-theme/postinstall.js"
   },
   "dependencies": {
     "@angular/cdk": "^6.2.1",
