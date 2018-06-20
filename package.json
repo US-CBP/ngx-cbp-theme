@@ -44,7 +44,7 @@
     "ready": "npm-run-all lint build:kitchensink:prod test:once e2e:kitchensink",
     "preversion": "npm-run-all build:ngx-cbp-theme copy:readme copy:liscense",
     "version": "npm-run-all copy:readme copy:liscense",
-    "postversion": "node replaceversion.js",
+    "postversion": "node pre-publish.js",
     "test:once": "npm-run-all --parallel  test:ngx-cbp-theme:once test:kitchensink:once",
     "postinstall": "node postinstall.js"
   },
