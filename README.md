@@ -74,7 +74,7 @@ Use @angular/cli global install version matching the version inside [package.jso
 
 * In your `styles.scss` add
   ```sass
-  @import '~ngx-cbp-theme/ngx-cbp-theme';
+  @import '~ngx-cbp-theme/styles/ngx-cbp-theme';
   ```
 
 * Implement required services:
