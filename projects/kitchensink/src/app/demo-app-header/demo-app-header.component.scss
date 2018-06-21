@@ -2,6 +2,9 @@
 
 .app-right-nav-items {
   display: inline-flex;
+  .cbp-navbar-item {
+    cursor: default;
+  }
 
 }
 

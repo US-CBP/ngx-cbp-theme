@@ -14,12 +14,16 @@
 
   <cbp-app-right-nav>
     <div ngClass.gt-xs="app-right-nav-items" ngClass.lt-sm="app-stacked-nav">
-      <button mat-icon-button class="cbp-navbar-item">
-        <mat-icon aria-label="print" fontSet="fontawesome" fontIcon="fa-print"></mat-icon>
-      </button>
-      <button mat-icon-button  class="cbp-navbar-item">
-        <mat-icon aria-label="wifi" fontSet="fontawesome" fontIcon="fa-wifi"></mat-icon>
-      </button>
+      <div class="cbp-navbar-item">
+        <button mat-icon-button>
+          <mat-icon aria-label="print" fontSet="fontawesome" fontIcon="fa-print"></mat-icon>
+        </button>
+      </div>
+      <div class="cbp-navbar-item">
+        <button mat-icon-button >
+          <mat-icon aria-label="wifi" fontSet="fontawesome" fontIcon="fa-wifi"></mat-icon>
+        </button>
+      </div>
     </div>
   </cbp-app-right-nav>
 </cbp-app-header>

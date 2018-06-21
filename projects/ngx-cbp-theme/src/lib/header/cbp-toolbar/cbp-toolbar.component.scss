@@ -21,7 +21,6 @@ cbp-toolbar {
     background-color: $navbar-inverse-bg;
     color: $navbar-inverse-color;
     border-bottom-color: darken($navbar-inverse-border, 2%);
-    // so that
     z-index: $zindex-appbar + 100;
     width: 100%;
     top: $navbar-height + $navbar-appheader-height;
