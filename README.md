@@ -65,6 +65,12 @@ Use @angular/cli global install version matching the version inside [package.jso
 
 * Ensure that you have exact version matches as per [package.json](https://github.com/US-CBP/ngx-cbp-theme/edit/master/package.json). This is because angular-cli has more relaxed versioning scheme which promotes early adoption which can be problematic with Material/RxJS/angular-flex combination.   
 
+* Install Material, CDK, FlexLayout
+
+  ```bash
+  $ npm install @angular/material@6  @angular/cdk@^6 --save
+  ```
+ 
 * Ensure that it builds and runs correctly i.e. `ng start` runs fine. 
 * Stop any of running processes/scripts against your project and then run:
 
