@@ -24,6 +24,7 @@ cbp-toolbar {
     z-index: $zindex-appbar + 100;
     width: 100%;
     top: $navbar-height + $navbar-appheader-height;
+    left:0;
 
     .mat-menu-item {
       cursor: pointer;
@@ -45,6 +46,7 @@ cbp-toolbar {
 
 
 .cbp-brand-nav-container {
+  display: block;
   @extend .cbp-navbar-item;
   padding: inherit;
 }
