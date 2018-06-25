@@ -20,7 +20,7 @@
     "ng": "ng",
     "build:ngx-cbp-theme:schematics": "tsc -p projects/ngx-cbp-theme/schematics/ && cpx \"projects/ngx-cbp-theme/schematics/**/*.json\" \"dist/ngx-cbp-theme/schematics/\" -u",
     "clean:ngx-cbp-theme": "rimraf dist/ngx-cbp-theme",
-    "build:ngx-cbp-theme": "npm-run-all clean:ngx-cbp-theme copy:scss build:ngx-cbp-theme:prod  build:ngx-cbp-theme:schematics",
+    "build:ngx-cbp-theme": "npm-run-all clean:ngx-cbp-theme build:ngx-cbp-theme:prod  copy:scss build:ngx-cbp-theme:schematics",
     "build:ngx-cbp-theme:prod": "ng build ngx-cbp-theme --prod",
     "copy:liscense": "cpx \"LICEN*\" \"dist/ngx-cbp-theme\" -u",
     "copy:postinstall": "cpx \"postinstall*\" \"dist/ngx-cbp-theme\" -u",
