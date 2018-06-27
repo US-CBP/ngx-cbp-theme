@@ -1,0 +1,20 @@
+{
+    "extends": "../../tslint.json",
+    "linterOptions": {
+      "exclude" : ["lib/buttons/cbp-toggle-switch/cbp-toggle-switch.component.ts"]
+    },
+    "rules": {
+        "directive-selector": [
+            true,
+            "attribute",
+            "cbp",
+            "camelCase"
+        ],
+        "component-selector": [
+            true,
+            "element",
+            "cbp",
+            "kebab-case"
+        ]
+    }
+}

@@ -65,6 +65,12 @@ Use @angular/cli global install version matching the version inside [package.jso
 
 * Ensure that you have exact version matches as per [package.json](https://github.com/US-CBP/ngx-cbp-theme/edit/master/package.json). This is because angular-cli has more relaxed versioning scheme which promotes early adoption which can be problematic with Material/RxJS/angular-flex combination.   
 
+* Install Material, CDK, FlexLayout
+
+  ```bash
+  $ npm install @angular/material@6  @angular/cdk@^6 --save
+  ```
+ 
 * Ensure that it builds and runs correctly i.e. `ng start` runs fine. 
 * Stop any of running processes/scripts against your project and then run:
 
@@ -74,7 +80,7 @@ Use @angular/cli global install version matching the version inside [package.jso
 
 * In your `styles.scss` add
   ```sass
-  @import '~ngx-cbp-theme/ngx-cbp-theme';
+  @import '~ngx-cbp-theme/styles/ngx-cbp-theme';
   ```
 
 * Implement required services:
@@ -89,6 +95,7 @@ Use @angular/cli global install version matching the version inside [package.jso
   Since this is just a guide we will create my-user.service (to fake User) and my-applications.service (to fake basic set of applications for header menu). 
   
   Lets go ahead and create those using `angular-cli`.
+  
     
   ```bash
   ng g s my-user

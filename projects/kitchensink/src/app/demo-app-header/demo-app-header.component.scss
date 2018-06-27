@@ -1,0 +1,34 @@
+@import '../../../../../dist/ngx-cbp-theme/styles/variables';
+
+.app-right-nav-items {
+  display: flex;
+  .cbp-navbar-item {
+    cursor: default;
+  }
+
+}
+
+.app-title {
+  padding: 0 $padding-base-horizontal;
+
+  margin-top: 10px;
+  &.vertical-divider {
+    border-right: 1px solid $brand-default-border;
+  }
+
+}
+
+
+.app-stacked-nav {
+  background-color: $navbar-default-bg;
+  left: 0;
+  width: 100%;
+  color: $navbar-default-color;
+}
+
+cbp-app-main-nav .app-stacked-nav  {
+  border-top: 1px solid darken($navbar-default-border, 4%);
+}
+cbp-app-right-nav .app-stacked-nav  {
+  border-bottom: 1px solid darken($navbar-default-border, 4%);
+}

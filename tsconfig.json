@@ -25,6 +25,11 @@
     ],
     "typeRoots": [
       "node_modules/@types"
-    ]
+    ],
+    "paths": {
+      "ngx-cbp-theme": [
+        "dist/ngx-cbp-theme"
+      ]
+    }
   }
 }

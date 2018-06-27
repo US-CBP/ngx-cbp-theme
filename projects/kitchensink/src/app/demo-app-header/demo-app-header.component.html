@@ -1,0 +1,47 @@
+<cbp-app-header>
+
+  <cbp-app-title fxFlex="grow">
+    <h2 class="app-title" ngClass.gt-xs="vertical-divider">
+      Kitchen Sink
+      <small>Demo</small>
+    </h2>
+  </cbp-app-title>
+
+  <cbp-app-main-nav>
+      <div fxShow="false" fxShow.gt-xs="true"><ng-template [ngTemplateOutlet]="tabbedAppNav"></ng-template></div>
+      <div fxShow="false" fxShow.lt-sm="true" class="app-stacked-nav"><ng-template [ngTemplateOutlet]="stackedAppNav"></ng-template></div>
+  </cbp-app-main-nav>
+
+  <cbp-app-right-nav>
+    <div ngClass.gt-xs="app-right-nav-items" ngClass.lt-sm="app-stacked-nav">
+      <div class="cbp-navbar-item">
+        <button mat-icon-button>
+          <mat-icon aria-label="print" fontSet="fontawesome" fontIcon="fa-print"></mat-icon>
+        </button>
+      </div>
+      <div class="cbp-navbar-item">
+        <button mat-icon-button >
+          <mat-icon aria-label="wifi" fontSet="fontawesome" fontIcon="fa-wifi"></mat-icon>
+        </button>
+      </div>
+    </div>
+  </cbp-app-right-nav>
+</cbp-app-header>
+
+<ng-template #tabbedAppNav>
+  <mat-tab-group class="mat-tab-header-pagination-controls-enabled">
+    <mat-tab *ngFor="let appNav of appNavigations" label="{{ appNav.name }}"></mat-tab>
+  </mat-tab-group>
+</ng-template>
+
+
+<ng-template #stackedAppNav>
+    <ng-container>
+        <div class="mat-menu-item" *ngFor="let appNav of appNavigations">
+            <div title="{{ appNav.name }}"  fxFlex="auto" >
+                {{ appNav.name }}
+            </div>
+        </div>
+    </ng-container>
+</ng-template>
+

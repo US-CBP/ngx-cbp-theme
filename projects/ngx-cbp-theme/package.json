@@ -1,0 +1,55 @@
+{
+  "name": "ngx-cbp-theme",
+  "version": "0.0.1-PLACEHOLDER",
+  "peerDependencies": {
+    "@angular/common": "^6",
+    "@angular/core": "^6",
+    "@angular/forms": "^6",
+    "@angular/http": "^6",
+    "@angular/animations": "^6",
+    "@angular/platform-browser": "^6",
+    "@angular/platform-browser-dynamic": "^6",
+    "@angular/router": "^6",
+    "@angular/material": "^6",
+    "@angular/cdk": "^6",
+    "@angular/flex-layout": "6.0.0-beta.15 || 6^ || < ^7"
+  },
+  "scripts": {
+    "postinstall": "node postinstall.js"
+  },
+  "dependencies": {
+    "cbp-theme": "1.9.0",
+    "classlist.js": "1.1.20150312",
+    "del": "^3.0.0",
+    "replace": "^1.0.0",
+    "web-animations-js": "^2.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/US-CBP/ngx-cbp-theme.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/US-CBP/ngx-cbp-theme.git/issues"
+  },
+  "engines": {
+    "node": ">=9.0.0"
+  },
+  "publishConfig": {
+    "registry" : "https://registry.npmjs.org"
+  },
+  "schematics": "./schematics/collection.json",
+  "sideEffects": false,
+  "ng-update": {
+    "migrations": "./schematics/migration.json",
+    "packageGroup": [
+      "ngx-cbp-theme",
+      "@angular/material",
+      "@angular/cdk",
+      "@angular/flex-layout"
+    ]
+  }
+}
