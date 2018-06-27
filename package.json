@@ -18,22 +18,14 @@
   },
   "scripts": {
     "ng": "ng",
-    "build:ngx-cbp-theme:schematics": "tsc -p projects/ngx-cbp-theme/schematics/ && cpx \"projects/ngx-cbp-theme/schematics/**/*.json\" \"dist/ngx-cbp-theme/schematics/\" -u",
+    "build:ngx-cbp-theme:schematics": "tsc -p projects/ngx-cbp-theme/schematics/",
     "clean:ngx-cbp-theme": "rimraf dist/ngx-cbp-theme",
-    "build:ngx-cbp-theme": "npm-run-all clean:ngx-cbp-theme build:ngx-cbp-theme:prod  copy:scss build:ngx-cbp-theme:schematics",
+    "build:ngx-cbp-theme": "npm-run-all clean:ngx-cbp-theme build:ngx-cbp-theme:prod  build:ngx-cbp-theme:schematics copy-assets:ngx-cbp-theme prepare-package:ngx-cbp-theme",
     "build:ngx-cbp-theme:prod": "ng build ngx-cbp-theme --prod",
-    "copy:liscense": "cpx \"LICEN*\" \"dist/ngx-cbp-theme\" -u",
-    "copy:postinstall": "cpx \"postinstall*\" \"dist/ngx-cbp-theme\" -u",
-    "copy:readme": "cpx \"README*\" \"dist/ngx-cbp-theme\" -u",
-    "mkdirp:styles": "mkdirp \"dist/ngx-cbp-theme/styles\"",
-    "copy:styles": "cpx \"projects/ngx-cbp-theme/src/lib/**/*.scss\" \"dist/ngx-cbp-theme/styles/\" -u",
-    "copy:scss": "npm-run-all mkdirp:styles copy:styles",
-    "docs": "npm run docs:build:ngx-cbp-theme",
-    "docs:build:ngx-cbp-theme": "compodoc -p ./src/tsconfig.app.json -n ngx-cpb-theme -d docs --hideGenerator",
-    "docs:serve:ngx-cbp-theme": "npm run docs:build:ngx-cbp-theme -- -s",
-    "docs:watch:ngx-cbp-theme": "npm run docs:build:ngx-cbp-theme -- -s --watch",
+    "copy-assets:ngx-cbp-theme": "node scripts/copy-assets.js",
+    "prepare-package:ngx-cbp-theme": "node scripts/prepare-package.js",
     "lint": "ng lint",
-    "start:kitchensink": "ng build ngx-cbp-theme && npm run copy:scss && ng serve kitchensink --port 4100 --watch",
+    "start:kitchensink": "ng build ngx-cbp-theme && ng serve kitchensink --port 4100 --watch",
     "clean:kitchensink": "rimraf ./dist/kitchensink",
     "build:kitchensink": "ng build kitchensink --prod --base-href ngx-cbp-theme",
     "build:kitchensink:watch": "ng build kitchensink --prod --base-href ngx-cbp-theme --watch",
@@ -44,9 +36,8 @@
     "test:ngx-cbp-theme:once": "ng test ngx-cbp-theme --watch=false --progress=false",
     "e2e:kitchensink": "ng e2e kitchensink-e2e --port 4300",
     "ready": "npm-run-all lint build:kitchensink:prod test:once e2e:kitchensink",
-    "preversion": "npm-run-all build:ngx-cbp-theme copy:readme copy:postinstall copy:liscense",
-    "version": "npm-run-all copy:readme copy:liscense",
-    "postversion": "node pre-publish.js",
+    "preversion": "npm run ready",
+    "postversion": "npm run prepare-package:ngx-cbp-theme",
     "test:once": "npm-run-all --parallel  test:ngx-cbp-theme:once test:kitchensink:once",
     "postinstall": "node postinstall.js"
   },
@@ -106,6 +97,6 @@
     "zone.js": "0.8.26"
   },
   "engines": {
-    "node": ">=9.0.0"
+    "node": ">=8.9.4"
   }
 }
