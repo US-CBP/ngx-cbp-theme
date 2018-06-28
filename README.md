@@ -7,7 +7,7 @@
 [![devDependencies Status](https://david-dm.org/us-cbp/ngx-cbp-theme/dev-status.svg)](https://david-dm.org/us-cbp/ngx-cbp-theme?type=dev)
 
 
-Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp-theme) for Angular 5.x applications. 
+Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp-theme) for Angular 6.x applications. 
 
 
 ___
@@ -24,7 +24,7 @@ ___
 ## Target Applications
 
 * Apps that must comply with [US CBP Style Guide](https://us-cbp.github.io/cbp-style-guide/) 
-* Apps that are using Angular >= 4.x
+* Apps that are using Angular ~6
 * Apps that will use Angular Material [Angular/Material](https://github.com/angular/material2)
 * Apps that use SCSS. 
  
@@ -68,7 +68,7 @@ Use @angular/cli global install version matching the version inside [package.jso
 * Install Material, CDK, FlexLayout
 
   ```bash
-  $ npm install @angular/material@6  @angular/cdk@^6 --save
+  $ npm install @angular/material@~6  @angular/cdk@^6 --save
   ```
  
 * Ensure that it builds and runs correctly i.e. `ng start` runs fine. 
