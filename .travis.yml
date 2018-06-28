@@ -13,7 +13,7 @@ branches:
   only:
   - master
 node_js:
-  - 8
+  - 10
 install:
   - npm install
 before_script:
@@ -27,7 +27,7 @@ jobs:
       deploy:
         provider: pages
         skip_cleanup: true
-        local_dir: ./dist-kitchensink
+        local_dir: ./dist/kitchensink
         github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
         on:
           branch: master

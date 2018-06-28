@@ -1,0 +1,4 @@
+/* You can add global styles to this file, and also import other style files */
+$roboto-font-path: '../../../node_modules/roboto-fontface/fonts' !default;
+$fa-font-path: "../../../node_modules/font-awesome/fonts" !default;
+@import '../../../dist/ngx-cbp-theme/styles/ngx-cbp-theme';

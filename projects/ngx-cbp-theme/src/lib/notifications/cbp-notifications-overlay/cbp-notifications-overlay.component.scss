@@ -1,0 +1,10 @@
+@import '../../variables';
+
+.cbp-notifications-overlay {
+  max-width: 500px;
+  width: 100%;
+  position: fixed;
+  top: 52px;
+  right: 0px;
+  z-index: 10000;
+}
