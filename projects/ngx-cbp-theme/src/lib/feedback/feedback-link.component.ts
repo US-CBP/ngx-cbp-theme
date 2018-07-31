@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, Optional} from '@angular/core';
 import {CBP_FEEDBACK_SERVICE, CBPFeedbackService} from './feedback.service';
 
 @Component({
@@ -8,7 +8,7 @@ import {CBP_FEEDBACK_SERVICE, CBPFeedbackService} from './feedback.service';
 })
 export class CBPFeedbackLinkComponent implements OnInit {
 
-  constructor(@Inject(CBP_FEEDBACK_SERVICE) private feedbackService: CBPFeedbackService) {
+  constructor(@Optional() @Inject(CBP_FEEDBACK_SERVICE) private feedbackService: CBPFeedbackService) {
     if (this.feedbackService) {
       this.feedbackService.onFeedbackClose(this.feedbackDone);
     }
