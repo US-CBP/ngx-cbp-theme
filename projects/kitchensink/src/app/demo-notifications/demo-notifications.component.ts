@@ -44,6 +44,9 @@ export class DemoNotificationsComponent implements OnInit, OnDestroy {
     notification.type = 'info';
     notification.content = this.infoNotificationRef;
     this.notificationService.notify(notification);
+    notification.onClose(() => {
+      console.log('info closed');
+    });
 
   }
 

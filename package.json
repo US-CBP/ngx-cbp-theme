@@ -56,6 +56,7 @@
     "cbp-theme": "^1.9.0",
     "classlist.js": "1.1.20150312",
     "del": "3.0.0",
+    "cpx": "^1.5.0",
     "hammerjs": "2.0.8",
     "replace": "1.0.0",
     "web-animations-js": "2.3.1"
