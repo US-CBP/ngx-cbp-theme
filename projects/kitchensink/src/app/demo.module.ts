@@ -17,6 +17,7 @@ import * as pkg from '../../../../package.json';
 import {DemoNotificationsModule} from './demo-notifications/demo-notifications.module';
 import {
   CBP_APPLICATIONS_SERVICE,
+  CBP_FEEDBACK_SERVICE,
   CBP_USER_SERVICE,
   CBPAccordionModule,
   CBPAppHeaderModule,
@@ -24,7 +25,8 @@ import {
   CBPNotificationsModule,
   CBPRootModule,
   MockUserService,
-  MockApplicationsService
+  MockApplicationsService,
+  MockFeedbackService
 } from 'ngx-cbp-theme';
 
 export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
@@ -53,7 +55,9 @@ export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
   providers: [
     MockUserService,
     MockApplicationsService,
+    MockFeedbackService,
     {provide: CBP_USER_SERVICE, useExisting: MockUserService},
+    {provide: CBP_FEEDBACK_SERVICE, useExisting: MockFeedbackService},
     {provide: CBP_APPLICATIONS_SERVICE, useExisting: MockApplicationsService}
   ],
   schemas: [],
