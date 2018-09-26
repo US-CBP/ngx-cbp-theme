@@ -21,7 +21,6 @@
     "cbp-theme": "^1.10.0",
     "classlist.js": "1.1.20150312",
     "del": "^3.0.0",
-    "replace": "^1.0.0",
     "web-animations-js": "^2.3.1"
   },
   "repository": {
