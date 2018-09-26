@@ -12,16 +12,15 @@
     "@angular/router": "^6",
     "@angular/material": "^6",
     "@angular/cdk": "^6",
-    "@angular/flex-layout": "6.0.0-beta.15 || 6^ || < ^7"
+    "@angular/flex-layout": "6^"
   },
   "scripts": {
     "postinstall": "node postinstall.js"
   },
   "dependencies": {
-    "cbp-theme": "1.9.0",
+    "cbp-theme": "^1.10.0",
     "classlist.js": "1.1.20150312",
     "del": "^3.0.0",
-    "replace": "^1.0.0",
     "web-animations-js": "^2.3.1"
   },
   "repository": {

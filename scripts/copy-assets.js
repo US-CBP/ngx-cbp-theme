@@ -21,8 +21,8 @@ function copyAssets() {
   console.log('Copying ' + lib + '/**/*.scss to ' + destStyles);
   cpx.copySync(lib + '/**/*.scss', destStyles);
 
-  console.log('Copying ' + root + '/{README.md,LICENSE,postinstall.js} to ' + dest);
-  cpx.copySync(root + '/*{README.md,LICENSE,postinstall.js}', dest);
+  console.log('Copying ' + root + '/{README.md,LICENSE} to ' + dest);
+  cpx.copySync(root + '/*{README.md,LICENSE}', dest);
 }
 copyAssets();
 
