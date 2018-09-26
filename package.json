@@ -38,11 +38,10 @@
     "ready": "npm-run-all lint build:kitchensink:prod test:once e2e:kitchensink",
     "preversion": "npm run ready",
     "postversion": "npm run prepare-package:ngx-cbp-theme",
-    "test:once": "npm-run-all --parallel  test:ngx-cbp-theme:once test:kitchensink:once",
-    "postinstall": "node postinstall.js"
+    "test:once": "npm-run-all --parallel  test:ngx-cbp-theme:once test:kitchensink:once"
   },
   "dependencies": {
-    "@angular/animations": "6.1.4",
+    "@angular/animations": "^6.1.4",
     "@angular/cdk": "^6.4.6",
     "@angular/common": "^6.1.4",
     "@angular/compiler": "^6.1.4",
@@ -54,7 +53,7 @@
     "@angular/platform-browser": "^6.1.4",
     "@angular/platform-browser-dynamic": "^6.1.4",
     "@angular/router": "^6.1.4",
-    "cbp-theme": "^1.9.0",
+    "cbp-theme": "^1.10.0",
     "classlist.js": "1.1.20150312",
     "cpx": "^1.5.0",
     "del": "3.0.0",
@@ -95,7 +94,7 @@
     "tsickle": ">=0.29.0",
     "tslib": "^1.9.0",
     "tslint": "5.10.0",
-    "typescript": "2.7.2",
+    "typescript": "2.9.2",
     "zone.js": "0.8.26"
   },
   "engines": {
