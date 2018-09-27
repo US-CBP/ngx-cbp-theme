@@ -12,7 +12,7 @@
     "@angular/router": "^6",
     "@angular/material": "^6",
     "@angular/cdk": "^6",
-    "@angular/flex-layout": "6^"
+    "@angular/flex-layout": "^6"
   },
   "scripts": {
     "postinstall": "node postinstall.js"
