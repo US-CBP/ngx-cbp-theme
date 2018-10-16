@@ -1,18 +1,18 @@
 <cbp-app-header>
 
-  <cbp-app-title fxFlex="grow">
+  <div class="cbp-app-title" fxFlex="grow">
     <h2 class="app-title" ngClass.gt-xs="vertical-divider">
       Kitchen Sink
       <small>Demo</small>
     </h2>
-  </cbp-app-title>
+  </div>
 
-  <cbp-app-main-nav>
+  <div class="cbp-app-main-nav">
       <div fxShow="false" fxShow.gt-xs="true"><ng-template [ngTemplateOutlet]="tabbedAppNav"></ng-template></div>
       <div fxShow="false" fxShow.lt-sm="true" class="app-stacked-nav"><ng-template [ngTemplateOutlet]="stackedAppNav"></ng-template></div>
-  </cbp-app-main-nav>
+  </div>
 
-  <cbp-app-right-nav>
+  <div class="cbp-app-right-nav">
     <div ngClass.gt-xs="app-right-nav-items" ngClass.lt-sm="app-stacked-nav">
       <div class="cbp-navbar-item">
         <button mat-icon-button>
@@ -25,7 +25,7 @@
         </button>
       </div>
     </div>
-  </cbp-app-right-nav>
+  </div>
 </cbp-app-header>
 
 <ng-template #tabbedAppNav>
