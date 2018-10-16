@@ -13,6 +13,16 @@
       z-index: $zindex-appbar;
       border-bottom: 1px solid $brand-default-border !important;
     }
+
+    .cbp-brand-nav-container {
+      cursor: default;
+      &:hover,
+      &:focus {
+        outline: none;
+        outline-offset: initial;
+        text-decoration: initial;
+      }
+    }
   }
 }
 
@@ -33,3 +43,4 @@
     }
   }
 }
+

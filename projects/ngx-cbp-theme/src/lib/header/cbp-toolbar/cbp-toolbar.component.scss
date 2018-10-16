@@ -47,7 +47,7 @@ cbp-toolbar {
 
 .cbp-brand-nav-container {
   display: block;
-  @extend .cbp-navbar-item;
+  @extend .cbp-navbar-item-default;
   padding: inherit;
 }
 .cbp-toolbar-main-nav-container {

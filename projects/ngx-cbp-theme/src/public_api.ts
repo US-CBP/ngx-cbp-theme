@@ -33,14 +33,9 @@ export * from './lib/header/cbp-toolbar/cbp-toolbar.module';
 
 export * from './lib/header/app-header/app-header.module';
 export * from './lib/header/app-header/app-header.component';
-export * from './lib/header/app-header/app-title/app-title.component';
-export * from './lib/header/app-header/app-main-nav/app-main-nav.component';
-export * from './lib/header/app-header/app-right-nav/app-right-nav.component';
-
 
 export * from './lib/header/cbp-header/cbp-header.module';
 export * from './lib/header/cbp-header/cbp-header.component';
-export * from './lib/header/cbp-header/cbp-brand/cbp-brand.component';
 
 
 export * from './lib/pipes/datetime.pipe';
