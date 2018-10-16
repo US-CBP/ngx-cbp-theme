@@ -6,32 +6,29 @@ let notificationCounter = 0;
 
 export class CBPNotification {
 
-  type?: 'success' | 'danger' | 'warning' | 'info';
-  /**
-   * For creating a simple test notification.
-   */
-  message?: string;
-
-  /**
-   * If you have your own markup and actionable notifications.
-   */
-  content?: TemplateRef<any>;
-
-  /**
-   * Mainly used internally but you can pass CdkPortal i.e. your own TemplatePortal or ComponentPortal
-   */
-  contentPortal?: Portal<any>;
 
   private _isOpen$: BehaviorSubject<boolean> = new BehaviorSubject(false);
   isOpen$: Observable<boolean> = this._isOpen$.asObservable();
-  private _id: number;
+  private readonly _id: number;
   private _onCloseHandlers: any[] = [];
 
   get id() {
     return this._id;
   }
 
-  constructor(isClosedInitially = false) {
+  /**
+   * Creates notification
+   * @param isClosedInitially
+   * @param type 'success' | 'danger' | 'warning' | 'info'
+   * @param message string - simple string based notification
+   * @param content pass in TemplateRef is your notification needs complex html
+   * @param contentPortal Mainly used internally but you can pass CdkPortal i.e. your own TemplatePortal or ComponentPortal
+   */
+  constructor(isClosedInitially = false,
+              public type?: 'success' | 'danger' | 'warning' | 'info',
+              public message?: string,
+              public content?: TemplateRef<any>,
+              public contentPortal?: Portal<any>) {
     this._id = ++notificationCounter;
     this._isOpen$.next(isClosedInitially);
   }

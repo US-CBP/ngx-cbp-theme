@@ -1,10 +1,11 @@
 <h2>Notifications</h2>
 
-
-<button mat-raised-button color="primary" (click)="notifyMe('You got notified!')">Notify Me</button>
-<button mat-raised-button color="accent" (click)="notifyInfo()">Comment Added</button>
-<button mat-raised-button (click)="notifyWarning()">Snooze</button>
-<button mat-raised-button color="warn" (click)="notifyDanger()">Retry & Close</button>
+<div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
+  <button mat-raised-button color="primary" (click)="notifyMe('You got notified!')">Notify Me</button>
+  <button mat-raised-button color="accent" (click)="notifyInfo()">Comment Added</button>
+  <button mat-raised-button (click)="notifyWarning()">Snooze</button>
+  <button mat-raised-button color="warn" (click)="notifyDanger()">Retry & Close</button>
+</div>
 
 <div class="demo-notifications-pre-build">
     <cbp-notification [type]="'success'" [message]="'Message sent to Jerry'" [autoShow]="true"></cbp-notification>
@@ -40,6 +41,7 @@
     <span class="cbp-notification-contents">Case 90/842,381 is due tomorrow.</span>
     <span class="cbp-notification-actions">
             <a mat-raised-button color="accent" (click)="caseViewed()">View case</a>
+      &nbsp;&nbsp;&nbsp;
             <a mat-raised-button (click)="snoozeSnoozing(3000)">Snooze 3 sec</a>
     </span>
 </ng-template>

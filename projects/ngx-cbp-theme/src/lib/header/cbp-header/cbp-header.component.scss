@@ -48,6 +48,13 @@ cbp-header {
   transition: color 200ms ease-in-out;
   height: $navbar-height;
 
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    outline: thin dotted;
+    outline-offset: -2px;
+    text-decoration: none;
+  }
   .cbp-brand {
     font-size: 19px ;
     line-height: 21px;

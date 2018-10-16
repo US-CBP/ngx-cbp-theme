@@ -19,7 +19,7 @@ export class CBPUserMenuComponent implements OnInit, OnDestroy {
     userDataLoaded = false;
     error: any;
 
-    private subscriptions: Subscription[] = [];
+    private subscriptions = new Subscription();
 
     @ViewChild(MatMenuTrigger) userMenuTrigger: MatMenuTrigger;
 
@@ -40,14 +40,14 @@ export class CBPUserMenuComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.subscriptions.push( this.toolbarState.hasToolbarMenu.subscribe(() => {
+        this.subscriptions.add( this.toolbarState.hasToolbarMenu.subscribe(() => {
             if (this.userMenuTrigger && this.userMenuTrigger.menu) {
                 this.userMenuExpanded = false;
                 this.userMenuTrigger.closeMenu();
             }
         }));
 
-        this.subscriptions.push( this.userService.getUser().subscribe({
+        this.subscriptions.add( this.userService.getUser().subscribe({
             next: (data: CBPUser) => {
                 if (data) {
                     this.user = data;
@@ -69,6 +69,12 @@ export class CBPUserMenuComponent implements OnInit, OnDestroy {
             }
         }));
 
+      this.subscriptions.add(this.toolbarState.scrollState.subscribe((value) => {
+        if (value === 'up') {
+          this.userMenuTrigger.closeMenu();
+        }
+      }));
+
     }
 
     login($event: any) {
@@ -78,7 +84,7 @@ export class CBPUserMenuComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.subscriptions.forEach(subscription => subscription.unsubscribe());
+        this.subscriptions.unsubscribe();
         this.user = undefined;
         this.userDataLoaded = false;
     }

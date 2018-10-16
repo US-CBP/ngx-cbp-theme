@@ -1,7 +1,15 @@
 @import '../variables';
 
-.cbp-navbar-item {
+.cbp-navbar-item-default {
   font-size: 15px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  vertical-align: middle;
+  height: $navbar-height;
+  padding: 0 16px;
+}
+.cbp-navbar-item {
   cursor: pointer;
   &:hover,
   &:focus {
@@ -9,12 +17,7 @@
     outline-offset: -2px;
     text-decoration: none;
   }
-  display: flex;
-  align-content: center;
-  align-items: center;
-  vertical-align: middle;
-  height: $navbar-height;
-  padding: 0 16px;
+  @extend .cbp-navbar-item-default;
 }
 .cbp-toolbar-expansion-container {
   &:hover {
