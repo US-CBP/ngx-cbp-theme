@@ -1,4 +1,4 @@
-import {Component, Inject, OnDestroy, OnInit, Output, ViewEncapsulation} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit, Output} from '@angular/core';
 import {CBPScrollShrinkAnimator} from '../cbp-toolbar/cbp-scrollshrink-animator';
 import {APP_HEADER_STATE, CBPToolbarState} from '../cbp-toolbar/cbp-toolbar-state';
 import {Subscription} from 'rxjs';
