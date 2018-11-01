@@ -62,6 +62,15 @@
   optionalDependencies:
     node-sass "4.9.3"
 
+"@angular-devkit/build-ng-packagr@~0.10.0":
+  version "0.10.3"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.10.3.tgz#246a7e7ae6e50d9deb561a75501d44cb0587bf3f"
+  dependencies:
+    "@angular-devkit/architect" "0.10.3"
+    "@angular-devkit/core" "7.0.3"
+    rxjs "6.3.3"
+    semver "5.5.1"
+
 "@angular-devkit/build-optimizer@0.10.3":
   version "0.10.3"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/@angular-devkit/build-optimizer/-/build-optimizer-0.10.3.tgz#e649b9d715edbb8eb4779a4f5772cc5cd842700f"
@@ -101,6 +110,14 @@
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/@angular/animations/-/animations-7.0.2.tgz#84513e8958b8fb57a35f6e494a0d465d081c7f8d"
   dependencies:
     tslib "^1.9.0"
+
+"@angular/cdk@~7.0.2":
+  version "7.0.2"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/@angular/cdk/-/cdk-7.0.2.tgz#35081cd27a8f5214568b6ad1acf8cb3b3c315f99"
+  dependencies:
+    tslib "^1.7.1"
+  optionalDependencies:
+    parse5 "^5.0.0"
 
 "@angular/cli@~7.0.3":
   version "7.0.3"
@@ -150,6 +167,12 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/flex-layout@^7.0.0-beta.19":
+  version "7.0.0-beta.19"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/@angular/flex-layout/-/flex-layout-7.0.0-beta.19.tgz#f8aa46dd1290adba512a15e762938d6a1d71bcd5"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/forms@~7.0.0":
   version "7.0.2"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/@angular/forms/-/forms-7.0.2.tgz#6c7e5f897c30a68714727a7979d10708cba4708b"
@@ -165,6 +188,12 @@
 "@angular/language-service@~7.0.0":
   version "7.0.2"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/@angular/language-service/-/language-service-7.0.2.tgz#3a38fa4419b088f0916f59c41436dd8303108ee4"
+
+"@angular/material@^7.0.2":
+  version "7.0.2"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/@angular/material/-/material-7.0.2.tgz#f64a664730dc497dbdc3dcabaf145636af90d0ea"
+  dependencies:
+    tslib "^1.7.1"
 
 "@angular/platform-browser-dynamic@~7.0.0":
   version "7.0.2"
@@ -262,6 +291,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@ngtools/json-schema@^1.1.0":
+  version "1.1.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/@ngtools/json-schema/-/json-schema-1.1.0.tgz#c3a0c544d62392acc2813a42c8a0dc6f58f86922"
+
 "@ngtools/webpack@7.0.3":
   version "7.0.3"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/@ngtools/webpack/-/webpack-7.0.3.tgz#96bc0d94e9a8ac84eb34cf81c59fdd21bfbd18e3"
@@ -291,6 +324,10 @@
     semver "5.5.1"
     semver-intersect "1.4.0"
 
+"@types/estree@0.0.39":
+  version "0.0.39"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
+
 "@types/jasmine@*", "@types/jasmine@~2.8.8":
   version "2.8.9"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/@types/jasmine/-/jasmine-2.8.9.tgz#e028c891e8551fdf6de905d959581fc4fa0b5509"
@@ -300,6 +337,10 @@
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/@types/jasminewd2/-/jasminewd2-2.0.5.tgz#0910db4bd50202dea9fe6ec37517b0ae6a01a9e6"
   dependencies:
     "@types/jasmine" "*"
+
+"@types/node@*":
+  version "10.12.2"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/@types/node/-/node-10.12.2.tgz#d77f9faa027cadad9c912cd47f4f8b07b0fb0864"
 
 "@types/node@^6.0.46":
   version "6.14.0"
@@ -532,6 +573,12 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+ansi-align@^2.0.0:
+  version "2.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
+  dependencies:
+    string-width "^2.0.0"
+
 ansi-colors@^3.0.0:
   version "3.2.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/ansi-colors/-/ansi-colors-3.2.1.tgz#9638047e4213f3428a11944a7d4b31cba0a3ff95"
@@ -736,6 +783,17 @@ autoprefixer@9.1.5:
     postcss "^7.0.2"
     postcss-value-parser "^3.2.3"
 
+autoprefixer@^9.0.0:
+  version "9.3.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/autoprefixer/-/autoprefixer-9.3.1.tgz#71b622174de2b783d5fd99f9ad617b7a3c78443e"
+  dependencies:
+    browserslist "^4.3.3"
+    caniuse-lite "^1.0.30000898"
+    normalize-range "^0.1.2"
+    num2fraction "^1.2.2"
+    postcss "^7.0.5"
+    postcss-value-parser "^3.3.1"
+
 aws-sign2@~0.7.0:
   version "0.7.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -921,6 +979,22 @@ bonjour@^3.5.0:
     multicast-dns "^6.0.1"
     multicast-dns-service-types "^1.1.0"
 
+bootstrap-sass@3.3.7:
+  version "3.3.7"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/bootstrap-sass/-/bootstrap-sass-3.3.7.tgz#6596c7ab40f6637393323ab0bc80d064fc630498"
+
+boxen@^1.2.1:
+  version "1.3.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/boxen/-/boxen-1.3.0.tgz#55c6c39a8ba58d9c61ad22cd877532deb665a20b"
+  dependencies:
+    ansi-align "^2.0.0"
+    camelcase "^4.0.0"
+    chalk "^2.0.1"
+    cli-boxes "^1.0.0"
+    string-width "^2.0.0"
+    term-size "^1.2.0"
+    widest-line "^2.0.0"
+
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
@@ -1014,7 +1088,7 @@ browserify-zlib@^0.2.0:
   dependencies:
     pako "~1.0.5"
 
-browserslist@^4.1.0:
+browserslist@^4.0.0, browserslist@^4.1.0, browserslist@^4.3.3:
   version "4.3.4"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/browserslist/-/browserslist-4.3.4.tgz#4477b737db6a1b07077275b24791e680d4300425"
   dependencies:
@@ -1066,6 +1140,10 @@ buffer@^4.3.0:
 builtin-modules@^1.0.0, builtin-modules@^1.1.1:
   version "1.1.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/builtin-modules/-/builtin-modules-1.1.1.tgz#270f076c5a72c02f5b65a47df94c5fe3a278892f"
+
+builtin-modules@^2.0.0:
+  version "2.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/builtin-modules/-/builtin-modules-2.0.0.tgz#60b7ef5ae6546bd7deefa74b08b62a43a232648e"
 
 builtin-status-codes@^3.0.0:
   version "3.0.0"
@@ -1149,11 +1227,11 @@ camelcase@^3.0.0:
   version "3.0.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
 
-camelcase@^4.1.0:
+camelcase@^4.0.0, camelcase@^4.1.0:
   version "4.1.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
-caniuse-lite@^1.0.30000884, caniuse-lite@^1.0.30000899:
+caniuse-lite@^1.0.30000884, caniuse-lite@^1.0.30000898, caniuse-lite@^1.0.30000899:
   version "1.0.30000903"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/caniuse-lite/-/caniuse-lite-1.0.30000903.tgz#86d46227759279b3db345ddbe778335dbba9e858"
 
@@ -1161,9 +1239,27 @@ canonical-path@0.0.2:
   version "0.0.2"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/canonical-path/-/canonical-path-0.0.2.tgz#e31eb937a8c93ee2a01df1839794721902874574"
 
+capture-stack-trace@^1.0.0:
+  version "1.0.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
+
 caseless@~0.12.0:
   version "0.12.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
+
+cbp-theme@^1.10.0:
+  version "1.10.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/cbp-theme/-/cbp-theme-1.10.0.tgz#2eb69507dd0277bbd2fabcd3d38f787f082fe59f"
+  dependencies:
+    bootstrap-sass "3.3.7"
+    font-awesome "4.6.3"
+    jquery "3.3.1"
+    material-design-lite "1.1.1"
+    mdl-selectfield "1.0.2"
+    roboto-fontface "0.10.0"
+  optionalDependencies:
+    flag-icon-css "2.8.0"
+    inputmask "3.3.11"
 
 chalk@^1.1.1, chalk@^1.1.3:
   version "1.1.3"
@@ -1175,7 +1271,7 @@ chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^2.0.0, chalk@^2.0.1, chalk@^2.3.0, chalk@^2.4.1:
+chalk@^2.0.0, chalk@^2.0.1, chalk@^2.3.0, chalk@^2.3.1, chalk@^2.4.1:
   version "2.4.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/chalk/-/chalk-2.4.1.tgz#18c49ab16a037b6eb0152cc83e3471338215b66e"
   dependencies:
@@ -1231,6 +1327,10 @@ chrome-trace-event@^1.0.0:
   dependencies:
     tslib "^1.9.0"
 
+ci-info@^1.5.0:
+  version "1.6.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/ci-info/-/ci-info-1.6.0.tgz#2ca20dbb9ceb32d4524a683303313f0304b1e497"
+
 cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   version "1.0.4"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/cipher-base/-/cipher-base-1.0.4.tgz#8760e4ecc272f4c363532f926d874aae2c1397de"
@@ -1255,11 +1355,15 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-clean-css@4.2.1:
+clean-css@4.2.1, clean-css@^4.1.11:
   version "4.2.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/clean-css/-/clean-css-4.2.1.tgz#2d411ef76b8569b6d0c84068dabe85b0aa5e5c17"
   dependencies:
     source-map "~0.6.0"
+
+cli-boxes@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
 
 cli-cursor@^2.1.0:
   version "2.1.0"
@@ -1356,7 +1460,7 @@ combined-stream@^1.0.6, combined-stream@~1.0.5, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@^2.12.1:
+commander@^2.12.0, commander@^2.12.1:
   version "2.19.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
 
@@ -1418,6 +1522,17 @@ concat-stream@^1.5.0, concat-stream@^1.5.2:
     inherits "^2.0.3"
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
+
+configstore@^3.0.0:
+  version "3.1.2"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/configstore/-/configstore-3.1.2.tgz#c6f25defaeef26df12dd33414b001fe81a543f8f"
+  dependencies:
+    dot-prop "^4.1.0"
+    graceful-fs "^4.1.2"
+    make-dir "^1.0.0"
+    unique-string "^1.0.0"
+    write-file-atomic "^2.0.0"
+    xdg-basedir "^3.0.0"
 
 connect-history-api-fallback@^1.3.0:
   version "1.5.0"
@@ -1524,6 +1639,12 @@ create-ecdh@^4.0.0:
     bn.js "^4.1.0"
     elliptic "^6.0.0"
 
+create-error-class@^3.0.0:
+  version "3.0.2"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/create-error-class/-/create-error-class-3.0.2.tgz#06be7abef947a3f14a30fd610671d401bca8b7b6"
+  dependencies:
+    capture-stack-trace "^1.0.0"
+
 create-hash@^1.1.0, create-hash@^1.1.2:
   version "1.2.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/create-hash/-/create-hash-1.2.0.tgz#889078af11a63756bcfb59bd221996be3a9ef196"
@@ -1586,6 +1707,10 @@ crypto-browserify@^3.11.0:
     randombytes "^2.0.0"
     randomfill "^1.0.3"
 
+crypto-random-string@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
+
 css-parse@1.7.x:
   version "1.7.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/css-parse/-/css-parse-1.7.0.tgz#321f6cf73782a6ff751111390fc05e2c657d8c9b"
@@ -1607,6 +1732,10 @@ cssauron@^1.4.0:
 cssesc@^0.1.0:
   version "0.1.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/cssesc/-/cssesc-0.1.0.tgz#c814903e45623371a0477b40109aaafbeeaddbb4"
+
+cuint@^0.2.2:
+  version "0.2.2"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/cuint/-/cuint-0.2.2.tgz#408086d409550c2631155619e9fa7bcadc3b991b"
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -1835,6 +1964,16 @@ domain-browser@^1.1.1:
   version "1.2.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
 
+dot-prop@^4.1.0:
+  version "4.2.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/dot-prop/-/dot-prop-4.2.0.tgz#1f19e0c2e1aa0e32797c49799f2837ac6af69c57"
+  dependencies:
+    is-obj "^1.0.0"
+
+duplexer3@^0.1.4:
+  version "0.1.4"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
+
 duplexify@^3.4.2, duplexify@^3.6.0:
   version "3.6.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/duplexify/-/duplexify-3.6.1.tgz#b1a7a29c4abfd639585efaecce80d666b1e34125"
@@ -2007,6 +2146,10 @@ estraverse@^1.9.1:
 estraverse@^4.1.0, estraverse@^4.1.1:
   version "4.2.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/estraverse/-/estraverse-4.2.0.tgz#0dee3fed31fcd469618ce7342099fc1afa0bdb13"
+
+estree-walker@^0.5.2:
+  version "0.5.2"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/estree-walker/-/estree-walker-0.5.2.tgz#d3850be7529c9580d815600b53126515e146dd39"
 
 esutils@^2.0.2:
   version "2.0.2"
@@ -2310,6 +2453,10 @@ find-cache-dir@^2.0.0:
     make-dir "^1.0.0"
     pkg-dir "^3.0.0"
 
+find-parent-dir@^0.3.0:
+  version "0.3.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/find-parent-dir/-/find-parent-dir-0.3.0.tgz#33c44b429ab2b2f0646299c5f9f718f376ff8d54"
+
 find-up@^1.0.0:
   version "1.1.2"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/find-up/-/find-up-1.1.2.tgz#6b2e9822b1a2ce0a60ab64d610eccad53cb24d0f"
@@ -2329,6 +2476,10 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
+flag-icon-css@2.8.0:
+  version "2.8.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/flag-icon-css/-/flag-icon-css-2.8.0.tgz#ec10c20fe417ade787a095200630069ca436a569"
+
 flush-write-stream@^1.0.0:
   version "1.0.3"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/flush-write-stream/-/flush-write-stream-1.0.3.tgz#c5d586ef38af6097650b49bc41b55fabb19f35bd"
@@ -2341,6 +2492,10 @@ follow-redirects@^1.0.0:
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/follow-redirects/-/follow-redirects-1.5.9.tgz#c9ed9d748b814a39535716e531b9196a845d89c6"
   dependencies:
     debug "=3.1.0"
+
+font-awesome@4.6.3:
+  version "4.6.3"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/font-awesome/-/font-awesome-4.6.3.tgz#86933651540ee00874c664017f50f2172f6531a2"
 
 for-in@^0.1.3:
   version "0.1.8"
@@ -2400,6 +2555,14 @@ fs-access@^1.0.0:
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/fs-access/-/fs-access-1.0.1.tgz#d6a87f262271cefebec30c553407fb995da8777a"
   dependencies:
     null-check "^1.0.0"
+
+fs-extra@^7.0.0:
+  version "7.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/fs-extra/-/fs-extra-7.0.0.tgz#8cc3f47ce07ef7b3593a11b9fb245f7e34c041d6"
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
 
 fs-minipass@^1.2.5:
   version "1.2.5"
@@ -2529,6 +2692,12 @@ glob@^5.0.15:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
+global-dirs@^0.1.0:
+  version "0.1.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/global-dirs/-/global-dirs-0.1.1.tgz#b319c0dd4607f353f3be9cca4c72fc148c49f445"
+  dependencies:
+    ini "^1.3.4"
+
 globals@^11.1.0:
   version "11.8.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/globals/-/globals-11.8.0.tgz#c1ef45ee9bed6badf0663c5cb90e8d1adec1321d"
@@ -2577,9 +2746,29 @@ globule@^1.0.0:
     lodash "~4.17.10"
     minimatch "~3.0.2"
 
+got@^6.7.1:
+  version "6.7.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/got/-/got-6.7.1.tgz#240cd05785a9a18e561dc1b44b41c763ef1e8db0"
+  dependencies:
+    create-error-class "^3.0.0"
+    duplexer3 "^0.1.4"
+    get-stream "^3.0.0"
+    is-redirect "^1.0.0"
+    is-retry-allowed "^1.0.0"
+    is-stream "^1.0.0"
+    lowercase-keys "^1.0.0"
+    safe-buffer "^5.0.1"
+    timed-out "^4.0.0"
+    unzip-response "^2.0.1"
+    url-parse-lax "^1.0.0"
+
 graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
+
+hammerjs@^2.0.8:
+  version "2.0.8"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
 
 handle-thing@^1.2.5:
   version "1.2.5"
@@ -2810,6 +2999,10 @@ import-from@^2.1.0:
   dependencies:
     resolve-from "^3.0.0"
 
+import-lazy@^2.1.0:
+  version "2.1.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/import-lazy/-/import-lazy-2.1.0.tgz#05698e3d45c88e8d7e9d92cb0584e77f096f3e43"
+
 import-local@^2.0.0:
   version "2.0.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/import-local/-/import-local-2.0.0.tgz#55070be38a5993cf18ef6db7e961f5bee5c5a09d"
@@ -2853,6 +3046,14 @@ inherits@2.0.1:
 ini@^1.3.4, ini@~1.3.0:
   version "1.3.5"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
+
+injection-js@^2.2.1:
+  version "2.2.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/injection-js/-/injection-js-2.2.1.tgz#a8d6a085b2f0b8d8650f6f4487f6abb8cc0d67ce"
+
+inputmask@3.3.11:
+  version "3.3.11"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/inputmask/-/inputmask-3.3.11.tgz#1421c94ae28c3dcd1b4d26337b508bb34998e2d8"
 
 inquirer@6.2.0:
   version "6.2.0"
@@ -2944,6 +3145,12 @@ is-builtin-module@^1.0.0:
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/is-builtin-module/-/is-builtin-module-1.0.0.tgz#540572d34f7ac3119f8f76c30cbc1b1e037affbe"
   dependencies:
     builtin-modules "^1.0.0"
+
+is-ci@^1.0.10:
+  version "1.2.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/is-ci/-/is-ci-1.2.1.tgz#e3779c8ee17fccf428488f6e281187f2e632841c"
+  dependencies:
+    ci-info "^1.5.0"
 
 is-data-descriptor@^0.1.4:
   version "0.1.4"
@@ -3039,6 +3246,21 @@ is-glob@^4.0.0:
   dependencies:
     is-extglob "^2.1.1"
 
+is-installed-globally@^0.1.0:
+  version "0.1.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/is-installed-globally/-/is-installed-globally-0.1.0.tgz#0dfd98f5a9111716dd535dda6492f67bf3d25a80"
+  dependencies:
+    global-dirs "^0.1.0"
+    is-path-inside "^1.0.0"
+
+is-module@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/is-module/-/is-module-1.0.0.tgz#3258fb69f78c14d5b815d664336b4cffb6441591"
+
+is-npm@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/is-npm/-/is-npm-1.0.0.tgz#f2fb63a65e4905b406c86072765a1a4dc793b9f4"
+
 is-number@^0.1.1:
   version "0.1.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/is-number/-/is-number-0.1.1.tgz#69a7af116963d47206ec9bd9b48a14216f1e3806"
@@ -3058,6 +3280,10 @@ is-number@^3.0.0:
 is-number@^4.0.0:
   version "4.0.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/is-number/-/is-number-4.0.0.tgz#0026e37f5454d73e356dfe6564699867c6a7f0ff"
+
+is-obj@^1.0.0:
+  version "1.0.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/is-obj/-/is-obj-1.0.1.tgz#3e4729ac1f5fde025cd7d83a896dab9f4f67db0f"
 
 is-path-cwd@^1.0.0:
   version "1.0.0"
@@ -3093,7 +3319,15 @@ is-promise@^2.1.0:
   version "2.1.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/is-promise/-/is-promise-2.1.0.tgz#79a2a9ece7f096e80f36d2b2f3bc16c1ff4bf3fa"
 
-is-stream@^1.1.0:
+is-redirect@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/is-redirect/-/is-redirect-1.0.0.tgz#1d03dded53bd8db0f30c26e4f95d36fc7c87dc24"
+
+is-retry-allowed@^1.0.0:
+  version "1.1.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/is-retry-allowed/-/is-retry-allowed-1.1.0.tgz#11a060568b67339444033d0125a61a20d564fb34"
+
+is-stream@^1.0.0, is-stream@^1.1.0:
   version "1.1.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
 
@@ -3278,6 +3512,10 @@ jasminewd2@^2.1.0:
   version "2.2.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/jasminewd2/-/jasminewd2-2.2.0.tgz#e37cf0b17f199cce23bea71b2039395246b4ec4e"
 
+jquery@3.3.1:
+  version "3.3.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+
 js-base64@^2.1.8:
   version "2.4.9"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/js-base64/-/js-base64-2.4.9.tgz#748911fb04f48a60c4771b375cac45a80df11c03"
@@ -3340,6 +3578,12 @@ json3@^3.3.2:
 json5@^0.5.0:
   version "0.5.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
+
+jsonfile@^4.0.0:
+  version "4.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/jsonfile/-/jsonfile-4.0.0.tgz#8771aae0799b64076b76640fca058f9c10e33ecb"
+  optionalDependencies:
+    graceful-fs "^4.1.6"
 
 jsprim@^1.2.2:
   version "1.4.1"
@@ -3446,6 +3690,12 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
+latest-version@^3.0.0:
+  version "3.1.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/latest-version/-/latest-version-3.1.0.tgz#a205383fea322b33b5ae3b18abee0dc2f356ee15"
+  dependencies:
+    package-json "^4.0.0"
+
 lcid@^1.0.0:
   version "1.0.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/lcid/-/lcid-1.0.0.tgz#308accafa0bc483a3867b4b6f2b9506251d1b835"
@@ -3466,7 +3716,14 @@ less-loader@4.1.0:
     loader-utils "^1.1.0"
     pify "^3.0.0"
 
-less@3.8.1:
+less-plugin-npm-import@^2.1.0:
+  version "2.1.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/less-plugin-npm-import/-/less-plugin-npm-import-2.1.0.tgz#823e6986c93318a98171ca858848b6bead55bf3e"
+  dependencies:
+    promise "~7.0.1"
+    resolve "~1.1.6"
+
+less@3.8.1, less@^3.8.0:
   version "3.8.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/less/-/less-3.8.1.tgz#f31758598ef5a1930dd4caefa9e4340641e71e1d"
   dependencies:
@@ -3517,6 +3774,15 @@ load-json-file@^2.0.0:
     graceful-fs "^4.1.2"
     parse-json "^2.2.0"
     pify "^2.0.0"
+    strip-bom "^3.0.0"
+
+load-json-file@^4.0.0:
+  version "4.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/load-json-file/-/load-json-file-4.0.0.tgz#2f5f45ab91e33216234fd53adab668eb4ec0993b"
+  dependencies:
+    graceful-fs "^4.1.2"
+    parse-json "^4.0.0"
+    pify "^3.0.0"
     strip-bom "^3.0.0"
 
 loader-runner@^2.3.0:
@@ -3596,6 +3862,10 @@ loud-rejection@^1.0.0, loud-rejection@^1.6.0:
     currently-unhandled "^0.4.1"
     signal-exit "^3.0.0"
 
+lowercase-keys@^1.0.0:
+  version "1.0.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/lowercase-keys/-/lowercase-keys-1.0.1.tgz#6f9e30b47084d971a7c820ff15a6c5167b74c26f"
+
 lru-cache@2.2.x:
   version "2.2.4"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/lru-cache/-/lru-cache-2.2.4.tgz#6c658619becf14031d0d0b594b16042ce4dc063d"
@@ -3607,7 +3877,7 @@ lru-cache@^4.0.1, lru-cache@^4.1.1, lru-cache@^4.1.3:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
-magic-string@^0.25.0:
+magic-string@^0.25.0, magic-string@^0.25.1:
   version "0.25.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/magic-string/-/magic-string-0.25.1.tgz#b1c248b399cd7485da0fe7385c2fc7011843266e"
   dependencies:
@@ -3647,6 +3917,14 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+material-design-lite@1.1.1:
+  version "1.1.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/material-design-lite/-/material-design-lite-1.1.1.tgz#5eb55a73851b3599e3c832c9335782a82e84c711"
+
+material-design-lite@^1.1.3:
+  version "1.3.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/material-design-lite/-/material-design-lite-1.3.0.tgz#d004ce3fee99a1eeb74a78b8a325134a5f1171d3"
+
 math-random@^1.0.1:
   version "1.0.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/math-random/-/math-random-1.0.1.tgz#8b3aac588b8a66e4975e3cdea67f7bb329601fac"
@@ -3658,6 +3936,12 @@ md5.js@^1.3.4:
     hash-base "^3.0.0"
     inherits "^2.0.1"
     safe-buffer "^5.1.2"
+
+mdl-selectfield@1.0.2:
+  version "1.0.2"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/mdl-selectfield/-/mdl-selectfield-1.0.2.tgz#e6df1e8ea34ca747b4d973d00b16ec5dd5a4d1e7"
+  dependencies:
+    material-design-lite "^1.1.3"
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -3707,7 +3991,7 @@ methods@~1.1.2:
   version "1.1.2"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
-micromatch@^2.1.5:
+micromatch@^2.1.5, micromatch@^2.3.11:
   version "2.3.11"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/micromatch/-/micromatch-2.3.11.tgz#86677c97d1720b363431d04d0d15293bd38c1565"
   dependencies:
@@ -3943,6 +4227,38 @@ neo-async@^2.5.0:
   version "2.6.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
 
+ng-packagr@^4.2.0:
+  version "4.4.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/ng-packagr/-/ng-packagr-4.4.0.tgz#b868a829b5743870c6392491de3faf4e4cec6f4d"
+  dependencies:
+    "@ngtools/json-schema" "^1.1.0"
+    autoprefixer "^9.0.0"
+    browserslist "^4.0.0"
+    chalk "^2.3.1"
+    chokidar "^2.0.3"
+    clean-css "^4.1.11"
+    commander "^2.12.0"
+    fs-extra "^7.0.0"
+    glob "^7.1.2"
+    injection-js "^2.2.1"
+    less "^3.8.0"
+    less-plugin-npm-import "^2.1.0"
+    node-sass "^4.9.3"
+    node-sass-tilde-importer "^1.0.0"
+    postcss "^7.0.0"
+    postcss-url "^8.0.0"
+    read-pkg-up "^4.0.0"
+    rimraf "^2.6.1"
+    rollup "^0.66.0"
+    rollup-plugin-commonjs "^9.1.3"
+    rollup-plugin-json "^3.1.0"
+    rollup-plugin-node-resolve "^3.0.0"
+    rollup-plugin-sourcemaps "^0.4.2"
+    rxjs "^6.0.0"
+    stylus "^0.54.5"
+    uglify-js "^3.0.7"
+    update-notifier "^2.3.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -4017,6 +4333,12 @@ node-releases@^1.0.1:
   dependencies:
     semver "^5.3.0"
 
+node-sass-tilde-importer@^1.0.0:
+  version "1.0.2"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/node-sass-tilde-importer/-/node-sass-tilde-importer-1.0.2.tgz#1a15105c153f648323b4347693fdb0f331bad1ce"
+  dependencies:
+    find-parent-dir "^0.3.0"
+
 node-sass@4.9.3:
   version "4.9.3"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/node-sass/-/node-sass-4.9.3.tgz#f407cf3d66f78308bb1e346b24fa428703196224"
@@ -4037,6 +4359,30 @@ node-sass@4.9.3:
     node-gyp "^3.8.0"
     npmlog "^4.0.0"
     request "2.87.0"
+    sass-graph "^2.2.4"
+    stdout-stream "^1.4.0"
+    "true-case-path" "^1.0.2"
+
+node-sass@^4.9.3:
+  version "4.9.4"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/node-sass/-/node-sass-4.9.4.tgz#349bd7f1c89422ffe7e1e4b60f2055a69fbc5512"
+  dependencies:
+    async-foreach "^0.1.3"
+    chalk "^1.1.1"
+    cross-spawn "^3.0.0"
+    gaze "^1.0.0"
+    get-stdin "^4.0.1"
+    glob "^7.0.3"
+    in-publish "^2.0.0"
+    lodash.assign "^4.2.0"
+    lodash.clonedeep "^4.3.2"
+    lodash.mergewith "^4.6.0"
+    meow "^3.7.0"
+    mkdirp "^0.5.1"
+    nan "^2.10.0"
+    node-gyp "^3.8.0"
+    npmlog "^4.0.0"
+    request "^2.88.0"
     sass-graph "^2.2.4"
     stdout-stream "^1.4.0"
     "true-case-path" "^1.0.2"
@@ -4332,6 +4678,15 @@ p-try@^2.0.0:
   version "2.0.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/p-try/-/p-try-2.0.0.tgz#85080bb87c64688fa47996fe8f7dfbe8211760b1"
 
+package-json@^4.0.0:
+  version "4.0.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/package-json/-/package-json-4.0.1.tgz#8869a0401253661c4c4ca3da6c2121ed555f5eed"
+  dependencies:
+    got "^6.7.1"
+    registry-auth-token "^3.0.1"
+    registry-url "^3.0.3"
+    semver "^5.1.0"
+
 pako@~1.0.2, pako@~1.0.5:
   version "1.0.6"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/pako/-/pako-1.0.6.tgz#0101211baa70c4bca4a0f63f2206e97b7dfaf258"
@@ -4379,6 +4734,10 @@ parse-json@^4.0.0:
 parse5@4.0.0:
   version "4.0.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
+
+parse5@^5.0.0:
+  version "5.1.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/parse5/-/parse5-5.1.0.tgz#c59341c9723f414c452975564c7c00a68d58acd2"
 
 parseqs@0.0.5:
   version "0.0.5"
@@ -4547,11 +4906,21 @@ postcss-loader@3.0.0:
     postcss-load-config "^2.0.0"
     schema-utils "^1.0.0"
 
-postcss-value-parser@^3.2.3:
+postcss-url@^8.0.0:
+  version "8.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/postcss-url/-/postcss-url-8.0.0.tgz#7b10059bd12929cdbb1971c60f61a0e5af86b4ca"
+  dependencies:
+    mime "^2.3.1"
+    minimatch "^3.0.4"
+    mkdirp "^0.5.0"
+    postcss "^7.0.2"
+    xxhashjs "^0.2.1"
+
+postcss-value-parser@^3.2.3, postcss-value-parser@^3.3.1:
   version "3.3.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz#9ff822547e2893213cf1c30efa51ac5fd1ba8281"
 
-postcss@7.0.5, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.2:
+postcss@7.0.5, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.2, postcss@^7.0.5:
   version "7.0.5"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/postcss/-/postcss-7.0.5.tgz#70e6443e36a6d520b0fd4e7593fcca3635ee9f55"
   dependencies:
@@ -4562,6 +4931,10 @@ postcss@7.0.5, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.2:
 prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
+
+prepend-http@^1.0.1:
+  version "1.0.4"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
 
 preserve@^0.2.0:
   version "0.2.0"
@@ -4586,6 +4959,12 @@ promise-inflight@^1.0.1:
 promise@^7.1.1:
   version "7.3.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/promise/-/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
+  dependencies:
+    asap "~2.0.3"
+
+promise@~7.0.1:
+  version "7.0.4"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/promise/-/promise-7.0.4.tgz#363e84a4c36c8356b890fed62c91ce85d02ed539"
   dependencies:
     asap "~2.0.3"
 
@@ -4740,7 +5119,7 @@ raw-loader@0.5.1:
   version "0.5.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
 
-rc@^1.2.7:
+rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
   version "1.2.8"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/rc/-/rc-1.2.8.tgz#cd924bf5200a075b83c188cd6b9e211b7fc0d3ed"
   dependencies:
@@ -4769,6 +5148,13 @@ read-pkg-up@^2.0.0:
     find-up "^2.0.0"
     read-pkg "^2.0.0"
 
+read-pkg-up@^4.0.0:
+  version "4.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/read-pkg-up/-/read-pkg-up-4.0.0.tgz#1b221c6088ba7799601c808f91161c66e58f8978"
+  dependencies:
+    find-up "^3.0.0"
+    read-pkg "^3.0.0"
+
 read-pkg@^1.0.0:
   version "1.1.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/read-pkg/-/read-pkg-1.1.0.tgz#f5ffaa5ecd29cb31c0474bca7d756b6bb29e3f28"
@@ -4784,6 +5170,14 @@ read-pkg@^2.0.0:
     load-json-file "^2.0.0"
     normalize-package-data "^2.3.2"
     path-type "^2.0.0"
+
+read-pkg@^3.0.0:
+  version "3.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/read-pkg/-/read-pkg-3.0.0.tgz#9cbc686978fee65d16c00e2b19c237fcf6e38389"
+  dependencies:
+    load-json-file "^4.0.0"
+    normalize-package-data "^2.3.2"
+    path-type "^3.0.0"
 
 "readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.2.9, readable-stream@^2.3.0, readable-stream@^2.3.3, readable-stream@^2.3.6:
   version "2.3.6"
@@ -4862,6 +5256,19 @@ regexpu-core@^1.0.0:
     regjsgen "^0.2.0"
     regjsparser "^0.1.4"
 
+registry-auth-token@^3.0.1:
+  version "3.3.2"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/registry-auth-token/-/registry-auth-token-3.3.2.tgz#851fd49038eecb586911115af845260eec983f20"
+  dependencies:
+    rc "^1.1.6"
+    safe-buffer "^5.0.1"
+
+registry-url@^3.0.3:
+  version "3.1.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/registry-url/-/registry-url-3.1.0.tgz#3d4ef870f73dde1d77f0cf9a381432444e174942"
+  dependencies:
+    rc "^1.0.1"
+
 regjsgen@^0.2.0:
   version "0.2.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/regjsgen/-/regjsgen-0.2.0.tgz#6c016adeac554f75823fe37ac05b92d5a4edb1f7"
@@ -4919,7 +5326,7 @@ request@2.87.0:
     tunnel-agent "^0.6.0"
     uuid "^3.1.0"
 
-request@^2.74.0, request@^2.83.0, request@^2.87.0:
+request@^2.74.0, request@^2.83.0, request@^2.87.0, request@^2.88.0:
   version "2.88.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   dependencies:
@@ -4974,11 +5381,11 @@ resolve-url@^0.2.1:
   version "0.2.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
 
-resolve@1.1.x:
+resolve@1.1.x, resolve@~1.1.6:
   version "1.1.7"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
 
-resolve@^1.1.6, resolve@^1.1.7, resolve@^1.3.2:
+resolve@^1.1.6, resolve@^1.1.7, resolve@^1.3.2, resolve@^1.8.1:
   version "1.8.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/resolve/-/resolve-1.8.1.tgz#82f1ec19a423ac1fbd080b0bab06ba36e84a7a26"
   dependencies:
@@ -5016,6 +5423,54 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
+roboto-fontface@0.10.0:
+  version "0.10.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/roboto-fontface/-/roboto-fontface-0.10.0.tgz#7eee40cfa18b1f7e4e605eaf1a2740afb6fd71b0"
+
+rollup-plugin-commonjs@^9.1.3:
+  version "9.2.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/rollup-plugin-commonjs/-/rollup-plugin-commonjs-9.2.0.tgz#4604e25069e0c78a09e08faa95dc32dec27f7c89"
+  dependencies:
+    estree-walker "^0.5.2"
+    magic-string "^0.25.1"
+    resolve "^1.8.1"
+    rollup-pluginutils "^2.3.3"
+
+rollup-plugin-json@^3.1.0:
+  version "3.1.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/rollup-plugin-json/-/rollup-plugin-json-3.1.0.tgz#7c1daf60c46bc21021ea016bd00863561a03321b"
+  dependencies:
+    rollup-pluginutils "^2.3.1"
+
+rollup-plugin-node-resolve@^3.0.0:
+  version "3.4.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.4.0.tgz#908585eda12e393caac7498715a01e08606abc89"
+  dependencies:
+    builtin-modules "^2.0.0"
+    is-module "^1.0.0"
+    resolve "^1.1.6"
+
+rollup-plugin-sourcemaps@^0.4.2:
+  version "0.4.2"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/rollup-plugin-sourcemaps/-/rollup-plugin-sourcemaps-0.4.2.tgz#62125aa94087aadf7b83ef4dfaf629b473135e87"
+  dependencies:
+    rollup-pluginutils "^2.0.1"
+    source-map-resolve "^0.5.0"
+
+rollup-pluginutils@^2.0.1, rollup-pluginutils@^2.3.1, rollup-pluginutils@^2.3.3:
+  version "2.3.3"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/rollup-pluginutils/-/rollup-pluginutils-2.3.3.tgz#3aad9b1eb3e7fe8262820818840bf091e5ae6794"
+  dependencies:
+    estree-walker "^0.5.2"
+    micromatch "^2.3.11"
+
+rollup@^0.66.0:
+  version "0.66.6"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/rollup/-/rollup-0.66.6.tgz#ce7d6185beb7acea644ce220c25e71ae03275482"
+  dependencies:
+    "@types/estree" "0.0.39"
+    "@types/node" "*"
+
 run-async@^2.2.0:
   version "2.3.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/run-async/-/run-async-2.3.0.tgz#0371ab4ae0bdd720d4166d7dfda64ff7a445a6c0"
@@ -5028,7 +5483,7 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs@6.3.3, rxjs@^6.1.0, rxjs@~6.3.3:
+rxjs@6.3.3, rxjs@^6.0.0, rxjs@^6.1.0, rxjs@~6.3.3:
   version "6.3.3"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/rxjs/-/rxjs-6.3.3.tgz#3c6a7fa420e844a81390fb1158a9ec614f4bad55"
   dependencies:
@@ -5129,6 +5584,12 @@ selfsigned@^1.9.1:
   dependencies:
     node-forge "0.7.5"
 
+semver-diff@^2.0.0:
+  version "2.1.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/semver-diff/-/semver-diff-2.1.0.tgz#4bbb8437c8d37e4b0cf1a68fd726ec6d645d6d36"
+  dependencies:
+    semver "^5.0.3"
+
 semver-dsl@^1.0.1:
   version "1.0.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/semver-dsl/-/semver-dsl-1.0.1.tgz#d3678de5555e8a61f629eed025366ae5f27340a0"
@@ -5141,7 +5602,7 @@ semver-intersect@1.4.0:
   dependencies:
     semver "^5.0.0"
 
-"semver@2 >=2.2.1 || 3.x || 4 || 5", "semver@2 || 3 || 4 || 5", semver@^5.0.0, semver@^5.3.0, semver@^5.5.0:
+"semver@2 >=2.2.1 || 3.x || 4 || 5", "semver@2 || 3 || 4 || 5", semver@^5.0.0, semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.5.0:
   version "5.6.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/semver/-/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
 
@@ -5410,7 +5871,7 @@ source-map@0.5.6:
   version "0.5.6"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
 
-source-map@0.7.3:
+source-map@0.7.3, source-map@^0.7.3:
   version "0.7.3"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
 
@@ -5673,7 +6134,7 @@ stylus-loader@3.0.2:
     lodash.clonedeep "^4.5.0"
     when "~3.6.x"
 
-stylus@0.54.5:
+stylus@0.54.5, stylus@^0.54.5:
   version "0.54.5"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/stylus/-/stylus-0.54.5.tgz#42b9560931ca7090ce8515a798ba9e6aa3d6dc79"
   dependencies:
@@ -5728,6 +6189,12 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
 
+term-size@^1.2.0:
+  version "1.2.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/term-size/-/term-size-1.2.0.tgz#458b83887f288fc56d6fffbfad262e26638efa69"
+  dependencies:
+    execa "^0.7.0"
+
 terser-webpack-plugin@1.1.0:
   version "1.1.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/terser-webpack-plugin/-/terser-webpack-plugin-1.1.0.tgz#cf7c25a1eee25bf121f4a587bb9e004e3f80e528"
@@ -5763,6 +6230,10 @@ through@X.X.X, through@^2.3.6:
 thunky@^1.0.2:
   version "1.0.3"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/thunky/-/thunky-1.0.3.tgz#f5df732453407b09191dae73e2a8cc73f381a826"
+
+timed-out@^4.0.0:
+  version "4.0.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/timed-out/-/timed-out-4.0.1.tgz#f32eacac5a175bea25d7fab565ab3ed8741ef56f"
 
 timers-browserify@^2.0.4:
   version "2.0.10"
@@ -5864,7 +6335,15 @@ ts-node@~7.0.0:
     source-map-support "^0.5.6"
     yn "^2.0.0"
 
-tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tsickle@>=0.29.0:
+  version "0.33.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/tsickle/-/tsickle-0.33.1.tgz#eee4ebabeda3bcd8afc32cee34c822cbe3e839ec"
+  dependencies:
+    minimist "^1.2.0"
+    mkdirp "^0.5.1"
+    source-map "^0.7.3"
+
+tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.9.3"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
 
@@ -5937,7 +6416,7 @@ uglify-es@^3.3.4:
     commander "~2.13.0"
     source-map "~0.6.1"
 
-uglify-js@^3.1.4:
+uglify-js@^3.0.7, uglify-js@^3.1.4:
   version "3.4.9"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/uglify-js/-/uglify-js-3.4.9.tgz#af02f180c1207d76432e473ed24a28f4a782bae3"
   dependencies:
@@ -5982,6 +6461,16 @@ unique-slug@^2.0.0:
   dependencies:
     imurmurhash "^0.1.4"
 
+unique-string@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/unique-string/-/unique-string-1.0.0.tgz#9e1057cca851abb93398f8b33ae187b99caec11a"
+  dependencies:
+    crypto-random-string "^1.0.0"
+
+universalify@^0.1.0:
+  version "0.1.2"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
+
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
@@ -5993,9 +6482,28 @@ unset-value@^1.0.0:
     has-value "^0.3.1"
     isobject "^3.0.0"
 
+unzip-response@^2.0.1:
+  version "2.0.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/unzip-response/-/unzip-response-2.0.1.tgz#d2f0f737d16b0615e72a6935ed04214572d56f97"
+
 upath@^1.0.5:
   version "1.1.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/upath/-/upath-1.1.0.tgz#35256597e46a581db4793d0ce47fa9aebfc9fabd"
+
+update-notifier@^2.3.0:
+  version "2.5.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/update-notifier/-/update-notifier-2.5.0.tgz#d0744593e13f161e406acb1d9408b72cad08aff6"
+  dependencies:
+    boxen "^1.2.1"
+    chalk "^2.0.1"
+    configstore "^3.0.0"
+    import-lazy "^2.1.0"
+    is-ci "^1.0.10"
+    is-installed-globally "^0.1.0"
+    is-npm "^1.0.0"
+    latest-version "^3.0.0"
+    semver-diff "^2.0.0"
+    xdg-basedir "^3.0.0"
 
 uri-js@^4.2.2:
   version "4.2.2"
@@ -6010,6 +6518,12 @@ urix@^0.1.0:
 url-join@^4.0.0:
   version "4.0.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/url-join/-/url-join-4.0.0.tgz#4d3340e807d3773bda9991f8305acdcc2a665d2a"
+
+url-parse-lax@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/url-parse-lax/-/url-parse-lax-1.0.0.tgz#7af8f303645e9bd79a272e7a14ac68bc0609da73"
+  dependencies:
+    prepend-http "^1.0.1"
 
 url-parse@^1.1.8, url-parse@^1.4.3:
   version "1.4.3"
@@ -6108,6 +6622,10 @@ wbuf@^1.1.0, wbuf@^1.7.2:
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/wbuf/-/wbuf-1.7.3.tgz#c1d8d149316d3ea852848895cb6a0bfe887b87df"
   dependencies:
     minimalistic-assert "^1.0.0"
+
+web-animations-js@^2.3.1:
+  version "2.3.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/web-animations-js/-/web-animations-js-2.3.1.tgz#3a6d9bc15196377a90f8e2803fa5262165b04510"
 
 webdriver-js-extender@2.1.0:
   version "2.1.0"
@@ -6292,6 +6810,12 @@ wide-align@^1.1.0:
   dependencies:
     string-width "^1.0.2 || 2"
 
+widest-line@^2.0.0:
+  version "2.0.1"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/widest-line/-/widest-line-2.0.1.tgz#7438764730ec7ef4381ce4df82fb98a53142a3fc"
+  dependencies:
+    string-width "^2.1.1"
+
 wordwrap@^1.0.0, wordwrap@~1.0.0:
   version "1.0.0"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
@@ -6317,6 +6841,14 @@ wrappy@1:
   version "1.0.2"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
 
+write-file-atomic@^2.0.0:
+  version "2.3.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/write-file-atomic/-/write-file-atomic-2.3.0.tgz#1ff61575c2e2a4e8e510d6fa4e243cce183999ab"
+  dependencies:
+    graceful-fs "^4.1.11"
+    imurmurhash "^0.1.4"
+    signal-exit "^3.0.2"
+
 ws@~3.3.1:
   version "3.3.3"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/ws/-/ws-3.3.3.tgz#f1cf84fe2d5e901ebce94efaece785f187a228f2"
@@ -6324,6 +6856,10 @@ ws@~3.3.1:
     async-limiter "~1.0.0"
     safe-buffer "~5.1.0"
     ultron "~1.1.0"
+
+xdg-basedir@^3.0.0:
+  version "3.0.0"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
 
 xml2js@^0.4.17:
   version "0.4.19"
@@ -6347,6 +6883,12 @@ xregexp@4.0.0:
 xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.1"
   resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
+
+xxhashjs@^0.2.1:
+  version "0.2.2"
+  resolved "https://artifactory.cbp.dhs.gov:443/artifactory/api/npm/npm/xxhashjs/-/xxhashjs-0.2.2.tgz#8a6251567621a1c46a5ae204da0249c7f8caa9d8"
+  dependencies:
+    cuint "^0.2.2"
 
 y18n@^3.2.1:
   version "3.2.1"

@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-cbp-theme": [
+        "dist/ngx-cbp-theme"
+      ],
+      "ngx-cbp-theme/*": [
+        "dist/ngx-cbp-theme/*"
+      ]
+    }
   }
 }

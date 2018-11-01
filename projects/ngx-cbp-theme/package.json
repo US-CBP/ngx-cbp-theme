@@ -1,0 +1,8 @@
+{
+  "name": "ngx-cbp-theme",
+  "version": "0.0.1-PLACEHOLDER",
+  "peerDependencies": {
+    "@angular/common": "^7.0.0",
+    "@angular/core": "^7.0.0"
+  }
+}
