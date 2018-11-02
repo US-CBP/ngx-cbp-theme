@@ -82,7 +82,16 @@ Use @angular/cli global install version matching the version inside [package.jso
   ```sass
   @import '~ngx-cbp-theme/styles/ngx-cbp-theme';
   ```
+  
+* In your angular.json add to your build options for `@angular-devkit/build-angular:browser`
 
+  ```json
+  "stylePreprocessorOptions": {
+    "includePaths": ["./node_modules"]
+  },
+  
+  ```
+  
 * Implement required services:
 
    

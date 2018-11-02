@@ -1,12 +1,9 @@
-import {
-  Component, EventEmitter, HostBinding, HostListener, Input, OnDestroy, OnInit, Output,
-  ViewEncapsulation
-} from '@angular/core';
-import {CBPScrollShrinkAnimator} from './cbp-scrollshrink-animator';
-import {MediaChange, ObservableMedia} from '@angular/flex-layout';
-import {Subscription} from 'rxjs';
-import {fadeInContent} from '@angular/material';
-import {CBPToolbarState} from './cbp-toolbar-state';
+import { Component, EventEmitter, HostBinding, HostListener, Input, OnDestroy, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { CBPScrollShrinkAnimator } from './cbp-scrollshrink-animator';
+import { MediaChange, ObservableMedia } from '@angular/flex-layout';
+import { Subscription } from 'rxjs';
+import { matSelectAnimations } from '@angular/material';
+import { CBPToolbarState } from './cbp-toolbar-state';
 
 @Component({
   selector: 'cbp-toolbar',
@@ -15,7 +12,7 @@ import {CBPToolbarState} from './cbp-toolbar-state';
   encapsulation: ViewEncapsulation.None,
   animations: [
     CBPScrollShrinkAnimator.createScrollShrinkTrigger('cbpToolbarScrollState', '*', '-50px'),
-    fadeInContent
+    matSelectAnimations.fadeInContent
   ],
   exportAs: 'cbpToolbar'
 })

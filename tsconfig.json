@@ -1,34 +1,28 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": ".",
-    "baseUrl": ".",
-    "moduleResolution": "node",
-    "target": "es5",
-    "module": "es2015",
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
-    "inlineSources": true,
-    "declaration": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "skipLibCheck": true,
-    "stripInternal": true,
-    "lib": [
-      "es2017",
-      "dom"
-    ],
-    "types": [
-      "node",
-      "jasmine"
-    ],
+    "target": "es5",
     "typeRoots": [
       "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
     ],
     "paths": {
       "ngx-cbp-theme": [
         "dist/ngx-cbp-theme"
+      ],
+      "ngx-cbp-theme/*": [
+        "dist/ngx-cbp-theme/*"
       ]
     }
   }

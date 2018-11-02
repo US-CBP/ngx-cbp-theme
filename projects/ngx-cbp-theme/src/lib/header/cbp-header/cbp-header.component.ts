@@ -29,7 +29,7 @@ export class CBPHeaderComponent {
   constructor(@Inject(CBP_HEADER_STATE) state: CBPToolbarState,
               @Inject(CBP_APPLICATIONS_SERVICE) public applicationsService?: CBPApplicationsService) {
     this.toolbarState = state;
-  };
+  }
 
   isProvided(comp: any): boolean {
     return comp ? true : false;

@@ -14,11 +14,6 @@
           "options": {
             "tsConfig": "projects/ngx-cbp-theme/tsconfig.lib.json",
             "project": "projects/ngx-cbp-theme/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "project": "projects/ngx-cbp-theme/ng-package.prod.json"
-            }
           }
         },
         "test": {
@@ -70,7 +65,7 @@
               "projects/kitchensink/src/kitchensink.scss"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["node_modules"]
+              "includePaths": ["./node_modules"]
             },
             "scripts": ["node_modules/tota11y/build/tota11y.min.js"]
           },
@@ -90,7 +85,14 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
@@ -125,7 +127,10 @@
             "assets": [
               "projects/kitchensink/src/favicon.ico",
               "projects/kitchensink/src/assets"
-            ]
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["./node_modules"]
+            }
           }
         },
         "lint": {
@@ -145,12 +150,18 @@
     "kitchensink-e2e": {
       "root": "projects/kitchensink-e2e/",
       "projectType": "application",
+      "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "projects/kitchensink-e2e/protractor.conf.js",
             "devServerTarget": "kitchensink:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "kitchensink:serve:production"
+            }
           }
         },
         "lint": {
@@ -165,14 +176,5 @@
       }
     }
   },
-  "defaultProject": "kitchensink",
-  "schematics": {
-    "@schematics/angular:component": {
-      "prefix": "cbp",
-      "styleext": "scss"
-    },
-    "@schematics/angular:directive": {
-      "prefix": "cbp"
-    }
-  }
+  "defaultProject": "ngx-cbp-theme"
 }

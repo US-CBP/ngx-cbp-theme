@@ -23,7 +23,7 @@ export class CBPToolbarState {
         this._scrollShrinkSuspended = suspended;
     }
 
-    constructor() {};
+    constructor() {}
 }
 
 

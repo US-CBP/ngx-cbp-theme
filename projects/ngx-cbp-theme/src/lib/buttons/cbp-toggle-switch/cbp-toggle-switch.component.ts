@@ -99,7 +99,7 @@ export class CBPToggleSwitchComponent extends _CBPToggleSwitchMixinBase
               @Attribute('tabindex') tabIndex: string) {
     // tslint:disable-next-line
     super(elementRef);
-    this.tabIndex = Number.parseInt(tabIndex) || 0;
+    this.tabIndex = Number.parseInt(tabIndex, 10) || 0;
   }
 
   @Input()
@@ -132,7 +132,7 @@ export class CBPToggleSwitchComponent extends _CBPToggleSwitchMixinBase
   }
 
   private _emitChangeEvent() {
-    let event = new CBPToggleSwitchChange();
+    const event = new CBPToggleSwitchChange();
     event.source = this;
     event.checked = this.checked;
 
@@ -142,7 +142,7 @@ export class CBPToggleSwitchComponent extends _CBPToggleSwitchMixinBase
 
   // just to avoid TypeScript error - it is going to get overwritten by ControlValueAccessor impl of registerOnChange
   private _controlValueAccessorChangeFn: (value: any) => void = () => {
-  };
+  }
 
   ngOnInit() {
   }
@@ -159,7 +159,6 @@ export class CBPToggleSwitchComponent extends _CBPToggleSwitchMixinBase
 
   /**
    * Focus control not implemented yet
-   * @param fn
    */
   registerOnTouched(): void {
   }
