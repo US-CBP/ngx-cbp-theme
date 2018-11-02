@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import {CBPNotification} from '../cbp-notification';
 import {CBPNotificationsService} from '../cbp-notifications.service';
 import {Subscription} from 'rxjs';
@@ -14,12 +14,13 @@ export class CBPNotificationsOverlayComponent implements OnInit, OnDestroy {
   notifications: CBPNotification[] = [];
   private _subscriptions = new Subscription();
 
-  constructor(private notificationsService: CBPNotificationsService) { }
+  constructor(private notificationsService: CBPNotificationsService,
+              private viewContainerRef: ViewContainerRef) { }
 
   ngOnInit() {
     this._subscriptions.add(this.notificationsService.getNotifications().subscribe( notification => {
       if (notification.content && !notification.contentPortal) {
-          notification.contentPortal = new TemplatePortal(notification.content, null!);
+          notification.contentPortal = new TemplatePortal(notification.content, this.viewContainerRef);
       }
       this.notifications.push(notification);
     }));

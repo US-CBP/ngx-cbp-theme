@@ -17,7 +17,7 @@ export * from './lib/accordion/accordion.module';
 export * from './lib/applications/cbp-applications-service';
 export * from './lib/applications/applications.module';
 export * from './lib/applications/apps-menu/apps-menu.component';
-export * from './lib/applications/applications-search/applications-search.component'
+export * from './lib/applications/applications-search/applications-search.component';
 
 
 export * from './lib/cbp-root/cbp-root.module';

@@ -1,22 +1,22 @@
-import {async, ComponentFixture, fakeAsync, inject, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, inject, TestBed } from '@angular/core/testing';
 
-import {CBPApplicationsMenuComponent} from './apps-menu.component';
-import {MatDividerModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule} from '@angular/material';
-import {CBPProgressModule} from '../../progress/progress.module';
-import {CBPPipesModule} from '../../pipes/pipes.module';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {CBP_APPLICATIONS_SERVICE, CBPApplicationsData} from '../cbp-applications-service';
-import {MockApplicationsService} from '../../mock-services/applications.mock.service';
-import {CBP_USER_SERVICE} from '../../user/user';
-import {MockUserService} from '../../mock-services/user.mock.service';
-import {CBPApplicationsSearchComponent} from '../applications-search/applications-search.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {CBPToolbarState, CBP_HEADER_STATE} from '../../header/cbp-toolbar/cbp-toolbar-state';
-import { By }              from '@angular/platform-browser';
-import {ReplaySubject} from 'rxjs';
-import {CommonModule} from '@angular/common';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { CBPApplicationsMenuComponent } from './apps-menu.component';
+import { MatDividerModule, MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule } from '@angular/material';
+import { CBPProgressModule } from '../../progress/progress.module';
+import { CBPPipesModule } from '../../pipes/pipes.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { CBP_APPLICATIONS_SERVICE, CBPApplicationsData } from '../cbp-applications-service';
+import { MockApplicationsService } from '../../mock-services/applications.mock.service';
+import { CBP_USER_SERVICE } from '../../user/user';
+import { MockUserService } from '../../mock-services/user.mock.service';
+import { CBPApplicationsSearchComponent } from '../applications-search/applications-search.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CBP_HEADER_STATE, CBPToolbarState } from '../../header/cbp-toolbar/cbp-toolbar-state';
+import { By } from '@angular/platform-browser';
+import { ReplaySubject } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('CBPApplicationsMenuComponent', () => {
     let component: CBPApplicationsMenuComponent;

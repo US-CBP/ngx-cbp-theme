@@ -18,11 +18,6 @@ export class CBPNotification {
 
   /**
    * Creates notification
-   * @param isClosedInitially
-   * @param type 'success' | 'danger' | 'warning' | 'info'
-   * @param message string - simple string based notification
-   * @param content pass in TemplateRef is your notification needs complex html
-   * @param contentPortal Mainly used internally but you can pass CdkPortal i.e. your own TemplatePortal or ComponentPortal
    */
   constructor(isClosedInitially = false,
               public type?: 'success' | 'danger' | 'warning' | 'info',
@@ -36,7 +31,6 @@ export class CBPNotification {
 
   /**
    * Is the notification currently open ?
-   * @returns
    */
   isOpen(): boolean {
     return this._isOpen$.getValue();

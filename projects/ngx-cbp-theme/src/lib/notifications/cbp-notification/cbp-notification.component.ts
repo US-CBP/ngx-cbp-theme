@@ -78,7 +78,7 @@ export class CBPNotificationComponent implements OnInit, OnDestroy {
 
     activate() {
         this.show = true;
-        this.animationState = 'enter'
+        this.animationState = 'enter';
     }
 
     dismiss() {

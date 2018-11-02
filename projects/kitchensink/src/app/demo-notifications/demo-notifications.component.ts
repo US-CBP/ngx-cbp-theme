@@ -1,8 +1,8 @@
-import {EMPTY, Subscription} from 'rxjs';
+import { EMPTY, Subscription } from 'rxjs';
 
-import {delay, filter, first} from 'rxjs/operators';
-import {Component, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {CBPNotification, CBPNotificationsService} from 'ngx-cbp-theme';
+import { delay, filter, first } from 'rxjs/operators';
+import { Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { CBPNotification, CBPNotificationsService } from 'ngx-cbp-theme';
 
 @Component({
   selector: 'demo-notifications, cbp-demo-notifications',
@@ -55,9 +55,7 @@ export class DemoNotificationsComponent implements OnInit, OnDestroy {
    * Also an example to listening to user closing the notification.
    */
   notifyWarning() {
-    this.snoozingNotification = new CBPNotification();
-    this.snoozingNotification.type = 'warning';
-    this.snoozingNotification.content = this.warnNotificationRef;
+    this.snoozingNotification = new CBPNotification(false, 'warning', null, this.warnNotificationRef);
     this.notificationService.notify(this.snoozingNotification);
     this.snoozerNotifClosingSubscription.add(
       this.snoozingNotification.isOpen$.pipe(
@@ -86,7 +84,6 @@ export class DemoNotificationsComponent implements OnInit, OnDestroy {
 
   /**
    * Example of snoozing action.
-   * @param {number} snoozeFor
    */
   snoozeSnoozing(snoozeFor: number) {
     if (this.snoozingNotification) {

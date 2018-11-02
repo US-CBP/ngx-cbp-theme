@@ -65,7 +65,7 @@
               "projects/kitchensink/src/kitchensink.scss"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["node_modules"]
+              "includePaths": ["./node_modules"]
             },
             "scripts": ["node_modules/tota11y/build/tota11y.min.js"]
           },
@@ -127,7 +127,10 @@
             "assets": [
               "projects/kitchensink/src/favicon.ico",
               "projects/kitchensink/src/assets"
-            ]
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["./node_modules"]
+            }
           }
         },
         "lint": {

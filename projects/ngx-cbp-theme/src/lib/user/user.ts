@@ -21,11 +21,11 @@ export abstract class CBPUserService {
     private _loginInProgress = false;
     get loginInProgress(): boolean {
         return this._loginInProgress;
-    };
+    }
 
     set loginInProgress(loginInProgress: boolean ) {
         this._loginInProgress = loginInProgress;
-    };
+    }
 
     /**
      * User may not loaded or since user may not be "logged in".

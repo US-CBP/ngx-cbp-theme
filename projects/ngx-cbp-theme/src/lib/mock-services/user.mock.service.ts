@@ -10,7 +10,7 @@ export class MockUserService extends  CBPUserService {
 
     constructor() {
         super();
-    };
+    }
 
     getUser(): Subject<CBPUser> {
         return this.subject;
@@ -18,7 +18,7 @@ export class MockUserService extends  CBPUserService {
     login(delay = 3000): Subject<CBPUser> {
         setTimeout(() => {
             this.loggedIn = true;
-            let user = new CBPUser();
+            const user = new CBPUser();
             user.firstName = 'First';
             user.lastName = 'LastName';
             user.preferences = {

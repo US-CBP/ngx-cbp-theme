@@ -41,13 +41,13 @@ export class MockApplicationsService extends  CBPApplicationsService {
     }
 
     removeRecentApplication(recentApplication: CBPApplication): Observable<boolean> {
-        let data: CBPApplicationsData  = this.subject.getValue();
+        const data: CBPApplicationsData  = this.subject.getValue();
         return this._removeAppFromArray(recentApplication, data.recents);
     }
 
 
     private _removeAppFromArray(app: CBPApplication, fromArray: CBPApplication[]): Observable<boolean> {
-        let index = fromArray.indexOf(app);
+        const index = fromArray.indexOf(app);
         if (index >= 0) {
             fromArray.splice(index, 1);
         }
@@ -80,7 +80,7 @@ export class MockApplicationsService extends  CBPApplicationsService {
     }
 
     private _getMockHttpData(): Observable<CBPApplicationsData> {
-        let rawList: any[] = [];
+        const rawList: any[] = [];
         let count = 100;
         do {
             rawList.push(
@@ -88,7 +88,7 @@ export class MockApplicationsService extends  CBPApplicationsService {
                     name: `App ${count}`, description: `Description ${count}`, href: `http://example.com/app-${count}`});
         } while (count-- >= 0);
 
-        let data = new CBPApplicationsData();
+        const data = new CBPApplicationsData();
         data.list = <CBPApplication[]> rawList;
         return observableOf(data);
 
@@ -102,7 +102,7 @@ export class MockApplicationsService extends  CBPApplicationsService {
      */
     private _applyUserToApplications(user: CBPUser, data: CBPApplicationsData): CBPApplicationsData {
 
-        let applications = <CBPApplication[]> data.list;
+        const applications = <CBPApplication[]> data.list;
         if (applications) {
             let random;
             data.recents = [];
