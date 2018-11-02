@@ -62,9 +62,12 @@
               "projects/kitchensink/src/assets"
             ],
             "styles": [
-              "projects/kitchensink/src/styles.scss"
+              "projects/kitchensink/src/kitchensink.scss"
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules"]
+            },
+            "scripts": ["node_modules/tota11y/build/tota11y.min.js"]
           },
           "configurations": {
             "production": {
@@ -118,7 +121,7 @@
             "tsConfig": "projects/kitchensink/tsconfig.spec.json",
             "karmaConfig": "projects/kitchensink/karma.conf.js",
             "styles": [
-              "projects/kitchensink/src/styles.scss"
+              "projects/kitchensink/src/kitchensink.scss"
             ],
             "scripts": [],
             "assets": [

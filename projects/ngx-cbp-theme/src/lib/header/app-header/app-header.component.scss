@@ -1,0 +1,46 @@
+@import '../../variables';
+
+
+:host {
+
+  cbp-toolbar {
+
+    border-bottom-color: $navbar-default-border;
+    height: $navbar-appheader-height + 1px;
+    z-index: $zindex-appbar;
+    position: fixed;
+    .cbp-toolbar-row {
+      z-index: $zindex-appbar;
+      border-bottom: 1px solid $brand-default-border !important;
+    }
+
+    .cbp-brand-nav-container {
+      cursor: default;
+      &:hover,
+      &:focus {
+        outline: none;
+        outline-offset: initial;
+        text-decoration: initial;
+      }
+    }
+  }
+}
+
+
+:host .cbp-toolbar-expansion-container {
+  z-index: $zindex-appbar + 100;
+  .cbp-toolbar-expansion {
+    .cbp-toolbar-expansion-icon {
+      border: 1px solid darken($navbar-default-border, 4%);
+      background-color: $navbar-default-bg;
+      &:hover {
+        background-color: $navbar-default-toggle-hover-bg;
+      }
+      &:focus {
+        border-color: $navbar-default-toggle-border-color;
+        outline: 1px dotted darken($brand-default-border, 0.25)!important;
+      }
+    }
+  }
+}
+

@@ -1,14 +1,16 @@
-import { AppPage } from './app.po';
+import { DemoAppPage } from './app.po';
 
-describe('workspace-project App', () => {
-  let page: AppPage;
+describe('ngx-cbp-theme-kitchensink-cli Demo App', () => {
+    let page: DemoAppPage;
 
-  beforeEach(() => {
-    page = new AppPage();
-  });
+    beforeAll((done: Function) => {
+        page = new DemoAppPage();
+        page.navigateTo().then(done);
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to kitchensink!');
-  });
+    });
+
+
+    it('should display app header title', () => {
+       expect(page.getCurrentAppName()).toEqual('Kitchen Sink');
+    });
 });

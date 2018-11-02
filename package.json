@@ -1,16 +1,41 @@
 {
   "name": "ngx-cbp-theme",
-  "version": "0.0.0",
+  "version": "7.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/US-CBP/ngx-cbp-theme.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/US-CBP/ngx-cbp-theme.git/issues"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "build:ngx-cbp-theme": "ng build ngx-cbp-theme",
-    "test": "ng test",
+    "build:ngx-cbp-theme:schematics": "tsc -p projects/ngx-cbp-theme/schematics/",
+    "clean:ngx-cbp-theme": "rimraf dist/ngx-cbp-theme",
+    "build:ngx-cbp-theme": "npm-run-all clean:ngx-cbp-theme build:ngx-cbp-theme:prod  build:ngx-cbp-theme:schematics copy-assets:ngx-cbp-theme prepare-package:ngx-cbp-theme",
+    "build:ngx-cbp-theme:prod": "ng build ngx-cbp-theme",
+    "copy-assets:ngx-cbp-theme": "node scripts/copy-assets.js",
+    "prepare-package:ngx-cbp-theme": "node scripts/prepare-package.js",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start:kitchensink": "ng build ngx-cbp-theme && ng serve kitchensink --port 4100 --watch",
+    "clean:kitchensink": "rimraf ./dist/kitchensink",
+    "build:kitchensink": "ng build kitchensink --prod --base-href ngx-cbp-theme",
+    "build:kitchensink:watch": "ng build kitchensink --prod --base-href ngx-cbp-theme --watch",
+    "build:kitchensink:prod": "npm-run-all --serial clean:kitchensink build:ngx-cbp-theme build:kitchensink",
+    "test:kitchensink": "ng test kitchensink",
+    "test:kitchensink:once": "ng test kitchensink --watch=false  --progress=false",
+    "test:ngx-cbp-theme": "ng test ngx-cbp-theme",
+    "test:ngx-cbp-theme:once": "ng test ngx-cbp-theme --watch=false --progress=false",
+    "e2e:kitchensink": "ng e2e kitchensink-e2e --port 4300",
+    "ready": "npm-run-all lint build:kitchensink:prod test:once e2e:kitchensink",
+    "preversion": "npm run ready",
+    "postversion": "npm run prepare-package:ngx-cbp-theme",
+    "test:once": "npm-run-all --parallel  test:ngx-cbp-theme:once test:kitchensink:once"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~7.0.0",
     "@angular/cdk": "~7.0.2",
