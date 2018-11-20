@@ -19,7 +19,7 @@ import {FormsModule} from '@angular/forms';
   ],
   declarations: [CBPRootComponent],
   exports: [
-      MatIconModule, BrowserAnimationsModule, FlexLayoutModule, MatButtonModule, MatInputModule, MatFormFieldModule, FormsModule,
+      MatIconModule, BrowserAnimationsModule, MatButtonModule, MatInputModule, MatFormFieldModule, FormsModule,
       MatDividerModule, CBPRootComponent, CBPProgressModule, CBPHeaderModule, CBPPipesModule
   ]
 })

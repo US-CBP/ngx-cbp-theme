@@ -24,4 +24,7 @@ export class DemoAppHeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  print(): void {
+    window.print();
+  }
 }
