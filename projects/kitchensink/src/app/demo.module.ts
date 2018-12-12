@@ -28,6 +28,7 @@ import {
   MockApplicationsService,
   MockFeedbackService
 } from 'ngx-cbp-theme';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
 
@@ -39,6 +40,7 @@ export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
   ],
   imports: [
     BrowserModule, HttpClientModule,
+    FlexLayoutModule,
     MatTabsModule, MatIconModule, // MdTabsModule is used only for demo cbp-app-header
     CBPRootModule,
     CBPAccordionModule,
