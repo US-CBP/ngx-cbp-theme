@@ -1,9 +1,9 @@
-import { Component, EventEmitter, HostBinding, HostListener, Input, OnDestroy, OnInit, Output, ViewEncapsulation } from '@angular/core';
-import { CBPScrollShrinkAnimator } from './cbp-scrollshrink-animator';
-import { MediaChange, ObservableMedia } from '@angular/flex-layout';
-import { Subscription } from 'rxjs';
-import { matSelectAnimations } from '@angular/material';
-import { CBPToolbarState } from './cbp-toolbar-state';
+import {Component, EventEmitter, HostBinding, HostListener, Input, OnDestroy, OnInit, Output, ViewEncapsulation} from '@angular/core';
+import {CBPScrollShrinkAnimator} from './cbp-scrollshrink-animator';
+import {MediaChange, MediaObserver} from '@angular/flex-layout';
+import {Subscription} from 'rxjs';
+import {matSelectAnimations} from '@angular/material';
+import {CBPToolbarState} from './cbp-toolbar-state';
 
 @Component({
   selector: 'cbp-toolbar',
@@ -43,12 +43,12 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
     this.toolbarState.hasToolbarMenu.next(has);
   }
 
-  constructor(private media: ObservableMedia) {
+  constructor(private mediaObserver: MediaObserver) {
   }
 
   ngOnInit() {
     this.cbpToolbarScrollState = 'initial';
-    this._subscription.add(this.media.subscribe(
+    this._subscription.add(this.mediaObserver.media$.subscribe(
       (change: MediaChange) => {
         if (change.mqAlias !== 'xs') {
           this.isToolbarExpanded = false;

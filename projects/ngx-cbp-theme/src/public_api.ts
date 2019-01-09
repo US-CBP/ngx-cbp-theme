@@ -50,10 +50,11 @@ export * from './lib/mock-services/applications.mock.service';
 export * from './lib/mock-services/feedback.mock.service';
 export * from './lib/mock-services/user.mock.service';
 
-export * from './lib/notifications/notifications.module';
+export * from './lib/notifications/cbp-notifications.module';
 export * from './lib/notifications/cbp-notification';
 export * from './lib/notifications/cbp-notifications.service';
 export * from './lib/notifications/cbp-notification/cbp-notification.component';
+export * from './lib/notifications/cbp-notifications-overlay/cbp-notifications-overlay.component';
 
 
 export * from './lib/feedback/feedback.service';
