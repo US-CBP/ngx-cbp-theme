@@ -7,7 +7,7 @@
 [![devDependencies Status](https://david-dm.org/us-cbp/ngx-cbp-theme/dev-status.svg)](https://david-dm.org/us-cbp/ngx-cbp-theme?type=dev)
 
 
-Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp-theme) for Angular 6.x applications. 
+Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp-theme) for Angular 5/6/7/next applications. 
 
 
 ___
@@ -24,7 +24,7 @@ ___
 ## Target Applications
 
 * Apps that must comply with [US CBP Style Guide](https://us-cbp.github.io/cbp-style-guide/) 
-* Apps that are using Angular ~6
+* Apps that are using latest Angular
 * Apps that will use Angular Material [Angular/Material](https://github.com/angular/material2)
 * Apps that use SCSS. 
  
