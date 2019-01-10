@@ -7,7 +7,7 @@
     "@angular/animations": "^7",
     "@angular/material": "^7",
     "@angular/cdk": "^7",
-    "@angular/flex-layout": "^7 || 7.0.0-beta.19 || 7.0.0-beta.20 || || 7.0.0-beta.21"
+    "@angular/flex-layout": ">7.0.0-beta < 8"
   },
   "dependencies": {
     "cbp-theme": "^1",
