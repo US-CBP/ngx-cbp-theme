@@ -9,6 +9,9 @@
   &.cbp-button-info {
     @include basic_button($brand-info-subtle, $brand-info);
   }
+  &.cbp-button-warning {
+    @include basic_button($brand-warning-subtle, $brand-warning);
+  }
 }
 
 // Flat/Raised Buttons - Default to these if possible
@@ -22,6 +25,9 @@
   &.cbp-button-info {
     @include raised_button($brand-info, $light-primary-text);
   }
+  &.cbp-button-warning {
+    @include raised_button($brand-warning, $dark-primary-text);
+  }
 }
 
 // Outlined Buttons - More extraneous options
@@ -34,5 +40,8 @@
   }
   &.cbp-button-info {
     @include stroked_button($brand-info, $brand-info-subtle);
+  }
+  &.cbp-button-warning {
+    @include stroked_button($brand-warning, $brand-warning-subtle);
   }
 }
