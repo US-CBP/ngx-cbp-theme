@@ -1,12 +1,20 @@
+@import '../variables';
 @import 'cbp-palette';
 
-@include mat-core();
+@include mat-core($cbp-font-config);
 
+// V1 Theme
 $app-primary: mat-palette($cbp-from-primary);
 $app-accent:  mat-palette($cbp-from-info);
 $app-warn:    mat-palette($cbp-from-error);
-
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
-@include angular-material-theme($app-theme);
+// V2 Theme
+// Note, we set the values of the palette maps to match up each primary shade
+$cbp-primary:   mat-palette($primary-map, 900, 600, 900);
+$cbp-accent:    mat-palette($primary-map, 400, 200, 700);
+$cbp-warning:   mat-palette($warning-map, 900, 600, 900);
+$cbp-theme:     mat-light-theme($cbp-primary, $cbp-accent, $cbp-warning);
+
+@include angular-material-theme($cbp-theme);
 

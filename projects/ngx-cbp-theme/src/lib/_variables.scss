@@ -38,9 +38,18 @@ $brand-info-border:                 #0f4880;
 $brand-default-border:              #adadad;
 $brand-live-border:                 darken($brand-live, 10%);
 
+// brand subtle colors
+$brand-primary-subtle: #ecf1f4;
+$brand-success-subtle: #ecf5ec;
+$brand-info-subtle:    #edf3f9;
+$brand-warning-subtle: #fef7ed;
+$brand-danger-subtle:  #f8ecec;
+
 // custom brand text
 //this color is adjusted-hue of brand-warning to create proper color contrast
 $brand-warning-text:               #A44900; 
+$dark-primary-text: $gray-darker;
+$light-primary-text: $white;
 
 //
 $brand-default-highlight:           rgba(20,96,170,.1);
@@ -71,6 +80,7 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
+$font-weight-base:        400;
 
 $font-size-base:          13px !default; // default 14px
 $font-size-large:         ceil(($font-size-base * 1.25)) !default;
@@ -899,9 +909,7 @@ $box-default-border-top-color: #d2d6de;
 /** CBP VARIABLES **/
 $keyline-color:              $white-offset;
 
-
 $navbar-appheader-height: $navbar-height - 2;
 
 $font-size-smallest: 12px; // We cannot use $font-size-small because it is not 12 px as required by DHS brand (we also use it for version)
 $brand-padding: 0 70px 0 15px;
-

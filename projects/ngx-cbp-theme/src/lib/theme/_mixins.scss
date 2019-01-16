@@ -1,0 +1,30 @@
+// FUNCTIONS
+
+@function getFontSize($size) {
+  @return mat-font-size($cbp-font-config, $size);
+}
+
+// MIXINS
+@mixin raised_button($bg-color, $txt-color) {
+  background-color: $bg-color;
+  color: $txt-color;
+}
+
+@mixin basic_button($bg-color, $txt-color) {
+  color: $txt-color;
+  &:hover {
+    background-color: $bg-color;
+  }
+}
+
+@mixin stroked_button($txt-color, $bg-color) {
+  color: $txt-color;
+  &:hover {
+    background-color: lighten($color: $bg-color, $amount: 10%);
+  }
+}
+
+@mixin chip($bg-color, $txt-color) {
+  background-color: $bg-color;
+  color: $txt-color;
+}

@@ -1,0 +1,38 @@
+// Regular Basic Buttons
+.mat-button {
+  &.cbp-button-success {
+    @include basic_button($brand-success-subtle, $brand-success);
+  }
+  &.cbp-button-danger {
+    @include basic_button($brand-danger-subtle, $brand-danger);
+  }
+  &.cbp-button-info {
+    @include basic_button($brand-info-subtle, $brand-info);
+  }
+}
+
+// Flat/Raised Buttons - Default to these if possible
+.mat-raised-button, .mat-flat-button {
+  &.cbp-button-success {
+    @include raised_button($brand-success, $light-primary-text);
+  }
+  &.cbp-button-danger {
+    @include raised_button($brand-danger, $light-primary-text);
+  }
+  &.cbp-button-info {
+    @include raised_button($brand-info, $light-primary-text);
+  }
+}
+
+// Outlined Buttons - More extraneous options
+.mat-stroked-button {
+  &.cbp-button-success {
+    @include stroked_button($brand-success, $brand-success-subtle);
+  }
+  &.cbp-button-danger {
+    @include stroked_button($brand-danger, $brand-danger-subtle);
+  }
+  &.cbp-button-info {
+    @include stroked_button($brand-info, $brand-info-subtle);
+  }
+}
