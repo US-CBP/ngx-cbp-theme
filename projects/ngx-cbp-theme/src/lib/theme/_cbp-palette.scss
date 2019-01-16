@@ -200,6 +200,39 @@ $danger-map: (
   )
 );
 
+$info-map: (
+  50:  #e2f6ff,
+  100: #b6e8ff,
+  200: #85daff,
+  300: #54cbff,
+  400: #30bfff,
+  500: #19b3ff,
+  600: #19a5f5,
+  700: #1891e0,
+  800: #1680cc,
+  900: $brand-info,
+  A100: $brand-info-subtle,
+  A200: lighten($brand-info, 15%),
+  A400: $brand-info,
+  A700: darken($brand-info, 15%),
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
 $warning-map: (
   50:  #fdf3e0,
   100: #fadfb3,
