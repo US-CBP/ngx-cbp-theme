@@ -5,7 +5,7 @@ import {NgModule} from '@angular/core';
 import {DemoAppComponent} from './demo.component';
 
 
-import {MatIconModule, MatTabsModule} from '@angular/material';
+import {MatIconModule, MatTabsModule, MatCardModule} from '@angular/material';
 
 import {DemoCBPAccordionComponent} from './demo-cbp-accordion/demo-cbp-accordion.component';
 import {DemoTypographyComponent} from './demo-typography/demo-typography.component';
@@ -39,7 +39,7 @@ export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
   ],
   imports: [
     BrowserModule, HttpClientModule,
-    MatTabsModule, MatIconModule, // MdTabsModule is used only for demo cbp-app-header
+    MatTabsModule, MatIconModule, MatCardModule, // MdTabsModule is used only for demo cbp-app-header
     CBPRootModule,
     CBPAccordionModule,
     CBPHeaderModule,
