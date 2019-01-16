@@ -1,5 +1,10 @@
-$fa-font-path: "../node_modules/font-awesome/fonts" !default;
-@import '~cbp-theme/dist/scss/vendor/_fontawesome';
+// custom overrides!
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts" !default;
+
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+
+// last updated 01.08.2018
 
 @mixin mat-icon-size($size: 24px) {
   font-size: $size;

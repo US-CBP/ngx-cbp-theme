@@ -3,7 +3,6 @@
   <div class="cbp-app-title" fxFlex="grow">
     <h2 class="app-title" ngClass.gt-xs="vertical-divider">
       Kitchen Sink
-      <small>Demo</small>
     </h2>
   </div>
 
@@ -19,22 +18,18 @@
           <mat-icon aria-label="print" fontSet="fontawesome" fontIcon="fa-print"></mat-icon>
         </button>
       </div>
-      <div class="cbp-navbar-item">
-        <button mat-icon-button >
-          <mat-icon aria-label="wifi" fontSet="fontawesome" fontIcon="fa-wifi"></mat-icon>
-        </button>
-      </div>
     </div>
   </div>
 </cbp-app-header>
 
+<!-- would become /a mat-nav-link-tab/ -->
 <ng-template #tabbedAppNav>
   <mat-tab-group class="mat-tab-header-pagination-controls-enabled">
     <mat-tab *ngFor="let appNav of appNavigations" label="{{ appNav.name }}"></mat-tab>
   </mat-tab-group>
 </ng-template>
 
-
+<!-- configure for links -->
 <ng-template #stackedAppNav>
     <ng-container>
         <div class="mat-menu-item" *ngFor="let appNav of appNavigations">

@@ -1,6 +1,16 @@
 
 @import '../_variables';
 
+// Bootstrap Sass text-empahsis-variant mixin
+@mixin text-emphasis-variant($parent, $color) {
+  #{$parent} {
+    color: $color;
+  }
+  a#{$parent}:hover,
+  a#{$parent}:focus {
+    color: darken($color, 10%);
+  }
+}
 
 //TODO use mat-typography-config https://material.angular.io/guide/typography to change this
 //TODO this is from _globals which must be refactored
@@ -58,11 +68,52 @@ h5, .h5 { font-size: $font-size-h5; }
 h6, .h6 { font-size: $font-size-h6; }
 
 
-
-// workaround for missing text-emphasis-variant
-@mixin text-emphasis-variant($a, $b) {}
 // then import cbp-theme overrides to override
-@import '~cbp-theme/dist/scss/custom/_type';
+.black    { font-weight: 900; }
+.bold     { font-weight: 700; }
+.semibold { font-weight: 500; }
+.normal   { font-weight: 400; }
+.light    { font-weight: 300; }
+
+.caption {
+  font-size: $font-size-base - 1;
+  color: $gray-light;
+}
+
+h1, .h1 { @extend .normal; }
+
+h1, .h1,
+h2, .h2 {
+  margin-top: $line-height-computed;
+  margin-bottom: ($line-height-computed / 2);
+}
+
+h3, .h3,
+h4, .h4 {
+  margin-top: ($line-height-computed / 1.5);
+  margin-bottom: ($line-height-computed / 2);
+}
+
+
+h5, .h5,
+h6, .h6 {
+  margin-top: ($line-height-computed / 2);
+  margin-bottom: ($line-height-computed / 2);
+}
+
+@include text-emphasis-variant('.text-warning', $brand-warning-text);
+
+@media (max-width:$screen-sm) {
+  .page-header, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    padding-left: 6px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  small {
+    color: $gray;
+  }
+}
 
 .mat-toolbar h2 {
   @extend .h2

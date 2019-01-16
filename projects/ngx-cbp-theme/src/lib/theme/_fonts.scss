@@ -1,3 +1,24 @@
 $roboto-font-path: '../node_modules/roboto-fontface/fonts' !default;
-@import '~cbp-theme/dist/scss/vendor/_roboto';
+
+// Stripped from CBP-Theme
+// 300
+@import "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface-light";
+@import "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface-light-italic";
+
+// 400
+@import "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface-regular";
+@import "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface-regular-italic";
+
+
+// 500
+@import "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface-medium";
+@import "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface-medium-italic";
+
+// 700
+@import "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface-bold";
+@import "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface-bold-italic";
+
+// 900
+@import "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface-black";
+@import "../node_modules/roboto-fontface/css/roboto/sass/roboto-fontface-black-italic";
 
