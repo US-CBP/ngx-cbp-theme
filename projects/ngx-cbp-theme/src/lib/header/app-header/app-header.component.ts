@@ -3,7 +3,6 @@ import {CBPScrollShrinkAnimator} from '../cbp-toolbar/cbp-scrollshrink-animator'
 import {APP_HEADER_STATE, CBPToolbarState} from '../cbp-toolbar/cbp-toolbar-state';
 import {Subscription} from 'rxjs';
 
-
 @Component({
   selector: 'cbp-app-header',
   templateUrl: './app-header.component.html',

@@ -1,6 +1,7 @@
-<!-- Custom toolbar component designed to manage and hold links to pages in the app -->
+<!-- Universal Navbar designed to hold the CBP Brand, apps nav, and user menu -->
 <cbp-toolbar [position]="0" [toolbarState]="toolbarState" #cbpToolbar>
 
+  <!-- Holds the CBP Brand -->
   <div class="cbp-brand-nav cbp-toolbar-title"
     fxFlexAlign="stretch"
     fxLayout="row"
@@ -8,6 +9,7 @@
     <ng-template [ngTemplateOutlet]="cbpBrand"></ng-template>
   </div>
 
+  <!-- -->
   <div class="cbp-toolbar-main-nav"
     *ngIf="!cbpAppsMenuExclude && !isProvided(cbpAppsMenu)">
     <cbp-apps-menu></cbp-apps-menu>

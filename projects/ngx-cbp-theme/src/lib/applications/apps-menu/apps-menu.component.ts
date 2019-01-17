@@ -1,11 +1,26 @@
-import {Component, Inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {Subscription} from 'rxjs';
-import {MatMenuTrigger} from '@angular/material';
 import {
-  CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
+  Component,
+  Inject,
+  OnDestroy,
+  OnInit,
+  ViewChild
+} from '@angular/core';
+import {
+  Subscription
+} from 'rxjs';
+import {
+  MatMenuTrigger
+} from '@angular/material';
+import {
+  CBP_APPLICATIONS_SERVICE,
+  CBPApplication,
+  CBPApplicationsData,
   CBPApplicationsService
 } from '../cbp-applications-service';
-import {CBPToolbarState, CBP_HEADER_STATE} from '../../header/cbp-toolbar/cbp-toolbar-state';
+import {
+  CBPToolbarState,
+  CBP_HEADER_STATE
+} from '../../header/cbp-toolbar/cbp-toolbar-state';
 
 @Component({
   selector: 'cbp-apps-menu',
@@ -19,7 +34,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
   menuDataLoaded = false;
   applicationsDataLoading = true;
   isApplicationsExpanded = false;
-  applicationsData?: CBPApplicationsData;
+  applicationsData ? : CBPApplicationsData;
   private subscriptions = new Subscription();
 
 
@@ -28,8 +43,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
   public error: any;
 
   constructor(@Inject(CBP_APPLICATIONS_SERVICE) public applicationsService: CBPApplicationsService,
-              @Inject(CBP_HEADER_STATE) private toolbarState: CBPToolbarState) {
-  }
+    @Inject(CBP_HEADER_STATE) private toolbarState: CBPToolbarState) {}
 
   get toolbarIsExpanded(): boolean {
     return this.toolbarState.toolbarIsExpanded.getValue();

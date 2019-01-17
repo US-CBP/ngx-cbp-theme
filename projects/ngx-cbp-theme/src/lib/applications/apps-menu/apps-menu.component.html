@@ -3,60 +3,122 @@
 </div>
 
 <div class="applications-expansion-panel inverse" *ngIf="isApplicationsExpanded  && menuDataLoaded">
-  <ng-template [ngTemplateOutlet]="applicationsPanel" ></ng-template>
+  <ng-template [ngTemplateOutlet]="applicationsPanel"></ng-template>
 </div>
 
-<mat-menu #cbpMenu="matMenu" yPosition="above" xPosition="after" [overlapTrigger]="false" class="cbp-menu-with-category applications-expansion-panel" >
+<mat-menu
+  #cbpMenu="matMenu"
+  yPosition="above"
+  xPosition="after"
+  [overlapTrigger]="false"
+  class="cbp-menu-with-category applications-expansion-panel">
   <ng-template [ngTemplateOutlet]="applicationsPanel"></ng-template>
 </mat-menu>
-
 
 <ng-template #applicationsPanel>
   <ng-container *ngIf="applicationsData">
 
-    <div class="cbp-menu-item-category" *ngIf="applicationsData.recents?.length > 0">Recent Apps</div>
-    <div class="mat-menu-item" *ngFor="let app of applicationsData.recents">
-      <mat-icon color="default" class="cbp-applications-remove-icon" fontSet="fontawesome" fontIcon="fa-times" (click)="removeFromRecent(app, $event)" fxFlexAlign="center"></mat-icon>
-      <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="auto" >
-        {{ app.name }}
+    <!-- Main Menu Block -->
+    <mat-menu #mainAppsMenu="matMenu">
+      <button
+        mat-menu-item
+        [matMenuTriggerFor]="recentAppsMenu"
+        *ngIf="applicationsData.recents?.length > 0">
+        Recent Apps
+      </button>
+      <button
+        mat-menu-item
+        [matMenuTriggerFor]="favoriteAppsMenu"
+        *ngIf="applicationsData.favorites?.length > 0">
+        Favorite Apps
+      </button>
+      <a mat-menu-item
+        href="{{ getApplicationsDirectoryUrl() }}"
+        title="View All Apps">
+        View All Apps
       </a>
-    </div>
+      <cbp-applications-search></cbp-applications-search>
+      <button mat-menu-item (click)="reloadApplicationsData($event)">
+        Refresh
+      </button>
+      <div class="cbp-applications-last-updated" (click)="stopPropogation($event)">
+        <small>Updated {{ applicationsData.lastRetrieved | datetime }}</small>
+      </div>
+    </mat-menu>
 
-    <mat-divider *ngIf="applicationsData.recents?.length > 0"></mat-divider>
+    <!-- Recent Apps Loop -->
+    <mat-menu #recentAppsMenu="matMenu">
+      <div *ngFor="let app of applicationsData.recents">
+        <a mat-menu-item href="{{app.href}}" title="{{app.description}}">
+          {{ app.name }}
+        </a>
+      </div>
+    </mat-menu>
 
-    <div class="cbp-menu-item-category" *ngIf="applicationsData.favorites?.length > 0">Favorite Apps</div>
-    <div class="mat-menu-item" *ngFor="let app of applicationsData.favorites">
-      <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="auto" >
-        {{ app.name }}
-      </a>
-    </div>
+    <!-- Favorite Apps Loop -->
+    <mat-menu #favoriteAppsMenu="matMenu">
+      <div *ngFor="let app of applicationsData.favorites">
+        <a mat-menu-item href="{{app.href}}" title="{{app.description}}">
+          {{ app.name }}
+        </a>
+      </div>
+    </mat-menu>
 
+    <!--
+      DEPRECEATED - now leveraging mat-menu & mat-menu-item
+      <div class="mat-menu-item" *ngFor="let app of applicationsData.recents">
+        <mat-icon color="default" class="cbp-applications-remove-icon" fontSet="fontawesome" fontIcon="fa-times" (click)="removeFromRecent(app, $event)"
+          fxFlexAlign="center"></mat-icon>
+        <a class="cbp-applications-link" title="{{app.description}}" href="{{app.href}}" fxFlex="auto">
+          {{ app.name }}
+        </a>
+      </div>
 
-    <mat-divider class="mat-divider" *ngIf="applicationsData.favorites?.length > 0"></mat-divider>
-
-    <cbp-applications-search></cbp-applications-search>
-
-    <a class="mat-menu-item cbp-applications-see-all" href="{{ getApplicationsDirectoryUrl() }}">
-      <div>See All Available Apps...</div>
-    </a>
-    <a class="mat-menu-item cbp-applications-refresh" (click)="reloadApplicationsData($event)">
-      <div>Refresh</div>
-    </a>
-    <div class="cbp-applications-last-updated" (click)="stopPropogation($event)">
-      <small>Updated {{ applicationsData.lastRetrieved | datetime }}</small>
-    </div>
+      <div class="mat-menu-item" *ngFor="let app of applicationsData.favorites">
+        <a class="cbp-applications-link" title="{{app.description}}" href="{{app.href}}" fxFlex="auto">
+          {{ app.name }}
+        </a>
+      </div>
+    -->
+    
   </ng-container>
 
 </ng-template>
 <ng-template #application>
-  <div class="cbp-current-application" fxShow="false" fxShow.gt-xs fxShow.lt-sm fxLayout="column" fxLayoutAlign="center start" >
-    <div *ngIf="applicationsDataLoading" class="cbp-menu-loading" style="color: white">
+  <!-- Wrapper for Current Icon -->
+  <div class="cbp-current-application"
+    fxShow="false"
+    fxShow.gt-xs
+    fxShow.lt-sm
+    fxLayout="column"
+    fxLayoutAlign="center start">
+
+    <!-- If not ready, show loading icon -->
+    <div *ngIf="applicationsDataLoading" 
+      class="cbp-menu-loading"
+      style="color: white">
       <cbp-loading></cbp-loading>
     </div>
-    <div role="button" *ngIf="menuDataLoaded && applicationsData.currentApp && !applicationsDataLoading" class="cbp-current-application-name-container" (click)="toggleApplicationsMenu($event)">
-      <span class="cbp-current-application-name">{{ applicationsData.currentApp.name }}</span><span *ngIf="applicationsData.currentApp.version"> - {{ applicationsData.currentApp.version }}</span>
-      <mat-icon *ngIf="applicationsData.lastRetrieved" fontSet="fontawesome" fontIcon="fa-caret-down"></mat-icon>
-    </div>
+    
+    <!-- Button to trigger the main menu -->
+    <button mat-button
+      *ngIf="menuDataLoaded && applicationsData.currentApp && !applicationsDataLoading"
+      class="cbp-current-application-name-container"
+      [matMenuTriggerFor]="mainAppsMenu">
+      <span class="cbp-current-application-name">
+        {{ applicationsData.currentApp.name }}
+      </span> 
+      <!-- 
+        NOTE: Removed the version number for now 
+        not clear where applicationsData.currentApp.version 
+        actually comes from in the service provider
+      -->
+      <mat-icon *ngIf="applicationsData.lastRetrieved"
+        fontSet="fontawesome"
+        fontIcon="fa-caret-down">
+      </mat-icon>
+    </button>
+
   </div>
 </ng-template>
 
