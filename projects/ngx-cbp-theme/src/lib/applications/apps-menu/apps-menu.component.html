@@ -19,49 +19,52 @@
   <ng-container *ngIf="applicationsData">
 
     <!-- Main Menu Block -->
-    <mat-menu #mainAppsMenu="matMenu">
-      <button
-        mat-menu-item
-        [matMenuTriggerFor]="recentAppsMenu"
-        *ngIf="applicationsData.recents?.length > 0">
-        Recent Apps
-      </button>
-      <button
-        mat-menu-item
-        [matMenuTriggerFor]="favoriteAppsMenu"
-        *ngIf="applicationsData.favorites?.length > 0">
-        Favorite Apps
-      </button>
-      <a mat-menu-item
-        href="{{ getApplicationsDirectoryUrl() }}"
-        title="View All Apps">
-        View All Apps
-      </a>
-      <cbp-applications-search></cbp-applications-search>
-      <button mat-menu-item (click)="reloadApplicationsData($event)">
-        Refresh
-      </button>
-      <div class="cbp-applications-last-updated" (click)="stopPropogation($event)">
-        <small>Updated {{ applicationsData.lastRetrieved | datetime }}</small>
-      </div>
-    </mat-menu>
+    <button
+      mat-menu-item
+      [matMenuTriggerFor]="recentAppsMenu"
+      *ngIf="applicationsData.recents?.length > 0">
+      Recent Apps
+    </button>
+    <button
+      mat-menu-item
+      [matMenuTriggerFor]="favoriteAppsMenu"
+      *ngIf="applicationsData.favorites?.length > 0">
+      Favorite Apps
+    </button>
+    <a mat-menu-item
+      href="{{ getApplicationsDirectoryUrl() }}"
+      title="View All Apps">
+      View All Apps
+    </a>
+    <cbp-applications-search></cbp-applications-search>
+    <button mat-menu-item (click)="reloadApplicationsData($event)">
+      Refresh
+    </button>
+    <div class="cbp-applications-last-updated" (click)="stopPropogation($event)">
+      <small>Updated {{ applicationsData.lastRetrieved | datetime }}</small>
+    </div>
+    
 
     <!-- Recent Apps Loop -->
     <mat-menu #recentAppsMenu="matMenu">
-      <div *ngFor="let app of applicationsData.recents">
-        <a mat-menu-item href="{{app.href}}" title="{{app.description}}">
-          {{ app.name }}
-        </a>
-      </div>
+      <ng-template matMenuContent>
+          <div *ngFor="let app of applicationsData.recents">
+              <a mat-menu-item href="{{app.href}}" title="{{app.description}}">
+                {{ app.name }}
+              </a>
+            </div>
+      </ng-template>
     </mat-menu>
 
     <!-- Favorite Apps Loop -->
     <mat-menu #favoriteAppsMenu="matMenu">
-      <div *ngFor="let app of applicationsData.favorites">
-        <a mat-menu-item href="{{app.href}}" title="{{app.description}}">
-          {{ app.name }}
-        </a>
-      </div>
+      <ng-template matMenuContent>
+          <div *ngFor="let app of applicationsData.favorites">
+              <a mat-menu-item href="{{app.href}}" title="{{app.description}}">
+                {{ app.name }}
+              </a>
+            </div>
+      </ng-template>
     </mat-menu>
 
     <!--
@@ -104,7 +107,7 @@
     <button mat-button
       *ngIf="menuDataLoaded && applicationsData.currentApp && !applicationsDataLoading"
       class="cbp-current-application-name-container"
-      [matMenuTriggerFor]="mainAppsMenu">
+      [matMenuTriggerFor]="cbpMenu">
       <span class="cbp-current-application-name">
         {{ applicationsData.currentApp.name }}
       </span> 

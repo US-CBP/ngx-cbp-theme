@@ -9,7 +9,7 @@ import {
   Subscription
 } from 'rxjs';
 import {
-  MatMenuTrigger
+  MatMenuTrigger, MatMenu
 } from '@angular/material';
 import {
   CBP_APPLICATIONS_SERVICE,
@@ -36,7 +36,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
   isApplicationsExpanded = false;
   applicationsData ? : CBPApplicationsData;
   private subscriptions = new Subscription();
-
+  // mainAppsMenu = MatMenu;
 
   @ViewChild(MatMenuTrigger) cbpMenuTrigger: MatMenuTrigger;
 
@@ -105,6 +105,8 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
       $event.stopPropagation();
     } else {
       if (this.cbpMenuTrigger) {
+        console.log(':: toggleApplicationsMenu ::');
+        console.log(this.cbpMenuTrigger);
         this.cbpMenuTrigger.toggleMenu();
       }
     }
