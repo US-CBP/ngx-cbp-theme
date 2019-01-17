@@ -24,12 +24,24 @@
       [matMenuTriggerFor]="recentAppsMenu"
       *ngIf="applicationsData.recents?.length > 0">
       Recent Apps
+      <mat-icon
+        class="cbp-submenu-icon"
+        color="default"
+        fontSet="fontawesome"
+        fontIcon="fa-caret-right">
+      </mat-icon>
     </button>
     <button
       mat-menu-item
       [matMenuTriggerFor]="favoriteAppsMenu"
       *ngIf="applicationsData.favorites?.length > 0">
       Favorite Apps
+      <mat-icon
+        class="cbp-submenu-icon"
+        color="default"
+        fontSet="fontawesome"
+        fontIcon="fa-caret-right">
+      </mat-icon>
     </button>
     <a mat-menu-item
       href="{{ getApplicationsDirectoryUrl() }}"
@@ -43,7 +55,6 @@
     <div class="cbp-applications-last-updated" (click)="stopPropogation($event)">
       <small>Updated {{ applicationsData.lastRetrieved | datetime }}</small>
     </div>
-    
 
     <!-- Recent Apps Loop -->
     <mat-menu #recentAppsMenu="matMenu">
@@ -83,7 +94,7 @@
         </a>
       </div>
     -->
-    
+
   </ng-container>
 
 </ng-template>
@@ -98,11 +109,10 @@
 
     <!-- If not ready, show loading icon -->
     <div *ngIf="applicationsDataLoading" 
-      class="cbp-menu-loading"
-      style="color: white">
+      class="cbp-menu-loading">
       <cbp-loading></cbp-loading>
     </div>
-    
+
     <!-- Button to trigger the main menu -->
     <button mat-button
       *ngIf="menuDataLoaded && applicationsData.currentApp && !applicationsDataLoading"
@@ -116,7 +126,8 @@
         not clear where applicationsData.currentApp.version 
         actually comes from in the service provider
       -->
-      <mat-icon *ngIf="applicationsData.lastRetrieved"
+      <mat-icon
+        *ngIf="applicationsData.lastRetrieved"
         fontSet="fontawesome"
         fontIcon="fa-caret-down">
       </mat-icon>

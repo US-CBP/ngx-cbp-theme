@@ -9,7 +9,8 @@ import {
   Subscription
 } from 'rxjs';
 import {
-  MatMenuTrigger, MatMenu
+  MatMenuTrigger,
+  MatProgressSpinnerModule
 } from '@angular/material';
 import {
   CBP_APPLICATIONS_SERVICE,
@@ -36,7 +37,6 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
   isApplicationsExpanded = false;
   applicationsData ? : CBPApplicationsData;
   private subscriptions = new Subscription();
-  // mainAppsMenu = MatMenu;
 
   @ViewChild(MatMenuTrigger) cbpMenuTrigger: MatMenuTrigger;
 

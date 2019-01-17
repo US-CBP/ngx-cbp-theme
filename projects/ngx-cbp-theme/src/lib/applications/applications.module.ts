@@ -7,7 +7,7 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatMenuModule
+  MatMenuModule,
 } from '@angular/material';
 import { CBPProgressModule } from '../progress/progress.module';
 import { CBPPipesModule } from '../pipes/pipes.module';
