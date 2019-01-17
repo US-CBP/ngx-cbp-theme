@@ -5,13 +5,8 @@ import {
   OnInit,
   ViewChild
 } from '@angular/core';
-import {
-  Subscription
-} from 'rxjs';
-import {
-  MatMenuTrigger,
-  MatProgressSpinnerModule
-} from '@angular/material';
+import { Subscription } from 'rxjs';
+import { MatMenuTrigger } from '@angular/material';
 import {
   CBP_APPLICATIONS_SERVICE,
   CBPApplication,
@@ -30,7 +25,6 @@ import {
   entryComponents: []
 })
 export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
-
 
   menuDataLoaded = false;
   applicationsDataLoading = true;

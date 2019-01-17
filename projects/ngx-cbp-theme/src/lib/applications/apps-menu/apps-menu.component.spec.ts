@@ -50,9 +50,18 @@ describe('CBPApplicationsMenuComponent', () => {
   beforeEach(async (() => {
     TestBed.configureTestingModule({
         imports: [
-          CommonModule, MatMenuModule, MatIconModule, FlexLayoutModule, FormsModule, ReactiveFormsModule,
-          MatInputModule, MatFormFieldModule, NoopAnimationsModule,
-          MatDividerModule, CBPProgressModule, CBPPipesModule
+          CommonModule,
+          MatMenuModule,
+          MatIconModule,
+          FlexLayoutModule,
+          FormsModule,
+          ReactiveFormsModule,
+          MatInputModule,
+          MatFormFieldModule,
+          NoopAnimationsModule,
+          MatDividerModule,
+          CBPProgressModule,
+          CBPPipesModule
         ],
         declarations: [CBPApplicationsMenuComponent, CBPApplicationsSearchComponent],
         schemas: [CUSTOM_ELEMENTS_SCHEMA],

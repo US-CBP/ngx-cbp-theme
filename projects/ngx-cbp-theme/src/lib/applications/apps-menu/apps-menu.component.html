@@ -6,6 +6,7 @@
   <ng-template [ngTemplateOutlet]="applicationsPanel"></ng-template>
 </div>
 
+<!-- CBP Menu that opens on click-->
 <mat-menu
   #cbpMenu="matMenu"
   yPosition="above"
@@ -18,7 +19,7 @@
 <ng-template #applicationsPanel>
   <ng-container *ngIf="applicationsData">
 
-    <!-- Main Menu Block -->
+    <!-- Main Menu Block w/search and timestamp -->
     <button
       mat-menu-item
       [matMenuTriggerFor]="recentAppsMenu"
@@ -77,27 +78,9 @@
             </div>
       </ng-template>
     </mat-menu>
-
-    <!--
-      DEPRECEATED - now leveraging mat-menu & mat-menu-item
-      <div class="mat-menu-item" *ngFor="let app of applicationsData.recents">
-        <mat-icon color="default" class="cbp-applications-remove-icon" fontSet="fontawesome" fontIcon="fa-times" (click)="removeFromRecent(app, $event)"
-          fxFlexAlign="center"></mat-icon>
-        <a class="cbp-applications-link" title="{{app.description}}" href="{{app.href}}" fxFlex="auto">
-          {{ app.name }}
-        </a>
-      </div>
-
-      <div class="mat-menu-item" *ngFor="let app of applicationsData.favorites">
-        <a class="cbp-applications-link" title="{{app.description}}" href="{{app.href}}" fxFlex="auto">
-          {{ app.name }}
-        </a>
-      </div>
-    -->
-
   </ng-container>
-
 </ng-template>
+
 <ng-template #application>
   <!-- Wrapper for Current Icon -->
   <div class="cbp-current-application"
@@ -123,8 +106,8 @@
       </span> 
       <!-- 
         NOTE: Removed the version number for now 
-        not clear where applicationsData.currentApp.version 
-        actually comes from in the service provider
+        Version number is passed in applications service
+        see demo.module.ts lines 34 & 89 for info
       -->
       <mat-icon
         *ngIf="applicationsData.lastRetrieved"

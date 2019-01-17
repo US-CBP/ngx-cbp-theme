@@ -1,20 +1,21 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { DemoAppComponent } from './demo.component';
 
+import {
+  MatIconModule,
+  MatTabsModule,
+  MatCardModule
+} from '@angular/material';
 
-import {DemoAppComponent} from './demo.component';
-
-
-import {MatIconModule, MatTabsModule, MatCardModule} from '@angular/material';
-
-import {DemoCBPAccordionComponent} from './demo-cbp-accordion/demo-cbp-accordion.component';
-import {DemoTypographyComponent} from './demo-typography/demo-typography.component';
-import {DemoButtonsModule} from './demo-buttons/demo-buttons.module';
-import {DemoAppHeaderModule} from './demo-app-header/demo-app-header.module';
-import {HttpClientModule} from '@angular/common/http';
+import { DemoCBPAccordionComponent } from './demo-cbp-accordion/demo-cbp-accordion.component';
+import { DemoTypographyComponent } from './demo-typography/demo-typography.component';
+import { DemoButtonsModule } from './demo-buttons/demo-buttons.module';
+import { DemoAppHeaderModule } from './demo-app-header/demo-app-header.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import * as pkg from '../../../../package.json';
-import {DemoNotificationsModule} from './demo-notifications/demo-notifications.module';
+import { DemoNotificationsModule } from './demo-notifications/demo-notifications.module';
 import {
   CBP_APPLICATIONS_SERVICE,
   CBP_FEEDBACK_SERVICE,
@@ -29,7 +30,8 @@ import {
   MockFeedbackService
 } from 'ngx-cbp-theme';
 
-export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
+// NOTE: You don't really need this at the moment
+export const KITCHENSINK_APP_VERSION = ( < any > pkg).version;
 
 @NgModule({
   declarations: [
@@ -38,27 +40,40 @@ export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
     DemoTypographyComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule,
-    MatTabsModule, MatIconModule, MatCardModule, // MdTabsModule is used only for demo cbp-app-header
+    BrowserModule,
+    HttpClientModule,
+    MatTabsModule,
+    MatIconModule,
+    MatCardModule,
     CBPRootModule,
     CBPAccordionModule,
     CBPHeaderModule,
     CBPAppHeaderModule,
     CBPNotificationsModule,
-    // CBPProgressModule,
-    // demo
     DemoButtonsModule,
     DemoAppHeaderModule,
     DemoNotificationsModule
   ],
-  exports: [DemoButtonsModule, DemoAppHeaderModule],
+  exports: [
+    DemoButtonsModule,
+    DemoAppHeaderModule
+  ],
   providers: [
     MockUserService,
     MockApplicationsService,
     MockFeedbackService,
-    {provide: CBP_USER_SERVICE, useExisting: MockUserService},
-    {provide: CBP_FEEDBACK_SERVICE, useExisting: MockFeedbackService},
-    {provide: CBP_APPLICATIONS_SERVICE, useExisting: MockApplicationsService}
+    {
+      provide: CBP_USER_SERVICE,
+      useExisting: MockUserService
+    },
+    {
+      provide: CBP_FEEDBACK_SERVICE,
+      useExisting: MockFeedbackService
+    },
+    {
+      provide: CBP_APPLICATIONS_SERVICE,
+      useExisting: MockApplicationsService
+    }
   ],
   schemas: [],
   bootstrap: [DemoAppComponent]
@@ -69,12 +84,9 @@ export class DemoAppModule {
     userService.loginInProgress = true;
     // set this delay to zero if already loggedIn
     // and implement userService so that getUser() immediately returns subject after login()
-    userService.login(3000);
+    userService.login(2000);
     applicationsService.getCurrentApp().subscribe(currentApp => {
       currentApp.version = `v${KITCHENSINK_APP_VERSION}`;
     });
   }
 }
-
-
-
