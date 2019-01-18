@@ -88,6 +88,11 @@ export class MockApplicationsService extends CBPApplicationsService {
       }, 2000);
     }
   }
+
+  /**
+   * _getData - collects the and forms the final data object to be consumed by the
+   * universal header 
+   */
   private _getData(): Observable < CBPApplicationsData > {
     return this._getMockHttpData().pipe(
       map((data: CBPApplicationsData) => {
@@ -97,6 +102,13 @@ export class MockApplicationsService extends CBPApplicationsService {
         return data;
       }));
   }
+
+  /**
+   * _getMockHttpData - fakes an HTTP request and generates 100 apps for
+   * processing recents and favorites for the universal nav
+   * @param - none
+   * @return - list of 100 CBPApplicationsData items in an array
+   */
 
   private _getMockHttpData(): Observable < CBPApplicationsData > {
     const rawList: any[] = [];
@@ -117,14 +129,15 @@ export class MockApplicationsService extends CBPApplicationsService {
   }
 
   /**
-   * Fakeology - it does not even use user object
-   * @param CBPUser user
+   * _applyUserToApplications - accepts a user and data opect
+   * @param CBPUser user 
    * @param CBPApplicationsData data
-   * @returns CBPApplicationsData
+   * @returns CBPApplicationsData -
    */
   private _applyUserToApplications(user: CBPUser, data: CBPApplicationsData): CBPApplicationsData {
 
     const applications = < CBPApplication[] > data.list;
+    // const applications = [];
     if (applications) {
       let random;
       data.recents = [];

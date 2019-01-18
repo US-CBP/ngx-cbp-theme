@@ -63,6 +63,10 @@ export abstract class CBPApplicationsService {
     return this.currentApp;
   }
 
+  /**
+   * Provides the current URL of the application
+   * @returns url
+   */
   public getApplicationsDirectoryUrl(): string {
     return window.location.origin;
   }
