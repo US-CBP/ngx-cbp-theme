@@ -73,7 +73,12 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     }));
   }
 
-
+  /**
+   * TODO: Re-enable clear button on the component
+   * Removes a CBP from the recents section in the apps-menu
+   * @param app - a CBP Application in the dropdown
+   * @param $event - a click event
+   */
   removeFromRecent(app: CBPApplication, $event: any) {
     this.applicationsService.removeRecentApplication(app);
     $event.stopPropagation();
@@ -83,16 +88,27 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     this.subscriptions.unsubscribe();
   }
 
+  /**
+   * reloads the apps menu
+   * @param $event - a click event
+   */
   reloadApplicationsData($event: Event): void {
     this.applicationsService.refresh();
     this.applicationsDataLoading = true;
     $event.stopPropagation();
   }
 
+  /**
+   * returns the url of the CBP apps page. this is provided by the apps service
+   */
   getApplicationsDirectoryUrl(): string {
     return this.applicationsService.getApplicationsDirectoryUrl();
   }
 
+  /**
+   * toggles the apps menu
+   * @param $event - a clickable event
+   */
   toggleApplicationsMenu($event: Event) {
     if (this.toolbarState.toolbarIsExpanded.getValue()) {
       this.isApplicationsExpanded = !this.isApplicationsExpanded;
@@ -106,8 +122,11 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     }
   }
 
-
-  // TODO find a way to share this
+  /**
+   * TODO: find a way to share this
+   * used in the toggleApplicationMenu
+   * @param $event - click event
+   */
   stopPropogation($event: Event) {
     $event.stopPropagation();
   }

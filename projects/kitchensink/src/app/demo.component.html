@@ -1,12 +1,17 @@
 <!--This is "THE" Kitchen Sink Demo -->
 <cbp-root>
 
-  <!-- Showing Preference -->
-  <cbp-header [cbpFeedbackLinkExclude]="true">
+  <!-- TODO: Refactor all of these darn flags-->
+  <cbp-header
+    [cbpFeedbackLinkExclude]="true"
+    [cbpAppsMenuExclude]="true"
+    [cbpAppsMenuSimple]="true"
+    [cbpAppsMenuName]="'Manifest Trade Portal'">
     <cbp-user-menu>
       <div class="mat-menu-item" (click)="myPreferences()" cbp-user-menu-item>Preferences</div>
     </cbp-user-menu>
   </cbp-header>
+
   <!--
     Example:
     Hint:
