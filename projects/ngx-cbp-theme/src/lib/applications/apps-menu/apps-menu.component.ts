@@ -1,11 +1,22 @@
-import {Component, Inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {Subscription} from 'rxjs';
-import {MatMenuTrigger} from '@angular/material';
 import {
-  CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
+  Component,
+  Inject,
+  OnDestroy,
+  OnInit,
+  ViewChild
+} from '@angular/core';
+import { Subscription } from 'rxjs';
+import { MatMenuTrigger } from '@angular/material';
+import {
+  CBP_APPLICATIONS_SERVICE,
+  CBPApplication,
+  CBPApplicationsData,
   CBPApplicationsService
 } from '../cbp-applications-service';
-import {CBPToolbarState, CBP_HEADER_STATE} from '../../header/cbp-toolbar/cbp-toolbar-state';
+import {
+  CBPToolbarState,
+  CBP_HEADER_STATE
+} from '../../header/cbp-toolbar/cbp-toolbar-state';
 
 @Component({
   selector: 'cbp-apps-menu',
@@ -15,21 +26,18 @@ import {CBPToolbarState, CBP_HEADER_STATE} from '../../header/cbp-toolbar/cbp-to
 })
 export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
 
-
   menuDataLoaded = false;
   applicationsDataLoading = true;
   isApplicationsExpanded = false;
-  applicationsData?: CBPApplicationsData;
+  applicationsData ? : CBPApplicationsData;
   private subscriptions = new Subscription();
-
 
   @ViewChild(MatMenuTrigger) cbpMenuTrigger: MatMenuTrigger;
 
   public error: any;
 
   constructor(@Inject(CBP_APPLICATIONS_SERVICE) public applicationsService: CBPApplicationsService,
-              @Inject(CBP_HEADER_STATE) private toolbarState: CBPToolbarState) {
-  }
+    @Inject(CBP_HEADER_STATE) private toolbarState: CBPToolbarState) {}
 
   get toolbarIsExpanded(): boolean {
     return this.toolbarState.toolbarIsExpanded.getValue();
@@ -65,7 +73,12 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     }));
   }
 
-
+  /**
+   * TODO: Re-enable clear button on the component
+   * Removes a CBP from the recents section in the apps-menu
+   * @param app - a CBP Application in the dropdown
+   * @param $event - a click event
+   */
   removeFromRecent(app: CBPApplication, $event: any) {
     this.applicationsService.removeRecentApplication(app);
     $event.stopPropagation();
@@ -75,29 +88,45 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
     this.subscriptions.unsubscribe();
   }
 
+  /**
+   * reloads the apps menu
+   * @param $event - a click event
+   */
   reloadApplicationsData($event: Event): void {
     this.applicationsService.refresh();
     this.applicationsDataLoading = true;
     $event.stopPropagation();
   }
 
+  /**
+   * returns the url of the CBP apps page. this is provided by the apps service
+   */
   getApplicationsDirectoryUrl(): string {
     return this.applicationsService.getApplicationsDirectoryUrl();
   }
 
+  /**
+   * toggles the apps menu
+   * @param $event - a clickable event
+   */
   toggleApplicationsMenu($event: Event) {
     if (this.toolbarState.toolbarIsExpanded.getValue()) {
       this.isApplicationsExpanded = !this.isApplicationsExpanded;
       $event.stopPropagation();
     } else {
       if (this.cbpMenuTrigger) {
+        console.log(':: toggleApplicationsMenu ::');
+        console.log(this.cbpMenuTrigger);
         this.cbpMenuTrigger.toggleMenu();
       }
     }
   }
 
-
-  // TODO find a way to share this
+  /**
+   * TODO: find a way to share this
+   * used in the toggleApplicationMenu
+   * @param $event - click event
+   */
   stopPropogation($event: Event) {
     $event.stopPropagation();
   }

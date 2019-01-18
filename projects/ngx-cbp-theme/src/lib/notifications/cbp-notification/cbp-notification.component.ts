@@ -16,11 +16,11 @@ import {CBPNotification} from '../cbp-notification';
             'animationState', [
                 transition('* => enter', [
                     style({transform: 'translateX(100%)', opacity: 0}),
-                    animate('500ms', style({transform: 'translateX(0)', opacity: 1}))
+                    animate('500ms ease-out', style({transform: 'translateX(0)', opacity: 1}))
                 ]),
                 transition('enter => *', [
                     style({transform: 'translateX(0)', opacity: 1}),
-                    animate('500ms', style({transform: 'translateX(100%)', opacity: 0}))
+                    animate('500ms ease-in', style({transform: 'translateX(100%)', opacity: 0}))
                 ])
             ]
         )

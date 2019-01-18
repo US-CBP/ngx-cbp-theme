@@ -16,7 +16,21 @@
   .mat-button, .mat-raised-button[color="default"]{
     border: 1px solid $btn-default-border;
   }
-  button[disabled][disabled], .mat-button[disabled], .mat-raised-button.mat-primary[disabled], .mat-raised-button.mat-accent[disabled], .mat-raised-button.mat-warn[disabled], .mat-raised-button[disabled][disabled], .mat-fab.mat-primary[disabled], .mat-fab.mat-accent[disabled], .mat-fab.mat-warn[disabled], .mat-fab[disabled][disabled], .mat-mini-fab.mat-primary[disabled], .mat-mini-fab.mat-accent[disabled], .mat-mini-fab.mat-warn[disabled], .mat-mini-fab[disabled][disabled] {
+  
+  button[disabled][disabled],
+  .mat-button[disabled],
+  .mat-raised-button.mat-primary[disabled],
+  .mat-raised-button.mat-accent[disabled],
+  .mat-raised-button.mat-warn[disabled],
+  .mat-raised-button[disabled][disabled],
+  .mat-fab.mat-primary[disabled],
+  .mat-fab.mat-accent[disabled],
+  .mat-fab.mat-warn[disabled],
+  .mat-fab[disabled][disabled],
+  .mat-mini-fab.mat-primary[disabled],
+  .mat-mini-fab.mat-accent[disabled],
+  .mat-mini-fab.mat-warn[disabled],
+  .mat-mini-fab[disabled][disabled] {
     background-color: $gray-darker;
     color: $white;
     opacity: .65;

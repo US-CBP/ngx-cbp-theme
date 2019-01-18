@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
 
 @Component({
   selector: 'cbp-demo-demo-app-header, demo-demo-app-header',
@@ -7,21 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoAppHeaderComponent implements OnInit {
 
-  appNavigations = [
-      {name: 'Info'},
-      {name: 'Findings'},
-      {name: 'Attachments'},
-      {name: 'Results'},
-      {name:  'Some'},
-      {name: 'More'},
-      {name: 'Items'},
-      {name: 'Remarks'},
-      {name: 'History'},
-      {name: 'Notes'},
-      {name: 'Ideas'}];
-  constructor() { }
+  appNavigations = [{
+      name: 'Dashboard',
+      link: '/dashboard'
+    },
+    {
+      name: 'Manifests',
+      link: '/manifest'
+    },
+    {
+      name: 'Bills of Lading',
+      link: '/bols'
+    }
+  ];
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

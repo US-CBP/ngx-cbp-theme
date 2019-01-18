@@ -1,21 +1,32 @@
-<cbp-toolbar position="1" [toolbarState]="toolbarState" class="cbp-app-header" fxLayout="row" fxLayoutAlign.gt-xs="start stretch" [@appHeaderState]="appHeaderState">
+<!-- this is the html template code for the second header -->
+<cbp-toolbar
+  position="1"
+  [toolbarState]="toolbarState"
+  class="cbp-app-header"
+  fxLayout="row"
+  fxLayoutAlign.gt-xs="start stretch"
+  [@appHeaderState]="appHeaderState">
 
+  <!-- if you want to add standard app title, it goes here -->
   <div class="app-header-title-container cbp-toolbar-title" >
     <ng-content select=".cbp-app-title"></ng-content>
   </div>
 
-
+  <!-- This is the element where the main links of the application are held -->
   <div class="app-header-left-nav-container cbp-toolbar-main-nav">
     <ng-content select=".cbp-app-main-nav"></ng-content>
   </div>
 
-
-
-  <div class="app-header-right-nav-container cbp-toolbar-right-nav" fxFlex="auto"  fxFlexAlign.gt-xs="end" fxLayoutAlign.gt-xs="end stretch" fxLayout.gt-xs="row" fxLayout.lt-sm="column" >
+  <!-- This is the right side of the navigation, housing extra nav -->
+  <!-- elements you'd want as a dropdown -->
+  <div class="app-header-right-nav-container cbp-toolbar-right-nav" 
+    fxFlex="auto" 
+    fxFlexAlign.gt-xs="end"
+    fxLayoutAlign.gt-xs="end stretch"
+    fxLayout.gt-xs="row"
+    fxLayout.lt-sm="column" >
     <ng-content select=".cbp-app-right-nav"></ng-content>
   </div>
-
-
 </cbp-toolbar>
 
 

@@ -16,12 +16,18 @@ import {APP_HEADER_STATE, CBPToolbarState} from '../cbp-toolbar/cbp-toolbar-stat
 
 @NgModule({
   imports: [
-    CommonModule, MatTabsModule, MatListModule, MatMenuModule, MatToolbarModule, FlexLayoutModule, MatButtonModule, MatIconModule,
+    CommonModule,
+    MatTabsModule,
+    MatListModule,
+    MatMenuModule,
+    MatToolbarModule,
+    FlexLayoutModule,
+    MatButtonModule,
+    MatIconModule,
     CBPToolbarModule
   ],
   declarations: [CBPAppHeaderComponent],
   exports: [CBPAppHeaderComponent],
   providers: [{provide: APP_HEADER_STATE, useClass: CBPToolbarState}]
 })
-export class CBPAppHeaderModule {
-}
+export class CBPAppHeaderModule {}

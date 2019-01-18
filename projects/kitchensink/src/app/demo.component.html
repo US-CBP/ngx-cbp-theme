@@ -1,16 +1,18 @@
 <!--This is "THE" Kitchen Sink Demo -->
 <cbp-root>
 
+  <!-- TODO: Refactor all of these darn flags-->
+  <cbp-header
+    [cbpFeedbackLinkExclude]="true"
+    [cbpAppsMenuExclude]="true"
+    [cbpAppsMenuSimple]="true"
+    [cbpAppsMenuName]="'Manifest Trade Portal'">
+    <cbp-user-menu>
+      <div class="mat-menu-item" (click)="myPreferences()" cbp-user-menu-item>Preferences</div>
+    </cbp-user-menu>
+  </cbp-header>
 
-    <!-- Showing Preference -->
-    <cbp-header>
-        <cbp-user-menu>
-            <div class="mat-menu-item" (click)="myPreferences()" cbp-user-menu-item>Preferences</div>
-        </cbp-user-menu>
-    </cbp-header>
-
-
-    <!--
+  <!--
     Example:
     Hint:
       Customizable header:-  e.g. shows cbpAppsMenuExclude is excluded, cbp-feedback-link has custom action, cbp-user-menu has additional menu item Preference
@@ -22,21 +24,16 @@
     </cbp-header>
      -->
 
-    <!-- Your own App header built from <app-header> -->
-    <demo-demo-app-header></demo-demo-app-header>
+  <!-- Your own App header built from <app-header> -->
+  <demo-demo-app-header></demo-demo-app-header>
 
-    <!-- Notifications area - System Notifications are displayed here -->
-    <cbp-notifications-overlay></cbp-notifications-overlay>
+  <!-- Notifications area - System Notifications are displayed here -->
+  <cbp-notifications-overlay></cbp-notifications-overlay>
 
-    <div class="app-content">
-        <demo-typography></demo-typography>
-        <demo-buttons></demo-buttons>
-        <demo-notifications></demo-notifications>
-        <demo-cbp-accordion></demo-cbp-accordion>
-    </div>
+  <div class="app-content">
+    <demo-typography></demo-typography>
+    <demo-buttons></demo-buttons>
+    <demo-notifications></demo-notifications>
+    <demo-cbp-accordion></demo-cbp-accordion>
+  </div>
 </cbp-root>
-
-
-
-
-
