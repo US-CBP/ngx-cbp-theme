@@ -1,9 +1,16 @@
 {
-  "name": "ngx-cbp-theme",
-  "version": "7.2.1",
+  "name": "ngx-cbp-theme-2",
+  "version": "1.0.1",
+  "author": "CBP CF Team / tenji240",
+  "contributors": [
+    {
+      "name": "Tenji Tembo",
+      "email": "tenji240@gmail.com"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/US-CBP/ngx-cbp-theme.git"
+    "url": "https://github.com/tenji240/ngx-cbp-theme.git"
   },
   "keywords": [
     "angular"
