@@ -40,13 +40,13 @@
       </div>
     </div>
   </div>
-
-  <div class="cbp-toolbar-sub-nav">
-    Nicholas Trading Company
+  <!-- NOTE: Contents are not rendering -->
+  <div class="cbp-subtoolbar">
+    <p>Nicholas Trading Company</p>
   </div>
 </cbp-app-header>
 
-<!-- Navigation Header Router Link isn't actually active though-->
+<!-- NOTE: Navigation Header Router Link isn't actually active though-->
 <ng-template #tabbedAppNav>
   <nav mat-tab-nav-bar>
     <a mat-tab-link [active]="true" href="{{ link.link }}" *ngFor="let link of appNavigations">

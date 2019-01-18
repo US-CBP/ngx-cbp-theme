@@ -5,9 +5,10 @@
     - cbp-toolbar-main-nav: render the main navigation section.
       use mat-tab or mat-tab-nav-bar to render individual elements
     - cbp-toolbar-right-nav: renders content to the right section
-    - cbp-toolbar-sub-nav: renders content in the sub section of the main nav
 -->
-<div class="cbp-toolbar-row mat-toolbar" [@cbpToolbarScrollState]="cbpToolbarScrollState">
+<div
+  class="cbp-toolbar-row mat-toolbar"
+  [@cbpToolbarScrollState]="cbpToolbarScrollState">
     <div
     class="cbp-toolbar-row mat-toolbar mat-toolbar-row"
     fxLayout="row"
@@ -60,10 +61,16 @@
   <ng-template [ngTemplateOutlet]="cbpToolBarSubNav"></ng-template>
 </div>
 
-<div *ngIf="isToolbarExpanded ? true : false" fxShow="false" fxShow.lt-sm [ngStyle]="{ top: getToolbarExpansionPanelTop()}"
-  class="cbp-toolbar-expansion-panel" [@fadeInContent]="'showing'" fxLayout="column">
+<div
+  *ngIf="isToolbarExpanded ? true : false"
+  fxShow="false" fxShow.lt-sm
+  [ngStyle]="{ top: getToolbarExpansionPanelTop()}"
+  class="cbp-toolbar-expansion-panel"
+  [@fadeInContent]="'showing'"
+  fxLayout="column">
   <ng-template [ngTemplateOutlet]="cbpToolbarMainNav"></ng-template>
   <ng-template [ngTemplateOutlet]="cbpToolbarRightNav"></ng-template>
+  <ng-template [ngTemplateOutlet]="cbpToolBarSubNav"></ng-template>
 </div>
 
 <ng-template #cbpToolbarMainNav>
@@ -78,6 +85,6 @@
 
 <ng-template #cbpToolBarSubNav>
   <div class="mat-toolbar mat-toolbar-row cbp-sub-toolbar">
-      <ng-content select=".cbp-toolbar-sub-nav"></ng-content>
+    Trading Company: <ng-content select=".cbp-subtoolbar"></ng-content>
   </div>
 </ng-template>
