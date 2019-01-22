@@ -15,6 +15,10 @@
   color: $navbar-default-color;
 }
 
+.cbp-subtoolbar {
+  font-weight: 400;
+}
+
 cbp-app-main-nav .app-stacked-nav {
   border-top: 1px solid darken($navbar-default-border, 4%);
 }

@@ -1,34 +1,91 @@
-<div class="cbp-toolbar-row mat-toolbar mat-toolbar-row" fxLayout="row" fxLayoutAlign="space-between stretch"  [@cbpToolbarScrollState]="cbpToolbarScrollState">
-
-  <div class="cbp-brand-nav-container">
-    <ng-content select=".cbp-toolbar-title"></ng-content>
-  </div>
-
-  <div class="cbp-toolbar-main-nav-container"   *ngIf="isToolbarExpanded ? false : true"  fxShow="false" fxShow.gt-xs>
-    <ng-template [ngTemplateOutlet]="cbpToolbarMainNav"></ng-template>
-  </div>
-
-  <div class="cbp-toolbar-right-nav-container" *ngIf="isToolbarExpanded ? false : true" fxFlex="auto"   fxShow="false" fxShow.gt-xs>
-    <ng-template [ngTemplateOutlet]="cbpToolbarRightNav"></ng-template>
-  </div>
-
-  <div fxFlex="auto" fxFlexOrder.lt-sm="1"  class="cbp-toolbar-expansion-container" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="end stretch" fxHide="false" fxHide.gt-xs>
-    <div class="cbp-toolbar-expansion" (click)="isToolbarExpanded = ! isToolbarExpanded">
-      <div class="cbp-toolbar-expansion-icon">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+<!--
+  this is a global item, used on both the top and main nav
+  CBP toolbar renders the content based on the ng-content select element.
+  there are 4 available:
+    - cbp-toolbar-title: Renders a title section on the main content nav
+    - cbp-toolbar-main-nav: render the main navigation section.
+      use mat-tab or mat-tab-nav-bar to render individual elements
+    - cbp-toolbar-right-nav: renders content to the right section
+-->
+<div
+  class="cbp-toolbar-row mat-toolbar"
+  [@cbpToolbarScrollState]="cbpToolbarScrollState">
+    <div
+    class="cbp-toolbar-row mat-toolbar mat-toolbar-row"
+    fxLayout="row"
+    fxLayoutAlign="space-between stretch">
+  
+    <!-- Secondary Toolbar Title -->
+    <div class="cbp-brand-nav-container">
+      <ng-content select=".cbp-toolbar-title"></ng-content>
+    </div>
+  
+    <!-- Secondary Toolbar Main Nav -->
+    <div
+      class="cbp-toolbar-main-nav-container"
+      *ngIf="isToolbarExpanded ? false : true" 
+      xShow="false"
+      fxShow.gt-xs>
+      <ng-template [ngTemplateOutlet]="cbpToolbarMainNav"></ng-template>
+    </div>
+    
+    <!-- Secondar Right Side Toolbar-->
+    <!-- Think of the more_vert icon section -->
+    <div
+      class="cbp-toolbar-right-nav-container"
+      *ngIf="isToolbarExpanded ? false : true"
+      fxFlex="auto"
+      fxShow="false"
+      fxShow.gt-xs>
+      <ng-template [ngTemplateOutlet]="cbpToolbarRightNav"></ng-template>
+    </div>
+  
+    <!-- Mobile Navigaion Trigger Button -->
+    <div
+      fxFlex="auto"
+      fxFlexOrder.lt-sm="1"
+      class="cbp-toolbar-expansion-container"
+      fxFlexAlign="stretch"
+      fxLayout="row"
+      fxLayoutAlign="end stretch"
+      fxHide="false"
+      fxHide.gt-xs>
+      <div class="cbp-toolbar-expansion" (click)="isToolbarExpanded = ! isToolbarExpanded">
+        <div class="cbp-toolbar-expansion-icon">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </div>
       </div>
     </div>
   </div>
+  <ng-template [ngTemplateOutlet]="cbpToolBarSubNav"></ng-template>
 </div>
-<div *ngIf="isToolbarExpanded ? true : false" fxShow="false" fxShow.lt-sm [ngStyle]="{ top: getToolbarExpansionPanelTop()}" class="cbp-toolbar-expansion-panel" [@fadeInContent]="'showing'"   fxLayout="column" >
+
+<div
+  *ngIf="isToolbarExpanded ? true : false"
+  fxShow="false" fxShow.lt-sm
+  [ngStyle]="{ top: getToolbarExpansionPanelTop()}"
+  class="cbp-toolbar-expansion-panel"
+  [@fadeInContent]="'showing'"
+  fxLayout="column">
   <ng-template [ngTemplateOutlet]="cbpToolbarMainNav"></ng-template>
   <ng-template [ngTemplateOutlet]="cbpToolbarRightNav"></ng-template>
+  <ng-template [ngTemplateOutlet]="cbpToolBarSubNav"></ng-template>
 </div>
+
 <ng-template #cbpToolbarMainNav>
   <ng-content select=".cbp-toolbar-main-nav"></ng-content>
 </ng-template>
+
 <ng-template #cbpToolbarRightNav>
-  <div fxLayout="column" fxLayoutAlign="end stretch"><ng-content select=".cbp-toolbar-right-nav"></ng-content></div>
+  <div fxLayout="column" fxLayoutAlign="end stretch">
+    <ng-content select=".cbp-toolbar-right-nav"></ng-content>
+  </div>
+</ng-template>
+
+<ng-template #cbpToolBarSubNav>
+  <div class="mat-toolbar mat-toolbar-row cbp-sub-toolbar">
+    Trading Company: <ng-content select=".cbp-subtoolbar-content"></ng-content>
+  </div>
 </ng-template>

@@ -40,9 +40,14 @@
       </div>
     </div>
   </div>
+
+  <!-- NOTE: Contents are not rendering -->
+  <div class="cbp-subtoolbar-content">
+    {{ companyName }}
+  </div>
 </cbp-app-header>
 
-<!-- Navigation Header Router Link isn't actually active though-->
+<!-- NOTE: Navigation Header Router Link isn't actually active though-->
 <ng-template #tabbedAppNav>
   <nav mat-tab-nav-bar>
     <a mat-tab-link [active]="true" href="{{ link.link }}" *ngFor="let link of appNavigations">
