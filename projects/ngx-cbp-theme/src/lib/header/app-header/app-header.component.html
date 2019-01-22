@@ -1,4 +1,4 @@
-<!-- this is the html template code for the second header -->
+<!-- main subnav -->
 <div>
   <cbp-toolbar
     position="1"
@@ -27,6 +27,10 @@
       fxLayout.gt-xs="row"
       fxLayout.lt-sm="column" >
       <ng-content select=".cbp-app-right-nav"></ng-content>
+    </div>
+
+    <div>
+      <ng-content select=".cbp-subtoolbar"></ng-content>
     </div>
   </cbp-toolbar>
 
