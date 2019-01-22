@@ -86,6 +86,31 @@ $ npm install --save rxjs-compat
   $ npm install ngx-cbp-theme-2
   ```
 
+* if you run into peer dependency warnings, standardize your `package.json` to match version numbers
+
+```json
+"depenencies": {
+  "@angular/animations": "~7.2.0",
+  "@angular/cdk": "^7.2.0",
+  "@angular/common": "~7.2.0",
+  "@angular/compiler": "~7.2.0",
+  "@angular/core": "~7.2.0",
+  "@angular/forms": "~7.2.0",
+  "@angular/material": "^7.2.0",
+  "@angular/platform-browser": "~7.2.0",
+  "@angular/platform-browser-dynamic": "~7.2.0",
+  "@angular/router": "~7.2.0",
+  ...
+}
+"devDependencies" : {
+  "@angular-devkit/build-angular": "^0.12.2",
+  "@angular/cli": "~7.2.0",
+  "@angular/compiler-cli": "~7.2.0",
+  "@angular/language-service": "~7.2.0",
+  ...
+}
+```
+
 * In your `styles.scss` add
   ```sass
   @import '~ngx-cbp-theme-2/styles/ngx-cbp-theme';
