@@ -23,6 +23,9 @@ export class DemoAppHeaderComponent implements OnInit {
       link: '/bols'
     }
   ];
+
+  companyName = "Nicholas Trading Company";
+  
   constructor() {}
 
   ngOnInit() {}
