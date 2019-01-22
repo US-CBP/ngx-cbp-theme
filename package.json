@@ -1,7 +1,8 @@
 {
   "name": "ngx-cbp-theme-2",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "CBP CF Team / tenji240",
+  "description": "Angular Material Based CBP Compliant Theme",
   "contributors": [
     {
       "name": "Tenji Tembo",
@@ -46,14 +47,14 @@
   },
   "dependencies": {
     "@angular/animations": "~7.2.0",
-    "@angular/cdk": "~7.2.1",
+    "@angular/cdk": "~7.2.0",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
     "@angular/core": "~7.2.0",
-    "@angular/flex-layout": "^7.0.0-beta.22",
+    "@angular/flex-layout": "^7.0.0-beta.23",
     "@angular/forms": "~7.2.0",
     "@angular/http": "~7.2.0",
-    "@angular/material": "~7.2.1",
+    "@angular/material": "~7.2.0",
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
@@ -68,7 +69,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.12.0",
     "@angular-devkit/build-ng-packagr": "~0.12.1",
-    "@angular/cli": "~7.2.1",
+    "@angular/cli": "~7.2.0",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
     "@types/jasmine": "~2.8.4",
