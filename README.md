@@ -60,6 +60,8 @@ Use @angular/cli global install version matching the version inside [package.jso
 * For new apps follow [angular-cli](https://cli.angular.io/) and create your application with styles = SCSS. Minimal e.g.
   ```bash
   ng new my-app --style scss --skip-install
+  cd my-app/
+  npm install
   ``` 
 * Ensure `polyfills.ts` is correct by following instructions in your `src/polyfills.ts`  to enable all `IE11` and `web-animations-js` polyfills. 
 
@@ -70,17 +72,23 @@ Use @angular/cli global install version matching the version inside [package.jso
   ```bash
   $ npm install @angular/material@~6  @angular/cdk@^6 --save
   ```
+
+* Install the latest version of RxJS
+
+```bash
+$ npm install --save rxjs-compat
+```
  
 * Ensure that it builds and runs correctly i.e. `ng start` runs fine. 
 * Stop any of running processes/scripts against your project and then run:
 
   ```bash
-  $ npm install ngx-cbp-theme --save
+  $ npm install ngx-cbp-theme-2
   ```
 
 * In your `styles.scss` add
   ```sass
-  @import '~ngx-cbp-theme/styles/ngx-cbp-theme';
+  @import '~ngx-cbp-theme-2/styles/ngx-cbp-theme';
   ```
   
 * In your angular.json add to your build options for `@angular-devkit/build-angular:browser`
