@@ -113,7 +113,7 @@ $ npm install --save rxjs-compat
 
 * In your `styles.scss` add
   ```sass
-  @import '~ngx-cbp-theme-2/styles/ngx-cbp-theme';
+  @import '~ngx-cbp-theme-alt/styles/ngx-cbp-theme';
   ```
   
 * In your angular.json add to your build options for `@angular-devkit/build-angular:browser`
