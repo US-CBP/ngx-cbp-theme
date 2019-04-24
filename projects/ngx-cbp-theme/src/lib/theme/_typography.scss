@@ -67,3 +67,7 @@ h6, .h6 { font-size: $font-size-h6; }
 .mat-toolbar h2 {
   @extend .h2
 }
+
+::selection {
+  background-color: #b3d4fb;
+}
