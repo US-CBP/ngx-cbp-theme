@@ -4,12 +4,14 @@ import {InjectionToken} from '@angular/core';
 /**
  * Each application in the drop down and this application to refer by name/id etc.
  */
-export class CBPApplication {
-    public id: string;
-    public description: string;
-    public version?: string;
-    public context?: string;
-    constructor(public name?: string, public href?: string) {}
+export interface CBPApplication {
+    id: string;
+    description: string;
+    name?: string;
+    href?: string;
+    version?: string;
+    context?: string;
+    terms?: string;
 }
 
 /**
@@ -19,7 +21,7 @@ export class CBPApplicationsData {
     public list: CBPApplication[] = [];
     public recents: CBPApplication[] = [];
     public favorites: CBPApplication[] = [];
-    public currentApp: CBPApplication = new CBPApplication();
+    public currentApp: CBPApplication = {} as CBPApplication;
     public lastRetrieved: Date;
 }
 

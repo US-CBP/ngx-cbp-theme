@@ -8,12 +8,6 @@ export * from './lib/buttons/cbp-toggle-switch/cbp-toggle-switch.component';
 export * from './lib/buttons/buttons.module';
 
 
-export * from './lib/accordion/accordion.component';
-export * from './lib/accordion/accordion-panel.component';
-export * from './lib/accordion/accordion.module';
-
-
-
 export * from './lib/applications/cbp-applications-service';
 export * from './lib/applications/applications.module';
 export * from './lib/applications/apps-menu/apps-menu.component';

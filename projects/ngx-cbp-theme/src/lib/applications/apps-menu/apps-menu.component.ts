@@ -1,4 +1,4 @@
-import {Component, Inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {MatMenuTrigger} from '@angular/material';
 import {
@@ -6,11 +6,13 @@ import {
   CBPApplicationsService
 } from '../cbp-applications-service';
 import {CBPToolbarState, CBP_HEADER_STATE} from '../../header/cbp-toolbar/cbp-toolbar-state';
+import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'cbp-apps-menu',
   templateUrl: './apps-menu.component.html',
   styleUrls: ['./apps-menu.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   entryComponents: []
 })
 export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
@@ -27,7 +29,8 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
 
   public error: any;
 
-  constructor(@Inject(CBP_APPLICATIONS_SERVICE) public applicationsService: CBPApplicationsService,
+  constructor(public _cdr: ChangeDetectorRef,
+              @Inject(CBP_APPLICATIONS_SERVICE) public applicationsService: CBPApplicationsService,
               @Inject(CBP_HEADER_STATE) private toolbarState: CBPToolbarState) {
   }
 
@@ -40,6 +43,7 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
       if (this.cbpMenuTrigger && this.cbpMenuTrigger.menu) {
         this.isApplicationsExpanded = false;
         this.cbpMenuTrigger.closeMenu();
+        this._cdr.markForCheck();
       }
     }));
 
@@ -52,14 +56,18 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
               this.menuDataLoaded = true;
               this.applicationsDataLoading = false;
             }
+            this._cdr.markForCheck();
           },
           (err) => {
             this.error = err;
             this.applicationsDataLoading = false;
+            console.log(err);
+            this._cdr.markForCheck();
           }));
     }
     this.subscriptions.add(this.toolbarState.scrollState.subscribe((value) => {
       if (value === 'up') {
+        this._cdr.markForCheck();
         this.cbpMenuTrigger.closeMenu();
       }
     }));
@@ -76,8 +84,14 @@ export class CBPApplicationsMenuComponent implements OnInit, OnDestroy {
   }
 
   reloadApplicationsData($event: Event): void {
-    this.applicationsService.refresh();
     this.applicationsDataLoading = true;
+    this._cdr.markForCheck();
+    this.applicationsService.refresh().pipe(first()).subscribe(() => {
+      this.applicationsDataLoading = false;
+      console.log('this.applicationsDataLoading', this.applicationsDataLoading);
+      this._cdr.markForCheck();
+    });
+
     $event.stopPropagation();
   }
 
