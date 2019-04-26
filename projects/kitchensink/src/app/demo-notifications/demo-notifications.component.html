@@ -1,9 +1,15 @@
 <h2>Notifications</h2>
+<mat-checkbox [(ngModel)]="autoClose">Auto Close</mat-checkbox>
+&nbsp;&nbsp;&nbsp;
+<mat-form-field style="width: 50px">
+  <input matInput placeholder="Duration" [(ngModel)]="autoCloseInSec" [disabled]="!autoClose"/>
+</mat-form-field>
 
 <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
   <button mat-raised-button color="primary" (click)="notifyMe('You got notified!')">Notify Me</button>
   <button mat-raised-button color="accent" (click)="notifyInfo()">Comment Added</button>
   <button mat-raised-button (click)="notifyWarning()">Snooze</button>
+  <button mat-raised-button color="primary" (click)="notifyMe('Success at last!', 'success')">Check Results</button>
   <button mat-raised-button color="warn" (click)="notifyDanger()">Retry & Close</button>
 </div>
 

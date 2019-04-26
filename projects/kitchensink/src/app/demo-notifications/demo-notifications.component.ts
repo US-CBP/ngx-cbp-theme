@@ -1,49 +1,45 @@
-import { EMPTY, Subscription } from 'rxjs';
+import {EMPTY, Subscription} from 'rxjs';
 
-import { delay, filter, first } from 'rxjs/operators';
-import { Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { CBPNotification, CBPNotificationsService } from 'ngx-cbp-theme';
+import {delay, filter, first} from 'rxjs/operators';
+import {ChangeDetectionStrategy, Component, ElementRef, OnDestroy, TemplateRef, ViewChild} from '@angular/core';
+import {CBPNotification, CBPNotificationsService} from 'ngx-cbp-theme';
 
 @Component({
   selector: 'demo-notifications, cbp-demo-notifications',
   templateUrl: './demo-notifications.component.html',
-  styleUrls: ['./demo-notifications.component.scss']
+  styleUrls: ['./demo-notifications.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
-export class DemoNotificationsComponent implements OnInit, OnDestroy {
+export class DemoNotificationsComponent implements OnDestroy {
 
   @ViewChild('successNotification') successContentRef: TemplateRef<any>;
   @ViewChild('infoNotification') infoNotificationRef: TemplateRef<any>;
   @ViewChild('warnNotification') warnNotificationRef: TemplateRef<any>;
   @ViewChild('dangerNotification') dangerNotificationRef: TemplateRef<any>;
 
+  @ViewChild('block2') blockEl: ElementRef;
   private snoozingNotification: CBPNotification;
   private connectionLostNotification: CBPNotification;
   dangerShow = true;
   private snoozerNotifClosingSubscription = new Subscription();
 
-
-  constructor(private notificationService: CBPNotificationsService) {
-  }
-
-  ngOnInit() {
-  }
+  autoClose = true;
+  autoCloseInSec = 3;
+  constructor(private notificationService: CBPNotificationsService) {}
 
   ngOnDestroy() {
     this.snoozerNotifClosingSubscription.unsubscribe();
   }
 
-  notifyMe(message: string) {
-    const notification = new CBPNotification();
-    notification.type = 'success';
-    notification.message = message;
-    this.notificationService.notify(notification);
+  notifyMe(message: string, type: any = 'info') {
+    const notification = new CBPNotification({type: type, message: message});
+    this._notify(notification);
   }
 
   notifyInfo() {
-    const notification = new CBPNotification();
-    notification.type = 'info';
-    notification.content = this.infoNotificationRef;
-    this.notificationService.notify(notification);
+    const notification = new CBPNotification({type: 'info', content: this.infoNotificationRef});
+    this._notify(notification);
     notification.onClose(() => {
       console.log('info closed');
     });
@@ -55,8 +51,8 @@ export class DemoNotificationsComponent implements OnInit, OnDestroy {
    * Also an example to listening to user closing the notification.
    */
   notifyWarning() {
-    this.snoozingNotification = new CBPNotification(false, 'warning', null, this.warnNotificationRef);
-    this.notificationService.notify(this.snoozingNotification);
+    this.snoozingNotification = new CBPNotification({type: 'warning', content: this.warnNotificationRef});
+    this._notify(this.snoozingNotification);
     this.snoozerNotifClosingSubscription.add(
       this.snoozingNotification.isOpen$.pipe(
         filter((open: boolean) => open === false),
@@ -68,10 +64,8 @@ export class DemoNotificationsComponent implements OnInit, OnDestroy {
   }
 
   notifyDanger() {
-    this.connectionLostNotification = new CBPNotification();
-    this.connectionLostNotification.type = 'danger';
-    this.connectionLostNotification.content = this.dangerNotificationRef;
-    this.notificationService.notify(this.connectionLostNotification);
+    this.connectionLostNotification = new CBPNotification({type: 'danger', content: this.dangerNotificationRef});
+    this._notify(this.connectionLostNotification);
   }
 
   /**
@@ -110,5 +104,11 @@ export class DemoNotificationsComponent implements OnInit, OnDestroy {
    */
   caseViewed() {
     this.notifyMe('Case #165799-96 viewed.');
+  }
+
+  _notify(notification: CBPNotification) {
+    this.notificationService.notify(notification);
+    notification.autoClose = this.autoClose;
+    notification.autoCloseInMilliSec = this.autoCloseInSec * 1000;
   }
 }

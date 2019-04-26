@@ -1,35 +1,17 @@
 @import '../../variables';
 
+$toast-band-width: 8px !default;
 .toast {
   position: relative;
-  border: 1px solid #ddd;
-  border-left-width: 4px;
-  border-radius: 2px;
   margin-bottom: 9px;
   position: relative;
   background: #fff;
-  box-shadow: 0px 1px 3px rgba(0,0,0,.1);
-  padding: $alert-padding*2;
-
-  &.toast-info {
-    border-left-color: $brand-info;
-  }
-  &.toast-primary {
-    border-left-color: $brand-primary;
-  }
-  &.toast-success {
-    border-left-color: $brand-success;
-  }
-  &.toast-danger {
-    border-left-color: $brand-danger;
-  }
-  &.toast-warning {
-    border-left-color: $brand-warning;
-  }
-
-
-
-
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, .1);
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 100%;
+  min-height: 40px;
   button.close {
     position: absolute;
     right: 0;
@@ -38,11 +20,83 @@
   }
 }
 
+.toast-info .toast-color {
+  background: $brand-info;
+}
+
+.toast-primary .toast-color {
+  background: $brand-primary;
+}
+
+.toast-success .toast-color {
+  background: $brand-success;
+}
+
+.toast-danger .toast-color {
+  background: $brand-danger;
+}
+
+.toast-warning .toast-color {
+  background: $brand-warning;
+}
+
+.toast-color {
+  place-content: center;
+  align-items: center;
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 100%;
+  max-width: $toast-band-width;
+  z-index: 1;
+  transform-origin: bottom center;
+}
+
+.toast-body {
+  height: 100%;
+  width: calc(100% - #{$toast-band-width});
+  flex: 1 1 100%;
+  padding: $alert-padding*2;
+  border: 1px solid #ddd;
+  border-radius: 0 2px 2px 0;
+  border-left: none;
+}
+
+.toast::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: $toast-band-width;
+}
+
+.toast.toast-info::before {
+  background: lighten($brand-info, 50%);
+}
+
+.toast.toast-primary::before {
+  background: lighten($brand-primary, 50%);
+}
+
+.toast.toast-success::before {
+  background: lighten($brand-success, 50%);
+}
+
+.toast.toast-danger::before {
+  background: lighten($brand-danger, 50%);
+}
+
+.toast.toast-warning::before {
+  background: lighten($brand-warning, 15%);
+}
+
+
+
 .cbp-notification-contents {
   display: inline-block;
   margin-bottom: $alert-padding;
   margin-right: $modal-inner-padding;
 }
+
 .cbp-notification-actions {
   display: inline-block;
   margin-top: $alert-padding;
