@@ -1,18 +1,21 @@
-<div class="cbp-toolbar-row mat-toolbar mat-toolbar-row" fxLayout="row" fxLayoutAlign="space-between stretch"  [@cbpToolbarScrollState]="cbpToolbarScrollState">
+<div class="cbp-toolbar-row mat-toolbar mat-toolbar-row" fxLayout="row" fxLayoutAlign="space-between stretch"
+     [@cbpToolbarScrollState]="cbpToolbarScrollState">
 
   <div class="cbp-brand-nav-container">
     <ng-content select=".cbp-toolbar-title"></ng-content>
   </div>
 
-  <div class="cbp-toolbar-main-nav-container"   *ngIf="isToolbarExpanded ? false : true"  fxShow="false" fxShow.gt-xs>
+  <div class="cbp-toolbar-main-nav-container" *ngIf="isToolbarExpanded ? false : true" fxShow="false" fxShow.gt-xs>
     <ng-template [ngTemplateOutlet]="cbpToolbarMainNav"></ng-template>
   </div>
 
-  <div class="cbp-toolbar-right-nav-container" *ngIf="isToolbarExpanded ? false : true" fxFlex="auto"   fxShow="false" fxShow.gt-xs>
+  <div class="cbp-toolbar-right-nav-container" *ngIf="isToolbarExpanded ? false : true" fxFlex="auto" fxShow="false"
+       fxShow.gt-xs>
     <ng-template [ngTemplateOutlet]="cbpToolbarRightNav"></ng-template>
   </div>
 
-  <div fxFlex="auto" fxFlexOrder.lt-sm="1"  class="cbp-toolbar-expansion-container" fxFlexAlign="stretch" fxLayout="row" fxLayoutAlign="end stretch" fxHide="false" fxHide.gt-xs>
+  <div fxFlex="auto" fxFlexOrder.lt-sm="1" class="cbp-toolbar-expansion-container" fxFlexAlign="stretch" fxLayout="row"
+       fxLayoutAlign="end stretch" fxHide="false" fxHide.gt-xs>
     <div class="cbp-toolbar-expansion" (click)="isToolbarExpanded = ! isToolbarExpanded">
       <div class="cbp-toolbar-expansion-icon">
         <span class="icon-bar"></span>
@@ -22,7 +25,9 @@
     </div>
   </div>
 </div>
-<div *ngIf="isToolbarExpanded ? true : false" fxShow="false" fxShow.lt-sm [ngStyle]="{ top: getToolbarExpansionPanelTop()}" class="cbp-toolbar-expansion-panel" [@fadeInContent]="'showing'"   fxLayout="column" >
+<div *ngIf="isToolbarExpanded ? true : false" fxShow="false" fxShow.lt-sm
+     [ngStyle]="{ top: getToolbarExpansionPanelTop()}" class="cbp-toolbar-expansion-panel" [@fadeInContent]="'showing'"
+     fxLayout="column">
   <ng-template [ngTemplateOutlet]="cbpToolbarMainNav"></ng-template>
   <ng-template [ngTemplateOutlet]="cbpToolbarRightNav"></ng-template>
 </div>
@@ -30,5 +35,7 @@
   <ng-content select=".cbp-toolbar-main-nav"></ng-content>
 </ng-template>
 <ng-template #cbpToolbarRightNav>
-  <div fxLayout="column" fxLayoutAlign="end stretch"><ng-content select=".cbp-toolbar-right-nav"></ng-content></div>
+  <div fxLayout="column" fxLayoutAlign="end stretch">
+    <ng-content select=".cbp-toolbar-right-nav"></ng-content>
+  </div>
 </ng-template>

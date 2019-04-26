@@ -3,15 +3,8 @@
  */
 
 
-
 export * from './lib/buttons/cbp-toggle-switch/cbp-toggle-switch.component';
 export * from './lib/buttons/buttons.module';
-
-
-export * from './lib/accordion/accordion.component';
-export * from './lib/accordion/accordion-panel.component';
-export * from './lib/accordion/accordion.module';
-
 
 
 export * from './lib/applications/cbp-applications-service';
@@ -22,7 +15,6 @@ export * from './lib/applications/applications-search/applications-search.compon
 
 export * from './lib/cbp-root/cbp-root.module';
 export * from './lib/cbp-root/cbp-root.component';
-
 
 
 export * from './lib/header/cbp-toolbar/cbp-toolbar-state';

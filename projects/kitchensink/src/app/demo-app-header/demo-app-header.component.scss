@@ -2,6 +2,7 @@
 
 .app-right-nav-items {
   display: flex;
+
   .cbp-navbar-item {
     cursor: default;
   }
@@ -12,6 +13,7 @@
   padding: 0 $padding-base-horizontal;
 
   margin-top: 10px;
+
   &.vertical-divider {
     border-right: 1px solid $brand-default-border;
   }
@@ -26,9 +28,10 @@
   color: $navbar-default-color;
 }
 
-cbp-app-main-nav .app-stacked-nav  {
+cbp-app-main-nav .app-stacked-nav {
   border-top: 1px solid darken($navbar-default-border, 4%);
 }
-cbp-app-right-nav .app-stacked-nav  {
+
+cbp-app-right-nav .app-stacked-nav {
   border-bottom: 1px solid darken($navbar-default-border, 4%);
 }

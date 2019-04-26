@@ -16,6 +16,7 @@ cbp-toolbar {
   .cbp-toolbar-expansion {
     padding: 4px;
   }
+
   .cbp-toolbar-expansion-panel {
     position: fixed;
     background-color: $navbar-inverse-bg;
@@ -24,7 +25,7 @@ cbp-toolbar {
     z-index: $zindex-appbar + 100;
     width: 100%;
     top: $navbar-height + $navbar-appheader-height;
-    left:0;
+    left: 0;
 
     .mat-menu-item {
       cursor: pointer;
@@ -36,6 +37,7 @@ cbp-toolbar {
       color: $gray-dark;
       overflow: inherit;
       text-overflow: inherit;
+
       &:hover,
       &:focus {
         text-decoration: underline;
@@ -50,6 +52,7 @@ cbp-toolbar {
   @extend .cbp-navbar-item-default;
   padding: inherit;
 }
+
 .cbp-toolbar-main-nav-container {
   overflow: hidden;
 }

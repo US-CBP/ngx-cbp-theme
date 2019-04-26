@@ -16,18 +16,34 @@ export class CBPNotification {
     return this._id;
   }
 
+  public type?: 'success' | 'danger' | 'warning' | 'info';
+  public message?: string;
+  public content?: TemplateRef<any>;
+  public contentPortal?: Portal<any>;
+  public autoClose = false;
+  public autoCloseInMilliSec = 5000;
+
   /**
    * Creates notification
    */
-  constructor(isClosedInitially = false,
-              public type?: 'success' | 'danger' | 'warning' | 'info',
-              public message?: string,
-              public content?: TemplateRef<any>,
-              public contentPortal?: Portal<any>) {
+  constructor(options: {
+    isClosedInitially?: boolean,
+    type?: 'success' | 'danger' | 'warning' | 'info',
+    message?: string,
+    content?: TemplateRef<any>,
+    contentPortal?: Portal<any>,
+    autoClose?: boolean;
+    autoCloseInMilliSec?: number
+  }) {
+    this.type = options.type;
+    this.message = options.message;
+    this.content = options.content;
+    this.contentPortal = options.contentPortal;
+    this.autoClose = !!options.autoClose;
+    this.autoCloseInMilliSec = options.autoCloseInMilliSec;
     this._id = ++notificationCounter;
-    this._isOpen$.next(isClosedInitially);
+    this._isOpen$.next(options.isClosedInitially);
   }
-
 
   /**
    * Is the notification currently open ?

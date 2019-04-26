@@ -5,6 +5,7 @@
 
 cbp-header {
   z-index: $zindex-navbar;
+
   cbp-toolbar .cbp-toolbar-row {
     height: $navbar-height;
     background-color: $navbar-inverse-bg;
@@ -18,24 +19,29 @@ cbp-header {
   .cbp-toolbar-expansion-panel {
     top: $navbar-height !important;
   }
+
   .cbp-toolbar-expansion-container {
     .cbp-toolbar-expansion {
       .cbp-toolbar-expansion-icon {
         border: 1px solid darken($navbar-inverse-border, 4%);
         background-color: $navbar-inverse-bg;
+
         &:hover {
           background-color: $navbar-inverse-toggle-hover-bg;
         }
+
         &:focus {
           border-color: $navbar-inverse-toggle-border-color;
-          outline: 1px dotted lighten($brand-info, 0.25)!important;
+          outline: 1px dotted lighten($brand-info, 0.25) !important;
         }
       }
     }
   }
+
   .icon-bar {
     background-color: $navbar-inverse-toggle-icon-bar-bg;
   }
+
   .mat-toolbar h1 {
     font-weight: inherit;
   }
@@ -49,14 +55,16 @@ cbp-header {
   height: $navbar-height;
 
   cursor: pointer;
+
   &:hover,
   &:focus {
     outline: thin dotted;
     outline-offset: -2px;
     text-decoration: none;
   }
+
   .cbp-brand {
-    font-size: 19px ;
+    font-size: 19px;
     line-height: 21px;
   }
 
@@ -74,7 +82,7 @@ cbp-header {
   @extend .cbp-navbar-item;
 }
 
-.cbp-theme cbp-toolbar  {
+.cbp-theme cbp-toolbar {
   // flush buttons
   .mat-button {
     border: inherit;
@@ -84,12 +92,14 @@ cbp-header {
     .mat-button-wrapper {
       font-weight: 400;
     }
+
     .mat-icon {
       height: inherit;
       width: inherit;
       padding: 2px;
     }
   }
+
   //.mat-button:hover {
   //  background-color: #004773 !important;
   //}

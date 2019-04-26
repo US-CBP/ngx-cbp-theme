@@ -8,9 +8,9 @@ describe('CBPRootComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CBPRootComponent ]
+      declarations: [CBPRootComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

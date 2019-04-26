@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { CBPToggleSwitchComponent } from './cbp-toggle-switch/cbp-toggle-switch.component';
 
 @NgModule({
@@ -10,4 +10,5 @@ import { CBPToggleSwitchComponent } from './cbp-toggle-switch/cbp-toggle-switch.
   exports: [CBPToggleSwitchComponent],
   declarations: [CBPToggleSwitchComponent]
 })
-export class CBPButtonsModule { }
+export class CBPButtonsModule {
+}

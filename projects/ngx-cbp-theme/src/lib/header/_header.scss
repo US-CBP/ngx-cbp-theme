@@ -9,20 +9,25 @@
   height: $navbar-height;
   padding: 0 16px;
 }
+
 .cbp-navbar-item {
   cursor: pointer;
+
   &:hover,
   &:focus {
     outline: thin dotted;
     outline-offset: -2px;
     text-decoration: none;
   }
+
   @extend .cbp-navbar-item-default;
 }
+
 .cbp-toolbar-expansion-container {
   &:hover {
     outline: none;
   }
+
   .cbp-toolbar-expansion {
     &:hover {
       outline: none;
@@ -37,25 +42,25 @@
       border-radius: 2px;
       min-width: inherit;
       background-color: $navbar-default-bg;
+
       &:hover {
         background-color: $navbar-default-toggle-hover-bg;
 
       }
+
       &:focus {
         border-color: $navbar-default-toggle-border-color;
-        outline: 1px dotted lighten($brand-default, 0.25)!important;
+        outline: 1px dotted lighten($brand-default, 0.25) !important;
       }
     }
   }
 }
 
 
-
-
-
-.icon-bar+.icon-bar {
+.icon-bar + .icon-bar {
   margin-top: 4px;
 }
+
 .icon-bar {
   background-color: $navbar-default-toggle-icon-bar-bg;
   display: block;

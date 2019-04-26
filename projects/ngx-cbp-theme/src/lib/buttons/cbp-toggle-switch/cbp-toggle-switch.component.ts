@@ -12,16 +12,8 @@ import {
   Output,
   ViewEncapsulation
 } from '@angular/core';
-import {
-  CanColor,
-  CanDisable,
-  HasTabIndex,
-  mixinColor,
-  mixinDisabled,
-  mixinTabIndex,
-  ThemePalette
-} from '@angular/material/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { CanColor, CanDisable, HasTabIndex, mixinColor, mixinDisabled, mixinTabIndex, ThemePalette } from '@angular/material/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 
 export class CBPToggleSwitchChange {
@@ -40,7 +32,6 @@ export const _CBPToggleSwitchMixinBase =
   mixinTabIndex(mixinColor(mixinDisabled(CBPToggleSwitchComponentBase), 'accent'));
 
 let toggleSwitchCounter = 1;
-
 
 
 @Component({
@@ -141,8 +132,7 @@ export class CBPToggleSwitchComponent extends _CBPToggleSwitchMixinBase
   }
 
   // just to avoid TypeScript error - it is going to get overwritten by ControlValueAccessor impl of registerOnChange
-  private _controlValueAccessorChangeFn: (value: any) => void = () => {
-  }
+  private _controlValueAccessorChangeFn: (value: any) => void = () => {};
 
   ngOnInit() {
   }

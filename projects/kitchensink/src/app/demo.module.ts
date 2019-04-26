@@ -6,8 +6,6 @@ import {DemoAppComponent} from './demo.component';
 
 
 import {MatIconModule, MatTabsModule} from '@angular/material';
-
-import {DemoCBPAccordionComponent} from './demo-cbp-accordion/demo-cbp-accordion.component';
 import {DemoTypographyComponent} from './demo-typography/demo-typography.component';
 import {DemoButtonsModule} from './demo-buttons/demo-buttons.module';
 import {DemoAppHeaderModule} from './demo-app-header/demo-app-header.module';
@@ -19,14 +17,13 @@ import {
   CBP_APPLICATIONS_SERVICE,
   CBP_FEEDBACK_SERVICE,
   CBP_USER_SERVICE,
-  CBPAccordionModule,
   CBPAppHeaderModule,
   CBPHeaderModule,
   CBPNotificationsModule,
   CBPRootModule,
-  MockUserService,
   MockApplicationsService,
-  MockFeedbackService
+  MockFeedbackService,
+  MockUserService
 } from 'ngx-cbp-theme';
 
 export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
@@ -34,19 +31,15 @@ export const KITCHENSINK_APP_VERSION = (<any>pkg).version;
 @NgModule({
   declarations: [
     DemoAppComponent,
-    DemoCBPAccordionComponent,
     DemoTypographyComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
     MatTabsModule, MatIconModule, // MdTabsModule is used only for demo cbp-app-header
     CBPRootModule,
-    CBPAccordionModule,
     CBPHeaderModule,
     CBPAppHeaderModule,
     CBPNotificationsModule,
-    // CBPProgressModule,
-    // demo
     DemoButtonsModule,
     DemoAppHeaderModule,
     DemoNotificationsModule

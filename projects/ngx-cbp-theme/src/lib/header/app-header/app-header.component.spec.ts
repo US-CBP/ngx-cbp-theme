@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {CBPAppHeaderModule} from './app-header.module';
-import {CBPAppHeaderComponent} from './app-header.component';
+import { CBPAppHeaderModule } from './app-header.module';
+import { CBPAppHeaderComponent } from './app-header.component';
 
 describe('CBPAppHeaderComponent', () => {
   let component: CBPAppHeaderComponent;
@@ -12,7 +12,7 @@ describe('CBPAppHeaderComponent', () => {
     TestBed.configureTestingModule({
       imports: [NoopAnimationsModule, CBPAppHeaderModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

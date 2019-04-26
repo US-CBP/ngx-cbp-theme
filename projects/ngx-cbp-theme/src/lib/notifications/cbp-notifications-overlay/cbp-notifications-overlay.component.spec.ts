@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CBPNotificationsOverlayComponent } from './cbp-notifications-overlay.component';
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
-import {PortalModule} from '@angular/cdk/portal';
-import {CBPNotificationsService} from '../cbp-notifications.service';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { PortalModule } from '@angular/cdk/portal';
+import { CBPNotificationsService } from '../cbp-notifications.service';
 
 describe('CBPNotificationsOverlayComponent', () => {
   let component: CBPNotificationsOverlayComponent;
@@ -11,12 +11,12 @@ describe('CBPNotificationsOverlayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CBPNotificationsOverlayComponent ],
+      declarations: [CBPNotificationsOverlayComponent],
       imports: [PortalModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [CBPNotificationsService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

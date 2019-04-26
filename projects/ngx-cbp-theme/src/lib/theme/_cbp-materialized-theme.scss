@@ -3,8 +3,8 @@
 @include mat-core();
 
 $app-primary: mat-palette($cbp-from-primary);
-$app-accent:  mat-palette($cbp-from-info);
-$app-warn:    mat-palette($cbp-from-error);
+$app-accent: mat-palette($cbp-from-info);
+$app-warn: mat-palette($cbp-from-error);
 
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 

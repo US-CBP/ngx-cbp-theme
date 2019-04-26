@@ -15,11 +15,11 @@ describe('CBPHeaderComponent', () => {
     TestBed.configureTestingModule({
       imports: [CBPHeaderModule],
       providers: [
-          {provide: CBP_USER_SERVICE, useClass: MockUserService},
-          {provide: CBP_APPLICATIONS_SERVICE, useClass: MockApplicationsService}
+        {provide: CBP_USER_SERVICE, useClass: MockUserService},
+        {provide: CBP_APPLICATIONS_SERVICE, useClass: MockApplicationsService}
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

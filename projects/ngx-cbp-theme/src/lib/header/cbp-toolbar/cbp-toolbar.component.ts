@@ -1,15 +1,28 @@
-import {Component, EventEmitter, HostBinding, HostListener, Input, OnDestroy, OnInit, Output, ViewEncapsulation} from '@angular/core';
-import {CBPScrollShrinkAnimator} from './cbp-scrollshrink-animator';
-import {MediaChange, MediaObserver} from '@angular/flex-layout';
-import {Subscription} from 'rxjs';
-import {matSelectAnimations} from '@angular/material';
-import {CBPToolbarState} from './cbp-toolbar-state';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  HostBinding,
+  HostListener,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  ViewEncapsulation
+} from '@angular/core';
+import { CBPScrollShrinkAnimator } from './cbp-scrollshrink-animator';
+import { MediaChange, MediaObserver } from '@angular/flex-layout';
+import { Subscription } from 'rxjs';
+import { matSelectAnimations } from '@angular/material';
+import { CBPToolbarState } from './cbp-toolbar-state';
 
 @Component({
   selector: 'cbp-toolbar',
   templateUrl: './cbp-toolbar.component.html',
   styleUrls: ['./cbp-toolbar.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     CBPScrollShrinkAnimator.createScrollShrinkTrigger('cbpToolbarScrollState', '*', '-50px'),
     matSelectAnimations.fadeInContent
@@ -43,7 +56,8 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
     this.toolbarState.hasToolbarMenu.next(has);
   }
 
-  constructor(private mediaObserver: MediaObserver) {
+  constructor(private mediaObserver: MediaObserver,
+              private _cdr: ChangeDetectorRef) {
   }
 
   ngOnInit() {
@@ -56,6 +70,7 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
         } else {
           this.hasToolbarMenu = true;
         }
+        this._cdr.markForCheck();
       }
     ));
   }

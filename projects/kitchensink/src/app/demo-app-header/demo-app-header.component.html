@@ -1,6 +1,6 @@
 <cbp-app-header>
 
-  <div class="cbp-app-title" fxFlex="grow">
+  <div class="cbp-app-title">
     <h2 class="app-title" ngClass.gt-xs="vertical-divider">
       Kitchen Sink
       <small>Demo</small>
@@ -8,8 +8,12 @@
   </div>
 
   <div class="cbp-app-main-nav">
-      <div fxShow="false" fxShow.gt-xs="true"><ng-template [ngTemplateOutlet]="tabbedAppNav"></ng-template></div>
-      <div fxShow="false" fxShow.lt-sm="true" class="app-stacked-nav"><ng-template [ngTemplateOutlet]="stackedAppNav"></ng-template></div>
+    <div fxShow="false" fxShow.gt-xs="true">
+      <ng-template [ngTemplateOutlet]="tabbedAppNav"></ng-template>
+    </div>
+    <div fxShow="false" fxShow.lt-sm="true" class="app-stacked-nav">
+      <ng-template [ngTemplateOutlet]="stackedAppNav"></ng-template>
+    </div>
   </div>
 
   <div class="cbp-app-right-nav">
@@ -20,7 +24,7 @@
         </button>
       </div>
       <div class="cbp-navbar-item">
-        <button mat-icon-button >
+        <button mat-icon-button>
           <mat-icon aria-label="wifi" fontSet="fontawesome" fontIcon="fa-wifi"></mat-icon>
         </button>
       </div>
@@ -36,12 +40,12 @@
 
 
 <ng-template #stackedAppNav>
-    <ng-container>
-        <div class="mat-menu-item" *ngFor="let appNav of appNavigations">
-            <div title="{{ appNav.name }}"  fxFlex="auto" >
-                {{ appNav.name }}
-            </div>
-        </div>
-    </ng-container>
+  <ng-container>
+    <div class="mat-menu-item" *ngFor="let appNav of appNavigations">
+      <div title="{{ appNav.name }}" fxFlex="auto">
+        {{ appNav.name }}
+      </div>
+    </div>
+  </ng-container>
 </ng-template>
 

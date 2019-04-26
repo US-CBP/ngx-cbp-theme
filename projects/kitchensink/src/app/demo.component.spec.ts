@@ -1,25 +1,23 @@
-import {async, TestBed} from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 
-import {DemoAppComponent} from './demo.component';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {BrowserModule} from '@angular/platform-browser';
+import { DemoAppComponent } from './demo.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
 
-import {DemoCBPAccordionComponent} from './demo-cbp-accordion/demo-cbp-accordion.component';
-import {DemoTypographyComponent} from './demo-typography/demo-typography.component';
+import { DemoTypographyComponent } from './demo-typography/demo-typography.component';
 
-import {DemoButtonsModule} from './demo-buttons/demo-buttons.module';
-import {DemoAppHeaderModule} from './demo-app-header/demo-app-header.module';
-import {DemoNotificationsModule} from './demo-notifications/demo-notifications.module';
+import { DemoButtonsModule } from './demo-buttons/demo-buttons.module';
+import { DemoAppHeaderModule } from './demo-app-header/demo-app-header.module';
+import { DemoNotificationsModule } from './demo-notifications/demo-notifications.module';
 import {
-  CBPRootModule,
-  CBPAccordionModule,
-  CBPHeaderModule,
-  CBPAppHeaderModule,
-  CBPNotificationsModule,
-  MockUserService,
-  MockApplicationsService,
+  CBP_APPLICATIONS_SERVICE,
   CBP_USER_SERVICE,
-  CBP_APPLICATIONS_SERVICE
+  CBPAppHeaderModule,
+  CBPHeaderModule,
+  CBPNotificationsModule,
+  CBPRootModule,
+  MockApplicationsService,
+  MockUserService
 } from 'ngx-cbp-theme';
 
 describe('DemoAppComponent', () => {
@@ -27,7 +25,6 @@ describe('DemoAppComponent', () => {
     TestBed.configureTestingModule({
       imports: [BrowserModule, NoopAnimationsModule,
         CBPRootModule,
-        CBPAccordionModule,
         CBPHeaderModule,
         CBPAppHeaderModule,
         CBPNotificationsModule,
@@ -37,7 +34,6 @@ describe('DemoAppComponent', () => {
       ],
       declarations: [
         DemoAppComponent,
-        DemoCBPAccordionComponent,
         DemoTypographyComponent],
       providers: [
         MockUserService,

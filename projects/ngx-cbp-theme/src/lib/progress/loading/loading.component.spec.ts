@@ -8,9 +8,9 @@ describe('CBPLoadingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CBPLoadingComponent ]
+      declarations: [CBPLoadingComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

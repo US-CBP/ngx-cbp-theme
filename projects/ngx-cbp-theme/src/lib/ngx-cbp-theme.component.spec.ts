@@ -8,9 +8,9 @@ describe('NgxCbpThemeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxCbpThemeComponent ]
+      declarations: [NgxCbpThemeComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

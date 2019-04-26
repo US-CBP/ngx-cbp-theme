@@ -16,47 +16,49 @@
 
 <h3>Toggle Switches</h3>
 <form>
-    <div>
-        <cbp-toggle-switch label="Access" name="toggle-one" [(ngModel)]="toggle.one"
-                           (change)="changed($event)"></cbp-toggle-switch>
-        <span style="padding: 10px;">value = {{ toggle.one }}</span>
-    </div>
-    <br>
-    <div>
-        <cbp-toggle-switch name="toggle-something2" label="Bidi Model" onLabel="YES" offLabel="NO"  name="toggle-something3" [(ngModel)]="toggle.something2"
-                           (change)="changed($event)"></cbp-toggle-switch>
-        <span style="padding: 10px;min-width: 100px;display: inline-block;">value = {{ toggle.something2 }}</span>
-        <mat-checkbox [disableRipple]="true" name="toggle-something2-checkbox" [(ngModel)]="toggle.something2">Toggle</mat-checkbox>
-    </div>
-    <br>
-    <div>
-        <cbp-toggle-switch label="Alert" name="toggle-two" onLabel="YES" offLabel="NO"
-                           [(ngModel)]="toggle.two" (change)="changed($event)"></cbp-toggle-switch>
-        <span style="padding: 10px; width: 50px;">value = {{ toggle.two }}</span>
-    </div>
-    <br>
-    <div>
-        <cbp-toggle-switch label="Y/N Model values" name="toggle-yn" onLabel="YES" offLabel="NO" onValue="Y" offValue="N"
-                           [(ngModel)]="toggle.yn" (change)="changed($event)"></cbp-toggle-switch>
-        <span style="padding: 10px; width: 50px;">value = {{ toggle.yn }}</span>
-    </div>
-    <br>
-    <div>
-        <cbp-toggle-switch label="Undefined" name="toggle-three" onLabel="YES" offLabel="NO"
-                           [(ngModel)]="toggle.three" (change)="changed($event)"></cbp-toggle-switch>
-        <span style="padding: 10px; width: 50px;">value = {{ toggle.three }}</span>
-    </div>
-    <br>
-    <div>
-        <cbp-toggle-switch label="Disabled" disabled="true" onLabel="YES" offLabel="NO" onValue="Y" offValue="N"
-                           name="toggle-disabled" [(ngModel)]="toggle.disabled"
-                           (change)="changed($event)"></cbp-toggle-switch>
-        <span style="padding: 10px;">value = {{ toggle.disabled }}</span>
-    </div>
-    <br>
-    <div>
-        <cbp-toggle-switch label="Disabled" [disabled]="true" onLabel="YES" offLabel="NO"></cbp-toggle-switch>
-        <span style="padding: 10px;">value = false</span>
-    </div>
+  <div>
+    <cbp-toggle-switch label="Access" name="toggle-one" [(ngModel)]="toggle.one"
+                       (change)="changed($event)"></cbp-toggle-switch>
+    <span style="padding: 10px;">value = {{ toggle.one }}</span>
+  </div>
+  <br>
+  <div>
+    <cbp-toggle-switch name="toggle-something2" label="Bidi Model" onLabel="YES" offLabel="NO" name="toggle-something3"
+                       [(ngModel)]="toggle.something2"
+                       (change)="changed($event)"></cbp-toggle-switch>
+    <span style="padding: 10px;min-width: 100px;display: inline-block;">value = {{ toggle.something2 }}</span>
+    <mat-checkbox [disableRipple]="true" name="toggle-something2-checkbox" [(ngModel)]="toggle.something2">Toggle
+    </mat-checkbox>
+  </div>
+  <br>
+  <div>
+    <cbp-toggle-switch label="Alert" name="toggle-two" onLabel="YES" offLabel="NO"
+                       [(ngModel)]="toggle.two" (change)="changed($event)"></cbp-toggle-switch>
+    <span style="padding: 10px; width: 50px;">value = {{ toggle.two }}</span>
+  </div>
+  <br>
+  <div>
+    <cbp-toggle-switch label="Y/N Model values" name="toggle-yn" onLabel="YES" offLabel="NO" onValue="Y" offValue="N"
+                       [(ngModel)]="toggle.yn" (change)="changed($event)"></cbp-toggle-switch>
+    <span style="padding: 10px; width: 50px;">value = {{ toggle.yn }}</span>
+  </div>
+  <br>
+  <div>
+    <cbp-toggle-switch label="Undefined" name="toggle-three" onLabel="YES" offLabel="NO"
+                       [(ngModel)]="toggle.three" (change)="changed($event)"></cbp-toggle-switch>
+    <span style="padding: 10px; width: 50px;">value = {{ toggle.three }}</span>
+  </div>
+  <br>
+  <div>
+    <cbp-toggle-switch label="Disabled" disabled="true" onLabel="YES" offLabel="NO" onValue="Y" offValue="N"
+                       name="toggle-disabled" [(ngModel)]="toggle.disabled"
+                       (change)="changed($event)"></cbp-toggle-switch>
+    <span style="padding: 10px;">value = {{ toggle.disabled }}</span>
+  </div>
+  <br>
+  <div>
+    <cbp-toggle-switch label="Disabled" [disabled]="true" onLabel="YES" offLabel="NO"></cbp-toggle-switch>
+    <span style="padding: 10px;">value = false</span>
+  </div>
 
 </form>
