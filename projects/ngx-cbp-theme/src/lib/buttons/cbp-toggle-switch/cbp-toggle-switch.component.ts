@@ -132,8 +132,7 @@ export class CBPToggleSwitchComponent extends _CBPToggleSwitchMixinBase
   }
 
   // just to avoid TypeScript error - it is going to get overwritten by ControlValueAccessor impl of registerOnChange
-  private _controlValueAccessorChangeFn: (value: any) => void = () => {
-  };
+  private _controlValueAccessorChangeFn: (value: any) => void = () => {};
 
   ngOnInit() {
   }
