@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CBPToolbarComponent } from './cbp-toolbar.component';
-import {CBPToolbarModule} from './cbp-toolbar.module';
-import {CBPToolbarState} from './cbp-toolbar-state';
+import { CBPToolbarModule } from './cbp-toolbar.module';
+import { CBPToolbarState } from './cbp-toolbar-state';
 
 describe('CBPToolbarComponent', () => {
   let component: CBPToolbarComponent;
@@ -10,9 +10,9 @@ describe('CBPToolbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ CBPToolbarModule ]
+      imports: [CBPToolbarModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

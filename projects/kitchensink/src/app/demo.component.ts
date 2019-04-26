@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class DemoAppComponent {
   }
 
   myPreferences(): void {
-      console.log('demo::myPreferences implementation');
+    console.log('demo::myPreferences implementation');
   }
 }
 

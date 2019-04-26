@@ -1,5 +1,6 @@
 import {
-  ChangeDetectionStrategy, ChangeDetectorRef,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   EventEmitter,
   HostBinding,
@@ -10,11 +11,11 @@ import {
   Output,
   ViewEncapsulation
 } from '@angular/core';
-import {CBPScrollShrinkAnimator} from './cbp-scrollshrink-animator';
-import {MediaChange, MediaObserver} from '@angular/flex-layout';
-import {Subscription} from 'rxjs';
-import {matSelectAnimations} from '@angular/material';
-import {CBPToolbarState} from './cbp-toolbar-state';
+import { CBPScrollShrinkAnimator } from './cbp-scrollshrink-animator';
+import { MediaChange, MediaObserver } from '@angular/flex-layout';
+import { Subscription } from 'rxjs';
+import { matSelectAnimations } from '@angular/material';
+import { CBPToolbarState } from './cbp-toolbar-state';
 
 @Component({
   selector: 'cbp-toolbar',

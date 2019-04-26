@@ -1,4 +1,4 @@
-import {Component, HostBinding, OnInit, ViewEncapsulation} from '@angular/core';
+import { Component, HostBinding, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'cbp-root',
@@ -7,7 +7,9 @@ import {Component, HostBinding, OnInit, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class CBPRootComponent implements OnInit {
-  constructor() { }
+  constructor() {
+  }
+
   @HostBinding('class.cbp-theme')
   ngOnInit() {
   }

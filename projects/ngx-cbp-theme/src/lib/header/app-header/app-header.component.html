@@ -1,6 +1,7 @@
-<cbp-toolbar position="1" [toolbarState]="toolbarState" class="cbp-app-header" fxLayout="row" fxLayoutAlign.gt-xs="start stretch" [@appHeaderState]="appHeaderState">
+<cbp-toolbar position="1" [toolbarState]="toolbarState" class="cbp-app-header" fxLayout="row"
+             fxLayoutAlign.gt-xs="start stretch" [@appHeaderState]="appHeaderState">
 
-  <div class="app-header-title-container cbp-toolbar-title" >
+  <div class="app-header-title-container cbp-toolbar-title">
     <ng-content select=".cbp-app-title"></ng-content>
   </div>
 
@@ -10,8 +11,8 @@
   </div>
 
 
-
-  <div class="app-header-right-nav-container cbp-toolbar-right-nav" fxFlex="auto"  fxFlexAlign.gt-xs="end" fxLayoutAlign.gt-xs="end stretch" fxLayout.gt-xs="row" fxLayout.lt-sm="column" >
+  <div class="app-header-right-nav-container cbp-toolbar-right-nav" fxFlex="auto" fxFlexAlign.gt-xs="end"
+       fxLayoutAlign.gt-xs="end stretch" fxLayout.gt-xs="row" fxLayout.lt-sm="column">
     <ng-content select=".cbp-app-right-nav"></ng-content>
   </div>
 

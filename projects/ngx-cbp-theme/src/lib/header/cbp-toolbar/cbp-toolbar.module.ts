@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CBPToolbarComponent } from './cbp-toolbar.component';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -11,4 +11,5 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   declarations: [CBPToolbarComponent],
   exports: [CBPToolbarComponent]
 })
-export class CBPToolbarModule { }
+export class CBPToolbarModule {
+}

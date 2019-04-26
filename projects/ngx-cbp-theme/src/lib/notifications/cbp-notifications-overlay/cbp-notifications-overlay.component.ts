@@ -1,9 +1,9 @@
-import {ChangeDetectionStrategy, Component, OnInit, ViewContainerRef} from '@angular/core';
-import {CBPNotification} from '../cbp-notification';
-import {CBPNotificationsService} from '../cbp-notifications.service';
-import {Observable} from 'rxjs';
-import {TemplatePortal} from '@angular/cdk/portal';
-import {map} from 'rxjs/operators';
+import { ChangeDetectionStrategy, Component, OnInit, ViewContainerRef } from '@angular/core';
+import { CBPNotification } from '../cbp-notification';
+import { CBPNotificationsService } from '../cbp-notifications.service';
+import { Observable } from 'rxjs';
+import { TemplatePortal } from '@angular/cdk/portal';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'cbp-notifications-overlay',
@@ -17,7 +17,8 @@ export class CBPNotificationsOverlayComponent implements OnInit {
   notifications$: Observable<CBPNotification[]>;
 
   constructor(private notificationsService: CBPNotificationsService,
-              private viewContainerRef: ViewContainerRef) { }
+              private viewContainerRef: ViewContainerRef) {
+  }
 
   ngOnInit() {
     this.notifications$ = this.notificationsService.getNotifications().pipe(

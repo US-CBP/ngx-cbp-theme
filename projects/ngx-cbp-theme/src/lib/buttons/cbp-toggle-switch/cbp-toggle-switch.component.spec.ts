@@ -8,9 +8,9 @@ describe('CBPToggleSwitchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CBPToggleSwitchComponent ]
+      declarations: [CBPToggleSwitchComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -29,7 +29,7 @@
     "node": ">=8.4.0"
   },
   "publishConfig": {
-    "registry" : "https://registry.npmjs.org"
+    "registry": "https://registry.npmjs.org"
   },
   "sideEffects": false
 }

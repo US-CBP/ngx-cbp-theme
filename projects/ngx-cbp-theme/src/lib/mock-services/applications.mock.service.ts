@@ -1,9 +1,9 @@
-import {of as observableOf, Observable, BehaviorSubject, ReplaySubject, of} from 'rxjs';
+import { Observable, of as observableOf, of, ReplaySubject } from 'rxjs';
 
-import {delay, map, switchMap, tap} from 'rxjs/operators';
-import {Inject, Injectable} from '@angular/core';
-import {CBP_USER_SERVICE, CBPUser, CBPUserService} from '../user/user';
-import {CBPApplication, CBPApplicationsData, CBPApplicationsService} from '../applications/cbp-applications-service';
+import { delay, map, switchMap } from 'rxjs/operators';
+import { Inject, Injectable } from '@angular/core';
+import { CBP_USER_SERVICE, CBPUser, CBPUserService } from '../user/user';
+import { CBPApplication, CBPApplicationsData, CBPApplicationsService } from '../applications/cbp-applications-service';
 
 
 @Injectable()
@@ -73,14 +73,14 @@ export class MockApplicationsService extends CBPApplicationsService {
       return this._getMockHttpData().pipe(
         map(results => {
           results.lastRetrieved = new Date();
-          results.currentApp = { name: 'Kitchen Sink' } as  CBPApplication;
+          results.currentApp = {name: 'Kitchen Sink'} as CBPApplication;
           this.data = results;
           this.currentApp.next(results.currentApp);
           return results;
         }),
         switchMap((results) => {
           return this.userService.getUser()
-            .pipe(map( user => {
+            .pipe(map(user => {
               return this._applyUserToApplications(user, results);
             }));
         })

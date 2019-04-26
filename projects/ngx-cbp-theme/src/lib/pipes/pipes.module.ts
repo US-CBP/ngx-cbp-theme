@@ -6,7 +6,8 @@ import { CBPDatetimePipe } from './datetime.pipe';
   imports: [
     CommonModule
   ],
-    exports: [CBPDatetimePipe],
+  exports: [CBPDatetimePipe],
   declarations: [CBPDatetimePipe]
 })
-export class CBPPipesModule { }
+export class CBPPipesModule {
+}

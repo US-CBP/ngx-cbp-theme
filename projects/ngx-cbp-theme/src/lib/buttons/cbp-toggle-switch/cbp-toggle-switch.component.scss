@@ -50,6 +50,7 @@
     cursor: not-allowed;
     background: mix(#aaa, #fff, 30%);
   }
+
   > input:checked:disabled + label:before {
     background: mix($brand-primary, #fff, 30%);
   }
@@ -85,7 +86,6 @@
   > input:checked + label:after {
     left: -29px;
   }
-
 
 
 }

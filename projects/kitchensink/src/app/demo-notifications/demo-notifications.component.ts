@@ -1,8 +1,8 @@
-import {EMPTY, Subscription} from 'rxjs';
+import { EMPTY, Subscription } from 'rxjs';
 
-import {delay, filter, first} from 'rxjs/operators';
-import {ChangeDetectionStrategy, Component, ElementRef, OnDestroy, TemplateRef, ViewChild} from '@angular/core';
-import {CBPNotification, CBPNotificationsService} from 'ngx-cbp-theme';
+import { delay, filter, first } from 'rxjs/operators';
+import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
+import { CBPNotification, CBPNotificationsService } from 'ngx-cbp-theme';
 
 @Component({
   selector: 'demo-notifications, cbp-demo-notifications',
@@ -26,7 +26,9 @@ export class DemoNotificationsComponent implements OnDestroy {
 
   autoClose = true;
   autoCloseInSec = 3;
-  constructor(private notificationService: CBPNotificationsService) {}
+
+  constructor(private notificationService: CBPNotificationsService) {
+  }
 
   ngOnDestroy() {
     this.snoozerNotifClosingSubscription.unsubscribe();

@@ -5,10 +5,12 @@
   color: $gray-dark;
   overflow: inherit;
   text-overflow: inherit;
+
   &:hover,
   &:focus {
     text-decoration: underline;
   }
+
   .inverse & {
     color: $navbar-inverse-color;
   }
@@ -16,14 +18,17 @@
 
 .cbp-app-search {
   padding: 0px;
+
   .mat-form-field {
     display: block;
   }
+
   .mat-form-field-label,
   .cbp-applications-search-input {
     padding-left: 16px;
   }
 }
+
 .cbp-app-search-results.mat-menu-item {
   cursor: inherit;
   height: 32px;

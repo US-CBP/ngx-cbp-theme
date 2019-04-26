@@ -6,6 +6,7 @@
 
 .cbp-current-application-name {
   line-height: 1em;
+
   .mat-icon {
     margin-left: 5px;
     height: 14px;
@@ -19,7 +20,6 @@
 }
 
 
-
 .cbp-menu-item-category {
   margin-left: $box-padding;
   pointer-events: none;
@@ -28,17 +28,20 @@
 
 
 .mat-menu-item .cbp-applications-remove-icon .mat-icon {
-    vertical-align: inherit;
-    margin-right: 8px;
-    &:hover,
-    &:focus {
-      color: $gray-darker;
-      cursor: pointer;
-    }
+  vertical-align: inherit;
+  margin-right: 8px;
+
+  &:hover,
+  &:focus {
+    color: $gray-darker;
+    cursor: pointer;
   }
+}
+
 .cbp-applications-refresh {
   cursor: pointer;
 }
+
 .cbp-applications-last-updated {
   float: left;
   padding: 0 $padding-large-horizontal $padding-base-vertical;
@@ -71,18 +74,22 @@
   user-select: none;
   overflow-x: hidden;
 }
+
 .cbp-menu-item-category {
   margin-left: $box-padding;
   pointer-events: none;
   padding: $padding-small-vertical $padding-xs-horizontal;
 }
+
 .mat-button {
   font-weight: 400 !important;
+
   :hover {
     background-color: $navbar-inverse-bg;
   }
 
 }
+
 .mat-menu-item .mat-icon {
   margin-right: 0;
 }

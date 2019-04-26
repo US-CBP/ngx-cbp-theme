@@ -12,6 +12,7 @@ $toast-band-width: 8px !default;
   display: flex;
   flex: 1 1 100%;
   min-height: 40px;
+
   button.close {
     position: absolute;
     right: 0;
@@ -88,7 +89,6 @@ $toast-band-width: 8px !default;
 .toast.toast-warning::before {
   background: lighten($brand-warning, 15%);
 }
-
 
 
 .cbp-notification-contents {

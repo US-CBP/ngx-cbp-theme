@@ -1,9 +1,9 @@
-import {EMPTY, Subscription} from 'rxjs';
+import { EMPTY, Subscription } from 'rxjs';
 
-import {delay} from 'rxjs/operators';
-import {Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewEncapsulation} from '@angular/core';
-import {animate, AnimationBuilder, AnimationFactory, AnimationPlayer, query, style, transition, trigger} from '@angular/animations';
-import {CBPNotification} from '../cbp-notification';
+import { delay } from 'rxjs/operators';
+import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { animate, AnimationBuilder, AnimationFactory, AnimationPlayer, query, style, transition, trigger } from '@angular/animations';
+import { CBPNotification } from '../cbp-notification';
 
 
 @Component({
@@ -78,7 +78,7 @@ export class CBPNotificationComponent implements OnInit, OnDestroy {
             style({
               transform: 'scaleY(0)',
             }))
-        ], { optional: true })
+        ], {optional: true})
       );
       this.autoClosePlayer = autoCloseAnimation.create(this.elementRef.nativeElement);
       this.autoClosePlayer.onDone(() => this.notification.close());

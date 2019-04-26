@@ -3,10 +3,11 @@
 </div>
 
 <div class="applications-expansion-panel inverse" *ngIf="isApplicationsExpanded  && menuDataLoaded">
-  <ng-template [ngTemplateOutlet]="applicationsPanel" ></ng-template>
+  <ng-template [ngTemplateOutlet]="applicationsPanel"></ng-template>
 </div>
 
-<mat-menu #cbpMenu="matMenu" yPosition="above" xPosition="after" [overlapTrigger]="false" class="cbp-menu-with-category applications-expansion-panel" >
+<mat-menu #cbpMenu="matMenu" yPosition="above" xPosition="after" [overlapTrigger]="false"
+          class="cbp-menu-with-category applications-expansion-panel">
   <ng-template [ngTemplateOutlet]="applicationsPanel"></ng-template>
 </mat-menu>
 
@@ -16,8 +17,9 @@
 
     <div class="cbp-menu-item-category" *ngIf="applicationsData.recents?.length > 0">Recent Apps</div>
     <div class="mat-menu-item" *ngFor="let app of applicationsData.recents">
-      <mat-icon color="default" class="cbp-applications-remove-icon" fontSet="fontawesome" fontIcon="fa-times" (click)="removeFromRecent(app, $event)" fxFlexAlign="center"></mat-icon>
-      <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="auto" >
+      <mat-icon color="default" class="cbp-applications-remove-icon" fontSet="fontawesome" fontIcon="fa-times"
+                (click)="removeFromRecent(app, $event)" fxFlexAlign="center"></mat-icon>
+      <a class="cbp-applications-link" title="{{app.description}}" href="{{app.href}}" fxFlex="auto">
         {{ app.name }}
       </a>
     </div>
@@ -26,7 +28,7 @@
 
     <div class="cbp-menu-item-category" *ngIf="applicationsData.favorites?.length > 0">Favorite Apps</div>
     <div class="mat-menu-item" *ngFor="let app of applicationsData.favorites">
-      <a class="cbp-applications-link"  title="{{app.description}}" href="{{app.href}}" fxFlex="auto" >
+      <a class="cbp-applications-link" title="{{app.description}}" href="{{app.href}}" fxFlex="auto">
         {{ app.name }}
       </a>
     </div>
@@ -49,12 +51,15 @@
 
 </ng-template>
 <ng-template #application>
-  <div class="cbp-current-application" fxShow="false" fxShow.gt-xs fxShow.lt-sm fxLayout="column" fxLayoutAlign="center start" >
+  <div class="cbp-current-application" fxShow="false" fxShow.gt-xs fxShow.lt-sm fxLayout="column"
+       fxLayoutAlign="center start">
     <div *ngIf="applicationsDataLoading" class="cbp-menu-loading" style="color: white">
       <cbp-loading></cbp-loading>
     </div>
-    <div role="button" *ngIf="menuDataLoaded && applicationsData.currentApp && !applicationsDataLoading" class="cbp-current-application-name-container" (click)="toggleApplicationsMenu($event)">
-      <span class="cbp-current-application-name">{{ applicationsData.currentApp.name }}</span><span *ngIf="applicationsData.currentApp.version"> - {{ applicationsData.currentApp.version }}</span>
+    <div role="button" *ngIf="menuDataLoaded && applicationsData.currentApp && !applicationsDataLoading"
+         class="cbp-current-application-name-container" (click)="toggleApplicationsMenu($event)">
+      <span class="cbp-current-application-name">{{ applicationsData.currentApp.name }}</span><span
+      *ngIf="applicationsData.currentApp.version"> - {{ applicationsData.currentApp.version }}</span>
       <mat-icon *ngIf="applicationsData.lastRetrieved" fontSet="fontawesome" fontIcon="fa-caret-down"></mat-icon>
     </div>
   </div>

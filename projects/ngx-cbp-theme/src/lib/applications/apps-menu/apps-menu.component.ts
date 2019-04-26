@@ -1,12 +1,9 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {Subscription} from 'rxjs';
-import {MatMenuTrigger} from '@angular/material';
-import {
-  CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData,
-  CBPApplicationsService
-} from '../cbp-applications-service';
-import {CBPToolbarState, CBP_HEADER_STATE} from '../../header/cbp-toolbar/cbp-toolbar-state';
-import {first} from 'rxjs/operators';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { MatMenuTrigger } from '@angular/material';
+import { CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsData, CBPApplicationsService } from '../cbp-applications-service';
+import { CBP_HEADER_STATE, CBPToolbarState } from '../../header/cbp-toolbar/cbp-toolbar-state';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'cbp-apps-menu',

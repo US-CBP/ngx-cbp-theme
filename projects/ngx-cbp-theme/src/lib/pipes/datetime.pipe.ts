@@ -1,12 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 export const DATE_FORMAT_DayOfWeek_ShortDate_Time = {
-    weekday: 'short',
-    month: 'short',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit'
+  weekday: 'short',
+  month: 'short',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: '2-digit'
 };
+
 @Pipe({
   name: 'datetime'
 })
