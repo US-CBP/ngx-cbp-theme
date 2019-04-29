@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ReplaySubject, Subject } from 'rxjs';
+import { timer, ReplaySubject, Subject, EMPTY, of } from 'rxjs';
 import { CBPUser, CBPUserService } from '../user/user';
+import { delay, first, tap } from 'rxjs/operators';
 
 @Injectable()
 export class MockUserService extends CBPUserService {
@@ -16,8 +17,8 @@ export class MockUserService extends CBPUserService {
     return this.subject;
   }
 
-  login(delay = 3000): Subject<CBPUser> {
-    setTimeout(() => {
+  login(someDelay = 3000): Subject<CBPUser> {
+    of(1).pipe(first(), delay(someDelay), tap(() => {
       this.loggedIn = true;
       const user = new CBPUser();
       user.firstName = 'First';
@@ -26,8 +27,7 @@ export class MockUserService extends CBPUserService {
         favoriteAppIds: this._randomlyGetFavoritAppId()
       };
       this.subject.next(user);
-      // this.subject.complete();
-    }, delay);
+    })).subscribe();
     return this.subject;
   }
 

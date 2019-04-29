@@ -1,20 +1,20 @@
 <div class="cbp-user-navitem">
-  <ng-template [ngTemplateOutlet]="userView"></ng-template>
+  <ng-container *ngIf="isLoggedIn$ | async; else notLoggedIn;">
+    <div role="button" *ngIf="isLoggedIn && userDataLoaded" (click)="toggleMenu($event)">
+      <mat-icon fontSet="fontawesome" fontIcon="fa-user"></mat-icon>
+      <span fxShow="false" fxShow.gt-sm fxShow.lt-sm>{{ user.firstName }} {{ user.lastName }}</span>
+      <mat-icon fontSet="fontawesome" fontIcon="fa-caret-down"></mat-icon>
+    </div>
+  </ng-container>
 </div>
 
-<ng-template #userView>
+<ng-template #notLoggedIn>
   <div role="button" *ngIf="!isLoggedIn && !loginProgress" (click)="login($event)">
     <mat-icon fontSet="fontawesome" fontIcon="fa-sign-in"></mat-icon>
     <span fxShow="false" fxShow.gt-sm fxShow.lt-sm>Login</span>
   </div>
   <div class="cbp-user-login-in-progress" *ngIf="!isLoggedIn && loginProgress">
     <cbp-loading></cbp-loading>
-  </div>
-
-  <div role="button" *ngIf="isLoggedIn && userDataLoaded" (click)="toggleMenu($event)">
-    <mat-icon fontSet="fontawesome" fontIcon="fa-user"></mat-icon>
-    <span fxShow="false" fxShow.gt-sm fxShow.lt-sm>{{ user.firstName }} {{ user.lastName }}</span>
-    <mat-icon fontSet="fontawesome" fontIcon="fa-caret-down"></mat-icon>
   </div>
 </ng-template>
 
