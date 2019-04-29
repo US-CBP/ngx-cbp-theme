@@ -1,4 +1,4 @@
-import { Observable, of as observableOf, of, ReplaySubject } from 'rxjs';
+import { Observable, of, ReplaySubject, scheduled } from 'rxjs';
 
 import { delay, map, switchMap } from 'rxjs/operators';
 import { Inject, Injectable } from '@angular/core';
@@ -62,9 +62,9 @@ export class MockApplicationsService extends CBPApplicationsService {
         });
     } while (count-- >= 0);
 
-    const data = new CBPApplicationsData();
+    const data: CBPApplicationsData = new CBPApplicationsData();
     data.list = <CBPApplication[]>rawList;
-    return observableOf(data).pipe(delay(2000));
+    return of(data).pipe(delay(2000));
   }
 
   private _load(force = false): Observable<CBPApplicationsData> {
@@ -86,7 +86,7 @@ export class MockApplicationsService extends CBPApplicationsService {
         })
       );
     }
-    return of(this.data);
+    return of<CBPApplicationsData>(this.data);
   }
 
 

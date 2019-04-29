@@ -62,9 +62,9 @@ export class CBPToolbarComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.cbpToolbarScrollState = 'initial';
-    this._subscription.add(this.mediaObserver.media$.subscribe(
-      (change: MediaChange) => {
-        if (change.mqAlias !== 'xs') {
+    this._subscription.add(this.mediaObserver.asObservable().subscribe(
+      () => {
+        if (!this.mediaObserver.isActive('xs')) {
           this.isToolbarExpanded = false;
           this.hasToolbarMenu = false;
         } else {

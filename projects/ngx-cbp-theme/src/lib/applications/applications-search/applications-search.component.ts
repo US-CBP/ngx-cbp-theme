@@ -1,10 +1,10 @@
-import {map, startWith} from 'rxjs/operators';
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import {CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsService} from '../cbp-applications-service';
-import {FormControl} from '@angular/forms';
+import { map, startWith } from 'rxjs/operators';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { CBP_APPLICATIONS_SERVICE, CBPApplication, CBPApplicationsService } from '../cbp-applications-service';
+import { FormControl } from '@angular/forms';
 
 
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cbp-applications-search',
@@ -30,7 +30,7 @@ export class CBPApplicationsSearchComponent implements OnInit {
 
   ngOnInit() {
     this.searchResultsApplications = this.searchTokenControl.valueChanges.pipe(
-      startWith(null),
+      startWith<any, string>(null),
       map(token => {
         this._cdr.markForCheck();
         return this._search(token);

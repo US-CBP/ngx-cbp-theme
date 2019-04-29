@@ -1,21 +1,24 @@
-import { Component, Inject, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CBP_USER_SERVICE, CBPUser, CBPUserService } from '../user';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription, throwError } from 'rxjs';
 import { MatMenuTrigger } from '@angular/material';
 import { CBP_HEADER_STATE, CBPToolbarState } from '../../header/cbp-toolbar/cbp-toolbar-state';
+import { catchError, map } from 'rxjs/operators';
 
 
 @Component({
   selector: 'cbp-user-menu, [cbp-user-menu], .cbp-user-menu',
   templateUrl: './user-menu.component.html',
   styleUrls: ['./user-menu.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CBPUserMenuComponent implements OnInit, OnDestroy {
 
   userMenuExpanded = false;
   user: CBPUser;
   isLoggedIn = false;
+  isLoggedIn$: Observable<boolean>;
   userDataLoaded = false;
   error: any;
 
@@ -48,8 +51,8 @@ export class CBPUserMenuComponent implements OnInit, OnDestroy {
       }
     }));
 
-    this.subscriptions.add(this.userService.getUser().subscribe({
-      next: (data: CBPUser) => {
+    this.isLoggedIn$ = this.userService.getUser().pipe(
+      map((data: CBPUser) => {
         if (data) {
           this.user = data;
           this.userDataLoaded = true;
@@ -61,14 +64,15 @@ export class CBPUserMenuComponent implements OnInit, OnDestroy {
           this.user = data;
           this.userDataLoaded = false;
         }
-      },
-      error: (err: any) => {
+        return this.isLoggedIn;
+      }),
+      catchError((err: any) => {
         this.loginProgress = false;
         this.isLoggedIn = false;
         this.error = err;
         this.userDataLoaded = false;
-      }
-    }));
+        return throwError(err);
+      }));
 
     this.subscriptions.add(this.toolbarState.scrollState.subscribe((value) => {
       if (value === 'up') {

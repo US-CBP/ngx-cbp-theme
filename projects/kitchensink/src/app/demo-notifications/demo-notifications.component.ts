@@ -1,4 +1,4 @@
-import { EMPTY, Subscription } from 'rxjs';
+import { of, Subscription } from 'rxjs';
 
 import { delay, filter, first } from 'rxjs/operators';
 import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
@@ -92,7 +92,7 @@ export class DemoNotificationsComponent implements OnDestroy {
    */
   retryAndClose() {
     this.notifyMe('Connection Successful!');
-    EMPTY.pipe(delay(2000)).subscribe(null, null, () => {
+    of(1).pipe(delay(2000)).subscribe(() => {
       if (this.connectionLostNotification) {
         this.connectionLostNotification.close();
       } else {
@@ -109,8 +109,8 @@ export class DemoNotificationsComponent implements OnDestroy {
   }
 
   _notify(notification: CBPNotification) {
-    this.notificationService.notify(notification);
     notification.autoClose = this.autoClose;
     notification.autoCloseInMilliSec = this.autoCloseInSec * 1000;
+    this.notificationService.notify(notification);
   }
 }
