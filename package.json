@@ -66,6 +66,7 @@
     "@types/jasmine": "~2.8.4",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "bootstrap-sass": "^3.4.1",
     "classlist.js": "^1.1.20150312",
     "codelyzer": "~4.5.0",
     "cpx": "^1.5.0",
