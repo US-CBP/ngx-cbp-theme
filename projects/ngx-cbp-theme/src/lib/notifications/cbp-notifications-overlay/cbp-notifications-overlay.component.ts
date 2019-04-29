@@ -27,13 +27,20 @@ export class CBPNotificationsOverlayComponent implements OnInit {
           notification.contentPortal = new TemplatePortal(notification.content, this.viewContainerRef);
         }
         this.notifications.push(notification);
+        if (false && notification.autoClose) {
+          notification.onClose(() => {
+            this.onClose(notification, notification.autoClose);
+          });
+        }
         return this.notifications;
       })
     );
   }
 
-  onClose(closed: CBPNotification) {
-    closed.close();
+  onClose(closed: CBPNotification, autoClosed = false) {
+    if (!autoClosed) {
+      closed.close();
+    }
     const index = this.notifications.indexOf(closed);
     this.notifications.splice(index, 1);
   }

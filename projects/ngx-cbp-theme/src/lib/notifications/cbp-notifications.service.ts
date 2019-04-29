@@ -1,4 +1,4 @@
-import { EMPTY, Observable, ReplaySubject } from 'rxjs';
+import { Observable, of, ReplaySubject } from 'rxjs';
 
 import { delay } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
@@ -32,7 +32,7 @@ export class CBPNotificationsService {
    */
   snooze(notification: CBPNotification, wakeUpAfter = 5000) {
     notification.close();
-    EMPTY.pipe(delay(wakeUpAfter)).subscribe(null, null, () => {
+    of(1).pipe(delay(wakeUpAfter)).subscribe(() => {
       this.notify(notification);
     });
   }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { timer, ReplaySubject, Subject, EMPTY, of } from 'rxjs';
+import { of, ReplaySubject, Subject } from 'rxjs';
 import { CBPUser, CBPUserService } from '../user/user';
 import { delay, first, tap } from 'rxjs/operators';
 

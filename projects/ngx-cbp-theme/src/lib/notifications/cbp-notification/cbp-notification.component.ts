@@ -1,7 +1,18 @@
-import { EMPTY, Subscription } from 'rxjs';
+import { of, Subscription } from 'rxjs';
 
 import { delay } from 'rxjs/operators';
-import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  ViewEncapsulation
+} from '@angular/core';
 import { animate, AnimationBuilder, AnimationFactory, AnimationPlayer, query, style, transition, trigger } from '@angular/animations';
 import { CBPNotification } from '../cbp-notification';
 
@@ -11,6 +22,7 @@ import { CBPNotification } from '../cbp-notification';
   templateUrl: './cbp-notification.component.html',
   styleUrls: ['./cbp-notification.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger(
       'animationState', [
@@ -44,6 +56,7 @@ export class CBPNotificationComponent implements OnInit, OnDestroy {
 
 
   constructor(private animationBuilder: AnimationBuilder,
+              public _cdr: ChangeDetectorRef,
               private elementRef: ElementRef) {
   }
 
@@ -67,6 +80,7 @@ export class CBPNotificationComponent implements OnInit, OnDestroy {
       } else {
         this.remove();
       }
+      this._cdr.markForCheck();
     }));
   }
 
@@ -81,7 +95,10 @@ export class CBPNotificationComponent implements OnInit, OnDestroy {
         ], {optional: true})
       );
       this.autoClosePlayer = autoCloseAnimation.create(this.elementRef.nativeElement);
-      this.autoClosePlayer.onDone(() => this.notification.close());
+      this.autoClosePlayer.onDone(() => {
+        this.notification.close();
+        this._cdr.markForCheck();
+      });
       this.autoClosePlayer.play();
     }
   }
@@ -108,7 +125,7 @@ export class CBPNotificationComponent implements OnInit, OnDestroy {
     if (userTriggered) {
       this.notification.close();
     }
-    EMPTY.pipe(delay(300)).subscribe(null, null, () => {
+    of(1).pipe(delay(300)).subscribe(() => {
       this.close.emit(this.notification);
     });
   }
