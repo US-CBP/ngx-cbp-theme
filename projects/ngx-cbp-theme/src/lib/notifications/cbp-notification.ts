@@ -35,6 +35,7 @@ export class CBPNotification {
     autoClose?: boolean;
     autoCloseInMilliSec?: number
   }) {
+    options.isClosedInitially = options.isClosedInitially === false ? false : true;
     this.type = options.type;
     this.message = options.message;
     this.content = options.content;
