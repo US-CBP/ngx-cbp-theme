@@ -2,14 +2,17 @@
      [ngClass]="'toast-'+notification?.type"
      aria-live="polite" class="toast"
      tabindex="-1"><span class="cdk-visually-hidden">{{ notification?.type }} notification</span>
-  <div class="toast-color"></div>
-  <div class="toast-body">
-    <button (click)="remove(true)" aria-label="Close" class="close" mat-icon-button>
-      <mat-icon fontIcon="fa-close" fontSet="fontawesome"></mat-icon>
-    </button>
-    <ng-container *ngIf="notification.message">
-      <span class="cbp-notification-contents">{{ notification.message }}</span>
-    </ng-container>
-    <ng-content></ng-content>
+  <div class="toast-border">
+    <div class="toast-body">
+      <button (click)="remove(true)" aria-label="Close" class="close" mat-icon-button>
+        <mat-icon fontIcon="fa-close" fontSet="fontawesome"></mat-icon>
+      </button>
+      <ng-container *ngIf="notification.message">
+        <span class="cbp-notification-contents">{{ notification.message }}</span>
+      </ng-container>
+      <ng-content></ng-content>
+    </div>
+    <div *ngIf="notification?.autoClose" class="toast-progress"></div>
   </div>
 </div>
+

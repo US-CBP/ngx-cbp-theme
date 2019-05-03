@@ -87,10 +87,10 @@ export class CBPNotificationComponent implements OnInit, OnDestroy {
   startAutoClose() {
     if (this.notification.autoClose) {
       const autoCloseAnimation: AnimationFactory = this.animationBuilder.build(
-        query('.toast-color', [
+        query('.toast-progress', [
           animate(`${this.notification.autoCloseInMilliSec}ms linear`,
             style({
-              transform: 'scaleY(0)',
+              transform: 'scaleX(0)',
             }))
         ], {optional: true})
       );
