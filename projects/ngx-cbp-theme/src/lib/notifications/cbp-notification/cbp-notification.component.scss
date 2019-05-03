@@ -1,17 +1,24 @@
 @import '../../variables';
 
 $toast-band-width: 8px !default;
+$toast-progress-height: 4px !default;
 .toast {
   position: relative;
   margin-bottom: 9px;
-  position: relative;
   background: #fff;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, .1);
-  flex-direction: row;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
   box-sizing: border-box;
-  display: flex;
-  flex: 1 1 100%;
+
   min-height: 40px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: $toast-band-width;
+    height: 100%;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;;
+  }
 
   button.close {
     position: absolute;
@@ -19,75 +26,49 @@ $toast-band-width: 8px !default;
     top: 0;
     opacity: .6;
   }
+  .toast-border {
+    border: 1px solid #ddd;
+    border-radius: 0 2px 2px 0;
+    border-left: none;
+    width: 100%;
+  }
+
+  &.toast-info::before {
+    background: $brand-info;
+  }
+
+  &.toast-primary::before {
+    background: $brand-primary;
+  }
+
+  &.toast-success::before {
+    background: $brand-success;
+  }
+
+  &.toast-danger::before {
+    background: $brand-danger;
+  }
+
+  &.toast-warning::before {
+    background: $brand-warning;
+  }
 }
 
-.toast-info .toast-color {
-  background: $brand-info;
-}
-
-.toast-primary .toast-color {
-  background: $brand-primary;
-}
-
-.toast-success .toast-color {
-  background: $brand-success;
-}
-
-.toast-danger .toast-color {
-  background: $brand-danger;
-}
-
-.toast-warning .toast-color {
-  background: $brand-warning;
-}
-
-.toast-color {
-  place-content: center;
-  align-items: center;
-  flex-direction: row;
-  box-sizing: border-box;
-  display: flex;
-  flex: 1 1 100%;
-  max-width: $toast-band-width;
-  z-index: 1;
-  transform-origin: bottom center;
-}
 
 .toast-body {
   height: 100%;
-  width: calc(100% - #{$toast-band-width});
-  flex: 1 1 100%;
-  padding: $alert-padding*2;
-  border: 1px solid #ddd;
-  border-radius: 0 2px 2px 0;
-  border-left: none;
+  width: 100%;
+  padding: $alert-padding*2 calc(#{$alert-padding} * 2 + #{$toast-band-width});
 }
 
-.toast::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: $toast-band-width;
-}
-
-.toast.toast-info::before {
-  background: lighten($brand-info, 50%);
-}
-
-.toast.toast-primary::before {
-  background: lighten($brand-primary, 50%);
-}
-
-.toast.toast-success::before {
-  background: lighten($brand-success, 50%);
-}
-
-.toast.toast-danger::before {
-  background: lighten($brand-danger, 50%);
-}
-
-.toast.toast-warning::before {
-  background: lighten($brand-warning, 15%);
+.toast-progress {
+  background: #222222;
+  opacity: 0.4;
+  height: $toast-progress-height;
+  transform-origin: left center;
+  position: relative;
+  top: 1px;
+  margin-left: $toast-band-width;
 }
 
 
