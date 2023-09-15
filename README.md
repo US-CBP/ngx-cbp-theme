@@ -1,11 +1,15 @@
 # ngx-cbp-theme
 
 
+
 [![npm version](https://badge.fury.io/js/ngx-cbp-theme.svg)](https://www.npmjs.com/package/ngx-cbp-theme)
 [![build Status](https://travis-ci.org/US-CBP/ngx-cbp-theme.svg?branch=master)](https://travis-ci.org/US-CBP/ngx-cbp-theme)
 [![dependencies Status](https://david-dm.org/us-cbp/ngx-cbp-theme/status.svg)](https://david-dm.org/us-cbp/ngx-cbp-theme)
 [![devDependencies Status](https://david-dm.org/us-cbp/ngx-cbp-theme/dev-status.svg)](https://david-dm.org/us-cbp/ngx-cbp-theme?type=dev)
 
+# Deprecated 
+
+This package is deprecated and no long maintained since Angular 7.
 
 Angular native artifacts for consuming [CBP Theme](https://github.com/US-CBP/cbp-theme) for Angular 5/6/7/next applications. 
 
